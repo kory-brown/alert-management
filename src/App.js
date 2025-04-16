@@ -1,6 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { AuthProvider } from './contexts/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import AAMDashboard from './pages/AAMDashboard';
 import AlertDispatchDashboard from './pages/AlertDispatchDashboard';
@@ -15,6 +17,8 @@ import PathwaysDashboard from './pages/PathwaysDashboard';
 import AuditTrailDashboard from './pages/AuditTrailDashboard';
 import UnitTrendDashboard from './pages/UnitTrendDashboard';
 import AlarmAlertEscalationDashboard from './pages/AlarmAlertEscalationDashboard';
+import LoginPage from './pages/LoginPage';
+import { useAuth } from './contexts/AuthContext';
 
 const theme = createTheme({
   palette: {
@@ -28,28 +32,94 @@ const theme = createTheme({
   },
 });
 
+// Root route component to handle authentication-based redirects
+const RootRoute = () => {
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? <Navigate to="/home" replace /> : <Navigate to="/login" replace />;
+};
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard/aam" element={<AAMDashboard />} />
-          <Route path="/dashboard/alert-dispatch" element={<AlertDispatchDashboard />} />
-          <Route path="/dashboard/alert-response" element={<AlertResponseDashboard />} />
-          <Route path="/dashboard/top-alarms" element={<TopAlarmsDashboard />} />
-          <Route path="/dashboard/quality" element={<QualityInitiativeDashboard />} />
-          <Route path="/dashboard/shift" element={<ShiftDashboard />} />
-          <Route path="/dashboard/bed" element={<IndividualBedDashboard />} />
-          <Route path="/dashboard/user-metrics" element={<EndUserMetricsDashboard />} />
-          <Route path="/dashboard/escalation" element={<AlertEscalationDashboard />} />
-          <Route path="/dashboard/pathways" element={<PathwaysDashboard />} />
-          <Route path="/dashboard/audit" element={<AuditTrailDashboard />} />
-          <Route path="/dashboard/unit-trend" element={<UnitTrendDashboard />} />
-          <Route path="/dashboard/alarm-escalation" element={<AlarmAlertEscalationDashboard />} />
-        </Routes>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/" element={<RootRoute />} />
+            <Route path="/home" element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/aam" element={
+              <ProtectedRoute>
+                <AAMDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/alert-dispatch" element={
+              <ProtectedRoute>
+                <AlertDispatchDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/alert-response" element={
+              <ProtectedRoute>
+                <AlertResponseDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/top-alarms" element={
+              <ProtectedRoute>
+                <TopAlarmsDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/quality" element={
+              <ProtectedRoute>
+                <QualityInitiativeDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/shift" element={
+              <ProtectedRoute>
+                <ShiftDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/bed" element={
+              <ProtectedRoute>
+                <IndividualBedDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/user-metrics" element={
+              <ProtectedRoute>
+                <EndUserMetricsDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/escalation" element={
+              <ProtectedRoute>
+                <AlertEscalationDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/pathways" element={
+              <ProtectedRoute>
+                <PathwaysDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/audit" element={
+              <ProtectedRoute>
+                <AuditTrailDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/unit-trend" element={
+              <ProtectedRoute>
+                <UnitTrendDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/alarm-escalation" element={
+              <ProtectedRoute>
+                <AlarmAlertEscalationDashboard />
+              </ProtectedRoute>
+            } />
+          </Routes>
+        </Router>
+      </AuthProvider>
     </ThemeProvider>
   );
 }

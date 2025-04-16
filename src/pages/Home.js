@@ -6,9 +6,8 @@ import {
   Card, 
   CardActionArea,
   Box,
-  AppBar,
+  Container,
   Toolbar,
-  Container
 } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
@@ -23,7 +22,7 @@ import HistoryIcon from '@mui/icons-material/History';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import logo from '../assets/logo.svg';
+import AppHeader from '../components/AppHeader';
 
 function Home() {
   const dashboards = [
@@ -122,35 +121,8 @@ function Home() {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', minWidth: '1024px' }}>
-      <AppBar 
-        position="fixed" 
-        color="default" 
-        elevation={1}
-        sx={{
-          zIndex: (theme) => theme.zIndex.drawer + 1,
-          minWidth: '1024px'
-        }}
-      >
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <DashboardIcon sx={{ mr: 2 }} />
-            <Typography variant="h6" component="div">
-              Alert Management Reporting
-            </Typography>
-          </Box>
-          <img 
-            src={logo} 
-            alt="Logo" 
-            style={{ 
-              height: '40px',
-              marginLeft: 'auto'
-            }} 
-          />
-        </Toolbar>
-      </AppBar>
-
+      <AppHeader title="Alert Management Reporting" />
       <Toolbar />
-
       <Container maxWidth="lg" sx={{ py: 4, flex: 1 }}>
         <Grid container spacing={3}>
           {dashboards.map((dashboard) => (

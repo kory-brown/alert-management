@@ -542,6 +542,30 @@
         }
       ],
       "updateInterval": "5min"
+    },
+    "avgAlarmResolveTimeBySeverity": {
+      "title": "Average Alarm Resolve Time by Severity Daily Trend",
+      "data": [
+        { "date": "2024-01-01", "low": 45, "medium": 75, "high": 120 },
+        { "date": "2024-01-02", "low": 42, "medium": 82, "high": 115 },
+        { "date": "2024-01-03", "low": 48, "medium": 78, "high": 125 },
+        { "date": "2024-01-04", "low": 40, "medium": 85, "high": 118 },
+        { "date": "2024-01-05", "low": 44, "medium": 80, "high": 122 },
+        { "date": "2024-01-06", "low": 46, "medium": 72, "high": 128 },
+        { "date": "2024-01-07", "low": 43, "medium": 77, "high": 124 }
+      ]
+    },
+    "avgAlarmsByCategoryDailyTrend": {
+      "title": "Average Total Alarms by Category Daily Trend",
+      "data": [
+        { "date": "2024-01-01", "arrhythmia": 85, "system": 65, "other": 45 },
+        { "date": "2024-01-02", "arrhythmia": 92, "system": 58, "other": 48 },
+        { "date": "2024-01-03", "arrhythmia": 78, "system": 72, "other": 42 },
+        { "date": "2024-01-04", "arrhythmia": 88, "system": 62, "other": 52 },
+        { "date": "2024-01-05", "arrhythmia": 95, "system": 68, "other": 44 },
+        { "date": "2024-01-06", "arrhythmia": 82, "system": 70, "other": 46 },
+        { "date": "2024-01-07", "arrhythmia": 90, "system": 64, "other": 50 }
+      ]
     }
   },
   "tableCharts": {
@@ -1283,13 +1307,13 @@
           "d9AvgResponseTime": 140,
           "d9SK1": 3,
           "d9SK2": 2,
-          "d9SK3": 3,
-          "d9Auto": 2,
+          "d9SK3": 2,
+          "d9Auto": 3,
           "d10AvgResponseTime": 143,
           "d10SK1": 2,
           "d10SK2": 3,
           "d10SK3": 2,
-          "d10Auto": 3
+          "d10Auto": 2
         },
         {
           "alarmLabel": "Third Degree AV Block",

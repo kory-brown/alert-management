@@ -7,7 +7,8 @@ import {
   Box,
   IconButton,
   AppBar,
-  Toolbar
+  Toolbar,
+  Container
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -22,6 +23,8 @@ import LineChart from '../components/LineChart';
 import FiltersPanel from '../components/FiltersPanel';
 import chartData from '../data/AlarmAlertManagementData.json';
 import logo from '../assets/logo.svg';
+import AppHeader from '../components/AppHeader';
+import { drawerWidth } from '../components/FiltersPanel';
 
 function AAMDashboard() {
   const [startDate, setStartDate] = useState('');
@@ -51,48 +54,10 @@ function AAMDashboard() {
     setIsFilterPanelOpen(!isFilterPanelOpen);
   };
 
-  const drawerWidth = 320;
-
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', minWidth: '1024px' }}>
-      <AppBar 
-        position="fixed" 
-        color="default" 
-        elevation={1}
-        sx={{
-          zIndex: (theme) => theme.zIndex.drawer + 1,
-          minWidth: '1024px'
-        }}
-      >
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <IconButton
-              edge="start"
-              color="inherit"
-              component={Link}
-              to="/"
-              sx={{ mr: 2 }}
-            >
-              <ArrowBackIcon />
-            </IconButton>
-            <DashboardIcon sx={{ mr: 2 }} />
-            <Typography variant="h6" component="div">
-              AAM Dashboard
-            </Typography>
-          </Box>
-          <img 
-            src={logo} 
-            alt="Logo" 
-            style={{ 
-              height: '40px',
-              marginLeft: 'auto'
-            }} 
-          />
-        </Toolbar>
-      </AppBar>
-
+      <AppHeader title="AAM Dashboard" />
       <Toolbar />
-
       <Box sx={{ display: 'flex', flex: 1, position: 'relative' }}>
         <Box sx={{ 
           display: 'flex',
@@ -245,50 +210,7 @@ function AAMDashboard() {
               <Box sx={{ height: 400 }}>
                 <LineChart
                   title="Average Alarm Resolve Time by Severity Daily Trend"
-                  data={[
-                    {
-                      date: '2024-01-01',
-                      low: 45,
-                      medium: 75,
-                      high: 120
-                    },
-                    {
-                      date: '2024-01-02',
-                      low: 42,
-                      medium: 82,
-                      high: 115
-                    },
-                    {
-                      date: '2024-01-03',
-                      low: 48,
-                      medium: 78,
-                      high: 125
-                    },
-                    {
-                      date: '2024-01-04',
-                      low: 40,
-                      medium: 85,
-                      high: 118
-                    },
-                    {
-                      date: '2024-01-05',
-                      low: 44,
-                      medium: 80,
-                      high: 122
-                    },
-                    {
-                      date: '2024-01-06',
-                      low: 46,
-                      medium: 72,
-                      high: 128
-                    },
-                    {
-                      date: '2024-01-07',
-                      low: 43,
-                      medium: 77,
-                      high: 124
-                    }
-                  ]}
+                  data={chartData.lineCharts.avgAlarmResolveTimeBySeverity.data}
                   severityChart={true}
                 />
               </Box>
@@ -301,50 +223,7 @@ function AAMDashboard() {
               <Box sx={{ height: 400 }}>
                 <LineChart
                   title="Average Total Alarms by Category Daily Trend"
-                  data={[
-                    {
-                      date: '2024-01-01',
-                      arrhythmia: 85,
-                      system: 65,
-                      other: 45
-                    },
-                    {
-                      date: '2024-01-02',
-                      arrhythmia: 92,
-                      system: 58,
-                      other: 48
-                    },
-                    {
-                      date: '2024-01-03',
-                      arrhythmia: 78,
-                      system: 72,
-                      other: 42
-                    },
-                    {
-                      date: '2024-01-04',
-                      arrhythmia: 88,
-                      system: 62,
-                      other: 52
-                    },
-                    {
-                      date: '2024-01-05',
-                      arrhythmia: 95,
-                      system: 68,
-                      other: 44
-                    },
-                    {
-                      date: '2024-01-06',
-                      arrhythmia: 82,
-                      system: 70,
-                      other: 46
-                    },
-                    {
-                      date: '2024-01-07',
-                      arrhythmia: 90,
-                      system: 64,
-                      other: 50
-                    }
-                  ]}
+                  data={chartData.lineCharts.avgAlarmsByCategoryDailyTrend.data}
                   categoryChart={true}
                 />
               </Box>

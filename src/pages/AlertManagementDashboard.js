@@ -16,7 +16,7 @@ import TableChart from '../components/TableChart';
 import FiltersPanel from '../components/FiltersPanel';
 import chartData from '../data/AlarmAlertManagementData.json';
 
-function AlertDispatchDashboard() {
+function AlertManagementDashboard() {
   const [startDate, setStartDate] = useState('');
   const [shift, setShift] = useState('');
   const [facility, setFacility] = useState('');
@@ -36,7 +36,7 @@ function AlertDispatchDashboard() {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', minWidth: '1024px' }}>
-      <AppHeader title="Alert Dispatch Dashboard" />
+      <AppHeader title="Alert Management Dashboard" />
       <Toolbar />
       <Container maxWidth="lg" sx={{ py: 4, flex: 1 }}>
         <Box sx={{ display: 'flex', flex: 1, position: 'relative' }}>
@@ -149,4 +149,4 @@ function AlertDispatchDashboard() {
   );
 }
 
-export default AlertDispatchDashboard; 
+export default AlertManagementDashboard; 
