@@ -14,7 +14,8 @@ import BarChart from '../components/BarChart';
 import PieChart from '../components/PieChart';
 import TableChart from '../components/TableChart';
 import FiltersPanel from '../components/FiltersPanel';
-import chartData from '../data/AlarmAlertManagementData.json';
+import chartData from '../data/AAMDashboardData.json';
+import { drawerWidth } from '../components/FiltersPanel';
 
 function AlarmDashboard() {
   const [startDate, setStartDate] = useState('');
@@ -24,7 +25,6 @@ function AlarmDashboard() {
   const [severity, setSeverity] = useState('');
   const [category, setCategory] = useState('');
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
-  const drawerWidth = 240;
 
   const toggleFilterPanel = () => {
     setIsFilterPanelOpen(!isFilterPanelOpen);

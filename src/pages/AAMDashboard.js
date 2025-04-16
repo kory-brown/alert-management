@@ -21,7 +21,7 @@ import PieChart from '../components/PieChart';
 import TableChart from '../components/TableChart';
 import LineChart from '../components/LineChart';
 import FiltersPanel from '../components/FiltersPanel';
-import chartData from '../data/AlarmAlertManagementData.json';
+import chartData from '../data/AAMDashboardData.json';
 import logo from '../assets/logo.svg';
 import AppHeader from '../components/AppHeader';
 import { drawerWidth } from '../components/FiltersPanel';

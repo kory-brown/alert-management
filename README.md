@@ -76,7 +76,7 @@ src/
 │   ├── AAMDashboard/
 │   └── ...
 ├── data/              # Static data and configurations
-│   └── AlarmAlertManagementData.json
+│   └── AAMDashboardData.json
 └── assets/           # Static assets (images, icons)
 ```
 
