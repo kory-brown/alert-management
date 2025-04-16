@@ -1,30 +1,25 @@
 import React, { useState } from 'react';
 import {
-  AppBar,
   Box,
-  IconButton,
-  Paper,
   Toolbar,
-  Typography,
+  Paper,
+  IconButton,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import DashboardIcon from '@mui/icons-material/Dashboard';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import AppHeader from '../components/AppHeader';
 import FiltersPanel from '../components/FiltersPanel';
-import logo from '../assets/logo.svg';
+import { drawerWidth } from '../components/FiltersPanel';
 
-const drawerWidth = 320;
-
-const ShiftDashboard = () => {
-  // Filter state
-  const [severity, setSeverity] = useState('');
-  const [category, setCategory] = useState('');
-  const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
+function ShiftDashboard() {
   const [startDate, setStartDate] = useState('');
   const [shift, setShift] = useState('');
   const [facility, setFacility] = useState('');
   const [utility, setUtility] = useState('');
+  const [severity, setSeverity] = useState('');
+  const [category, setCategory] = useState('');
+  const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
+
+  const pageTitle = "Shift Dashboard";
 
   const toggleFilterPanel = () => {
     setIsFilterPanelOpen(!isFilterPanelOpen);
@@ -43,44 +38,8 @@ const ShiftDashboard = () => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', minWidth: '1024px' }}>
-      <AppBar 
-        position="fixed" 
-        color="default" 
-        elevation={1}
-        sx={{
-          zIndex: (theme) => theme.zIndex.drawer + 1,
-          minWidth: '1024px'
-        }}
-      >
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <IconButton
-              edge="start"
-              color="inherit"
-              component={Link}
-              to="/"
-              sx={{ mr: 2 }}
-            >
-              <ArrowBackIcon />
-            </IconButton>
-            <DashboardIcon sx={{ mr: 2 }} />
-            <Typography variant="h6" component="div">
-              Shift Dashboard
-            </Typography>
-          </Box>
-          <img 
-            src={logo} 
-            alt="Logo" 
-            style={{ 
-              height: '40px',
-              marginLeft: 'auto'
-            }} 
-          />
-        </Toolbar>
-      </AppBar>
-
+      <AppHeader title={pageTitle} />
       <Toolbar />
-
       <Box sx={{ display: 'flex', flex: 1, position: 'relative' }}>
         <Box sx={{ 
           display: 'flex',
@@ -169,11 +128,10 @@ const ShiftDashboard = () => {
               <ChevronRightIcon />
             </IconButton>
           )}
-          {/* Dashboard content will go here */}
         </Box>
       </Box>
     </Box>
   );
-};
+}
 
 export default ShiftDashboard; 

@@ -53,7 +53,7 @@ const AppHeader = ({ title }) => {
     >
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          {location.pathname !== '/' && (
+          {location.pathname !== '/home' && location.pathname !== '/login' && (
             <IconButton
               edge="start"
               color="inherit"

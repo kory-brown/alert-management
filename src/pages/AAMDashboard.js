@@ -50,15 +50,21 @@ function AAMDashboard() {
     });
   };
 
+  const pageTitle = "AAM Dashboard";
+  
   const toggleFilterPanel = () => {
     setIsFilterPanelOpen(!isFilterPanelOpen);
   };
 
+
+  {/* PAGE TEMPLATE COMPONENTS */}
   return (
+    /* NAVIGATION HEADER BAR */
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', minWidth: '1024px' }}>
-      <AppHeader title="AAM Dashboard" />
+      <AppHeader title={pageTitle} />
       <Toolbar />
       <Box sx={{ display: 'flex', flex: 1, position: 'relative' }}>
+      {/* FILTERS PANEL */}
         <Box sx={{ 
           display: 'flex',
           transition: 'width 0.3s ease',
@@ -146,6 +152,9 @@ function AAMDashboard() {
               <ChevronRightIcon />
             </IconButton>
           )}
+
+
+          {/* PAGE CHART COMPONENTS */}
 
           {/* Big Number Charts */}
           <Grid container spacing={3}>

@@ -1,6 +1,6 @@
 export const AUTH_CONFIG = {
   credentials: {
-    username: 'test',
-    password: 'test'
+    username: 'admin',
+    password: 'A1rstr1p!'
   }
 }; 
