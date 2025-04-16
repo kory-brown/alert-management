@@ -14,7 +14,7 @@ import BarChart from '../components/BarChart';
 import PieChart from '../components/PieChart';
 import TableChart from '../components/TableChart';
 import FiltersPanel from '../components/FiltersPanel';
-import chartData from '../data/AAMDashboardData.json';
+import chartData from '../data/AlertDispatchDashboardData.json';
 import { drawerWidth } from '../components/FiltersPanel';
 
 function AlertDispatchDashboard() {

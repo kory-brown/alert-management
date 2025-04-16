@@ -49,10 +49,100 @@
       "updateInterval": "5min"
     }
   },
+  "stackedBarCharts": {
+    "alarmsAndAlerts": {
+      "id": "stacked-alarms-and-alerts",
+      "title": "Total Alarms and Alerts by Day",
+      "description": "Shows total alarms with alerts as a subset",
+      "groupBy": "Date",
+      "data": [
+        {
+          "groupByLabel": "2024-01-01",
+          "totalLabel": "Alarms",
+          "totalValue": 3500,
+          "subsetLabel": "Alerts",
+          "subsetValue": 2675
+        },
+        {
+          "groupByLabel": "2024-01-02",
+          "totalLabel": "Alarms",
+          "totalValue": 3200,
+          "subsetLabel": "Alerts",
+          "subsetValue": 2450
+        },
+        {
+          "groupByLabel": "2024-01-03",
+          "totalLabel": "Alarms",
+          "totalValue": 3800,
+          "subsetLabel": "Alerts",
+          "subsetValue": 2900
+        },
+        {
+          "groupByLabel": "2024-01-04",
+          "totalLabel": "Alarms",
+          "totalValue": 3400,
+          "subsetLabel": "Alerts",
+          "subsetValue": 2600
+        },
+        {
+          "groupByLabel": "2024-01-05",
+          "totalLabel": "Alarms",
+          "totalValue": 3600,
+          "subsetLabel": "Alerts",
+          "subsetValue": 2750
+        },
+        {
+          "groupByLabel": "2024-01-06",
+          "totalLabel": "Alarms",
+          "totalValue": 3300,
+          "subsetLabel": "Alerts",
+          "subsetValue": 2525
+        },
+        {
+          "groupByLabel": "2024-01-07",
+          "totalLabel": "Alarms",
+          "totalValue": 3700,
+          "subsetLabel": "Alerts",
+          "subsetValue": 2825
+        }
+      ],
+      "updateInterval": "5min"
+    },
+    "bySeverity": {
+      "id": "stacked-alarms-and-alerts-by-severity",
+      "title": "Total Alarms & Alerts by Severity",
+      "description": "Shows total alarms with alerts as a subset by severity level",
+      "groupBy": "Severity",
+      "data": [
+        {
+          "groupByLabel": "Low",
+          "totalLabel": "Alarms",
+          "totalValue": 219,
+          "subsetLabel": "Alerts",
+          "subsetValue": 185
+        },
+        {
+          "groupByLabel": "Medium",
+          "totalLabel": "Alarms",
+          "totalValue": 320,
+          "subsetLabel": "Alerts",
+          "subsetValue": 201
+        },
+        {
+          "groupByLabel": "High",
+          "totalLabel": "Alarms",
+          "totalValue": 199,
+          "subsetLabel": "Alerts",
+          "subsetValue": 112
+        }
+      ],
+      "updateInterval": "5min"
+    }
+  },
   "barCharts": {
     "alarmsAndAlerts": {
       "id": "alarms-and-alerts",
-      "title": "Total Alarms and Alerts",
+      "title": "Total Alarms and Alerts by Day",
       "data": [
         {
           "date": "2024-01-01",
@@ -332,173 +422,6 @@
       ],
       "updateInterval": "5min"
     }
-  },
-  "alertsBySeverity": {
-    "title": "Alerts by Severity",
-    "type": "pie",
-    "data": [
-      {
-        "severity": "High",
-        "count": 45,
-        "color": "#f75e11"
-      },
-      {
-        "severity": "Medium",
-        "count": 78,
-        "color": "#fd7e44"
-      },
-      {
-        "severity": "Low",
-        "count": 156,
-        "color": "#ff9c6e"
-      }
-    ]
-  },
-  "alertsByShift": {
-    "title": "Alerts by Shift",
-    "type": "bar",
-    "data": [
-      {
-        "shift": "12:00 AM - 8:00 AM",
-        "count": 89,
-        "color": "#1aafe6"
-      },
-      {
-        "shift": "8:00 AM - 4:00 PM",
-        "count": 156,
-        "color": "#65bce8"
-      },
-      {
-        "shift": "4:00 PM - 12:00 AM",
-        "count": 134,
-        "color": "#8fc9eb"
-      }
-    ]
-  },
-  "alertsByFacility": {
-    "title": "Alerts by Facility",
-    "type": "bar",
-    "data": [
-      {
-        "facility": "Southside",
-        "count": 142,
-        "color": "#1aafe6"
-      },
-      {
-        "facility": "Eastside",
-        "count": 98,
-        "color": "#65bce8"
-      },
-      {
-        "facility": "Northside",
-        "count": 139,
-        "color": "#8fc9eb"
-      }
-    ]
-  },
-  "alertsByUtility": {
-    "title": "Alerts by Utility",
-    "type": "bar",
-    "data": [
-      {
-        "utility": "Emergency",
-        "count": 67,
-        "color": "#f75e11"
-      },
-      {
-        "utility": "Post Op",
-        "count": 89,
-        "color": "#fd7e44"
-      },
-      {
-        "utility": "Critical Care",
-        "count": 223,
-        "color": "#ff9c6e"
-      }
-    ]
-  },
-  "alertsByCategory": {
-    "title": "Alerts by Category",
-    "type": "pie",
-    "data": [
-      {
-        "category": "Arrhythmia",
-        "count": 156,
-        "color": "#1aafe6"
-      },
-      {
-        "category": "System",
-        "count": 89,
-        "color": "#65bce8"
-      },
-      {
-        "category": "Other",
-        "count": 134,
-        "color": "#8fc9eb"
-      }
-    ]
-  },
-  "alertsOverTime": {
-    "title": "Alerts Over Time",
-    "type": "line",
-    "data": [
-      {
-        "date": "2024-01-01",
-        "count": 12,
-        "color": "#1aafe6"
-      },
-      {
-        "date": "2024-01-02",
-        "count": 15,
-        "color": "#1aafe6"
-      },
-      {
-        "date": "2024-01-03",
-        "count": 8,
-        "color": "#1aafe6"
-      },
-      {
-        "date": "2024-01-04",
-        "count": 20,
-        "color": "#1aafe6"
-      },
-      {
-        "date": "2024-01-05",
-        "count": 14,
-        "color": "#1aafe6"
-      },
-      {
-        "date": "2024-01-06",
-        "count": 18,
-        "color": "#1aafe6"
-      },
-      {
-        "date": "2024-01-07",
-        "count": 16,
-        "color": "#1aafe6"
-      }
-    ]
-  },
-  "alertResolutionTime": {
-    "title": "Average Alert Resolution Time",
-    "type": "bar",
-    "data": [
-      {
-        "severity": "High",
-        "minutes": 15,
-        "color": "#f75e11"
-      },
-      {
-        "severity": "Medium",
-        "minutes": 45,
-        "color": "#fd7e44"
-      },
-      {
-        "severity": "Low",
-        "minutes": 120,
-        "color": "#ff9c6e"
-      }
-    ]
   },
   "lineCharts": {
     "alarmsAndAlertsDailyTrend": {

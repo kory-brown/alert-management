@@ -22,9 +22,9 @@ import TableChart from '../components/TableChart';
 import LineChart from '../components/LineChart';
 import FiltersPanel from '../components/FiltersPanel';
 import chartData from '../data/AAMDashboardData.json';
-import logo from '../assets/logo.svg';
 import AppHeader from '../components/AppHeader';
 import { drawerWidth } from '../components/FiltersPanel';
+import StackedBarChart from '../components/StackedBarChart';
 
 function AAMDashboard() {
   const [startDate, setStartDate] = useState('');
@@ -55,7 +55,6 @@ function AAMDashboard() {
   const toggleFilterPanel = () => {
     setIsFilterPanelOpen(!isFilterPanelOpen);
   };
-
 
   {/* PAGE TEMPLATE COMPONENTS */}
   return (
@@ -169,33 +168,50 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Severity and Category Charts */}
+          {/* Alarms and Alerts Row */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={6}>
               <Box sx={{ height: 400 }}>
-                <BarChart 
-                  title={chartData.barCharts.bySeverity.title}
-                  data={chartData.barCharts.bySeverity.data}
+                <StackedBarChart 
+                  title={chartData.stackedBarCharts.alarmsAndAlerts.title}
+                  data={chartData.stackedBarCharts.alarmsAndAlerts.data}
+                  totalLabel="Alarms"
+                  subsetLabel="Alerts"
                 />
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
               <Box sx={{ height: 400 }}>
                 <BarChart 
-                  title={chartData.barCharts.byCategory.title}
-                  data={chartData.barCharts.byCategory.data}
+                  title={chartData.barCharts.alarmsAndAlerts.title}
+                  data={chartData.barCharts.alarmsAndAlerts.data}
                 />
               </Box>
             </Grid>
           </Grid>
 
-          {/* Daily Bar Chart */}
+          {/* Severity and Category Charts */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
+            <Grid item xs={12} md={6}>
               <Box sx={{ height: 400 }}>
-                <BarChart 
-                  title={chartData.barCharts.alarmsAndAlerts.title}
-                  data={chartData.barCharts.alarmsAndAlerts.data}
+                <BarChart
+                  title={chartData.barCharts.bySeverity.title}
+                  data={chartData.barCharts.bySeverity.data}
+                  xAxisKey="severity"
+                  yAxisKeys={['alarms', 'alerts']}
+                  yAxisLabels={['Alarms', 'Alerts']}
+                  colors={['#1aafe6', '#667275']}
+                  showTotalLabels={true}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ height: 400 }}>
+                <StackedBarChart
+                  title={chartData.stackedBarCharts.bySeverity.title}
+                  data={chartData.stackedBarCharts.bySeverity.data}
+                  groupBy={chartData.stackedBarCharts.bySeverity.groupBy}
+                  colors={['#1aafe6', '#667275']}
                 />
               </Box>
             </Grid>

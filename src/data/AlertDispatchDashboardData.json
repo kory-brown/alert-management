@@ -1,0 +1,38 @@
+{
+  "bigNumbers": {
+    "totalAlarms": {
+      "title": "Total Alarms",
+      "value": "1,234",
+      "label": "Last 7 Days"
+    },
+    "totalAlerts": {
+      "title": "Total Alerts",
+      "value": "567",
+      "label": "Last 7 Days"
+    },
+    "avgAlarmDuration": {
+      "title": "Avg Alarm Duration",
+      "value": "2.5",
+      "label": "Hours"
+    },
+    "manuallyDispatchedAlerts": {
+      "title": "Manually Dispatched Alerts",
+      "value": "289",
+      "label": "Last 7 Days"
+    }
+  },
+  "barCharts": {
+    "manuallyDispatchedAlerts": {
+      "title": "Manually Dispatched Alerts",
+      "data": [
+        { "date": "2024-01-01", "manuallyDispatched": 245 },
+        { "date": "2024-01-02", "manuallyDispatched": 267 },
+        { "date": "2024-01-03", "manuallyDispatched": 278 },
+        { "date": "2024-01-04", "manuallyDispatched": 290 },
+        { "date": "2024-01-05", "manuallyDispatched": 256 },
+        { "date": "2024-01-06", "manuallyDispatched": 234 },
+        { "date": "2024-01-07", "manuallyDispatched": 289 }
+      ]
+    }
+  }
+} 

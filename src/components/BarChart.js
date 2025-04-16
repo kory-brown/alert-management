@@ -8,7 +8,8 @@ import {
   CartesianGrid, 
   Tooltip, 
   Legend,
-  ResponsiveContainer 
+  ResponsiveContainer,
+  LabelList
 } from 'recharts';
 
 const BarChart = ({ 
@@ -73,8 +74,15 @@ const BarChart = ({
                 dataKey={key}
                 name={yAxisLabels[index]}
                 fill={colors[index]}
-                label={showValueLabels ? { position: 'top', fill: '#2F2F2F', fontSize: 12 } : false}
-              />
+              >
+                <LabelList
+                  dataKey={key}
+                  position="top"
+                  fill="#2F2F2F"
+                  fontSize={12}
+                  formatter={(value) => value.toLocaleString()}
+                />
+              </Bar>
             ))}
           </RechartsBarChart>
         </ResponsiveContainer>
