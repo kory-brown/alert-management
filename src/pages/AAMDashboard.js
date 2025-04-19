@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+/*import { Link } from 'react-router-dom';*/
 import {
   Typography,
   Grid,
   Paper,
   Box,
   IconButton,
-  AppBar,
-  Toolbar,
-  Container
+  Toolbar
 } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import BigNumberChart from '../components/BigNumberChart';
 import BarChart from '../components/BarChart';
@@ -21,6 +16,8 @@ import PieChart from '../components/PieChart';
 import TableChart from '../components/TableChart';
 import LineChart from '../components/LineChart';
 import FiltersPanel from '../components/FiltersPanel';
+import SubsectionLabel from '../components/SubsectionLabel';
+import SectionLabel from '../components/SectionLabel';
 import chartData from '../data/AAMDashboardData.json';
 import AppHeader from '../components/AppHeader';
 import { drawerWidth } from '../components/FiltersPanel';
@@ -33,11 +30,8 @@ function AAMDashboard() {
   const [utility, setUtility] = useState('');
   const [severity, setSeverity] = useState('');
   const [category, setCategory] = useState('');
-  const [selectedDateRange, setSelectedDateRange] = useState('last7Days');
-  const [selectedUnits, setSelectedUnits] = useState(['All Units']);
-  const [selectedDestinations, setSelectedDestinations] = useState(['All Destinations']);
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
-  const [selectedView, setSelectedView] = useState('overview');
+
 
   const handleApplyFilters = () => {
     console.log('Applying filters:', {
@@ -170,7 +164,7 @@ function AAMDashboard() {
 
           {/* Alarms and Alerts Row */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <StackedBarChart 
                   title={chartData.stackedBarCharts.alarmsAndAlerts.title}
@@ -180,32 +174,11 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <Box sx={{ height: 400 }}>
-                <BarChart 
-                  title={chartData.barCharts.alarmsAndAlerts.title}
-                  data={chartData.barCharts.alarmsAndAlerts.data}
-                />
-              </Box>
-            </Grid>
           </Grid>
 
           {/* Severity and Category Charts */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12} md={6}>
-              <Box sx={{ height: 400 }}>
-                <BarChart
-                  title={chartData.barCharts.bySeverity.title}
-                  data={chartData.barCharts.bySeverity.data}
-                  xAxisKey="severity"
-                  yAxisKeys={['alarms', 'alerts']}
-                  yAxisLabels={['Alarms', 'Alerts']}
-                  colors={['#1aafe6', '#667275']}
-                  showTotalLabels={true}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={4}>
               <Box sx={{ height: 400 }}>
                 <StackedBarChart
                   title={chartData.stackedBarCharts.bySeverity.title}
@@ -215,63 +188,43 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-          </Grid>
-
-          {/* Daily Trend Line Chart */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
+            <Grid item xs={12} md={8}>
               <Box sx={{ height: 400 }}>
                 <LineChart
-                  title={chartData.lineCharts.alarmsAndAlertsDailyTrend.title}
-                  data={chartData.lineCharts.alarmsAndAlertsDailyTrend.data}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-
-          {/* Severity Resolve Time Trend Line Chart */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
-              <Box sx={{ height: 400 }}>
-                <LineChart
-                  title="Average Alarm Resolve Time by Severity Daily Trend"
-                  data={chartData.lineCharts.avgAlarmResolveTimeBySeverity.data}
+                  title={chartData.lineCharts.alarmsBySeverityDailyTrend.title}
+                  data={chartData.lineCharts.alarmsBySeverityDailyTrend.data}
                   severityChart={true}
                 />
               </Box>
             </Grid>
           </Grid>
 
-          {/* Category Trend Line Chart */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
-              <Box sx={{ height: 400 }}>
-                <LineChart
-                  title="Average Total Alarms by Category Daily Trend"
-                  data={chartData.lineCharts.avgAlarmsByCategoryDailyTrend.data}
-                  categoryChart={true}
+          {/* Alert Dispatch Workflows Section */}
+          <SectionLabel label="Alert Dispatch Workflows" />
+
+          {/* End-User Response Subsection */}
+          <SubsectionLabel label="Alert Responses" />
+
+          {/* Alert Responses Row */}
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart 
+                  title="Total Alert Responses"
+                  value="578"
+                  label="Total Responses"
                 />
               </Box>
             </Grid>
           </Grid>
 
-          {/* Alert Dispatch Workflows Section */}
-          <Typography 
-            variant="h5" 
-            sx={{ 
-              mt: 2.5, 
-              mb: 2, 
-              fontWeight: 600,
-              color: '#2F2F2F'
-            }}
-          >
-            Alert Dispatch Workflows
-          </Typography>
+          {/* End-User Response Subsection */}
+          <SubsectionLabel label="Manually Dispatched Alerts" />
 
-          {/* Manually Dispatched Alerts Row */}
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={3}>
-              <Box sx={{ height: 300 }}>
+          {/* Manually Dispatched Alerts Big Number Row */}
+          <Grid container spacing={3} sx={{ mt: 2.5 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
                 <BigNumberChart
                   title={chartData.bigNumbers.manuallyDispatchedAlerts.title}
                   value={chartData.bigNumbers.manuallyDispatchedAlerts.value}
@@ -279,8 +232,27 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={9}>
-              <Box sx={{ height: 300 }}>
+            <Grid item xs={12} md={4}>
+            <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.avgTimeManuallyDispatchedAlerts.title}
+                  value={chartData.bigNumbers.avgTimeManuallyDispatchedAlerts.value}
+                  label={chartData.bigNumbers.avgTimeManuallyDispatchedAlerts.label}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+            <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.percentManuallyDispatchedAlerts.title}
+                  value={chartData.bigNumbers.percentManuallyDispatchedAlerts.value}
+                  label={chartData.bigNumbers.percentManuallyDispatchedAlerts.label}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} sx={{ mt: 2.5 }}>
+              <Box sx={{ height: 400 }}>
                 <BarChart
                   title={chartData.barCharts.manuallyDispatchedAlerts.title}
                   data={chartData.barCharts.manuallyDispatchedAlerts.data}
@@ -292,49 +264,45 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-          </Grid>
 
-          {/* Alarms Delayed Row */}
-          <Grid container spacing={3} sx={{ mt: 2.5 }}>
-            <Grid item xs={12} md={3}>
-              <Box sx={{ height: 300 }}>
-                <BigNumberChart 
-                  title="Total Number of Alarms Delayed"
-                  value={378}
-                  label="Total Delayed Alarms"
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={9}>
-              <Box sx={{ height: 300 }}>
-                <BarChart 
-                  title="Total Number of Alarms Delayed by Day"
-                  data={chartData.barCharts.delayedAlarms.data}
-                  xAxisKey="date"
-                  yAxisKeys={["delayed"]}
-                  yAxisLabels={["Delayed Alarms"]}
-                  colors={["#667275"]}
-                  showValueLabels={true}
-                />
-              </Box>
-            </Grid>
-          </Grid>
+          {/* Auto Dispatched Response Subsection */}
+          <SubsectionLabel label="Auto Dispatched Alerts" />
 
           {/* Auto Dispatched Alerts Row */}
-          <Grid container spacing={3} sx={{ mt: 2.5 }}>
-            <Grid item xs={12} md={3}>
-              <Box sx={{ height: 300 }}>
+          <Grid container spacing={3} sx={{ mt: 2.5}}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
                 <BigNumberChart 
-                  title="Total Number of Auto Dispatched Alerts"
-                  value={471}
-                  label="Total Auto Dispatched Alerts"
+                  title={chartData.bigNumbers.autoDispatchedAlerts.title}
+                  value={chartData.bigNumbers.autoDispatchedAlerts.value}
+                  label={chartData.bigNumbers.autoDispatchedAlerts.label}
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={9}>
-              <Box sx={{ height: 300 }}>
+            <Grid item xs={12} md={4}>
+            <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.avgTimeAutoDispatchedAlerts.title}
+                  value={chartData.bigNumbers.avgTimeAutoDispatchedAlerts.value}
+                  label={chartData.bigNumbers.avgTimeAutoDispatchedAlerts.label}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+            <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.percentAutoDispatchedAlerts.title}
+                  value={chartData.bigNumbers.percentAutoDispatchedAlerts.value}
+                  label={chartData.bigNumbers.percentAutoDispatchedAlerts.label}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          <Grid item xs={12} sx={{ mt: 2.5 }}>
+              <Box sx={{ height: 400 }}>
                 <BarChart 
-                  title="Auto Dispatched Alerts by Day"
+                  title={chartData.barCharts.autoDispatchedAlerts.title}
                   data={chartData.barCharts.autoDispatchedAlerts.data}
                   xAxisKey="date"
                   yAxisKeys={["autoDispatched"]}
@@ -344,12 +312,17 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-          </Grid>
+
+          {/* Alarm  Section */}
+          <SectionLabel label="Alarm Actions" />
+
+          {/* Self Resolved Alarms Subsection */}
+          <SubsectionLabel label="Self Resolved Alarms" />
 
           {/* Total Number of Alarms Self Resolved/Not Sustained Row */}
           <Grid container spacing={3} sx={{ mt: 2.5 }}>
-            <Grid item xs={12} md={3}>
-              <Box sx={{ height: 300 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
                 <BigNumberChart
                   title={chartData.bigNumbers.selfResolvedAlarms.title}
                   value={chartData.bigNumbers.selfResolvedAlarms.value}
@@ -357,8 +330,27 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={9}>
-              <Box sx={{ height: 300 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.avgTimeSelfResolvedAlarms.title}
+                  value={chartData.bigNumbers.avgTimeSelfResolvedAlarms.value}
+                  label={chartData.bigNumbers.avgTimeSelfResolvedAlarms.label}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.percentageSelfResolvedAlarms.title}
+                  value={chartData.bigNumbers.percentageSelfResolvedAlarms.value}
+                  label={chartData.bigNumbers.percentageSelfResolvedAlarms.label}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} sx={{ mt: 2.5 }}>
+              <Box sx={{ height: 400 }}>
                 <BarChart
                   title={chartData.barCharts.selfResolvedAlarms.title}
                   data={chartData.barCharts.selfResolvedAlarms.data}
@@ -370,12 +362,62 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
+
+          {/* Delayed Alarms Subsection */}
+          <SubsectionLabel label="Delayed Alarms" />
+
+          {/* Total Number of Alarms Delayed Row */}
+          <Grid container spacing={3} sx={{ mt: 2.5 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.delayedAlarms.title}
+                  value={chartData.bigNumbers.delayedAlarms.value}
+                  label={chartData.bigNumbers.delayedAlarms.label}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.avgTimeDelayedAlarms.title}
+                  value={chartData.bigNumbers.avgTimeDelayedAlarms.value}
+                  label={chartData.bigNumbers.avgTimeDelayedAlarms.label}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.percentageDelayedAlarms.title}
+                  value={chartData.bigNumbers.percentageDelayedAlarms.value}
+                  label={chartData.bigNumbers.percentageDelayedAlarms.label}
+                />
+              </Box>
+            </Grid>
           </Grid>
+          <Grid item xs={12} sx={{ mt: 2.5 }}>
+              <Box sx={{ height: 400 }}>
+                <BarChart 
+                  title={chartData.barCharts.delayedAlarms.title}
+                  data={chartData.barCharts.delayedAlarms.data}
+                  xAxisKey="date"
+                  yAxisKeys={["delayed"]}
+                  yAxisLabels={["Delayed Alarms"]}
+                  colors={["#667275"]}
+                  showValueLabels={true}
+                />
+              </Box>
+            </Grid>
+
+
+          {/* Delayed Alarms Subsection */}
+          <SubsectionLabel label="Hold Reoccurence Alarms" />
 
           {/* Total Number of Alarms with Hold Reoccurence Row */}
           <Grid container spacing={3} sx={{ mt: 2.5 }}>
-            <Grid item xs={12} md={3}>
-              <Box sx={{ height: 300 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
                 <BigNumberChart
                   title={chartData.bigNumbers.holdReoccurenceAlarms.title}
                   value={chartData.bigNumbers.holdReoccurenceAlarms.value}
@@ -383,8 +425,27 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={9}>
-              <Box sx={{ height: 300 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.avgTimeHoldReoccurenceAlarms.title}
+                  value={chartData.bigNumbers.avgTimeHoldReoccurenceAlarms.value}
+                  label={chartData.bigNumbers.avgTimeHoldReoccurenceAlarms.label}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.percentageHoldReoccurenceAlarms.title}
+                  value={chartData.bigNumbers.percentageHoldReoccurenceAlarms.value}
+                  label={chartData.bigNumbers.percentageHoldReoccurenceAlarms.label}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} sx={{ mt: 2.5 }}>
+              <Box sx={{ height: 400 }}>
                 <BarChart
                   title={chartData.barCharts.holdReoccurenceAlarms.title}
                   data={chartData.barCharts.holdReoccurenceAlarms.data}
@@ -396,37 +457,9 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-          </Grid>
 
           {/* Alarm Queue Interval Subsection */}
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              mt: 6,
-              mb: 3,
-              gap: 2
-            }}
-          >
-            <Typography 
-              variant="subtitle2"
-              sx={{ 
-                fontWeight: 500,
-                color: '#2F2F2F',
-                whiteSpace: 'nowrap'
-              }}
-            >
-              Alarm Queue Interval
-            </Typography>
-            <Box
-              sx={{
-                flexGrow: 1,
-                height: '1px',
-                backgroundColor: '#2F2F2F',
-                opacity: 0.5
-              }}
-            />
-          </Box>
+          <SubsectionLabel label="Alarm Queue Interval" />
 
           {/* Alert Metrics */}
           <Grid container spacing={3}>
@@ -454,34 +487,7 @@ function AAMDashboard() {
           </Grid>
 
           {/* End-User Response Subsection */}
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              mt: 3,
-              mb: 3,
-              gap: 2
-            }}
-          >
-            <Typography 
-              variant="subtitle2"
-              sx={{ 
-                fontWeight: 500,
-                color: '#2F2F2F',
-                whiteSpace: 'nowrap'
-              }}
-            >
-              Alert Response
-            </Typography>
-            <Box
-              sx={{
-                flexGrow: 1,
-                height: '1px',
-                backgroundColor: '#2F2F2F',
-                opacity: 0.5
-              }}
-            />
-          </Box>
+          <SubsectionLabel label="Alert Response" />
 
           {/* Pie Charts Row */}
           <Grid container spacing={3}>

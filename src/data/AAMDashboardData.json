@@ -32,20 +32,116 @@
       "description": "Total number of alerts that were manually dispatched",
       "updateInterval": "5min"
     },
+    "avgTimeManuallyDispatchedAlerts": {
+      "id": "avg-time-manually-dispatched-alerts",
+      "title": "Avg Duration of Manually Dispatched Alerts",
+      "value": "01:32",
+      "label": "Average Duration (MM:SS)",
+      "description": "Average time for manually dispatched alerts.",
+      "updateInterval": "5min"
+    },
+    "percentManuallyDispatchedAlerts": {
+      "id": "percent-manually-dispatched-alerts",
+      "title": "Percentage of Alerts Manually Dispatched",
+      "value": 25,
+      "label": "Percent Manually Dispatched (%)",
+      "description": "Percentage of alerts that were manually dispatched.",
+      "updateInterval": "5min"
+    },
+    "autoDispatchedAlerts": {
+      "id": "auto-dispatched-alerts",
+      "title": "Total Number of Manually Dispatched Alerts",
+      "value": 311,
+      "label": "Total Manual Dispatched Alerts",
+      "description": "Total number of alerts that were manually dispatched",
+      "updateInterval": "5min"
+    },
+    "avgTimeAutoDispatchedAlerts": {
+      "id": "avg-time-auto-dispatched-alerts",
+      "title": "Avg Duration of Auto Dispatched Alerts",
+      "value": "00:56",
+      "label": "Average Duration (MM:SS)",
+      "description": "Average time for auto dispatched alerts.",
+      "updateInterval": "5min"
+    },
+    "percentAutoDispatchedAlerts": {
+      "id": "percent-auto-dispatched-alerts",
+      "title": "Percentage of Alerts Auto Dispatched",
+      "value": 36,
+      "label": "Percent Auto Dispatched (%)",
+      "description": "Percentage of alerts that were auto dispatched.",
+      "updateInterval": "5min"
+    },
     "selfResolvedAlarms": {
       "id": "self-resolved-alarms",
       "title": "Total Number of Alarms Self Resolved/Not Sustained",
-      "value": 289,
+      "value": 977,
       "label": "Total Self Resolved/Not Sustained Alarms",
       "description": "Total number of alarms that were self resolved or not sustained",
       "updateInterval": "5min"
     },
+    "avgTimeSelfResolvedAlarms": {
+      "id": "avg-time-self-resolved-alarms",
+      "title": "Avg Duration of Self Resolved/Not Sustained Alarms",
+      "value": "00:27",
+      "label": "Average Duration (MM:SS)",
+      "description": "Average duration of alarms that were self resolved or not sustained",
+      "updateInterval": "5min"
+    },
+    "percentageSelfResolvedAlarms": {
+      "id": "percentage-self-resolved-alarms",
+      "title": "Percentage of Alarms Self Resolved/Not Sustained",
+      "value": 49,
+      "label": "Percentage Resolved/Not Sustained Alarms (%)",
+      "description": "Percentage of alarms that were self resolved or not sustained",
+      "updateInterval": "5min"
+    },
+    "delayedAlarms": {
+      "id": "delayed-alarms",
+      "title": "Total Number of Alarms Delayed",
+      "value": 1011,
+      "label": "Total Delayed Alarms",
+      "description": "Total number of alarms that were delayed",
+      "updateInterval": "5min"
+    },
+    "avgTimeDelayedAlarms": {
+      "id": "avg-time-delayed-alarms",
+      "title": "Avg Duration of Delayed Alarms",
+      "value": "00:19",
+      "label": "Average Duration (MM:SS)",
+      "description": "Average duration of alarms that were delayed.",
+      "updateInterval": "5min"
+    },
+    "percentageDelayedAlarms": {
+      "id": "percentage-delayed-alarms",
+      "title": "Percentage of Alarms Delayed",
+      "value": 52,
+      "label": "Percentage Delayed Alarms (%)",
+      "description": "Percentage of alarms that were delayed.",
+      "updateInterval": "5min"
+    },
     "holdReoccurenceAlarms": {
       "id": "hold-reoccurence-alarms",
-      "title": "Total Number of Alarms with Hold Reoccurence",
+      "title": "Total Number of Hold Reoccurence Alarms",
       "value": 208,
       "label": "Total Hold Reoccurence Alarms",
       "description": "Total number of alarms with hold reoccurence",
+      "updateInterval": "5min"
+    },  
+    "avgTimeHoldReoccurenceAlarms": {
+      "id": "avg-time-hold-reoccurence-alarms",
+      "title": "Avg Duration of Hold Reoccurence Alarms",
+      "value": "00:36",
+      "label": "Average Duration (MM:SS)",
+      "description": "Average duration of hold reoccurrence alarms.",
+      "updateInterval": "5min"
+    },
+    "percentageHoldReoccurenceAlarms": {
+      "id": "percentage-hold-reoccurence-alarms",
+      "title": "Percentage of Hold Reoccurence Alarms",
+      "value": 21,
+      "label": "Percentage Hold Reoccurence Alarms (%)",
+      "description": "Percentage of alarms that were held reoccurence.",
       "updateInterval": "5min"
     }
   },
@@ -204,28 +300,6 @@
       ],
       "updateInterval": "5min"
     },
-    "byCategory": {
-      "id": "alarms-and-alerts-by-category",
-      "title": "Total Alarms & Alerts by Category",
-      "data": [
-        {
-          "category": "Arrhythmia",
-          "alarms": 219,
-          "alerts": 185
-        },
-        {
-          "category": "System",
-          "alarms": 219,
-          "alerts": 185
-        },
-        {
-          "category": "Other",
-          "alarms": 219,
-          "alerts": 185
-        }
-      ],
-      "updateInterval": "5min"
-    },
     "byActions": {
       "id": "alert-and-dispatch-actions",
       "title": "Total Number of Alert and Dispatch Actions",
@@ -291,7 +365,7 @@
     },
     "manuallyDispatchedAlerts": {
       "id": "manually-dispatched-alerts",
-      "title": "Manually Dispatched Alerts",
+      "title": "Total Number of Manually Dispatched Alerts by Day",
       "data": [
         {
           "date": "2024-01-01",
@@ -326,7 +400,7 @@
     },
     "autoDispatchedAlerts": {
       "id": "autoDispatchedAlerts",
-      "title": "Total Number of Auto Dispatched Alerts",
+      "title": "Total Number of Auto Dispatched Alerts by Day",
       "data": [
         { "date": "2024-01-01", "autoDispatched": 65 },
         { "date": "2024-01-02", "autoDispatched": 68 },
@@ -340,7 +414,7 @@
     },
     "delayedAlarms": {
       "id": "delayedAlarms",
-      "title": "Total Number of Alarms Delayed",
+      "title": "Total Number of Delayed Alarms by Day",
       "data": [
         { "date": "2024-01-01", "delayed": 52 },
         { "date": "2024-01-02", "delayed": 55 },
@@ -354,42 +428,42 @@
     },
     "selfResolvedAlarms": {
       "id": "self-resolved-alarms",
-      "title": "Total Number of Alarms Self Resolved/Not Sustained by Day",
+      "title": "Total Number of Self Resolved/Not Sustained Alarms by Day",
       "data": [
         {
           "date": "2024-01-01",
-          "selfResolved": 42
+          "selfResolved": 142
         },
         {
           "date": "2024-01-02",
-          "selfResolved": 38
+          "selfResolved": 138
         },
         {
           "date": "2024-01-03",
-          "selfResolved": 45
+          "selfResolved": 145
         },
         {
           "date": "2024-01-04",
-          "selfResolved": 40
+          "selfResolved": 140
         },
         {
           "date": "2024-01-05",
-          "selfResolved": 43
+          "selfResolved": 143
         },
         {
           "date": "2024-01-06",
-          "selfResolved": 41
+          "selfResolved": 141
         },
         {
           "date": "2024-01-07",
-          "selfResolved": 40
+          "selfResolved": 128
         }
       ],
       "updateInterval": "5min"
     },
     "holdReoccurenceAlarms": {
       "id": "hold-reoccurence-alarms",
-      "title": "Total Number of Alarms with Hold Reoccurence by Day",
+      "title": "Total Number of Hold Reoccurence Alarms by Day",
       "data": [
         {
           "date": "2024-01-01",
@@ -466,30 +540,19 @@
       ],
       "updateInterval": "5min"
     },
-    "avgAlarmResolveTimeBySeverity": {
-      "title": "Average Alarm Resolve Time by Severity Daily Trend",
+    "alarmsBySeverityDailyTrend": {
+      "title": "Number of Alarms by Severity Daily Trend",
       "data": [
         { "date": "2024-01-01", "low": 45, "medium": 75, "high": 120 },
-        { "date": "2024-01-02", "low": 42, "medium": 82, "high": 115 },
+        { "date": "2024-01-02", "low": 42, "medium": 35, "high": 115 },
         { "date": "2024-01-03", "low": 48, "medium": 78, "high": 125 },
-        { "date": "2024-01-04", "low": 40, "medium": 85, "high": 118 },
+        { "date": "2024-01-04", "low": 59, "medium": 45, "high": 107 },
         { "date": "2024-01-05", "low": 44, "medium": 80, "high": 122 },
-        { "date": "2024-01-06", "low": 46, "medium": 72, "high": 128 },
+        { "date": "2024-01-06", "low": 66, "medium": 72, "high": 100 },
         { "date": "2024-01-07", "low": 43, "medium": 77, "high": 124 }
       ]
-    },
-    "avgAlarmsByCategoryDailyTrend": {
-      "title": "Average Total Alarms by Category Daily Trend",
-      "data": [
-        { "date": "2024-01-01", "arrhythmia": 85, "system": 65, "other": 45 },
-        { "date": "2024-01-02", "arrhythmia": 92, "system": 58, "other": 48 },
-        { "date": "2024-01-03", "arrhythmia": 78, "system": 72, "other": 42 },
-        { "date": "2024-01-04", "arrhythmia": 88, "system": 62, "other": 52 },
-        { "date": "2024-01-05", "arrhythmia": 95, "system": 68, "other": 44 },
-        { "date": "2024-01-06", "arrhythmia": 82, "system": 70, "other": 46 },
-        { "date": "2024-01-07", "arrhythmia": 90, "system": 64, "other": 50 }
-      ]
     }
+    
   },
   "tableCharts": {
     "destinationAlertResponse": {
