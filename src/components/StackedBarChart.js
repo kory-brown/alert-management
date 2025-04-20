@@ -73,11 +73,16 @@ const StackedBarChart = ({
                 border: '1px solid #ccc',
                 borderRadius: '4px'
               }}
-              formatter={(value, name) => {
-                const displayName = name === `${totalLabel}Only` 
-                  ? `${totalLabel} (Non-${subsetLabel})` 
-                  : name;
-                return [value.toLocaleString(), displayName];
+              formatter={(value, name, props) => {
+                // For Alarms (totalLabel), show the total value
+                if (name === `${totalLabel}Only`) {
+                  return [props.payload[totalLabel].toLocaleString(), totalLabel];
+                }
+                // For other items (Alerts), show the actual value
+                return [value.toLocaleString(), name];
+              }}
+              itemSorter={(item) => {
+                return item.name === `${totalLabel}Only` ? -1 : 1;
               }}
             />
             <Legend 

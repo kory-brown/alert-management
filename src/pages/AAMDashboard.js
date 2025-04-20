@@ -11,7 +11,7 @@ import {
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import BigNumberChart from '../components/BigNumberChart';
 import BarChart from '../components/BarChart';
-import ActionBarChart from '../components/ActionBarChart';
+import GroupedBarChart from '../components/GroupedBarChart';
 import PieChart from '../components/PieChart';
 import TableChart from '../components/TableChart';
 import LineChart from '../components/LineChart';
@@ -20,6 +20,7 @@ import SubsectionLabel from '../components/SubsectionLabel';
 import SectionLabel from '../components/SectionLabel';
 import chartData from '../data/AAMDashboardData.json';
 import AppHeader from '../components/AppHeader';
+import Footer from '../components/Footer';
 import { drawerWidth } from '../components/FiltersPanel';
 import StackedBarChart from '../components/StackedBarChart';
 
@@ -189,11 +190,13 @@ function AAMDashboard() {
               </Box>
             </Grid>
             <Grid item xs={12} md={8}>
-              <Box sx={{ height: 400 }}>
-                <LineChart
-                  title={chartData.lineCharts.alarmsBySeverityDailyTrend.title}
-                  data={chartData.lineCharts.alarmsBySeverityDailyTrend.data}
-                  severityChart={true}
+            <Box sx={{ height: 400 }}>
+                <GroupedBarChart 
+                  title={chartData.barCharts.bySeverityByDay.title}
+                  data={chartData.barCharts.bySeverityByDay.data}
+                  dataKeys={['low', 'medium', 'high']}
+                  labels={['Low', 'Medium', 'High']}
+                  colors={['#1aafe6', '#faad14', '#ff6b6b']}
                 />
               </Box>
             </Grid>
@@ -529,452 +532,45 @@ function AAMDashboard() {
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
-                <ActionBarChart 
+                <GroupedBarChart 
                   title={chartData.barCharts.byActions.title}
                   data={chartData.barCharts.byActions.data}
+                  dataKeys={['manuallyEscalated', 'autoEscalated', 'delayedNotSustained', 'delayedManual', 'delayedAuto']}
+                  labels={['Manually Escalated', 'Auto-Escalated', 'Delayed - Not Sustained', 'Delayed - Manual', 'Delayed - Auto']}
                 />
               </Box>
             </Grid>
           </Grid>
 
-          {/* Table Chart */}
+          {/* Alert Dispatch Detail Table Chart */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
-              <TableChart
-                title="Alarm Label Detail"
-                data={[
-                  {
-                    facility: "Memorial Hospital",
-                    unit: "ICU-1",
-                    alarmLabel: "Ventricular Tachycardia",
-                    category: "Arrhythmia",
-                    priority: "High",
-                    avgDuration: 45,
-                    manualEscalations: 12,
-                    autoEscalations: 8,
-                    notSustained: 5,
-                    avgAlarmDuration: 120,
-                    avgADEscalationTime: 30,
-                    snippetsCreated: 15,
-                    softKeyResponses: "Option 1",
-                    destinations: "D1",
-                    avgResolutionDuration: 180,
-                    autoAfterDelay: 3
-                  },
-                  {
-                    facility: "Memorial Hospital",
-                    unit: "ICU-2",
-                    alarmLabel: "Oxygen Desaturation",
-                    category: "Other",
-                    priority: "High",
-                    avgDuration: 35,
-                    manualEscalations: 15,
-                    autoEscalations: 10,
-                    notSustained: 8,
-                    avgAlarmDuration: 90,
-                    avgADEscalationTime: 25,
-                    snippetsCreated: 12,
-                    softKeyResponses: "Option 2",
-                    destinations: "D2",
-                    avgResolutionDuration: 150,
-                    autoAfterDelay: 5
-                  },
-                  {
-                    facility: "Memorial Hospital",
-                    unit: "CCU",
-                    alarmLabel: "Lead Off",
-                    category: "System",
-                    priority: "Medium",
-                    avgDuration: 25,
-                    manualEscalations: 8,
-                    autoEscalations: 12,
-                    notSustained: 6,
-                    avgAlarmDuration: 75,
-                    avgADEscalationTime: 20,
-                    snippetsCreated: 10,
-                    softKeyResponses: "Option 3",
-                    destinations: "D3",
-                    avgResolutionDuration: 120,
-                    autoAfterDelay: 4
-                  },
-                  {
-                    facility: "City General",
-                    unit: "ICU-1",
-                    alarmLabel: "Ventricular Fibrillation",
-                    category: "Arrhythmia",
-                    priority: "High",
-                    avgDuration: 50,
-                    manualEscalations: 18,
-                    autoEscalations: 6,
-                    notSustained: 4,
-                    avgAlarmDuration: 140,
-                    avgADEscalationTime: 35,
-                    snippetsCreated: 20,
-                    softKeyResponses: "Option 1",
-                    destinations: "D1",
-                    avgResolutionDuration: 200,
-                    autoAfterDelay: 2
-                  },
-                  {
-                    facility: "City General",
-                    unit: "CCU",
-                    alarmLabel: "Bradycardia",
-                    category: "Arrhythmia",
-                    priority: "High",
-                    avgDuration: 40,
-                    manualEscalations: 14,
-                    autoEscalations: 9,
-                    notSustained: 7,
-                    avgAlarmDuration: 110,
-                    avgADEscalationTime: 28,
-                    snippetsCreated: 16,
-                    softKeyResponses: "Option 2",
-                    destinations: "D2",
-                    avgResolutionDuration: 170,
-                    autoAfterDelay: 4
-                  },
-                  {
-                    facility: "City General",
-                    unit: "NICU",
-                    alarmLabel: "Apnea",
-                    category: "Other",
-                    priority: "High",
-                    avgDuration: 30,
-                    manualEscalations: 20,
-                    autoEscalations: 15,
-                    notSustained: 10,
-                    avgAlarmDuration: 80,
-                    avgADEscalationTime: 22,
-                    snippetsCreated: 25,
-                    softKeyResponses: "Option 1",
-                    destinations: "D4",
-                    avgResolutionDuration: 130,
-                    autoAfterDelay: 6
-                  },
-                  {
-                    facility: "County Medical",
-                    unit: "ICU-1",
-                    alarmLabel: "High Heart Rate",
-                    category: "Other",
-                    priority: "Medium",
-                    avgDuration: 28,
-                    manualEscalations: 10,
-                    autoEscalations: 14,
-                    notSustained: 8,
-                    avgAlarmDuration: 70,
-                    avgADEscalationTime: 18,
-                    snippetsCreated: 12,
-                    softKeyResponses: "Option 3",
-                    destinations: "D2",
-                    avgResolutionDuration: 110,
-                    autoAfterDelay: 5
-                  },
-                  {
-                    facility: "County Medical",
-                    unit: "CCU",
-                    alarmLabel: "ST Elevation",
-                    category: "Arrhythmia",
-                    priority: "High",
-                    avgDuration: 55,
-                    manualEscalations: 22,
-                    autoEscalations: 5,
-                    notSustained: 3,
-                    avgAlarmDuration: 160,
-                    avgADEscalationTime: 40,
-                    snippetsCreated: 28,
-                    softKeyResponses: "Option 1",
-                    destinations: "D1",
-                    avgResolutionDuration: 220,
-                    autoAfterDelay: 2
-                  },
-                  {
-                    facility: "County Medical",
-                    unit: "PICU",
-                    alarmLabel: "SpO2 Probe Off",
-                    category: "System",
-                    priority: "Low",
-                    avgDuration: 15,
-                    manualEscalations: 5,
-                    autoEscalations: 18,
-                    notSustained: 12,
-                    avgAlarmDuration: 45,
-                    avgADEscalationTime: 12,
-                    snippetsCreated: 8,
-                    softKeyResponses: "Option 2",
-                    destinations: "D3",
-                    avgResolutionDuration: 80,
-                    autoAfterDelay: 8
-                  },
-                  {
-                    facility: "Memorial Hospital",
-                    unit: "PICU",
-                    alarmLabel: "Low Blood Pressure",
-                    category: "Other",
-                    priority: "High",
-                    avgDuration: 42,
-                    manualEscalations: 16,
-                    autoEscalations: 7,
-                    notSustained: 4,
-                    avgAlarmDuration: 130,
-                    avgADEscalationTime: 32,
-                    snippetsCreated: 18,
-                    softKeyResponses: "Option 1",
-                    destinations: "D2",
-                    avgResolutionDuration: 190,
-                    autoAfterDelay: 3
-                  },
-                  {
-                    facility: "Memorial Hospital",
-                    unit: "NICU",
-                    alarmLabel: "High Respiratory Rate",
-                    category: "Other",
-                    priority: "Medium",
-                    avgDuration: 32,
-                    manualEscalations: 11,
-                    autoEscalations: 13,
-                    notSustained: 7,
-                    avgAlarmDuration: 85,
-                    avgADEscalationTime: 24,
-                    snippetsCreated: 14,
-                    softKeyResponses: "Option 3",
-                    destinations: "D4",
-                    avgResolutionDuration: 140,
-                    autoAfterDelay: 5
-                  },
-                  {
-                    facility: "City General",
-                    unit: "ICU-2",
-                    alarmLabel: "Asystole",
-                    category: "Arrhythmia",
-                    priority: "High",
-                    avgDuration: 60,
-                    manualEscalations: 25,
-                    autoEscalations: 4,
-                    notSustained: 2,
-                    avgAlarmDuration: 180,
-                    avgADEscalationTime: 45,
-                    snippetsCreated: 30,
-                    softKeyResponses: "Option 1",
-                    destinations: "D1",
-                    avgResolutionDuration: 240,
-                    autoAfterDelay: 1
-                  },
-                  {
-                    facility: "County Medical",
-                    unit: "ICU-2",
-                    alarmLabel: "ECG Artifact",
-                    category: "System",
-                    priority: "Low",
-                    avgDuration: 20,
-                    manualEscalations: 6,
-                    autoEscalations: 16,
-                    notSustained: 10,
-                    avgAlarmDuration: 55,
-                    avgADEscalationTime: 15,
-                    snippetsCreated: 9,
-                    softKeyResponses: "Option 2",
-                    destinations: "D3",
-                    avgResolutionDuration: 90,
-                    autoAfterDelay: 7
-                  },
-                  {
-                    facility: "Memorial Hospital",
-                    unit: "ICU-1",
-                    alarmLabel: "High Temperature",
-                    category: "Other",
-                    priority: "Medium",
-                    avgDuration: 38,
-                    manualEscalations: 13,
-                    autoEscalations: 11,
-                    notSustained: 6,
-                    avgAlarmDuration: 95,
-                    avgADEscalationTime: 26,
-                    snippetsCreated: 16,
-                    softKeyResponses: "Option 3",
-                    destinations: "D2",
-                    avgResolutionDuration: 160,
-                    autoAfterDelay: 4
-                  },
-                  {
-                    facility: "City General",
-                    unit: "PICU",
-                    alarmLabel: "Low Heart Rate",
-                    category: "Other",
-                    priority: "High",
-                    avgDuration: 45,
-                    manualEscalations: 17,
-                    autoEscalations: 8,
-                    notSustained: 5,
-                    avgAlarmDuration: 125,
-                    avgADEscalationTime: 33,
-                    snippetsCreated: 19,
-                    softKeyResponses: "Option 1",
-                    destinations: "D1",
-                    avgResolutionDuration: 185,
-                    autoAfterDelay: 3
-                  },
-                  {
-                    facility: "County Medical",
-                    unit: "NICU",
-                    alarmLabel: "Low Respiratory Rate",
-                    category: "Other",
-                    priority: "High",
-                    avgDuration: 36,
-                    manualEscalations: 19,
-                    autoEscalations: 9,
-                    notSustained: 6,
-                    avgAlarmDuration: 105,
-                    avgADEscalationTime: 29,
-                    snippetsCreated: 22,
-                    softKeyResponses: "Option 2",
-                    destinations: "D4",
-                    avgResolutionDuration: 175,
-                    autoAfterDelay: 4
-                  },
-                  {
-                    facility: "Memorial Hospital",
-                    unit: "CCU",
-                    alarmLabel: "ST Depression",
-                    category: "Arrhythmia",
-                    priority: "High",
-                    avgDuration: 52,
-                    manualEscalations: 21,
-                    autoEscalations: 6,
-                    notSustained: 3,
-                    avgAlarmDuration: 150,
-                    avgADEscalationTime: 38,
-                    snippetsCreated: 24,
-                    softKeyResponses: "Option 1",
-                    destinations: "D1",
-                    avgResolutionDuration: 210,
-                    autoAfterDelay: 2
-                  },
-                  {
-                    facility: "City General",
-                    unit: "ICU-1",
-                    alarmLabel: "Sensor Disconnected",
-                    category: "System",
-                    priority: "Low",
-                    avgDuration: 18,
-                    manualEscalations: 7,
-                    autoEscalations: 15,
-                    notSustained: 9,
-                    avgAlarmDuration: 50,
-                    avgADEscalationTime: 14,
-                    snippetsCreated: 11,
-                    softKeyResponses: "Option 3",
-                    destinations: "D3",
-                    avgResolutionDuration: 85,
-                    autoAfterDelay: 6
-                  },
-                  {
-                    facility: "County Medical",
-                    unit: "ICU-1",
-                    alarmLabel: "NIBP Measurement Failed",
-                    category: "System",
-                    priority: "Low",
-                    avgDuration: 22,
-                    manualEscalations: 8,
-                    autoEscalations: 14,
-                    notSustained: 8,
-                    avgAlarmDuration: 60,
-                    avgADEscalationTime: 16,
-                    snippetsCreated: 13,
-                    softKeyResponses: "Option 2",
-                    destinations: "D2",
-                    avgResolutionDuration: 95,
-                    autoAfterDelay: 5
-                  },
-                  {
-                    facility: "Memorial Hospital",
-                    unit: "ICU-2",
-                    alarmLabel: "ICP High",
-                    category: "Other",
-                    priority: "High",
-                    avgDuration: 48,
-                    manualEscalations: 20,
-                    autoEscalations: 7,
-                    notSustained: 4,
-                    avgAlarmDuration: 135,
-                    avgADEscalationTime: 34,
-                    snippetsCreated: 23,
-                    softKeyResponses: "Option 1",
-                    destinations: "D1",
-                    avgResolutionDuration: 195,
-                    autoAfterDelay: 3
-                  },
-                  {
-                    facility: "City General",
-                    unit: "CCU",
-                    alarmLabel: "EtCO2 High",
-                    category: "Other",
-                    priority: "Medium",
-                    avgDuration: 34,
-                    manualEscalations: 12,
-                    autoEscalations: 12,
-                    notSustained: 7,
-                    avgAlarmDuration: 88,
-                    avgADEscalationTime: 23,
-                    snippetsCreated: 15,
-                    softKeyResponses: "Option 3",
-                    destinations: "D4",
-                    avgResolutionDuration: 145,
-                    autoAfterDelay: 5
-                  },
-                  {
-                    facility: "County Medical",
-                    unit: "PICU",
-                    alarmLabel: "EtCO2 Low",
-                    category: "Other",
-                    priority: "Medium",
-                    avgDuration: 30,
-                    manualEscalations: 11,
-                    autoEscalations: 13,
-                    notSustained: 8,
-                    avgAlarmDuration: 82,
-                    avgADEscalationTime: 21,
-                    snippetsCreated: 14,
-                    softKeyResponses: "Option 2",
-                    destinations: "D3",
-                    avgResolutionDuration: 135,
-                    autoAfterDelay: 6
-                  },
-                  {
-                    facility: "Memorial Hospital",
-                    unit: "NICU",
-                    alarmLabel: "Low Temperature",
-                    category: "Other",
-                    priority: "Medium",
-                    avgDuration: 33,
-                    manualEscalations: 10,
-                    autoEscalations: 11,
-                    notSustained: 6,
-                    avgAlarmDuration: 85,
-                    avgADEscalationTime: 24,
-                    snippetsCreated: 13,
-                    softKeyResponses: "Option 1",
-                    destinations: "D2",
-                    avgResolutionDuration: 140,
-                    autoAfterDelay: 4
-                  }
-                ]}
-              />
+              <Box sx={{ height: 400, mb: 3 }}>
+                <TableChart
+                  title={chartData.tableCharts.alertDispatchDetail.title}
+                  data={chartData.tableCharts.alertDispatchDetail.data}
+                />
+              </Box>
             </Grid>
           </Grid>
 
-          {/* Destination - Alert Response Detail Table Chart */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
+          {/* Alert Response Detail Table Chart */}
+          <Grid container spacing={3}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <TableChart
-                  title={chartData.tableCharts.destinationAlertResponse.title}
-                  data={chartData.tableCharts.destinationAlertResponse.data}
+                  title={chartData.tableCharts.alertResponseDetail.title}
+                  data={chartData.tableCharts.alertResponseDetail.data}
                 />
               </Box>
             </Grid>
           </Grid>
+
+
+
         </Box>
       </Box>
+      <Footer leftLabel="AirStrip Alert Management" versionId="Version 1.0" />
     </Box>
   );
 }

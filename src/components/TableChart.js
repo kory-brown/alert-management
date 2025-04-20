@@ -11,70 +11,65 @@ import {
   Paper
 } from '@mui/material';
 
-const TableChart = ({ title, data }) => {
-  // Determine if this is the destination response table based on the data structure
-  const isDestinationTable = data[0]?.hasOwnProperty('d1AvgResponseTime');
+// Utility function to format column headers
+const formatColumnHeader = (key) => {
+  // Special cases for abbreviations that should remain uppercase
+  const upperCaseTerms = ['CCU', 'ICU', 'ED', 'SK', 'RT'];
+  
+  // First, handle any special uppercase terms
+  const containsUpperCaseTerm = upperCaseTerms.some(term => key.toUpperCase().includes(term));
+  if (containsUpperCaseTerm) {
+    return key.split(/(?=[A-Z])/).map(part => {
+      return upperCaseTerms.includes(part.toUpperCase()) ? part.toUpperCase() : (
+        part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()
+      );
+    }).join(' ');
+  }
 
-  // Define column headers based on table type
-  const getHeaders = () => {
-    if (isDestinationTable) {
-      return [
-        { id: 'alarmLabel', label: 'Alarm Label', align: 'left' },
-        { id: 'd1AvgResponseTime', label: 'D1 AvgRT', align: 'right' },
-        { id: 'd1SK1', label: 'D1 SK #1', align: 'right' },
-        { id: 'd1SK2', label: 'D1 SK #2', align: 'right' },
-        { id: 'd1SK3', label: 'D1 SK #3', align: 'right' },
-        { id: 'd1Auto', label: 'D1 Auto', align: 'right' },
-        { id: 'd2AvgResponseTime', label: 'D2 AvgRT', align: 'right' },
-        { id: 'd2SK1', label: 'D2 SK #1', align: 'right' },
-        { id: 'd2SK2', label: 'D2 SK #2', align: 'right' },
-        { id: 'd2SK3', label: 'D2 SK #3', align: 'right' },
-        { id: 'd2Auto', label: 'D2 Auto', align: 'right' },
-        { id: 'd3AvgResponseTime', label: 'D3 AvgRT', align: 'right' },
-        { id: 'd3SK1', label: 'D3 SK #1', align: 'right' },
-        { id: 'd3SK2', label: 'D3 SK #2', align: 'right' },
-        { id: 'd3SK3', label: 'D3 SK #3', align: 'right' },
-        { id: 'd3Auto', label: 'D3 Auto', align: 'right' },
-        { id: 'd4AvgResponseTime', label: 'D4 AvgRT', align: 'right' },
-        { id: 'd4SK1', label: 'D4 SK #1', align: 'right' },
-        { id: 'd4SK2', label: 'D4 SK #2', align: 'right' },
-        { id: 'd4SK3', label: 'D4 SK #3', align: 'right' },
-        { id: 'd4Auto', label: 'D4 Auto', align: 'right' }
-      ];
-    } else {
-      return [
-        { id: 'alarmLabel', label: 'Alarm Label', align: 'left' },
-        { id: 'category', label: 'Category', align: 'left' },
-        { id: 'priority', label: 'Priority', align: 'left' },
-        { id: 'avgDuration', label: 'Avg Duration', align: 'right' },
-        { id: 'manualEscalations', label: 'Manual Escalations', align: 'right' },
-        { id: 'autoEscalations', label: 'Auto Escalations', align: 'right' },
-        { id: 'notSustained', label: 'Not Sustained', align: 'right' },
-        { id: 'avgAlarmDuration', label: 'Avg Alarm Duration', align: 'right' },
-        { id: 'avgADEscalationTime', label: 'Avg AD Escalation Time', align: 'right' },
-        { id: 'snippetsCreated', label: 'Snippets Created', align: 'right' },
-        { id: 'softKeyResponses', label: 'Soft Key Responses', align: 'left' },
-        { id: 'destinations', label: 'Destinations', align: 'left' },
-        { id: 'avgResolutionDuration', label: 'Avg Resolution Duration', align: 'right' },
-        { id: 'autoAfterDelay', label: 'Auto After Delay', align: 'right' }
-      ];
-    }
+  // For regular words, split on capital letters and capitalize each word
+  const words = key
+    // First, split the string on capital letters
+    .split(/(?=[A-Z])/)
+    // Then split any remaining lowercase words
+    .flatMap(word => word.split(/(?=[A-Z])/))
+    // Remove any empty strings
+    .filter(word => word.length > 0)
+    // Capitalize each word
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
+
+  return words.join(' ');
+};
+
+const TableChart = ({ title, data }) => {
+  // Generate headers from the first data object
+  const generateHeaders = () => {
+    if (!data || data.length === 0) return [];
+    
+    return Object.keys(data[0]).map(key => ({
+      id: key,
+      label: formatColumnHeader(key),
+      // Align numbers to the right, text to the left
+      align: typeof data[0][key] === 'number' ? 'right' : 'left'
+    }));
   };
 
-  const headers = getHeaders();
+  const headers = generateHeaders();
 
   return (
     <Box sx={{ 
       width: '100%',
+      height: '100%',
       backgroundColor: '#fff',
       borderRadius: '8px',
       boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-      overflow: 'hidden'
+      display: 'flex',
+      flexDirection: 'column'
     }}>
       <Typography
         variant="h6"
         sx={{
-          p: 2,
+          px: 2,
+          py: 1.5,
           fontWeight: 600,
           color: '#2F2F2F'
         }}
@@ -84,7 +79,7 @@ const TableChart = ({ title, data }) => {
       <TableContainer 
         component={Paper} 
         sx={{ 
-          maxHeight: 600,
+          flex: 1,
           '& .MuiPaper-root': {
             boxShadow: 'none'
           }

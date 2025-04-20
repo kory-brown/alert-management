@@ -11,7 +11,12 @@ import {
   ResponsiveContainer 
 } from 'recharts';
 
-const ActionBarChart = ({ title, data }) => {
+const COLORS = ['#1aafe6', '#667275', '#ff9c6e', '#65bce8', '#8fc9eb', '#ffd666', '#87d068', '#f759ab'];
+
+const GroupedBarChart = ({ title, data, xAxisKey = 'date', dataKeys = [], labels = [], colors = COLORS }) => {
+  // If labels are not provided, use dataKeys as labels
+  const barLabels = labels.length > 0 ? labels : dataKeys;
+  
   return (
     <Box sx={{ 
       width: '100%', 
@@ -37,7 +42,7 @@ const ActionBarChart = ({ title, data }) => {
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis 
-              dataKey="date"
+              dataKey={xAxisKey}
               tick={{ fill: '#2F2F2F', fontSize: 12 }}
             />
             <YAxis 
@@ -59,36 +64,15 @@ const ActionBarChart = ({ title, data }) => {
                 marginTop: '-10px'
               }}
             />
-            <Bar 
-              dataKey="manuallyEscalated" 
-              name="Manually Escalated" 
-              fill="#1aafe6"
-              label={{ position: 'top', fill: '#2F2F2F', fontSize: 12 }}
-            />
-            <Bar 
-              dataKey="autoEscalated" 
-              name="Auto-Escalated" 
-              fill="#667275"
-              label={{ position: 'top', fill: '#2F2F2F', fontSize: 12 }}
-            />
-            <Bar 
-              dataKey="delayedNotSustained" 
-              name="Delayed - Not Sustained" 
-              fill="#ff9c6e"
-              label={{ position: 'top', fill: '#2F2F2F', fontSize: 12 }}
-            />
-            <Bar 
-              dataKey="delayedManual" 
-              name="Delayed - Manual" 
-              fill="#65bce8"
-              label={{ position: 'top', fill: '#2F2F2F', fontSize: 12 }}
-            />
-            <Bar 
-              dataKey="delayedAuto" 
-              name="Delayed - Auto" 
-              fill="#8fc9eb"
-              label={{ position: 'top', fill: '#2F2F2F', fontSize: 12 }}
-            />
+            {dataKeys.map((key, index) => (
+              <Bar 
+                key={key}
+                dataKey={key}
+                name={barLabels[index]}
+                fill={colors[index % colors.length]}
+                label={{ position: 'top', fill: '#2F2F2F', fontSize: 12 }}
+              />
+            ))}
           </RechartsBarChart>
         </ResponsiveContainer>
       </Box>
@@ -96,4 +80,4 @@ const ActionBarChart = ({ title, data }) => {
   );
 };
 
-export default ActionBarChart; 
+export default GroupedBarChart; 
