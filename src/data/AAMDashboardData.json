@@ -151,8 +151,8 @@
       "title": "Alarms by Priority",
       "description": "Distribution of alarms by priority level",
       "data": [
-        { "name": "Low", "value": 1987 },
-        { "name": "Medium", "value": 3245 },
+        { "name": "Low", "value": 1987 }, 
+        { "name": "Medium", "value": 3245 }, 
         { "name": "High", "value": 2876 }
       ],
       "updateInterval": "5min"
@@ -162,8 +162,8 @@
       "title": "Alerts by Priority",
       "description": "Distribution of alerts by priority level",
       "data": [
-        { "name": "Low", "value": 1543 },
-        { "name": "Medium", "value": 2456 },
+        { "name": "Low", "value": 1543 }, 
+        { "name": "Medium", "value": 2456 }, 
         { "name": "High", "value": 2145 }
       ],
       "updateInterval": "5min"
@@ -176,55 +176,13 @@
       "description": "Shows total alarms with alerts as a subset",
       "groupBy": "Date",
       "data": [
-        {
-          "groupByLabel": "2024-01-01",
-          "totalLabel": "Alarms",
-          "totalValue": 3500,
-          "subsetLabel": "Alerts",
-          "subsetValue": 2675
-        },
-        {
-          "groupByLabel": "2024-01-02",
-          "totalLabel": "Alarms",
-          "totalValue": 3200,
-          "subsetLabel": "Alerts",
-          "subsetValue": 2450
-        },
-        {
-          "groupByLabel": "2024-01-03",
-          "totalLabel": "Alarms",
-          "totalValue": 3800,
-          "subsetLabel": "Alerts",
-          "subsetValue": 2900
-        },
-        {
-          "groupByLabel": "2024-01-04",
-          "totalLabel": "Alarms",
-          "totalValue": 3400,
-          "subsetLabel": "Alerts",
-          "subsetValue": 2600
-        },
-        {
-          "groupByLabel": "2024-01-05",
-          "totalLabel": "Alarms",
-          "totalValue": 3600,
-          "subsetLabel": "Alerts",
-          "subsetValue": 2750
-        },
-        {
-          "groupByLabel": "2024-01-06",
-          "totalLabel": "Alarms",
-          "totalValue": 3300,
-          "subsetLabel": "Alerts",
-          "subsetValue": 2525
-        },
-        {
-          "groupByLabel": "2024-01-07",
-          "totalLabel": "Alarms",
-          "totalValue": 3700,
-          "subsetLabel": "Alerts",
-          "subsetValue": 2825
-        }
+        { "groupByLabel": "2024-01-01", "totalLabel": "Alarms", "totalValue": 3500, "subsetLabel": "Alerts", "subsetValue": 2675 },
+        { "groupByLabel": "2024-01-02", "totalLabel": "Alarms", "totalValue": 3200, "subsetLabel": "Alerts", "subsetValue": 2450 },
+        { "groupByLabel": "2024-01-03", "totalLabel": "Alarms", "totalValue": 3800, "subsetLabel": "Alerts", "subsetValue": 2900 },
+        { "groupByLabel": "2024-01-04", "totalLabel": "Alarms", "totalValue": 3400, "subsetLabel": "Alerts", "subsetValue": 2600 },
+        { "groupByLabel": "2024-01-05", "totalLabel": "Alarms", "totalValue": 3600, "subsetLabel": "Alerts", "subsetValue": 2750 },
+        { "groupByLabel": "2024-01-06", "totalLabel": "Alarms", "totalValue": 3300, "subsetLabel": "Alerts", "subsetValue": 2525 },
+        { "groupByLabel": "2024-01-07", "totalLabel": "Alarms", "totalValue": 3700, "subsetLabel": "Alerts", "subsetValue": 2825 }
       ],
       "updateInterval": "5min"
     },
@@ -234,1721 +192,21 @@
       "description": "Shows total alarms with alerts as a subset by severity level",
       "groupBy": "Severity",
       "data": [
-        {
-          "groupByLabel": "Low",
-          "totalLabel": "Alarms",
-          "totalValue": 219,
-          "subsetLabel": "Alerts",
-          "subsetValue": 185
-        },
-        {
-          "groupByLabel": "Medium",
-          "totalLabel": "Alarms",
-          "totalValue": 320,
-          "subsetLabel": "Alerts",
-          "subsetValue": 201
-        },
-        {
-          "groupByLabel": "High",
-          "totalLabel": "Alarms",
-          "totalValue": 199,
-          "subsetLabel": "Alerts",
-          "subsetValue": 112
-        }
+        { "groupByLabel": "Low", "totalLabel": "Alarms", "totalValue": 219, "subsetLabel": "Alerts", "subsetValue": 185 },
+        { "groupByLabel": "Medium", "totalLabel": "Alarms", "totalValue": 320, "subsetLabel": "Alerts", "subsetValue": 201 },
+        { "groupByLabel": "High", "totalLabel": "Alarms", "totalValue": 461, "subsetLabel": "Alerts", "subsetValue": 314 }
       ],
       "updateInterval": "5min"
     },
     "byAlarmLabels": {
-      "id": "stacked-alarms-and-alerts-by-label",
-      "title": "Alarms and Alerts by Label",
-      "description": "Shows total alarms with alerts as a subset by alarm label",
+      "id": "stacked-alarms-and-alerts-by-labels",
+      "title": "Total Alarms & Alerts by Labels",
+      "description": "Shows total alarms with alerts as a subset by alarm labels",
       "groupBy": "Label",
       "data": [
-        {
-          "groupByLabel": "Asystole",
-          "totalLabel": "Alarms",
-          "totalValue": 450,
-          "subsetLabel": "Alerts",
-          "subsetValue": 320
-        },
-        {
-          "groupByLabel": "AFIB",
-          "totalLabel": "Alarms",
-          "totalValue": 380,
-          "subsetLabel": "Alerts",
-          "subsetValue": 290
-        },
-        {
-          "groupByLabel": "HR High",
-          "totalLabel": "Alarms",
-          "totalValue": 520,
-          "subsetLabel": "Alerts",
-          "subsetValue": 410
-        },
-        {
-          "groupByLabel": "HR Low",
-          "totalLabel": "Alarms",
-          "totalValue": 290,
-          "subsetLabel": "Alerts",
-          "subsetValue": 180
-        },
-        {
-          "groupByLabel": "Pause",
-          "totalLabel": "Alarms",
-          "totalValue": 340,
-          "subsetLabel": "Alerts",
-          "subsetValue": 260
-        },
-        {
-          "groupByLabel": "VFIB/VTAC",
-          "totalLabel": "Alarms",
-          "totalValue": 420,
-          "subsetLabel": "Alerts",
-          "subsetValue": 350
-        },
-        {
-          "groupByLabel": "SPO2",
-          "totalLabel": "Alarms",
-          "totalValue": 580,
-          "subsetLabel": "Alerts",
-          "subsetValue": 460
-        }
-      ],
-      "updateInterval": "5min"
-    }
-  },
-  "barCharts": {
-    "alarmsAndAlerts": {
-      "id": "alarms-and-alerts",
-      "title": "Total Alarms and Alerts by Day",
-      "data": [
-        {
-          "date": "2024-01-01",
-          "alarms": 3500,
-          "alerts": 2675
-        },
-        {
-          "date": "2024-01-02",
-          "alarms": 3200,
-          "alerts": 2450
-        },
-        {
-          "date": "2024-01-03",
-          "alarms": 3800,
-          "alerts": 2900
-        },
-        {
-          "date": "2024-01-04",
-          "alarms": 3400,
-          "alerts": 2600
-        },
-        {
-          "date": "2024-01-05",
-          "alarms": 3600,
-          "alerts": 2750
-        },
-        {
-          "date": "2024-01-06",
-          "alarms": 3300,
-          "alerts": 2525
-        },
-        {
-          "date": "2024-01-07",
-          "alarms": 3700,
-          "alerts": 2825
-        }
-      ],
-      "updateInterval": "5min"
-    },
-    "bySeverity": {
-      "id": "alarms-and-alerts-by-severity",
-      "title": "Total Alarms & Alerts by Priority",
-      "data": [
-        {
-          "severity": "Low",
-          "alarms": 219,
-          "alerts": 185
-        },
-        {
-          "severity": "Medium",
-          "alarms": 219,
-          "alerts": 185
-        },
-        {
-          "severity": "High",
-          "alarms": 219,
-          "alerts": 185
-        }
-      ],
-      "updateInterval": "5min"
-    },
-    "bySeverityByDay": {
-      "id": "alarms-and-alerts-by-severity",
-      "title": "Total Alarms & Alerts by Priority by Day",
-      "data": [
-        { "date": "2024-01-01", "low": 45, "medium": 75, "high": 120 },
-        { "date": "2024-01-02", "low": 42, "medium": 35, "high": 115 },
-        { "date": "2024-01-03", "low": 48, "medium": 78, "high": 125 },
-        { "date": "2024-01-04", "low": 59, "medium": 45, "high": 107 },
-        { "date": "2024-01-05", "low": 44, "medium": 80, "high": 122 },
-        { "date": "2024-01-06", "low": 66, "medium": 72, "high": 100 },
-        { "date": "2024-01-07", "low": 43, "medium": 77, "high": 124 }
-      ],
-      "updateInterval": "5min"
-    },
-    "byActions": {
-      "id": "alert-and-dispatch-actions",
-      "title": "Total Number of Alert and Dispatch Actions",
-      "data": [
-        {
-          "date": "2024-01-01",
-          "manuallyEscalated": 45,
-          "autoEscalated": 32,
-          "delayedNotSustained": 28,
-          "delayedManual": 15,
-          "delayedAuto": 22
-        },
-        {
-          "date": "2024-01-02",
-          "manuallyEscalated": 38,
-          "autoEscalated": 35,
-          "delayedNotSustained": 25,
-          "delayedManual": 18,
-          "delayedAuto": 20
-        },
-        {
-          "date": "2024-01-03",
-          "manuallyEscalated": 42,
-          "autoEscalated": 30,
-          "delayedNotSustained": 32,
-          "delayedManual": 12,
-          "delayedAuto": 25
-        },
-        {
-          "date": "2024-01-04",
-          "manuallyEscalated": 50,
-          "autoEscalated": 28,
-          "delayedNotSustained": 30,
-          "delayedManual": 20,
-          "delayedAuto": 18
-        },
-        {
-          "date": "2024-01-05",
-          "manuallyEscalated": 44,
-          "autoEscalated": 38,
-          "delayedNotSustained": 22,
-          "delayedManual": 16,
-          "delayedAuto": 24
-        },
-        {
-          "date": "2024-01-06",
-          "manuallyEscalated": 48,
-          "autoEscalated": 34,
-          "delayedNotSustained": 26,
-          "delayedManual": 14,
-          "delayedAuto": 21
-        },
-        {
-          "date": "2024-01-07",
-          "manuallyEscalated": 46,
-          "autoEscalated": 36,
-          "delayedNotSustained": 24,
-          "delayedManual": 19,
-          "delayedAuto": 23
-        }
-      ],
-      "updateInterval": "5min"
-    },
-    "manuallyDispatchedAlerts": {
-      "id": "manually-dispatched-alerts",
-      "title": "Total Number of Manually Dispatched Alerts by Day",
-      "data": [
-        {
-          "date": "2024-01-01",
-          "manuallyDispatched": 35
-        },
-        {
-          "date": "2024-01-02",
-          "manuallyDispatched": 37
-        },
-        {
-          "date": "2024-01-03",
-          "manuallyDispatched": 36
-        },
-        {
-          "date": "2024-01-04",
-          "manuallyDispatched": 38
-        },
-        {
-          "date": "2024-01-05",
-          "manuallyDispatched": 35
-        },
-        {
-          "date": "2024-01-06",
-          "manuallyDispatched": 37
-        },
-        {
-          "date": "2024-01-07",
-          "manuallyDispatched": 36
-        }
-      ],
-      "updateInterval": "5min"
-    },
-    "autoDispatchedAlerts": {
-      "id": "autoDispatchedAlerts",
-      "title": "Total Number of Auto Dispatched Alerts by Day",
-      "data": [
-        { "date": "2024-01-01", "autoDispatched": 65 },
-        { "date": "2024-01-02", "autoDispatched": 68 },
-        { "date": "2024-01-03", "autoDispatched": 70 },
-        { "date": "2024-01-04", "autoDispatched": 67 },
-        { "date": "2024-01-05", "autoDispatched": 69 },
-        { "date": "2024-01-06", "autoDispatched": 66 },
-        { "date": "2024-01-07", "autoDispatched": 66 }
-      ],
-      "updateInterval": "5min"
-    },
-    "delayedAlarms": {
-      "id": "delayedAlarms",
-      "title": "Total Number of Delayed Alarms by Day",
-      "data": [
-        { "date": "2024-01-01", "delayed": 52 },
-        { "date": "2024-01-02", "delayed": 55 },
-        { "date": "2024-01-03", "delayed": 54 },
-        { "date": "2024-01-04", "delayed": 53 },
-        { "date": "2024-01-05", "delayed": 56 },
-        { "date": "2024-01-06", "delayed": 54 },
-        { "date": "2024-01-07", "delayed": 54 }
-      ],
-      "updateInterval": "5min"
-    },
-    "selfResolvedAlarms": {
-      "id": "self-resolved-alarms",
-      "title": "Total Number of Self Resolved/Not Sustained Alarms by Day",
-      "data": [
-        {
-          "date": "2024-01-01",
-          "selfResolved": 142
-        },
-        {
-          "date": "2024-01-02",
-          "selfResolved": 138
-        },
-        {
-          "date": "2024-01-03",
-          "selfResolved": 145
-        },
-        {
-          "date": "2024-01-04",
-          "selfResolved": 140
-        },
-        {
-          "date": "2024-01-05",
-          "selfResolved": 143
-        },
-        {
-          "date": "2024-01-06",
-          "selfResolved": 141
-        },
-        {
-          "date": "2024-01-07",
-          "selfResolved": 128
-        }
-      ],
-      "updateInterval": "5min"
-    },
-    "holdReoccurenceAlarms": {
-      "id": "hold-reoccurence-alarms",
-      "title": "Total Number of Hold Reoccurence Alarms by Day",
-      "data": [
-        {
-          "date": "2024-01-01",
-          "holdReoccurence": 32
-        },
-        {
-          "date": "2024-01-02",
-          "holdReoccurence": 28
-        },
-        {
-          "date": "2024-01-03",
-          "holdReoccurence": 35
-        },
-        {
-          "date": "2024-01-04",
-          "holdReoccurence": 30
-        },
-        {
-          "date": "2024-01-05",
-          "holdReoccurence": 27
-        },
-        {
-          "date": "2024-01-06",
-          "holdReoccurence": 33
-        },
-        {
-          "date": "2024-01-07",
-          "holdReoccurence": 23
-        }
-      ],
-      "updateInterval": "5min"
-    },
-    "byAlarmLabels": {
-      "title": "Alarms and Alerts by Label",
-      "data": [
-        {
-          "label": "Asystole",
-          "alarms": 450,
-          "alerts": 320
-        },
-        {
-          "label": "AFIB",
-          "alarms": 380,
-          "alerts": 290
-        },
-        {
-          "label": "HR High",
-          "alarms": 520,
-          "alerts": 410
-        },
-        {
-          "label": "HR Low",
-          "alarms": 290,
-          "alerts": 180
-        },
-        {
-          "label": "Pause",
-          "alarms": 340,
-          "alerts": 260
-        },
-        {
-          "label": "VFIB/VTAC",
-          "alarms": 420,
-          "alerts": 350
-        },
-        {
-          "label": "SPO2",
-          "alarms": 580,
-          "alerts": 460
-        }
-      ]
-    }
-  },
-  "lineCharts": {
-    "alarmsAndAlertsDailyTrend": {
-      "id": "alarms-and-alerts-daily-trend",
-      "title": "Total Alarms & Alerts Daily Trend",
-      "data": [
-        {
-          "date": "2024-01-01",
-          "alarms": 3500,
-          "alerts": 2675
-        },
-        {
-          "date": "2024-01-02",
-          "alarms": 3200,
-          "alerts": 2450
-        },
-        {
-          "date": "2024-01-03",
-          "alarms": 3800,
-          "alerts": 2900
-        },
-        {
-          "date": "2024-01-04",
-          "alarms": 3400,
-          "alerts": 2600
-        },
-        {
-          "date": "2024-01-05",
-          "alarms": 3600,
-          "alerts": 2750
-        },
-        {
-          "date": "2024-01-06",
-          "alarms": 3300,
-          "alerts": 2525
-        },
-        {
-          "date": "2024-01-07",
-          "alarms": 3700,
-          "alerts": 2825
-        }
-      ]
-    },
-    "alarmDurationByPriorityTrend": {
-      "id": "alarm-duration-by-priority-trend",
-      "title": "Alarm Duration by Priority Daily Trend",
-      "description": "Average duration of alarms (MM:SS) by priority level over time",
-      "data": [
-        {
-          "date": "2024-01-01",
-          "low": "00:35",
-          "medium": "01:15",
-          "high": "01:45"
-        },
-        {
-          "date": "2024-01-02",
-          "low": "00:32",
-          "medium": "01:22",
-          "high": "01:55"
-        },
-        {
-          "date": "2024-01-03",
-          "low": "00:38",
-          "medium": "01:18",
-          "high": "01:50"
-        },
-        {
-          "date": "2024-01-04",
-          "low": "00:34",
-          "medium": "01:25",
-          "high": "01:48"
-        },
-        {
-          "date": "2024-01-05",
-          "low": "00:40",
-          "medium": "01:20",
-          "high": "01:52"
-        },
-        {
-          "date": "2024-01-06",
-          "low": "00:36",
-          "medium": "01:12",
-          "high": "01:46"
-        },
-        {
-          "date": "2024-01-07",
-          "low": "00:33",
-          "medium": "01:17",
-          "high": "01:54"
-        }
-      ],
-      "updateInterval": "5min"
-    },
-    "alarmsBySeverityDailyTrend": {
-      "title": "Number of Alarms by Priority Daily Trend",
-      "data": [
-        { "date": "2024-01-01", "low": 45, "medium": 75, "high": 120 },
-        { "date": "2024-01-02", "low": 42, "medium": 35, "high": 115 },
-        { "date": "2024-01-03", "low": 48, "medium": 78, "high": 125 },
-        { "date": "2024-01-04", "low": 59, "medium": 45, "high": 107 },
-        { "date": "2024-01-05", "low": 44, "medium": 80, "high": 122 },
-        { "date": "2024-01-06", "low": 66, "medium": 72, "high": 100 },
-        { "date": "2024-01-07", "low": 43, "medium": 77, "high": 124 }
-      ]
-    }
-  },
-  "tableCharts": {
-    "alertDispatchDetail": {
-      "id": "alert-dispatch-detail",
-      "title": "Alert Dispatch Detail",
-      "data": [
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Ventricular Tachycardia",
-          "priority": "High",
-          "totalAlarms": 3245,
-          "totalAlerts": 2568,
-          "totalActions": 834,
-          "totalSnippetsCreated": 156
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Asystole",
-          "priority": "High",
-          "totalAlarms": 2890,
-          "totalAlerts": 2345,
-          "totalActions": 756,
-          "totalSnippetsCreated": 142
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Bradycardia",
-          "priority": "High",
-          "totalAlarms": 3120,
-          "totalAlerts": 2456,
-          "totalActions": 789,
-          "totalSnippetsCreated": 148
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Tachycardia",
-          "priority": "High",
-          "totalAlarms": 2987,
-          "totalAlerts": 2345,
-          "totalActions": 745,
-          "totalSnippetsCreated": 138
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "AFib RVR",
-          "priority": "High",
-          "totalAlarms": 2756,
-          "totalAlerts": 2234,
-          "totalActions": 678,
-          "totalSnippetsCreated": 125
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "PVC Run",
-          "priority": "Medium",
-          "totalAlarms": 2345,
-          "totalAlerts": 1876,
-          "totalActions": 567,
-          "totalSnippetsCreated": 98
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "ST Elevation",
-          "priority": "High",
-          "totalAlarms": 2678,
-          "totalAlerts": 2145,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Low BP",
-          "priority": "High",
-          "totalAlarms": 3456,
-          "totalAlerts": 2789,
-          "totalActions": 867,
-          "totalSnippetsCreated": 165
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "High BP",
-          "priority": "Medium",
-          "totalAlarms": 3234,
-          "totalAlerts": 2567,
-          "totalActions": 789,
-          "totalSnippetsCreated": 145
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Lead Fail",
-          "priority": "Low",
-          "totalAlarms": 1987,
-          "totalAlerts": 1456,
-          "totalActions": 432,
-          "totalSnippetsCreated": 78
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Ventilator Disconnect",
-          "priority": "High",
-          "totalAlarms": 2876,
-          "totalAlerts": 2345,
-          "totalActions": 756,
-          "totalSnippetsCreated": 134
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High PEEP",
-          "priority": "High",
-          "totalAlarms": 2567,
-          "totalAlerts": 2123,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low Minute Volume",
-          "priority": "High",
-          "totalAlarms": 2987,
-          "totalAlerts": 2456,
-          "totalActions": 789,
-          "totalSnippetsCreated": 145
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High EtCO2",
-          "priority": "Medium",
-          "totalAlarms": 2345,
-          "totalAlerts": 1876,
-          "totalActions": 567,
-          "totalSnippetsCreated": 98
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low EtCO2",
-          "priority": "Medium",
-          "totalAlarms": 2456,
-          "totalAlerts": 1987,
-          "totalActions": 598,
-          "totalSnippetsCreated": 102
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High Respiratory Rate",
-          "priority": "Medium",
-          "totalAlarms": 3123,
-          "totalAlerts": 2567,
-          "totalActions": 789,
-          "totalSnippetsCreated": 145
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low Respiratory Rate",
-          "priority": "High",
-          "totalAlarms": 2234,
-          "totalAlerts": 1876,
-          "totalActions": 567,
-          "totalSnippetsCreated": 98
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Apnea",
-          "priority": "High",
-          "totalAlarms": 1987,
-          "totalAlerts": 1654,
-          "totalActions": 487,
-          "totalSnippetsCreated": 85
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High FiO2",
-          "priority": "Medium",
-          "totalAlarms": 2678,
-          "totalAlerts": 2145,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Circuit Leak",
-          "priority": "Medium",
-          "totalAlarms": 2345,
-          "totalAlerts": 1876,
-          "totalActions": 567,
-          "totalSnippetsCreated": 98
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Trauma Alert",
-          "priority": "High",
-          "totalAlarms": 3567,
-          "totalAlerts": 2987,
-          "totalActions": 945,
-          "totalSnippetsCreated": 178
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Code Blue",
-          "priority": "High",
-          "totalAlarms": 1876,
-          "totalAlerts": 1654,
-          "totalActions": 487,
-          "totalSnippetsCreated": 85
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Stroke Alert",
-          "priority": "High",
-          "totalAlarms": 2234,
-          "totalAlerts": 1876,
-          "totalActions": 567,
-          "totalSnippetsCreated": 98
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "STEMI Alert",
-          "priority": "High",
-          "totalAlarms": 2567,
-          "totalAlerts": 2123,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Sepsis Alert",
-          "priority": "High",
-          "totalAlarms": 3123,
-          "totalAlerts": 2567,
-          "totalActions": 789,
-          "totalSnippetsCreated": 145
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Rapid Response",
-          "priority": "High",
-          "totalAlarms": 2876,
-          "totalAlerts": 2345,
-          "totalActions": 756,
-          "totalSnippetsCreated": 134
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Fall Alert",
-          "priority": "Medium",
-          "totalAlarms": 2345,
-          "totalAlerts": 1876,
-          "totalActions": 567,
-          "totalSnippetsCreated": 98
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Security Alert",
-          "priority": "Medium",
-          "totalAlarms": 2678,
-          "totalAlerts": 2145,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Behavioral Alert",
-          "priority": "Medium",
-          "totalAlarms": 2987,
-          "totalAlerts": 2456,
-          "totalActions": 789,
-          "totalSnippetsCreated": 145
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Isolation Required",
-          "priority": "Medium",
-          "totalAlarms": 2123,
-          "totalAlerts": 1765,
-          "totalActions": 534,
-          "totalSnippetsCreated": 92
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Ventricular Tachycardia",
-          "priority": "High",
-          "totalAlarms": 2987,
-          "totalAlerts": 2456,
-          "totalActions": 789,
-          "totalSnippetsCreated": 145
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Asystole",
-          "priority": "High",
-          "totalAlarms": 2345,
-          "totalAlerts": 1876,
-          "totalActions": 567,
-          "totalSnippetsCreated": 98
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Bradycardia",
-          "priority": "High",
-          "totalAlarms": 2876,
-          "totalAlerts": 2345,
-          "totalActions": 756,
-          "totalSnippetsCreated": 134
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Tachycardia",
-          "priority": "High",
-          "totalAlarms": 2678,
-          "totalAlerts": 2145,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "AFib RVR",
-          "priority": "High",
-          "totalAlarms": 2456,
-          "totalAlerts": 1987,
-          "totalActions": 598,
-          "totalSnippetsCreated": 102
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "PVC Run",
-          "priority": "Medium",
-          "totalAlarms": 2123,
-          "totalAlerts": 1765,
-          "totalActions": 534,
-          "totalSnippetsCreated": 92
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "ST Elevation",
-          "priority": "High",
-          "totalAlarms": 2567,
-          "totalAlerts": 2123,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Low BP",
-          "priority": "High",
-          "totalAlarms": 2987,
-          "totalAlerts": 2456,
-          "totalActions": 789,
-          "totalSnippetsCreated": 145
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "High BP",
-          "priority": "Medium",
-          "totalAlarms": 2876,
-          "totalAlerts": 2345,
-          "totalActions": 756,
-          "totalSnippetsCreated": 134
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Lead Fail",
-          "priority": "Low",
-          "totalAlarms": 1876,
-          "totalAlerts": 1543,
-          "totalActions": 456,
-          "totalSnippetsCreated": 82
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Ventilator Disconnect",
-          "priority": "High",
-          "totalAlarms": 1987,
-          "totalAlerts": 1654,
-          "totalActions": 487,
-          "totalSnippetsCreated": 85
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High PEEP",
-          "priority": "High",
-          "totalAlarms": 2456,
-          "totalAlerts": 1987,
-          "totalActions": 598,
-          "totalSnippetsCreated": 102
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low Minute Volume",
-          "priority": "High",
-          "totalAlarms": 2678,
-          "totalAlerts": 2145,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High EtCO2",
-          "priority": "Medium",
-          "totalAlarms": 2123,
-          "totalAlerts": 1765,
-          "totalActions": 534,
-          "totalSnippetsCreated": 92
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low EtCO2",
-          "priority": "Medium",
-          "totalAlarms": 2234,
-          "totalAlerts": 1876,
-          "totalActions": 567,
-          "totalSnippetsCreated": 98
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High Respiratory Rate",
-          "priority": "Medium",
-          "totalAlarms": 2876,
-          "totalAlerts": 2345,
-          "totalActions": 756,
-          "totalSnippetsCreated": 134
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low Respiratory Rate",
-          "priority": "High",
-          "totalAlarms": 1876,
-          "totalAlerts": 1543,
-          "totalActions": 456,
-          "totalSnippetsCreated": 82
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Apnea",
-          "priority": "High",
-          "totalAlarms": 1765,
-          "totalAlerts": 1432,
-          "totalActions": 423,
-          "totalSnippetsCreated": 76
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High FiO2",
-          "priority": "Medium",
-          "totalAlarms": 2567,
-          "totalAlerts": 2123,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Circuit Leak",
-          "priority": "Medium",
-          "totalAlarms": 2123,
-          "totalAlerts": 1765,
-          "totalActions": 534,
-          "totalSnippetsCreated": 92
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Trauma Alert",
-          "priority": "High",
-          "totalAlarms": 3234,
-          "totalAlerts": 2678,
-          "totalActions": 867,
-          "totalSnippetsCreated": 156
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Code Blue",
-          "priority": "High",
-          "totalAlarms": 1765,
-          "totalAlerts": 1432,
-          "totalActions": 423,
-          "totalSnippetsCreated": 76
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Stroke Alert",
-          "priority": "High",
-          "totalAlarms": 2123,
-          "totalAlerts": 1765,
-          "totalActions": 534,
-          "totalSnippetsCreated": 92
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "STEMI Alert",
-          "priority": "High",
-          "totalAlarms": 2456,
-          "totalAlerts": 1987,
-          "totalActions": 598,
-          "totalSnippetsCreated": 102
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Sepsis Alert",
-          "priority": "High",
-          "totalAlarms": 2987,
-          "totalAlerts": 2456,
-          "totalActions": 789,
-          "totalSnippetsCreated": 145
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Rapid Response",
-          "priority": "High",
-          "totalAlarms": 2678,
-          "totalAlerts": 2145,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Fall Alert",
-          "priority": "Medium",
-          "totalAlarms": 2234,
-          "totalAlerts": 1876,
-          "totalActions": 567,
-          "totalSnippetsCreated": 98
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Security Alert",
-          "priority": "Medium",
-          "totalAlarms": 2567,
-          "totalAlerts": 2123,
-          "totalActions": 645,
-          "totalSnippetsCreated": 112
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Behavioral Alert",
-          "priority": "Medium",
-          "totalAlarms": 2876,
-          "totalAlerts": 2345,
-          "totalActions": 756,
-          "totalSnippetsCreated": 134
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Isolation Required",
-          "priority": "Medium",
-          "totalAlarms": 1987,
-          "totalAlerts": 1654,
-          "totalActions": 487,
-          "totalSnippetsCreated": 85
-        }
-      ]
-    },
-    "alertResponseDetail": {
-      "id": "alert-response-detail",
-      "title": "Alert Response Detail",
-      "data": [
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Ventricular Tachycardia",
-          "totalAlarms": 45,
-          "totalAlerts": 32,
-          "responded": 28,
-          "notResponded": 2,
-          "undeliverable": 2
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Asystole",
-          "totalAlarms": 38,
-          "totalAlerts": 30,
-          "responded": 27,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Bradycardia",
-          "totalAlarms": 52,
-          "totalAlerts": 40,
-          "responded": 35,
-          "notResponded": 3,
-          "undeliverable": 2
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Tachycardia",
-          "totalAlarms": 48,
-          "totalAlerts": 35,
-          "responded": 31,
-          "notResponded": 2,
-          "undeliverable": 2
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "AFib RVR",
-          "totalAlarms": 42,
-          "totalAlerts": 32,
-          "responded": 28,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "PVC Run",
-          "totalAlarms": 35,
-          "totalAlerts": 28,
-          "responded": 25,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "ST Elevation",
-          "totalAlarms": 40,
-          "totalAlerts": 32,
-          "responded": 29,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Low BP",
-          "totalAlarms": 55,
-          "totalAlerts": 42,
-          "responded": 38,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "High BP",
-          "totalAlarms": 50,
-          "totalAlerts": 38,
-          "responded": 34,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Lead Fail",
-          "totalAlarms": 30,
-          "totalAlerts": 25,
-          "responded": 22,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Ventilator Disconnect",
-          "totalAlarms": 28,
-          "totalAlerts": 25,
-          "responded": 23,
-          "notResponded": 1,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High PEEP",
-          "totalAlarms": 45,
-          "totalAlerts": 35,
-          "responded": 32,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low Minute Volume",
-          "totalAlarms": 52,
-          "totalAlerts": 42,
-          "responded": 38,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High EtCO2",
-          "totalAlarms": 38,
-          "totalAlerts": 30,
-          "responded": 27,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low EtCO2",
-          "totalAlarms": 42,
-          "totalAlerts": 35,
-          "responded": 31,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High Respiratory Rate",
-          "totalAlarms": 58,
-          "totalAlerts": 45,
-          "responded": 41,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low Respiratory Rate",
-          "totalAlarms": 32,
-          "totalAlerts": 28,
-          "responded": 25,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Apnea",
-          "totalAlarms": 25,
-          "totalAlerts": 22,
-          "responded": 20,
-          "notResponded": 1,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High FiO2",
-          "totalAlarms": 48,
-          "totalAlerts": 38,
-          "responded": 34,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Circuit Leak",
-          "totalAlarms": 35,
-          "totalAlerts": 30,
-          "responded": 27,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Trauma Alert",
-          "totalAlarms": 62,
-          "totalAlerts": 50,
-          "responded": 45,
-          "notResponded": 4,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Code Blue",
-          "totalAlarms": 28,
-          "totalAlerts": 25,
-          "responded": 24,
-          "notResponded": 1,
-          "undeliverable": 0
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Stroke Alert",
-          "totalAlarms": 35,
-          "totalAlerts": 30,
-          "responded": 28,
-          "notResponded": 2,
-          "undeliverable": 0
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "STEMI Alert",
-          "totalAlarms": 42,
-          "totalAlerts": 35,
-          "responded": 33,
-          "notResponded": 2,
-          "undeliverable": 0
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Sepsis Alert",
-          "totalAlarms": 55,
-          "totalAlerts": 45,
-          "responded": 41,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Rapid Response",
-          "totalAlarms": 48,
-          "totalAlerts": 40,
-          "responded": 37,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Fall Alert",
-          "totalAlarms": 38,
-          "totalAlerts": 32,
-          "responded": 29,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Security Alert",
-          "totalAlarms": 45,
-          "totalAlerts": 38,
-          "responded": 35,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Behavioral Alert",
-          "totalAlarms": 52,
-          "totalAlerts": 42,
-          "responded": 38,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "Memorial Hospital",
-          "unit": "ED",
-          "alarmLabel": "Isolation Required",
-          "totalAlarms": 32,
-          "totalAlerts": 28,
-          "responded": 25,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Ventricular Tachycardia",
-          "totalAlarms": 42,
-          "totalAlerts": 35,
-          "responded": 31,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Asystole",
-          "totalAlarms": 35,
-          "totalAlerts": 30,
-          "responded": 27,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Bradycardia",
-          "totalAlarms": 48,
-          "totalAlerts": 38,
-          "responded": 34,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Tachycardia",
-          "totalAlarms": 45,
-          "totalAlerts": 35,
-          "responded": 31,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "AFib RVR",
-          "totalAlarms": 38,
-          "totalAlerts": 32,
-          "responded": 29,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "PVC Run",
-          "totalAlarms": 32,
-          "totalAlerts": 28,
-          "responded": 25,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "ST Elevation",
-          "totalAlarms": 42,
-          "totalAlerts": 35,
-          "responded": 31,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Low BP",
-          "totalAlarms": 52,
-          "totalAlerts": 42,
-          "responded": 38,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "High BP",
-          "totalAlarms": 48,
-          "totalAlerts": 38,
-          "responded": 34,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "CCU",
-          "alarmLabel": "Lead Fail",
-          "totalAlarms": 28,
-          "totalAlerts": 25,
-          "responded": 22,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Ventilator Disconnect",
-          "totalAlarms": 25,
-          "totalAlerts": 22,
-          "responded": 20,
-          "notResponded": 1,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High PEEP",
-          "totalAlarms": 38,
-          "totalAlerts": 32,
-          "responded": 29,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low Minute Volume",
-          "totalAlarms": 45,
-          "totalAlerts": 38,
-          "responded": 34,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High EtCO2",
-          "totalAlarms": 32,
-          "totalAlerts": 28,
-          "responded": 25,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low EtCO2",
-          "totalAlarms": 35,
-          "totalAlerts": 30,
-          "responded": 27,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High Respiratory Rate",
-          "totalAlarms": 48,
-          "totalAlerts": 40,
-          "responded": 36,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Low Respiratory Rate",
-          "totalAlarms": 28,
-          "totalAlerts": 25,
-          "responded": 22,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Apnea",
-          "totalAlarms": 22,
-          "totalAlerts": 20,
-          "responded": 18,
-          "notResponded": 1,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "High FiO2",
-          "totalAlarms": 42,
-          "totalAlerts": 35,
-          "responded": 31,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ICU",
-          "alarmLabel": "Circuit Leak",
-          "totalAlarms": 32,
-          "totalAlerts": 28,
-          "responded": 25,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Trauma Alert",
-          "totalAlarms": 58,
-          "totalAlerts": 48,
-          "responded": 43,
-          "notResponded": 4,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Code Blue",
-          "totalAlarms": 25,
-          "totalAlerts": 22,
-          "responded": 21,
-          "notResponded": 1,
-          "undeliverable": 0
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Stroke Alert",
-          "totalAlarms": 32,
-          "totalAlerts": 28,
-          "responded": 26,
-          "notResponded": 2,
-          "undeliverable": 0
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "STEMI Alert",
-          "totalAlarms": 38,
-          "totalAlerts": 32,
-          "responded": 30,
-          "notResponded": 2,
-          "undeliverable": 0
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Sepsis Alert",
-          "totalAlarms": 52,
-          "totalAlerts": 42,
-          "responded": 38,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Rapid Response",
-          "totalAlarms": 45,
-          "totalAlerts": 38,
-          "responded": 35,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Fall Alert",
-          "totalAlarms": 35,
-          "totalAlerts": 30,
-          "responded": 27,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Security Alert",
-          "totalAlarms": 42,
-          "totalAlerts": 35,
-          "responded": 32,
-          "notResponded": 2,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Behavioral Alert",
-          "totalAlarms": 48,
-          "totalAlerts": 40,
-          "responded": 36,
-          "notResponded": 3,
-          "undeliverable": 1
-        },
-        {
-          "facility": "General Hospital",
-          "unit": "ED",
-          "alarmLabel": "Isolation Required",
-          "totalAlarms": 28,
-          "totalAlerts": 25,
-          "responded": 22,
-          "notResponded": 2,
-          "undeliverable": 1
-        }
+        { "groupByLabel": "Asystole", "totalLabel": "Alarms", "totalValue": 461, "subsetLabel": "Alerts", "subsetValue": 314 },
+        { "groupByLabel": "Vtach", "totalLabel": "Alarms", "totalValue": 320, "subsetLabel": "Alerts", "subsetValue": 201 },
+        { "groupByLabel": "Vfib", "totalLabel": "Alarms", "totalValue": 219, "subsetLabel": "Alerts", "subsetValue": 185 }
       ],
       "updateInterval": "5min"
     }
@@ -1956,93 +214,168 @@
   "groupedStackedCharts": {
     "severityByDay": {
       "title": "Total Alarms & Alerts by Priority by Day",
-      "description": "Alerts are a subset of alarms and are represented as the darker bars in the chart. The lighter bars represent the total number of alarms.",
+      "description": "Shows daily totals of alarms and alerts broken down by priority level",
       "data": [
-        {
-          "date": "2024-01-01",
-          "lowAlerts": 45,
-          "lowAlarmsOnly": 65,
-          "lowTotal": 110,
-          "mediumAlerts": 35,
-          "mediumAlarmsOnly": 55,
-          "mediumTotal": 90,
-          "highAlerts": 15,
-          "highAlarmsOnly": 25,
-          "highTotal": 40
-        },
-        {
-          "date": "2024-01-02",
-          "lowAlerts": 50,
-          "lowAlarmsOnly": 70,
-          "lowTotal": 120,
-          "mediumAlerts": 40,
-          "mediumAlarmsOnly": 50,
-          "mediumTotal": 90,
-          "highAlerts": 20,
-          "highAlarmsOnly": 30,
-          "highTotal": 50
-        },
-        {
-          "date": "2024-01-03",
-          "lowAlerts": 55,
-          "lowAlarmsOnly": 75,
-          "lowTotal": 130,
-          "mediumAlerts": 45,
-          "mediumAlarmsOnly": 65,
-          "mediumTotal": 110,
-          "highAlerts": 25,
-          "highAlarmsOnly": 35,
-          "highTotal": 60
-        },
-        {
-          "date": "2024-01-04",
-          "lowAlerts": 40,
-          "lowAlarmsOnly": 60,
-          "lowTotal": 100,
-          "mediumAlerts": 30,
-          "mediumAlarmsOnly": 50,
-          "mediumTotal": 80,
-          "highAlerts": 10,
-          "highAlarmsOnly": 20,
-          "highTotal": 30
-        },
-        {
-          "date": "2024-01-05",
-          "lowAlerts": 60,
-          "lowAlarmsOnly": 80,
-          "lowTotal": 140,
-          "mediumAlerts": 50,
-          "mediumAlarmsOnly": 70,
-          "mediumTotal": 120,
-          "highAlerts": 30,
-          "highAlarmsOnly": 40,
-          "highTotal": 70
-        },
-        {
-          "date": "2024-01-06",
-          "lowAlerts": 45,
-          "lowAlarmsOnly": 65,
-          "lowTotal": 110,
-          "mediumAlerts": 35,
-          "mediumAlarmsOnly": 55,
-          "mediumTotal": 90,
-          "highAlerts": 15,
-          "highAlarmsOnly": 25,
-          "highTotal": 40
-        },
-        {
-          "date": "2024-01-07",
-          "lowAlerts": 50,
-          "lowAlarmsOnly": 70,
-          "lowTotal": 120,
-          "mediumAlerts": 40,
-          "mediumAlarmsOnly": 60,
-          "mediumTotal": 100,
-          "highAlerts": 20,
-          "highAlarmsOnly": 30,
-          "highTotal": 50
-        }
+        { "date": "2024-01-01", "lowAlarms": 45, "lowAlerts": 35, "mediumAlarms": 75, "mediumAlerts": 60, "highAlarms": 120, "highAlerts": 95 },
+        { "date": "2024-01-02", "lowAlarms": 42, "lowAlerts": 32, "mediumAlarms": 35, "mediumAlerts": 28, "highAlarms": 115, "highAlerts": 92 },
+        { "date": "2024-01-03", "lowAlarms": 48, "lowAlerts": 38, "mediumAlarms": 78, "mediumAlerts": 62, "highAlarms": 125, "highAlerts": 100 },
+        { "date": "2024-01-04", "lowAlarms": 59, "lowAlerts": 47, "mediumAlarms": 45, "mediumAlerts": 36, "highAlarms": 107, "highAlerts": 86 },
+        { "date": "2024-01-05", "lowAlarms": 44, "lowAlerts": 35, "mediumAlarms": 80, "mediumAlerts": 64, "highAlarms": 122, "highAlerts": 98 },
+        { "date": "2024-01-06", "lowAlarms": 66, "lowAlerts": 53, "mediumAlarms": 72, "mediumAlerts": 58, "highAlarms": 100, "highAlerts": 80 },
+        { "date": "2024-01-07", "lowAlarms": 43, "lowAlerts": 34, "mediumAlarms": 77, "mediumAlerts": 62, "highAlarms": 124, "highAlerts": 99 }
       ]
+    }
+  },
+  "lineCharts": {
+    "alarmsAndAlertsDailyTrend": {
+      "id": "alarms-and-alerts-daily-trend",
+      "title": "Total Alarms & Alerts Daily Trend",
+      "description": "Shows the trend of total alarms and alerts over time",
+      "data": [
+        { "date": "2024-01-01", "alarms": 240, "alerts": 190 },
+        { "date": "2024-01-02", "alarms": 192, "alerts": 152 },
+        { "date": "2024-01-03", "alarms": 251, "alerts": 200 },
+        { "date": "2024-01-04", "alarms": 211, "alerts": 169 },
+        { "date": "2024-01-05", "alarms": 246, "alerts": 197 },
+        { "date": "2024-01-06", "alarms": 238, "alerts": 191 },
+        { "date": "2024-01-07", "alarms": 244, "alerts": 195 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alarmDurationByPriorityTrend": {
+      "id": "alarm-duration-by-priority-trend",
+      "title": "Alarm Duration by Priority Daily Trend",
+      "description": "Average duration of alarms in MM:SS by priority level over time",
+      "data": [
+        { "date": "2024-01-01", "low": "00:45", "medium": "01:15", "high": "02:00" },
+        { "date": "2024-01-02", "low": "00:42", "medium": "00:35", "high": "01:55" },
+        { "date": "2024-01-03", "low": "00:48", "medium": "01:18", "high": "02:05" },
+        { "date": "2024-01-04", "low": "00:59", "medium": "00:45", "high": "01:47" },
+        { "date": "2024-01-05", "low": "00:44", "medium": "01:20", "high": "02:02" },
+        { "date": "2024-01-06", "low": "01:06", "medium": "01:12", "high": "01:40" },
+        { "date": "2024-01-07", "low": "00:43", "medium": "01:17", "high": "02:04" }
+      ],
+      "updateInterval": "5min"
+    }
+  },
+  "barCharts": {
+    "manuallyDispatchedAlerts": {
+      "id": "manually-dispatched-alerts-trend",
+      "title": "Manually Dispatched Alerts Daily Trend",
+      "description": "Shows the trend of manually dispatched alerts over time",
+      "data": [
+        { "date": "2024-01-01", "manuallyDispatched": 45 },
+        { "date": "2024-01-02", "manuallyDispatched": 32 },
+        { "date": "2024-01-03", "manuallyDispatched": 38 },
+        { "date": "2024-01-04", "manuallyDispatched": 47 },
+        { "date": "2024-01-05", "manuallyDispatched": 35 },
+        { "date": "2024-01-06", "manuallyDispatched": 53 },
+        { "date": "2024-01-07", "manuallyDispatched": 34 }
+      ],
+      "updateInterval": "5min"
+    },
+    "autoDispatchedAlerts": {
+      "id": "auto-dispatched-alerts-trend",
+      "title": "Auto Dispatched Alerts Daily Trend",
+      "description": "Shows the trend of auto dispatched alerts over time",
+      "data": [
+        { "date": "2024-01-01", "autoDispatched": 55 },
+        { "date": "2024-01-02", "autoDispatched": 42 },
+        { "date": "2024-01-03", "autoDispatched": 48 },
+        { "date": "2024-01-04", "autoDispatched": 57 },
+        { "date": "2024-01-05", "autoDispatched": 45 },
+        { "date": "2024-01-06", "autoDispatched": 63 },
+        { "date": "2024-01-07", "autoDispatched": 44 }
+      ],
+      "updateInterval": "5min"
+    },
+    "selfResolvedAlarms": {
+      "id": "self-resolved-alarms-trend",
+      "title": "Self Resolved/Not Sustained Alarms Daily Trend",
+      "description": "Shows the trend of self resolved/not sustained alarms over time",
+      "data": [
+        { "date": "2024-01-01", "selfResolved": 165 },
+        { "date": "2024-01-02", "selfResolved": 142 },
+        { "date": "2024-01-03", "selfResolved": 148 },
+        { "date": "2024-01-04", "selfResolved": 157 },
+        { "date": "2024-01-05", "selfResolved": 145 },
+        { "date": "2024-01-06", "selfResolved": 163 },
+        { "date": "2024-01-07", "selfResolved": 144 }
+      ],
+      "updateInterval": "5min"
+    },
+    "delayedAlarms": {
+      "id": "delayed-alarms-trend",
+      "title": "Delayed Alarms Daily Trend",
+      "description": "Shows the trend of delayed alarms over time",
+      "data": [
+        { "date": "2024-01-01", "delayed": 175 },
+        { "date": "2024-01-02", "delayed": 152 },
+        { "date": "2024-01-03", "delayed": 158 },
+        { "date": "2024-01-04", "delayed": 167 },
+        { "date": "2024-01-05", "delayed": 155 },
+        { "date": "2024-01-06", "delayed": 173 },
+        { "date": "2024-01-07", "delayed": 154 }
+      ],
+      "updateInterval": "5min"
+    },
+    "holdReoccurenceAlarms": {
+      "id": "hold-reoccurence-alarms-trend",
+      "title": "Hold Reoccurence Alarms Daily Trend",
+      "description": "Shows the trend of hold reoccurence alarms over time",
+      "data": [
+        { "date": "2024-01-01", "holdReoccurence": 35 },
+        { "date": "2024-01-02", "holdReoccurence": 22 },
+        { "date": "2024-01-03", "holdReoccurence": 28 },
+        { "date": "2024-01-04", "holdReoccurence": 37 },
+        { "date": "2024-01-05", "holdReoccurence": 25 },
+        { "date": "2024-01-06", "holdReoccurence": 43 },
+        { "date": "2024-01-07", "holdReoccurence": 24 }
+      ],
+      "updateInterval": "5min"
+    },
+    "byActions": {
+      "id": "by-actions",
+      "title": "Actions by Day",
+      "description": "Shows the trend of different actions over time",
+      "data": [
+        { "date": "2024-01-01", "manuallyEscalated": 45, "autoEscalated": 55, "delayedNotSustained": 35, "delayedManual": 25, "delayedAuto": 30 },
+        { "date": "2024-01-02", "manuallyEscalated": 32, "autoEscalated": 42, "delayedNotSustained": 22, "delayedManual": 18, "delayedAuto": 24 },
+        { "date": "2024-01-03", "manuallyEscalated": 38, "autoEscalated": 48, "delayedNotSustained": 28, "delayedManual": 20, "delayedAuto": 26 },
+        { "date": "2024-01-04", "manuallyEscalated": 47, "autoEscalated": 57, "delayedNotSustained": 37, "delayedManual": 27, "delayedAuto": 32 },
+        { "date": "2024-01-05", "manuallyEscalated": 35, "autoEscalated": 45, "delayedNotSustained": 25, "delayedManual": 15, "delayedAuto": 20 },
+        { "date": "2024-01-06", "manuallyEscalated": 53, "autoEscalated": 63, "delayedNotSustained": 43, "delayedManual": 33, "delayedAuto": 38 },
+        { "date": "2024-01-07", "manuallyEscalated": 34, "autoEscalated": 44, "delayedNotSustained": 24, "delayedManual": 14, "delayedAuto": 19 }
+      ],
+      "updateInterval": "5min"
+    }
+  },
+  "tableCharts": {
+    "alertDispatchDetail": {
+      "id": "alert-dispatch-detail",
+      "title": "Alert Dispatch Detail",
+      "description": "Detailed information about alert dispatches",
+      "data": [
+        { "date": "2024-01-01", "alarmLabel": "Asystole", "priority": "High", "dispatchType": "Manual", "dispatchTime": "00:45", "responseTime": "01:15" },
+        { "date": "2024-01-02", "alarmLabel": "Vtach", "priority": "High", "dispatchType": "Auto", "dispatchTime": "00:35", "responseTime": "00:55" },
+        { "date": "2024-01-03", "alarmLabel": "Vfib", "priority": "High", "dispatchType": "Manual", "dispatchTime": "00:40", "responseTime": "01:10" },
+        { "date": "2024-01-04", "alarmLabel": "Brady", "priority": "Medium", "dispatchType": "Auto", "dispatchTime": "00:30", "responseTime": "00:50" },
+        { "date": "2024-01-05", "alarmLabel": "Tachy", "priority": "Medium", "dispatchType": "Manual", "dispatchTime": "00:42", "responseTime": "01:12" }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertResponseDetail": {
+      "id": "alert-response-detail",
+      "title": "Alert Response Detail",
+      "description": "Detailed information about alert responses",
+      "data": [
+        { "date": "2024-01-01", "alarmLabel": "Asystole", "priority": "High", "responseType": "Manual", "responseTime": "01:15", "responseAction": "Escalated" },
+        { "date": "2024-01-02", "alarmLabel": "Vtach", "priority": "High", "responseType": "Auto", "responseTime": "00:55", "responseAction": "Delayed" },
+        { "date": "2024-01-03", "alarmLabel": "Vfib", "priority": "High", "responseType": "Manual", "responseTime": "01:10", "responseAction": "Escalated" },
+        { "date": "2024-01-04", "alarmLabel": "Brady", "priority": "Medium", "responseType": "Auto", "responseTime": "00:50", "responseAction": "Not Sustained" },
+        { "date": "2024-01-05", "alarmLabel": "Tachy", "priority": "Medium", "responseType": "Manual", "responseTime": "01:12", "responseAction": "Delayed" }
+      ],
+      "updateInterval": "5min"
     }
   }
 } 
