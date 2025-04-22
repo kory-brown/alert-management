@@ -23,6 +23,7 @@ import AppHeader from '../components/AppHeader';
 import Footer from '../components/Footer';
 import { drawerWidth } from '../components/FiltersPanel';
 import StackedBarChart from '../components/StackedBarChart';
+import GroupedStackedBarChart from '../components/GroupedStackedBarChart';
 
 function AAMDashboard() {
   const [startDate, setStartDate] = useState('');
@@ -150,6 +151,8 @@ function AAMDashboard() {
 
           {/* PAGE CHART COMPONENTS */}
 
+          <SectionLabel label="Alarm and Alert Volume Summary" />
+
           {/* Big Number Charts */}
           <Grid container spacing={3}>
             <Grid item xs={12} md={4}>
@@ -163,21 +166,41 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Alarms and Alerts Row */}
+          {/* Alarms and Alerts Daily TrendRow */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
-                <StackedBarChart 
-                  title={chartData.stackedBarCharts.alarmsAndAlerts.title}
-                  data={chartData.stackedBarCharts.alarmsAndAlerts.data}
-                  totalLabel="Alarms"
-                  subsetLabel="Alerts"
+                <LineChart 
+                  title={chartData.lineCharts.alarmsAndAlertsDailyTrend.title}
+                  data={chartData.lineCharts.alarmsAndAlertsDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["alarms", "alerts"]}
+                  yAxisLabels={["Alarms", "Alerts"]}
+                  colors={{
+                    'alarms': '#1aafe6',
+                    'alerts': '#808080'
+                  }}
+                  isTimeFormat={false}
                 />
               </Box>
             </Grid>
           </Grid>
 
-          {/* Severity and Category Charts */}
+          {/* Alarm and Alerts by LabelsBar Chart */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <StackedBarChart 
+                  title={chartData.stackedBarCharts.byAlarmLabels.title}
+                  data={chartData.stackedBarCharts.byAlarmLabels.data}
+                  groupBy={chartData.stackedBarCharts.byAlarmLabels.groupBy}
+                  colors={['#1aafe6', '#667275']}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Priority Charts */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
               <Box sx={{ height: 400 }}>
@@ -189,14 +212,69 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={8}>
-            <Box sx={{ height: 400 }}>
-                <GroupedBarChart 
-                  title={chartData.barCharts.bySeverityByDay.title}
-                  data={chartData.barCharts.bySeverityByDay.data}
-                  dataKeys={['low', 'medium', 'high']}
-                  labels={['Low', 'Medium', 'High']}
-                  colors={['#1aafe6', '#faad14', '#ff6b6b']}
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <PieChart
+                  title={chartData.pieCharts.alarmsByPriority.title}
+                  data={chartData.pieCharts.alarmsByPriority.data}
+                  colors={{
+                    'Low': '#1aafe6',
+                    'Medium': '#faad14',
+                    'High': '#ff6b6b'
+                  }}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <PieChart
+                  title={chartData.pieCharts.alertsByPriority.title}
+                  data={chartData.pieCharts.alertsByPriority.data}
+                  colors={{
+                    'Low': '#1aafe6',
+                    'Medium': '#faad14',
+                    'High': '#ff6b6b'
+                  }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Severity Trends by Day */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <GroupedStackedBarChart
+                  title={chartData.groupedStackedCharts.severityByDay.title}
+                  description={chartData.groupedStackedCharts.severityByDay.description}
+                  data={chartData.groupedStackedCharts.severityByDay.data}
+                  colors={{
+                    low: ['#1aafe6', '#52c7f5'],
+                    medium: ['#faad14', '#ffd591'],
+                    high: ['#ff6b6b', '#ffa8a8']
+                  }}
+                  flattenLegend={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Alarm Duration by Priority Daily Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.alarmDurationByPriorityTrend.title}
+                  data={chartData.lineCharts.alarmDurationByPriorityTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["low", "medium", "high"]}
+                  yAxisLabels={["Low", "Medium", "High"]}
+                  colors={{
+                    'low': '#1aafe6',
+                    'medium': '#faad14',
+                    'high': '#ff6b6b'
+                  }}
+                  isTimeFormat={true}
                 />
               </Box>
             </Grid>

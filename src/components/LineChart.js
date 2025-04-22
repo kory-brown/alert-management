@@ -11,7 +11,17 @@ import {
 } from 'recharts';
 import { Box, Typography } from '@mui/material';
 
-const CustomizedLabel = ({ x, y, value, stroke }) => {
+const CustomizedLabel = ({ x, y, value, stroke, isTimeFormat }) => {
+  const formatValue = (val) => {
+    if (!isTimeFormat) return val.toLocaleString();
+    if (typeof val === 'string' && val.includes(':')) {
+      return val;
+    }
+    const minutes = Math.floor(val / 60);
+    const seconds = val % 60;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
   return (
     <text 
       x={x} 
@@ -20,12 +30,67 @@ const CustomizedLabel = ({ x, y, value, stroke }) => {
       fontSize={11} 
       textAnchor="middle"
     >
-      {value}
+      {formatValue(value)}
     </text>
   );
 };
 
-const LineChart = ({ title, data, severityChart, categoryChart }) => {
+const CustomTooltip = ({ active, payload, label, isTimeFormat }) => {
+  if (active && payload && payload.length) {
+    const formatValue = (val) => {
+      if (!isTimeFormat) return val.toLocaleString();
+      if (typeof val === 'string' && val.includes(':')) {
+        return val;
+      }
+      const minutes = Math.floor(val / 60);
+      const seconds = val % 60;
+      return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    };
+
+    return (
+      <Box sx={{ 
+        backgroundColor: 'white', 
+        p: 1, 
+        border: '1px solid #ccc',
+        borderRadius: '4px'
+      }}>
+        <Typography variant="body2">{`Date: ${label}`}</Typography>
+        {payload.map((entry) => (
+          <Typography 
+            key={entry.name}
+            variant="body2"
+            style={{ color: entry.color }}
+          >
+            {`${entry.name}: ${formatValue(entry.value)}`}
+          </Typography>
+        ))}
+      </Box>
+    );
+  }
+  return null;
+};
+
+const LineChart = ({ 
+  title, 
+  data, 
+  xAxisKey = 'date', 
+  yAxisKeys = [], 
+  yAxisLabels = [], 
+  colors = {}, 
+  isTimeFormat = false 
+}) => {
+  // Convert time strings to seconds for plotting only if isTimeFormat is true
+  const processedData = isTimeFormat ? data.map(item => {
+    const newItem = { ...item };
+    yAxisKeys.forEach(key => {
+      if (typeof item[key] === 'string' && item[key].includes(':')) {
+        const [minutes, seconds] = item[key].split(':').map(Number);
+        newItem[key] = minutes * 60 + seconds;
+      }
+    });
+    return newItem;
+  }) : data;
+
   return (
     <Box sx={{ 
       width: '100%', 
@@ -41,7 +106,7 @@ const LineChart = ({ title, data, severityChart, categoryChart }) => {
       <Box sx={{ width: '100%', height: 'calc(100% - 40px)' }}>
         <ResponsiveContainer width="100%" height="100%">
           <RechartsLineChart
-            data={data}
+            data={processedData}
             margin={{
               top: 30,
               right: 30,
@@ -51,21 +116,21 @@ const LineChart = ({ title, data, severityChart, categoryChart }) => {
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#E5E5E5" />
             <XAxis
-              dataKey="date"
+              dataKey={xAxisKey}
               tick={{ fontSize: 12, fill: '#2F2F2F' }}
               height={40}
             />
             <YAxis
               tick={{ fontSize: 12, fill: '#2F2F2F' }}
               domain={[0, (dataMax) => dataMax * 1.2]}
-            />
-            <Tooltip
-              contentStyle={{
-                backgroundColor: 'white',
-                border: '1px solid #ccc',
-                borderRadius: '4px'
+              tickFormatter={(value) => {
+                if (!isTimeFormat) return value.toLocaleString();
+                const minutes = Math.floor(value / 60);
+                const seconds = value % 60;
+                return `${minutes}:${seconds.toString().padStart(2, '0')}`;
               }}
             />
+            <Tooltip content={<CustomTooltip isTimeFormat={isTimeFormat} />} />
             <Legend
               height={36}
               iconType="rect"
@@ -77,96 +142,19 @@ const LineChart = ({ title, data, severityChart, categoryChart }) => {
                 marginTop: '-10px'
               }}
             />
-            {categoryChart ? (
-              <>
-                <Line
-                  type="monotone"
-                  dataKey="arrhythmia"
-                  stroke="#1aafe6"
-                  strokeWidth={2}
-                  dot={{ fill: '#1aafe6', r: 4 }}
-                  activeDot={{ r: 6 }}
-                  name="Arrhythmia"
-                  label={<CustomizedLabel stroke="#1aafe6" />}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="system"
-                  stroke="#e5801c"
-                  strokeWidth={2}
-                  dot={{ fill: '#e5801c', r: 4 }}
-                  activeDot={{ r: 6 }}
-                  name="System"
-                  label={<CustomizedLabel stroke="#e5801c" />}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="other"
-                  stroke="#808080"
-                  strokeWidth={2}
-                  dot={{ fill: '#808080', r: 4 }}
-                  activeDot={{ r: 6 }}
-                  name="Other"
-                  label={<CustomizedLabel stroke="#808080" />}
-                />
-              </>
-            ) : severityChart ? (
-              <>
-                <Line
-                  type="monotone"
-                  dataKey="high"
-                  stroke="#ff6b6b"
-                  strokeWidth={2}
-                  dot={{ fill: '#ff6b6b', r: 4 }}
-                  activeDot={{ r: 6 }}
-                  name="High"
-                  label={<CustomizedLabel stroke="#ff6b6b" />}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="medium"
-                  stroke="#e5801c"
-                  strokeWidth={2}
-                  dot={{ fill: '#e5801c', r: 4 }}
-                  activeDot={{ r: 6 }}
-                  name="Medium"
-                  label={<CustomizedLabel stroke="#e5801c" />}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="low"
-                  stroke="#1aafe6"
-                  strokeWidth={2}
-                  dot={{ fill: '#1aafe6', r: 4 }}
-                  activeDot={{ r: 6 }}
-                  name="Low"
-                  label={<CustomizedLabel stroke="#1aafe6" />}
-                />
-              </>
-            ) : (
-              <>
-                <Line
-                  type="monotone"
-                  dataKey="alarms"
-                  stroke="#1aafe6"
-                  strokeWidth={2}
-                  dot={{ fill: '#1aafe6', r: 4 }}
-                  activeDot={{ r: 6 }}
-                  name="Alarms"
-                  label={<CustomizedLabel stroke="#1aafe6" />}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="alerts"
-                  stroke="#808080"
-                  strokeWidth={2}
-                  dot={{ fill: '#808080', r: 4 }}
-                  activeDot={{ r: 6 }}
-                  name="Alerts"
-                  label={<CustomizedLabel stroke="#808080" />}
-                />
-              </>
-            )}
+            {yAxisKeys.map((key, index) => (
+              <Line
+                key={key}
+                type="monotone"
+                dataKey={key}
+                name={yAxisLabels[index]}
+                stroke={colors[key]}
+                strokeWidth={2}
+                dot={{ fill: colors[key], r: 4 }}
+                activeDot={{ r: 6 }}
+                label={<CustomizedLabel stroke={colors[key]} isTimeFormat={isTimeFormat} />}
+              />
+            ))}
           </RechartsLineChart>
         </ResponsiveContainer>
       </Box>

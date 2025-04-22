@@ -20,7 +20,7 @@
       "id": "avg-alarm-duration",
       "title": "Average Alarm Duration",
       "value": 97,
-      "label": "Avg Alarm Duration (sec)",
+      "label": "Avg Alarm Start to Finish (sec)",
       "description": "Average duration of alarms in seconds",
       "updateInterval": "5min"
     },
@@ -145,6 +145,30 @@
       "updateInterval": "5min"
     }
   },
+  "pieCharts": {
+    "alarmsByPriority": {
+      "id": "alarms-by-priority",
+      "title": "Alarms by Priority",
+      "description": "Distribution of alarms by priority level",
+      "data": [
+        { "name": "Low", "value": 1987 },
+        { "name": "Medium", "value": 3245 },
+        { "name": "High", "value": 2876 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertsByPriority": {
+      "id": "alerts-by-priority",
+      "title": "Alerts by Priority",
+      "description": "Distribution of alerts by priority level",
+      "data": [
+        { "name": "Low", "value": 1543 },
+        { "name": "Medium", "value": 2456 },
+        { "name": "High", "value": 2145 }
+      ],
+      "updateInterval": "5min"
+    }
+  },
   "stackedBarCharts": {
     "alarmsAndAlerts": {
       "id": "stacked-alarms-and-alerts",
@@ -206,7 +230,7 @@
     },
     "bySeverity": {
       "id": "stacked-alarms-and-alerts-by-severity",
-      "title": "Total Alarms & Alerts by Severity",
+      "title": "Total Alarms & Alerts by Priority",
       "description": "Shows total alarms with alerts as a subset by severity level",
       "groupBy": "Severity",
       "data": [
@@ -230,6 +254,64 @@
           "totalValue": 199,
           "subsetLabel": "Alerts",
           "subsetValue": 112
+        }
+      ],
+      "updateInterval": "5min"
+    },
+    "byAlarmLabels": {
+      "id": "stacked-alarms-and-alerts-by-label",
+      "title": "Alarms and Alerts by Label",
+      "description": "Shows total alarms with alerts as a subset by alarm label",
+      "groupBy": "Label",
+      "data": [
+        {
+          "groupByLabel": "Asystole",
+          "totalLabel": "Alarms",
+          "totalValue": 450,
+          "subsetLabel": "Alerts",
+          "subsetValue": 320
+        },
+        {
+          "groupByLabel": "AFIB",
+          "totalLabel": "Alarms",
+          "totalValue": 380,
+          "subsetLabel": "Alerts",
+          "subsetValue": 290
+        },
+        {
+          "groupByLabel": "HR High",
+          "totalLabel": "Alarms",
+          "totalValue": 520,
+          "subsetLabel": "Alerts",
+          "subsetValue": 410
+        },
+        {
+          "groupByLabel": "HR Low",
+          "totalLabel": "Alarms",
+          "totalValue": 290,
+          "subsetLabel": "Alerts",
+          "subsetValue": 180
+        },
+        {
+          "groupByLabel": "Pause",
+          "totalLabel": "Alarms",
+          "totalValue": 340,
+          "subsetLabel": "Alerts",
+          "subsetValue": 260
+        },
+        {
+          "groupByLabel": "VFIB/VTAC",
+          "totalLabel": "Alarms",
+          "totalValue": 420,
+          "subsetLabel": "Alerts",
+          "subsetValue": 350
+        },
+        {
+          "groupByLabel": "SPO2",
+          "totalLabel": "Alarms",
+          "totalValue": 580,
+          "subsetLabel": "Alerts",
+          "subsetValue": 460
         }
       ],
       "updateInterval": "5min"
@@ -280,7 +362,7 @@
     },
     "bySeverity": {
       "id": "alarms-and-alerts-by-severity",
-      "title": "Total Alarms & Alerts by Severity",
+      "title": "Total Alarms & Alerts by Priority",
       "data": [
         {
           "severity": "Low",
@@ -302,7 +384,7 @@
     },
     "bySeverityByDay": {
       "id": "alarms-and-alerts-by-severity",
-      "title": "Total Alarms & Alerts by Severity by Day",
+      "title": "Total Alarms & Alerts by Priority by Day",
       "data": [
         { "date": "2024-01-01", "low": 45, "medium": 75, "high": 120 },
         { "date": "2024-01-02", "low": 42, "medium": 35, "high": 115 },
@@ -509,6 +591,46 @@
         }
       ],
       "updateInterval": "5min"
+    },
+    "byAlarmLabels": {
+      "title": "Alarms and Alerts by Label",
+      "data": [
+        {
+          "label": "Asystole",
+          "alarms": 450,
+          "alerts": 320
+        },
+        {
+          "label": "AFIB",
+          "alarms": 380,
+          "alerts": 290
+        },
+        {
+          "label": "HR High",
+          "alarms": 520,
+          "alerts": 410
+        },
+        {
+          "label": "HR Low",
+          "alarms": 290,
+          "alerts": 180
+        },
+        {
+          "label": "Pause",
+          "alarms": 340,
+          "alerts": 260
+        },
+        {
+          "label": "VFIB/VTAC",
+          "alarms": 420,
+          "alerts": 350
+        },
+        {
+          "label": "SPO2",
+          "alarms": 580,
+          "alerts": 460
+        }
+      ]
     }
   },
   "lineCharts": {
@@ -518,44 +640,93 @@
       "data": [
         {
           "date": "2024-01-01",
-          "alarms": 245,
-          "alerts": 180
+          "alarms": 3500,
+          "alerts": 2675
         },
         {
           "date": "2024-01-02",
-          "alarms": 268,
-          "alerts": 195
+          "alarms": 3200,
+          "alerts": 2450
         },
         {
           "date": "2024-01-03",
-          "alarms": 230,
-          "alerts": 165
+          "alarms": 3800,
+          "alerts": 2900
         },
         {
           "date": "2024-01-04",
-          "alarms": 275,
-          "alerts": 205
+          "alarms": 3400,
+          "alerts": 2600
         },
         {
           "date": "2024-01-05",
-          "alarms": 258,
-          "alerts": 188
+          "alarms": 3600,
+          "alerts": 2750
         },
         {
           "date": "2024-01-06",
-          "alarms": 240,
-          "alerts": 172
+          "alarms": 3300,
+          "alerts": 2525
         },
         {
           "date": "2024-01-07",
-          "alarms": 262,
-          "alerts": 198
+          "alarms": 3700,
+          "alerts": 2825
+        }
+      ]
+    },
+    "alarmDurationByPriorityTrend": {
+      "id": "alarm-duration-by-priority-trend",
+      "title": "Alarm Duration by Priority Daily Trend",
+      "description": "Average duration of alarms (MM:SS) by priority level over time",
+      "data": [
+        {
+          "date": "2024-01-01",
+          "low": "00:35",
+          "medium": "01:15",
+          "high": "01:45"
+        },
+        {
+          "date": "2024-01-02",
+          "low": "00:32",
+          "medium": "01:22",
+          "high": "01:55"
+        },
+        {
+          "date": "2024-01-03",
+          "low": "00:38",
+          "medium": "01:18",
+          "high": "01:50"
+        },
+        {
+          "date": "2024-01-04",
+          "low": "00:34",
+          "medium": "01:25",
+          "high": "01:48"
+        },
+        {
+          "date": "2024-01-05",
+          "low": "00:40",
+          "medium": "01:20",
+          "high": "01:52"
+        },
+        {
+          "date": "2024-01-06",
+          "low": "00:36",
+          "medium": "01:12",
+          "high": "01:46"
+        },
+        {
+          "date": "2024-01-07",
+          "low": "00:33",
+          "medium": "01:17",
+          "high": "01:54"
         }
       ],
       "updateInterval": "5min"
     },
     "alarmsBySeverityDailyTrend": {
-      "title": "Number of Alarms by Severity Daily Trend",
+      "title": "Number of Alarms by Priority Daily Trend",
       "data": [
         { "date": "2024-01-01", "low": 45, "medium": 75, "high": 120 },
         { "date": "2024-01-02", "low": 42, "medium": 35, "high": 115 },
@@ -566,7 +737,6 @@
         { "date": "2024-01-07", "low": 43, "medium": 77, "high": 124 }
       ]
     }
-    
   },
   "tableCharts": {
     "alertDispatchDetail": {
@@ -1781,6 +1951,98 @@
         }
       ],
       "updateInterval": "5min"
+    }
+  },
+  "groupedStackedCharts": {
+    "severityByDay": {
+      "title": "Total Alarms & Alerts by Priority by Day",
+      "description": "Alerts are a subset of alarms and are represented as the darker bars in the chart. The lighter bars represent the total number of alarms.",
+      "data": [
+        {
+          "date": "2024-01-01",
+          "lowAlerts": 45,
+          "lowAlarmsOnly": 65,
+          "lowTotal": 110,
+          "mediumAlerts": 35,
+          "mediumAlarmsOnly": 55,
+          "mediumTotal": 90,
+          "highAlerts": 15,
+          "highAlarmsOnly": 25,
+          "highTotal": 40
+        },
+        {
+          "date": "2024-01-02",
+          "lowAlerts": 50,
+          "lowAlarmsOnly": 70,
+          "lowTotal": 120,
+          "mediumAlerts": 40,
+          "mediumAlarmsOnly": 50,
+          "mediumTotal": 90,
+          "highAlerts": 20,
+          "highAlarmsOnly": 30,
+          "highTotal": 50
+        },
+        {
+          "date": "2024-01-03",
+          "lowAlerts": 55,
+          "lowAlarmsOnly": 75,
+          "lowTotal": 130,
+          "mediumAlerts": 45,
+          "mediumAlarmsOnly": 65,
+          "mediumTotal": 110,
+          "highAlerts": 25,
+          "highAlarmsOnly": 35,
+          "highTotal": 60
+        },
+        {
+          "date": "2024-01-04",
+          "lowAlerts": 40,
+          "lowAlarmsOnly": 60,
+          "lowTotal": 100,
+          "mediumAlerts": 30,
+          "mediumAlarmsOnly": 50,
+          "mediumTotal": 80,
+          "highAlerts": 10,
+          "highAlarmsOnly": 20,
+          "highTotal": 30
+        },
+        {
+          "date": "2024-01-05",
+          "lowAlerts": 60,
+          "lowAlarmsOnly": 80,
+          "lowTotal": 140,
+          "mediumAlerts": 50,
+          "mediumAlarmsOnly": 70,
+          "mediumTotal": 120,
+          "highAlerts": 30,
+          "highAlarmsOnly": 40,
+          "highTotal": 70
+        },
+        {
+          "date": "2024-01-06",
+          "lowAlerts": 45,
+          "lowAlarmsOnly": 65,
+          "lowTotal": 110,
+          "mediumAlerts": 35,
+          "mediumAlarmsOnly": 55,
+          "mediumTotal": 90,
+          "highAlerts": 15,
+          "highAlarmsOnly": 25,
+          "highTotal": 40
+        },
+        {
+          "date": "2024-01-07",
+          "lowAlerts": 50,
+          "lowAlarmsOnly": 70,
+          "lowTotal": 120,
+          "mediumAlerts": 40,
+          "mediumAlarmsOnly": 60,
+          "mediumTotal": 100,
+          "highAlerts": 20,
+          "highAlarmsOnly": 30,
+          "highTotal": 50
+        }
+      ]
     }
   }
 } 
