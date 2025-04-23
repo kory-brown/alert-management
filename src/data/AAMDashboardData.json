@@ -36,7 +36,7 @@
       "id": "avg-time-manually-dispatched-alerts",
       "title": "Avg Duration of Manually Dispatched Alerts",
       "value": "01:32",
-      "label": "Average Duration (MM:SS)",
+      "label": "Queue to Dispatch (MM:SS)",
       "description": "Average time for manually dispatched alerts.",
       "updateInterval": "5min"
     },
@@ -60,7 +60,7 @@
       "id": "avg-time-auto-dispatched-alerts",
       "title": "Avg Duration of Auto Dispatched Alerts",
       "value": "00:56",
-      "label": "Average Duration (MM:SS)",
+      "label": "Queue to Dispatch (MM:SS)",
       "description": "Average time for auto dispatched alerts.",
       "updateInterval": "5min"
     },
@@ -393,7 +393,7 @@
   "tableCharts": {
     "alarmLabelStats": {
       "id": "alarm-label-stats",
-      "title": "Alarm Label Detail",
+      "title": "Alarm Label Stats",
       "description": "Summary statistics for each alarm label",
       "data": [
         { "alarmLabel": "AFIB", "totalAlarms": 425, "totalAlerts": 298, "avgDuration": "01:35" },
@@ -403,6 +403,97 @@
         { "alarmLabel": "PAUSE", "totalAlarms": 298, "totalAlerts": 187, "avgDuration": "01:15" },
         { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "totalAlerts": 356, "avgDuration": "01:55" },
         { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "totalAlerts": 267, "avgDuration": "01:30" }
+      ]
+    },
+    "alarmLabelDetail": {
+      "id": "alarm-label-detail",
+      "title": "Alarm Label Detail",
+      "description": "Detailed statistics for each alarm label including delayed and held for reoccurrence",
+      "data": [
+        { 
+          "alarmLabel": "AFIB", 
+          "totalAlarms": 425, 
+          "totalAlerts": 298,
+          "manuallyEscalated": 180,
+          "autoEscalated": 145,
+          "selfResolved": 165,
+          "delayed": 175, 
+          "heldForReoccurrence": 35,
+          "timeToDispatch": "00:45",
+          "avgDurationInQueue": "01:35"
+        },
+        { 
+          "alarmLabel": "ASYSTOLE", 
+          "totalAlarms": 461, 
+          "totalAlerts": 314,
+          "manuallyEscalated": 195,
+          "autoEscalated": 186,
+          "selfResolved": 142,
+          "delayed": 188, 
+          "heldForReoccurrence": 42,
+          "timeToDispatch": "00:35",
+          "avgDurationInQueue": "02:15"
+        },
+        { 
+          "alarmLabel": "HR HIGH", 
+          "totalAlarms": 387, 
+          "totalAlerts": 245,
+          "manuallyEscalated": 155,
+          "autoEscalated": 132,
+          "selfResolved": 148,
+          "delayed": 156, 
+          "heldForReoccurrence": 31,
+          "timeToDispatch": "00:55",
+          "avgDurationInQueue": "01:25"
+        },
+        { 
+          "alarmLabel": "HR LOW", 
+          "totalAlarms": 342, 
+          "totalAlerts": 228,
+          "manuallyEscalated": 145,
+          "autoEscalated": 118,
+          "selfResolved": 157,
+          "delayed": 143, 
+          "heldForReoccurrence": 28,
+          "timeToDispatch": "00:50",
+          "avgDurationInQueue": "01:15"
+        },
+        { 
+          "alarmLabel": "PAUSE", 
+          "totalAlarms": 298, 
+          "totalAlerts": 187,
+          "manuallyEscalated": 120,
+          "autoEscalated": 98,
+          "selfResolved": 145,
+          "delayed": 124, 
+          "heldForReoccurrence": 25,
+          "timeToDispatch": "00:40",
+          "avgDurationInQueue": "01:05"
+        },
+        { 
+          "alarmLabel": "VFIB/VTACH", 
+          "totalAlarms": 475, 
+          "totalAlerts": 356,
+          "manuallyEscalated": 210,
+          "autoEscalated": 198,
+          "selfResolved": 163,
+          "delayed": 198, 
+          "heldForReoccurrence": 45,
+          "timeToDispatch": "00:30",
+          "avgDurationInQueue": "02:25"
+        },
+        { 
+          "alarmLabel": "SPO2 LOW", 
+          "totalAlarms": 412, 
+          "totalAlerts": 267,
+          "manuallyEscalated": 168,
+          "autoEscalated": 156,
+          "selfResolved": 144,
+          "delayed": 167, 
+          "heldForReoccurrence": 33,
+          "timeToDispatch": "00:45",
+          "avgDurationInQueue": "01:45"
+        }
       ],
       "updateInterval": "5min"
     },

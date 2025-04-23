@@ -301,21 +301,74 @@ function AAMDashboard() {
           {/* Alert Dispatch Workflows Section */}
           <SectionLabel label="Alert Dispatch Workflows" />
 
-          {/* End-User Response Subsection */}
-          <SubsectionLabel label="Alert Responses" />
-
           {/* Alert Responses Row */}
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={4}>
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={3}>
               <Box sx={{ height: 200 }}>
                 <BigNumberChart 
-                  title="Total Alert Responses"
+                  title="Total Number of Alerts Dispatched"
                   value="578"
-                  label="Total Responses"
+                  label="Total Alerts Dispatched"
                 />
               </Box>
             </Grid>
+
+            <Grid item xs={12} md={3}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.manuallyDispatchedAlerts.title}
+                  value={chartData.bigNumbers.manuallyDispatchedAlerts.value}
+                  label={chartData.bigNumbers.manuallyDispatchedAlerts.label}
+                />
+              </Box>
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart 
+                  title={chartData.bigNumbers.autoDispatchedAlerts.title}
+                  value={chartData.bigNumbers.autoDispatchedAlerts.value}
+                  label={chartData.bigNumbers.autoDispatchedAlerts.label}
+                />
+              </Box>
+            </Grid>
+
+            {/* NEED TO GIVE THIS ITS OWN DATA SET with TIME FORMAT*/ }
+            <Grid item xs={12} md={3}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart 
+                  title={chartData.bigNumbers.avgAlarmDuration.title}
+                  value={chartData.bigNumbers.avgAlarmDuration.value}
+                  label={chartData.bigNumbers.avgAlarmDuration.label}
+                />
+              </Box>
+            </Grid>
+            
           </Grid>
+
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+          <Grid item xs={12} md={12}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alarmLabelDetail.title}
+                  data={chartData.tableCharts.alarmLabelDetail.data}
+                />
+              </Box>
+            </Grid>
+            </Grid>
+
+            <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <PieChart
+                title="Alert Dispatch Delays"
+                data={[
+                  { name: 'Manually Escalated', value: 40 },
+                  { name: 'Auto Escalated', value: 35 },
+                  { name: 'Not Sustained', value: 25 }
+                ]}
+              />
+            </Grid>
+            </Grid>
 
           {/* End-User Response Subsection */}
           <SubsectionLabel label="Manually Dispatched Alerts" />
@@ -331,6 +384,7 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
+
             <Grid item xs={12} md={4}>
             <Box sx={{ height: 200 }}>
                 <BigNumberChart
@@ -340,6 +394,8 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
+
+
             <Grid item xs={12} md={4}>
             <Box sx={{ height: 200 }}>
                 <BigNumberChart
