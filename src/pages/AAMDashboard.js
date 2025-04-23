@@ -188,7 +188,15 @@ function AAMDashboard() {
 
           {/* Alarm and Alerts by LabelsBar Chart */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alarmLabelStats.title}
+                  data={chartData.tableCharts.alarmLabelStats.data}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={8}>
               <Box sx={{ height: 400 }}>
                 <StackedBarChart 
                   title={chartData.stackedBarCharts.byAlarmLabels.title}
@@ -248,12 +256,22 @@ function AAMDashboard() {
                   title={chartData.groupedStackedCharts.severityByDay.title}
                   description={chartData.groupedStackedCharts.severityByDay.description}
                   data={chartData.groupedStackedCharts.severityByDay.data}
+                  xAxisKey="date"
                   colors={{
-                    low: ['#1aafe6', '#52c7f5'],
-                    medium: ['#faad14', '#ffd591'],
-                    high: ['#ff6b6b', '#ffa8a8']
+                    low: ['#52c7f5', '#1aafe6'],      // Lighter blue for alarms, darker blue for alerts
+                    medium: ['#ffd591', '#faad14'],    // Lighter orange for alarms, darker orange for alerts
+                    high: ['#ffa8a8', '#ff6b6b']       // Lighter red for alarms, darker red for alerts
                   }}
-                  flattenLegend={true}
+                  keys={{
+                    low: ['lowAlarms', 'lowAlerts'],
+                    medium: ['mediumAlarms', 'mediumAlerts'],
+                    high: ['highAlarms', 'highAlerts']
+                  }}
+                  labels={{
+                    low: 'Low',
+                    medium: 'Medium',
+                    high: 'High'
+                  }}
                 />
               </Box>
             </Grid>

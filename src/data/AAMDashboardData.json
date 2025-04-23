@@ -204,9 +204,49 @@
       "description": "Shows total alarms with alerts as a subset by alarm labels",
       "groupBy": "Label",
       "data": [
-        { "groupByLabel": "Asystole", "totalLabel": "Alarms", "totalValue": 461, "subsetLabel": "Alerts", "subsetValue": 314 },
-        { "groupByLabel": "Vtach", "totalLabel": "Alarms", "totalValue": 320, "subsetLabel": "Alerts", "subsetValue": 201 },
-        { "groupByLabel": "Vfib", "totalLabel": "Alarms", "totalValue": 219, "subsetLabel": "Alerts", "subsetValue": 185 }
+        { "groupByLabel": "AFIB", "totalLabel": "Alarms", "totalValue": 425, "subsetLabel": "Alerts", "subsetValue": 298 },
+        { "groupByLabel": "ASYSTOLE", "totalLabel": "Alarms", "totalValue": 461, "subsetLabel": "Alerts", "subsetValue": 314 },
+        { "groupByLabel": "HR HIGH", "totalLabel": "Alarms", "totalValue": 387, "subsetLabel": "Alerts", "subsetValue": 245 },
+        { "groupByLabel": "HR LOW", "totalLabel": "Alarms", "totalValue": 342, "subsetLabel": "Alerts", "subsetValue": 228 },
+        { "groupByLabel": "PAUSE", "totalLabel": "Alarms", "totalValue": 298, "subsetLabel": "Alerts", "subsetValue": 187 },
+        { "groupByLabel": "VFIB/VTACH", "totalLabel": "Alarms", "totalValue": 475, "subsetLabel": "Alerts", "subsetValue": 356 },
+        { "groupByLabel": "SPO2 LOW", "totalLabel": "Alarms", "totalValue": 412, "subsetLabel": "Alerts", "subsetValue": 267 }
+      ],
+      "updateInterval": "5min"
+    },
+    "severityByDay": {
+      "id": "stacked-alarms-and-alerts-by-severity-day",
+      "title": "Total Alarms & Alerts by Priority by Day",
+      "description": "Shows daily totals of alarms with alerts as a subset by priority level",
+      "groupBy": "Date",
+      "data": [
+        { "groupByLabel": "Low Priority - Jan 1", "totalLabel": "Alarms", "totalValue": 45, "subsetLabel": "Alerts", "subsetValue": 35 },
+        { "groupByLabel": "Medium Priority - Jan 1", "totalLabel": "Alarms", "totalValue": 75, "subsetLabel": "Alerts", "subsetValue": 60 },
+        { "groupByLabel": "High Priority - Jan 1", "totalLabel": "Alarms", "totalValue": 120, "subsetLabel": "Alerts", "subsetValue": 95 },
+        
+        { "groupByLabel": "Low Priority - Jan 2", "totalLabel": "Alarms", "totalValue": 42, "subsetLabel": "Alerts", "subsetValue": 32 },
+        { "groupByLabel": "Medium Priority - Jan 2", "totalLabel": "Alarms", "totalValue": 35, "subsetLabel": "Alerts", "subsetValue": 28 },
+        { "groupByLabel": "High Priority - Jan 2", "totalLabel": "Alarms", "totalValue": 115, "subsetLabel": "Alerts", "subsetValue": 92 },
+        
+        { "groupByLabel": "Low Priority - Jan 3", "totalLabel": "Alarms", "totalValue": 48, "subsetLabel": "Alerts", "subsetValue": 38 },
+        { "groupByLabel": "Medium Priority - Jan 3", "totalLabel": "Alarms", "totalValue": 78, "subsetLabel": "Alerts", "subsetValue": 62 },
+        { "groupByLabel": "High Priority - Jan 3", "totalLabel": "Alarms", "totalValue": 125, "subsetLabel": "Alarms", "subsetValue": 100 },
+        
+        { "groupByLabel": "Low Priority - Jan 4", "totalLabel": "Alarms", "totalValue": 59, "subsetLabel": "Alerts", "subsetValue": 47 },
+        { "groupByLabel": "Medium Priority - Jan 4", "totalLabel": "Alarms", "totalValue": 45, "subsetLabel": "Alerts", "subsetValue": 36 },
+        { "groupByLabel": "High Priority - Jan 4", "totalLabel": "Alarms", "totalValue": 107, "subsetLabel": "Alerts", "subsetValue": 86 },
+        
+        { "groupByLabel": "Low Priority - Jan 5", "totalLabel": "Alarms", "totalValue": 44, "subsetLabel": "Alerts", "subsetValue": 35 },
+        { "groupByLabel": "Medium Priority - Jan 5", "totalLabel": "Alarms", "totalValue": 80, "subsetLabel": "Alerts", "subsetValue": 64 },
+        { "groupByLabel": "High Priority - Jan 5", "totalLabel": "Alarms", "totalValue": 122, "subsetLabel": "Alerts", "subsetValue": 98 },
+        
+        { "groupByLabel": "Low Priority - Jan 6", "totalLabel": "Alarms", "totalValue": 66, "subsetLabel": "Alerts", "subsetValue": 53 },
+        { "groupByLabel": "Medium Priority - Jan 6", "totalLabel": "Alarms", "totalValue": 72, "subsetLabel": "Alerts", "subsetValue": 58 },
+        { "groupByLabel": "High Priority - Jan 6", "totalLabel": "Alarms", "totalValue": 100, "subsetLabel": "Alerts", "subsetValue": 80 },
+        
+        { "groupByLabel": "Low Priority - Jan 7", "totalLabel": "Alarms", "totalValue": 43, "subsetLabel": "Alerts", "subsetValue": 34 },
+        { "groupByLabel": "Medium Priority - Jan 7", "totalLabel": "Alarms", "totalValue": 77, "subsetLabel": "Alerts", "subsetValue": 62 },
+        { "groupByLabel": "High Priority - Jan 7", "totalLabel": "Alarms", "totalValue": 124, "subsetLabel": "Alerts", "subsetValue": 99 }
       ],
       "updateInterval": "5min"
     }
@@ -351,6 +391,21 @@
     }
   },
   "tableCharts": {
+    "alarmLabelStats": {
+      "id": "alarm-label-stats",
+      "title": "Alarm Label Detail",
+      "description": "Summary statistics for each alarm label",
+      "data": [
+        { "alarmLabel": "AFIB", "totalAlarms": 425, "totalAlerts": 298, "avgDuration": "01:35" },
+        { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "totalAlerts": 314, "avgDuration": "01:45" },
+        { "alarmLabel": "HR HIGH", "totalAlarms": 387, "totalAlerts": 245, "avgDuration": "01:25" },
+        { "alarmLabel": "HR LOW", "totalAlarms": 342, "totalAlerts": 228, "avgDuration": "01:20" },
+        { "alarmLabel": "PAUSE", "totalAlarms": 298, "totalAlerts": 187, "avgDuration": "01:15" },
+        { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "totalAlerts": 356, "avgDuration": "01:55" },
+        { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "totalAlerts": 267, "avgDuration": "01:30" }
+      ],
+      "updateInterval": "5min"
+    },
     "alertDispatchDetail": {
       "id": "alert-dispatch-detail",
       "title": "Alert Dispatch Detail",

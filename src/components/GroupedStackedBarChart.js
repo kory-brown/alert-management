@@ -16,20 +16,25 @@ const GroupedStackedBarChart = ({
   title,
   description, 
   data,
-  groupBy = 'Category',
+  xAxisKey = 'date',
   colors,
-  flattenLegend = false
+  keys,
+  labels
 }) => {
   if (!colors || !colors.low || !colors.medium || !colors.high) {
     throw new Error('GroupedStackedBarChart requires colors prop with low, medium, and high color arrays');
   }
 
-  // Custom payload for the simplified legend
-  const simplifiedLegendPayload = [
-    { value: 'Low', color: colors.low[0], type: 'rect' },
-    { value: 'Medium', color: colors.medium[0], type: 'rect' },
-    { value: 'High', color: colors.high[0], type: 'rect' }
-  ];
+  // Process data to calculate the "only" values (total minus subset)
+  const processedData = data.map(item => ({
+    ...item,
+    lowAlarmsOnly: item.lowAlarms - item.lowAlerts,
+    mediumAlarmsOnly: item.mediumAlarms - item.mediumAlerts,
+    highAlarmsOnly: item.highAlarms - item.highAlerts,
+    lowTotal: item.lowAlarms,
+    mediumTotal: item.mediumAlarms,
+    highTotal: item.highAlarms
+  }));
 
   return (
     <Box sx={{ 
@@ -51,7 +56,7 @@ const GroupedStackedBarChart = ({
       <Box sx={{ width: '100%', height: 'calc(100% - 40px)' }}>
         <ResponsiveContainer>
           <RechartsBarChart
-            data={data}
+            data={processedData}
             margin={{
               top: 30,
               right: 30,
@@ -61,7 +66,7 @@ const GroupedStackedBarChart = ({
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis 
-              dataKey="date"
+              dataKey={xAxisKey}
               tick={{ fill: '#2F2F2F', fontSize: 12 }}
             />
             <YAxis 
@@ -75,7 +80,9 @@ const GroupedStackedBarChart = ({
                 borderRadius: '4px'
               }}
               formatter={(value, name) => {
-                return [value.toLocaleString(), name];
+                const priority = name.toLowerCase().replace('alarmsonly', '').replace('alarms', '').replace('alerts', '');
+                const type = name.toLowerCase().includes('alerts') ? 'Alerts' : 'Alarms';
+                return [value, `${labels[priority]} ${type}`];
               }}
             />
             <Legend 
@@ -85,95 +92,88 @@ const GroupedStackedBarChart = ({
                 paddingTop: '-20px',
                 marginTop: '-10px'
               }}
-              payload={flattenLegend ? simplifiedLegendPayload : undefined}
+              formatter={(value) => {
+                const priority = value.toLowerCase().replace('alarmsonly', '').replace('alarms', '').replace('alerts', '');
+                const type = value.toLowerCase().includes('alerts') ? 'Alerts' : 'Alarms';
+                return `${labels[priority]} ${type}`;
+              }}
             />
-            {/* Low Severity Group */}
+            
+            {/* Low Priority */}
             <Bar 
               dataKey="lowAlerts"
-              name="Low - Alerts"
               stackId="low"
-              fill={colors.low[0]}
+              fill={colors.low[1]}
             >
               <LabelList
                 dataKey="lowAlerts"
                 position="center"
                 fill="#fff"
                 fontSize={12}
-                formatter={(value) => value.toLocaleString()}
               />
             </Bar>
             <Bar 
               dataKey="lowAlarmsOnly"
-              name="Low - Alarms"
               stackId="low"
-              fill={colors.low[1]}
+              fill={colors.low[0]}
             >
               <LabelList
                 dataKey="lowTotal"
                 position="top"
                 fill="#2F2F2F"
                 fontSize={12}
-                formatter={(value) => value.toLocaleString()}
               />
             </Bar>
 
-            {/* Medium Severity Group */}
+            {/* Medium Priority */}
             <Bar 
               dataKey="mediumAlerts"
-              name="Medium - Alerts"
               stackId="medium"
-              fill={colors.medium[0]}
+              fill={colors.medium[1]}
             >
               <LabelList
                 dataKey="mediumAlerts"
                 position="center"
                 fill="#fff"
                 fontSize={12}
-                formatter={(value) => value.toLocaleString()}
               />
             </Bar>
             <Bar 
               dataKey="mediumAlarmsOnly"
-              name="Medium - Alarms"
               stackId="medium"
-              fill={colors.medium[1]}
+              fill={colors.medium[0]}
             >
               <LabelList
                 dataKey="mediumTotal"
                 position="top"
                 fill="#2F2F2F"
                 fontSize={12}
-                formatter={(value) => value.toLocaleString()}
               />
             </Bar>
 
-            {/* High Severity Group */}
+            {/* High Priority */}
             <Bar 
               dataKey="highAlerts"
-              name="High - Alerts"
               stackId="high"
-              fill={colors.high[0]}
+              fill={colors.high[1]}
             >
               <LabelList
                 dataKey="highAlerts"
                 position="center"
                 fill="#fff"
                 fontSize={12}
-                formatter={(value) => value.toLocaleString()}
               />
             </Bar>
             <Bar 
               dataKey="highAlarmsOnly"
-              name="High - Alarms"
               stackId="high"
-              fill={colors.high[1]}
+              fill={colors.high[0]}
             >
               <LabelList
                 dataKey="highTotal"
                 position="top"
                 fill="#2F2F2F"
                 fontSize={12}
-                formatter={(value) => value.toLocaleString()}
               />
             </Bar>
           </RechartsBarChart>
