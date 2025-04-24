@@ -19,16 +19,16 @@
     "avgAlarmDuration": {
       "id": "avg-alarm-duration",
       "title": "Average Alarm Duration",
-      "value": 97,
-      "label": "Avg Alarm Start to Finish (sec)",
-      "description": "Average duration of alarms in seconds",
+      "value": "01:37",
+      "label": "Alarm Interval to Dispatch",
+      "description": "Average duration from alarm to dispatch in minutes and seconds",
       "updateInterval": "5min"
     },
     "manuallyDispatchedAlerts": {
       "id": "manually-dispatched-alerts",
       "title": "Total Number of Manually Dispatched Alerts",
       "value": 254,
-      "label": "Total Manual Dispatched Alerts",
+      "label": "Total Dispatched Alerts",
       "description": "Total number of alerts that were manually dispatched",
       "updateInterval": "5min"
     },
@@ -50,9 +50,9 @@
     },
     "autoDispatchedAlerts": {
       "id": "auto-dispatched-alerts",
-      "title": "Total Number of Manually Dispatched Alerts",
+      "title": "Total Number of Auto Dispatched Alerts",
       "value": 311,
-      "label": "Total Manual Dispatched Alerts",
+      "label": "Total Dispatched Alerts",
       "description": "Total number of alerts that were manually dispatched",
       "updateInterval": "5min"
     },
@@ -296,6 +296,21 @@
         { "date": "2024-01-07", "low": "00:43", "medium": "01:17", "high": "02:04" }
       ],
       "updateInterval": "5min"
+    },
+    "dispatchTypesDailyTrend": {
+      "id": "dispatch-types-daily-trend",
+      "title": "Alert Dispatch Types Daily Trend",
+      "description": "Shows the trend of manually escalated, auto escalated, and self resolved alerts over time",
+      "data": [
+        { "date": "2024-01-01", "manuallyEscalated": 45, "autoEscalated": 55, "selfResolved": 35 },
+        { "date": "2024-01-02", "manuallyEscalated": 32, "autoEscalated": 42, "selfResolved": 22 },
+        { "date": "2024-01-03", "manuallyEscalated": 38, "autoEscalated": 48, "selfResolved": 28 },
+        { "date": "2024-01-04", "manuallyEscalated": 47, "autoEscalated": 57, "selfResolved": 37 },
+        { "date": "2024-01-05", "manuallyEscalated": 35, "autoEscalated": 45, "selfResolved": 25 },
+        { "date": "2024-01-06", "manuallyEscalated": 53, "autoEscalated": 63, "selfResolved": 43 },
+        { "date": "2024-01-07", "manuallyEscalated": 34, "autoEscalated": 44, "selfResolved": 24 }
+      ],
+      "updateInterval": "5min"
     }
   },
   "barCharts": {
@@ -388,6 +403,53 @@
         { "date": "2024-01-07", "manuallyEscalated": 34, "autoEscalated": 44, "delayedNotSustained": 24, "delayedManual": 14, "delayedAuto": 19 }
       ],
       "updateInterval": "5min"
+    },
+    "alarmLabelDispatchTypes": {
+      "title": "Alert Dispatch Delays by Alarm Label",
+      "data": [
+        {
+          "alarmLabel": "AFIB",
+          "autoEscalated": 145,
+          "manuallyEscalated": 180,
+          "selfResolved": 165
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "autoEscalated": 186,
+          "manuallyEscalated": 195,
+          "selfResolved": 142
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "autoEscalated": 132,
+          "manuallyEscalated": 155,
+          "selfResolved": 148
+        },
+        {
+          "alarmLabel": "HR LOW",
+          "autoEscalated": 118,
+          "manuallyEscalated": 145,
+          "selfResolved": 157
+        },
+        {
+          "alarmLabel": "PAUSE",
+          "autoEscalated": 98,
+          "manuallyEscalated": 120,
+          "selfResolved": 145
+        },
+        {
+          "alarmLabel": "VFIB/VTACH",
+          "autoEscalated": 198,
+          "manuallyEscalated": 210,
+          "selfResolved": 163
+        },
+        {
+          "alarmLabel": "SPO2 LOW",
+          "autoEscalated": 156,
+          "manuallyEscalated": 168,
+          "selfResolved": 144
+        }
+      ]
     }
   },
   "tableCharts": {
@@ -522,6 +584,20 @@
         { "date": "2024-01-05", "alarmLabel": "Tachy", "priority": "Medium", "responseType": "Manual", "responseTime": "01:12", "responseAction": "Delayed" }
       ],
       "updateInterval": "5min"
+    },
+    "alarmLabelVolumeDetail": {
+      "id": "alarm-label-volume-detail",
+      "title": "Alert Dispatch Types by Alarm Label Detail",
+      "description": "Summary of alarm label volumes by dispatch type",
+      "data": [
+        { "alarmLabel": "AFIB", "manuallyEscalated": 180, "autoEscalated": 145, "selfResolved": 165 },
+        { "alarmLabel": "ASYSTOLE", "manuallyEscalated": 195, "autoEscalated": 186, "selfResolved": 142 },
+        { "alarmLabel": "HR HIGH", "manuallyEscalated": 155, "autoEscalated": 132, "selfResolved": 148 },
+        { "alarmLabel": "HR LOW", "manuallyEscalated": 145, "autoEscalated": 118, "selfResolved": 157 },
+        { "alarmLabel": "PAUSE", "manuallyEscalated": 120, "autoEscalated": 98, "selfResolved": 145 },
+        { "alarmLabel": "VFIB/VTACH", "manuallyEscalated": 210, "autoEscalated": 198, "selfResolved": 163 },
+        { "alarmLabel": "SPO2 LOW", "manuallyEscalated": 168, "autoEscalated": 156, "selfResolved": 144 }
+      ]
     }
   }
 } 

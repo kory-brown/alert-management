@@ -299,7 +299,7 @@ function AAMDashboard() {
           </Grid>
 
           {/* Alert Dispatch Workflows Section */}
-          <SectionLabel label="Alert Dispatch Workflows" />
+          <SectionLabel label="Alert Dispatch Metrics" />
 
           {/* Alert Responses Row */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
@@ -368,281 +368,53 @@ function AAMDashboard() {
                 ]}
               />
             </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 400 }}>
+                <GroupedBarChart 
+                  title={chartData.barCharts.alarmLabelDispatchTypes.title}
+                  data={chartData.barCharts.alarmLabelDispatchTypes.data}
+                  xAxisKey="alarmLabel"
+                  dataKeys={['autoEscalated', 'manuallyEscalated', 'selfResolved']}
+                  labels={['Auto Escalated', 'Manually Escalated', 'Self Resolved']}
+                  colors={['#1aafe6', '#667275', '#ff9c6e']}
+                />
+              </Box>
             </Grid>
+            </Grid>
+
+            {/* Dispatch Types Daily Trend */}
+            <Grid container spacing={3} sx={{ mt: 2.5 }}>
+              <Grid item xs={12} md={4}>
+                <Box sx={{ height: 400 }}>
+                  <TableChart
+                    title={chartData.tableCharts.alarmLabelVolumeDetail.title}
+                    data={chartData.tableCharts.alarmLabelVolumeDetail.data}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={8}>
+                <Box sx={{ height: 400 }}>
+                  <LineChart 
+                    title={chartData.lineCharts.dispatchTypesDailyTrend.title}
+                    data={chartData.lineCharts.dispatchTypesDailyTrend.data}
+                    xAxisKey="date"
+                    yAxisKeys={["manuallyEscalated", "autoEscalated", "selfResolved"]}
+                    yAxisLabels={["Manually Escalated", "Auto Escalated", "Self Resolved"]}
+                    colors={{
+                      'manuallyEscalated': '#667275',
+                      'autoEscalated': '#1aafe6',
+                      'selfResolved': '#ff9c6e'
+                    }}
+                    isTimeFormat={false}
+                  />
+                </Box>
+              </Grid>
+            </Grid>
+
+
 
           {/* End-User Response Subsection */}
-          <SubsectionLabel label="Manually Dispatched Alerts" />
-
-          {/* Manually Dispatched Alerts Big Number Row */}
-          <Grid container spacing={3} sx={{ mt: 2.5 }}>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.manuallyDispatchedAlerts.title}
-                  value={chartData.bigNumbers.manuallyDispatchedAlerts.value}
-                  label={chartData.bigNumbers.manuallyDispatchedAlerts.label}
-                />
-              </Box>
-            </Grid>
-
-            <Grid item xs={12} md={4}>
-            <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.avgTimeManuallyDispatchedAlerts.title}
-                  value={chartData.bigNumbers.avgTimeManuallyDispatchedAlerts.value}
-                  label={chartData.bigNumbers.avgTimeManuallyDispatchedAlerts.label}
-                />
-              </Box>
-            </Grid>
-
-
-            <Grid item xs={12} md={4}>
-            <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.percentManuallyDispatchedAlerts.title}
-                  value={chartData.bigNumbers.percentManuallyDispatchedAlerts.value}
-                  label={chartData.bigNumbers.percentManuallyDispatchedAlerts.label}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} sx={{ mt: 2.5 }}>
-              <Box sx={{ height: 400 }}>
-                <BarChart
-                  title={chartData.barCharts.manuallyDispatchedAlerts.title}
-                  data={chartData.barCharts.manuallyDispatchedAlerts.data}
-                  xAxisKey="date"
-                  yAxisKeys={["manuallyDispatched"]}
-                  yAxisLabels={["Manually Dispatched Alerts"]}
-                  colors={["#667275"]}
-                  showValueLabels={true}
-                />
-              </Box>
-            </Grid>
-
-          {/* Auto Dispatched Response Subsection */}
-          <SubsectionLabel label="Auto Dispatched Alerts" />
-
-          {/* Auto Dispatched Alerts Row */}
-          <Grid container spacing={3} sx={{ mt: 2.5}}>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart 
-                  title={chartData.bigNumbers.autoDispatchedAlerts.title}
-                  value={chartData.bigNumbers.autoDispatchedAlerts.value}
-                  label={chartData.bigNumbers.autoDispatchedAlerts.label}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-            <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.avgTimeAutoDispatchedAlerts.title}
-                  value={chartData.bigNumbers.avgTimeAutoDispatchedAlerts.value}
-                  label={chartData.bigNumbers.avgTimeAutoDispatchedAlerts.label}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-            <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.percentAutoDispatchedAlerts.title}
-                  value={chartData.bigNumbers.percentAutoDispatchedAlerts.value}
-                  label={chartData.bigNumbers.percentAutoDispatchedAlerts.label}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-
-          <Grid item xs={12} sx={{ mt: 2.5 }}>
-              <Box sx={{ height: 400 }}>
-                <BarChart 
-                  title={chartData.barCharts.autoDispatchedAlerts.title}
-                  data={chartData.barCharts.autoDispatchedAlerts.data}
-                  xAxisKey="date"
-                  yAxisKeys={["autoDispatched"]}
-                  yAxisLabels={["Auto Dispatched Alerts"]}
-                  colors={["#667275"]}
-                  showValueLabels={true}
-                />
-              </Box>
-            </Grid>
-
-          {/* Alarm  Section */}
-          <SectionLabel label="Alarm Actions" />
-
-          {/* Self Resolved Alarms Subsection */}
-          <SubsectionLabel label="Self Resolved Alarms" />
-
-          {/* Total Number of Alarms Self Resolved/Not Sustained Row */}
-          <Grid container spacing={3} sx={{ mt: 2.5 }}>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.selfResolvedAlarms.title}
-                  value={chartData.bigNumbers.selfResolvedAlarms.value}
-                  label={chartData.bigNumbers.selfResolvedAlarms.label}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.avgTimeSelfResolvedAlarms.title}
-                  value={chartData.bigNumbers.avgTimeSelfResolvedAlarms.value}
-                  label={chartData.bigNumbers.avgTimeSelfResolvedAlarms.label}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.percentageSelfResolvedAlarms.title}
-                  value={chartData.bigNumbers.percentageSelfResolvedAlarms.value}
-                  label={chartData.bigNumbers.percentageSelfResolvedAlarms.label}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} sx={{ mt: 2.5 }}>
-              <Box sx={{ height: 400 }}>
-                <BarChart
-                  title={chartData.barCharts.selfResolvedAlarms.title}
-                  data={chartData.barCharts.selfResolvedAlarms.data}
-                  xAxisKey="date"
-                  yAxisKeys={["selfResolved"]}
-                  yAxisLabels={["Self Resolved/Not Sustained Alarms"]}
-                  colors={["#667275"]}
-                  showValueLabels={true}
-                />
-              </Box>
-            </Grid>
-
-          {/* Delayed Alarms Subsection */}
-          <SubsectionLabel label="Delayed Alarms" />
-
-          {/* Total Number of Alarms Delayed Row */}
-          <Grid container spacing={3} sx={{ mt: 2.5 }}>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.delayedAlarms.title}
-                  value={chartData.bigNumbers.delayedAlarms.value}
-                  label={chartData.bigNumbers.delayedAlarms.label}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.avgTimeDelayedAlarms.title}
-                  value={chartData.bigNumbers.avgTimeDelayedAlarms.value}
-                  label={chartData.bigNumbers.avgTimeDelayedAlarms.label}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.percentageDelayedAlarms.title}
-                  value={chartData.bigNumbers.percentageDelayedAlarms.value}
-                  label={chartData.bigNumbers.percentageDelayedAlarms.label}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} sx={{ mt: 2.5 }}>
-              <Box sx={{ height: 400 }}>
-                <BarChart 
-                  title={chartData.barCharts.delayedAlarms.title}
-                  data={chartData.barCharts.delayedAlarms.data}
-                  xAxisKey="date"
-                  yAxisKeys={["delayed"]}
-                  yAxisLabels={["Delayed Alarms"]}
-                  colors={["#667275"]}
-                  showValueLabels={true}
-                />
-              </Box>
-            </Grid>
-
-
-          {/* Delayed Alarms Subsection */}
-          <SubsectionLabel label="Hold Reoccurence Alarms" />
-
-          {/* Total Number of Alarms with Hold Reoccurence Row */}
-          <Grid container spacing={3} sx={{ mt: 2.5 }}>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.holdReoccurenceAlarms.title}
-                  value={chartData.bigNumbers.holdReoccurenceAlarms.value}
-                  label={chartData.bigNumbers.holdReoccurenceAlarms.label}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.avgTimeHoldReoccurenceAlarms.title}
-                  value={chartData.bigNumbers.avgTimeHoldReoccurenceAlarms.value}
-                  label={chartData.bigNumbers.avgTimeHoldReoccurenceAlarms.label}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 200 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.percentageHoldReoccurenceAlarms.title}
-                  value={chartData.bigNumbers.percentageHoldReoccurenceAlarms.value}
-                  label={chartData.bigNumbers.percentageHoldReoccurenceAlarms.label}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} sx={{ mt: 2.5 }}>
-              <Box sx={{ height: 400 }}>
-                <BarChart
-                  title={chartData.barCharts.holdReoccurenceAlarms.title}
-                  data={chartData.barCharts.holdReoccurenceAlarms.data}
-                  xAxisKey="date"
-                  yAxisKeys={["holdReoccurence"]}
-                  yAxisLabels={["Hold Reoccurence Alarms"]}
-                  colors={["#667275"]}
-                  showValueLabels={true}
-                />
-              </Box>
-            </Grid>
-
-          {/* Alarm Queue Interval Subsection */}
-          <SubsectionLabel label="Alarm Queue Interval" />
-
-          {/* Alert Metrics */}
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={4}>
-              <BigNumberChart
-                title="Average Suspend Time"
-                value={30}
-                label="Avg Suspend Time (sec)"
-              />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <BigNumberChart
-                title="Average Delayed Time"
-                value={24}
-                label="Avg Delayed Time (sec)"
-              />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <BigNumberChart
-                title="Average Not Sustained Time"
-                value={13}
-                label="Avg Not Sustained Time (sec)"
-              />
-            </Grid>
-          </Grid>
-
-          {/* End-User Response Subsection */}
-          <SubsectionLabel label="Alert Response" />
+          <SectionLabel label="Alert Response Metrics" />
 
           {/* Pie Charts Row */}
           <Grid container spacing={3}>
@@ -680,19 +452,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Action Bar Chart */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
-              <Box sx={{ height: 400 }}>
-                <GroupedBarChart 
-                  title={chartData.barCharts.byActions.title}
-                  data={chartData.barCharts.byActions.data}
-                  dataKeys={['manuallyEscalated', 'autoEscalated', 'delayedNotSustained', 'delayedManual', 'delayedAuto']}
-                  labels={['Manually Escalated', 'Auto-Escalated', 'Delayed - Not Sustained', 'Delayed - Manual', 'Delayed - Auto']}
-                />
-              </Box>
-            </Grid>
-          </Grid>
+        
 
           {/* Alert Dispatch Detail Table Chart */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
@@ -717,7 +477,6 @@ function AAMDashboard() {
               </Box>
             </Grid>
           </Grid>
-
 
 
         </Box>
