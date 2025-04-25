@@ -16,11 +16,27 @@
       "description": "Total number of alerts requiring attention",
       "updateInterval": "5min"
     },
+    "totalAlertsRespondedTo": {
+      "id": "total-alerts-responded-to",
+      "title": "Total Number of Alerts Responded To",
+      "value": 301,
+      "label": "Total Alerts Responded",
+      "description": "Total number of alerts that received a response",
+      "updateInterval": "5min"
+    },
+    "totalAlertsBottom": {
+      "id": "total-alerts-bottom",
+      "title": "Total Number of Alerts",
+      "value": 378,
+      "label": "Total Alerts",
+      "description": "Total number of alerts",
+      "updateInterval": "5min"
+    },
     "avgAlarmDuration": {
       "id": "avg-alarm-duration",
       "title": "Average Alarm Duration",
       "value": "01:37",
-      "label": "Alarm Interval to Dispatch",
+      "label": "Alarm Interval to Dispatch (MM:SS)",
       "description": "Average duration from alarm to dispatch in minutes and seconds",
       "updateInterval": "5min"
     },
@@ -142,6 +158,14 @@
       "value": 21,
       "label": "Percentage Hold Reoccurence Alarms (%)",
       "description": "Percentage of alarms that were held reoccurence.",
+      "updateInterval": "5min"
+    },
+    "avgResponseTime": {
+      "id": "avg-response-time",
+      "title": "Average Response Time",
+      "value": "01:32",
+      "label": "Avg Response Time (MM:SS)",
+      "description": "Average time taken to respond to alerts",
       "updateInterval": "5min"
     }
   },
@@ -267,6 +291,36 @@
     }
   },
   "lineCharts": {
+    "responseTypesDailyTrend": {
+      "id": "response-types-daily-trend",
+      "title": "Alert Response Types Daily Trend",
+      "description": "Shows the daily trend of accepts, escalations, and no responses",
+      "data": [
+        { "date": "2024-01-01", "accepts": 165, "escalate": 98, "noResponse": 38 },
+        { "date": "2024-01-02", "accepts": 152, "escalate": 92, "noResponse": 38 },
+        { "date": "2024-01-03", "accepts": 178, "escalate": 105, "noResponse": 42 },
+        { "date": "2024-01-04", "accepts": 162, "escalate": 96, "noResponse": 40 },
+        { "date": "2024-01-05", "accepts": 170, "escalate": 102, "noResponse": 43 },
+        { "date": "2024-01-06", "accepts": 148, "escalate": 90, "noResponse": 38 },
+        { "date": "2024-01-07", "accepts": 172, "escalate": 104, "noResponse": 42 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertsRespondedTrend": {
+      "id": "alerts-responded-trend",
+      "title": "Alerts Responded To Daily Trend",
+      "description": "Shows the trend of total alerts and alerts responded to over time",
+      "data": [
+        { "date": "2024-01-01", "totalAlerts": 378, "alertsResponded": 301 },
+        { "date": "2024-01-02", "totalAlerts": 352, "alertsResponded": 282 },
+        { "date": "2024-01-03", "totalAlerts": 401, "alertsResponded": 325 },
+        { "date": "2024-01-04", "totalAlerts": 367, "alertsResponded": 298 },
+        { "date": "2024-01-05", "totalAlerts": 389, "alertsResponded": 315 },
+        { "date": "2024-01-06", "totalAlerts": 345, "alertsResponded": 276 },
+        { "date": "2024-01-07", "totalAlerts": 392, "alertsResponded": 318 }
+      ],
+      "updateInterval": "5min"
+    },
     "alarmsAndAlertsDailyTrend": {
       "id": "alarms-and-alerts-daily-trend",
       "title": "Total Alarms & Alerts Daily Trend",
@@ -314,6 +368,55 @@
     }
   },
   "barCharts": {
+    "responseTypesByLabel": {
+      "id": "response-types-by-label",
+      "title": "Alert Response Types by Alarm Label",
+      "description": "Distribution of response types (Accept, Escalate, No Response) for each alarm label",
+      "data": [
+        {
+          "alarmLabel": "AFIB",
+          "accept": 125,
+          "escalate": 70,
+          "noResponse": 35
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "accept": 145,
+          "escalate": 90,
+          "noResponse": 35
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "accept": 105,
+          "escalate": 55,
+          "noResponse": 30
+        },
+        {
+          "alarmLabel": "HR LOW",
+          "accept": 85,
+          "escalate": 55,
+          "noResponse": 30
+        },
+        {
+          "alarmLabel": "PAUSE",
+          "accept": 83,
+          "escalate": 44,
+          "noResponse": 23
+        },
+        {
+          "alarmLabel": "VFIB/VTACH",
+          "accept": 165,
+          "escalate": 110,
+          "noResponse": 35
+        },
+        {
+          "alarmLabel": "SPO2 LOW",
+          "accept": 105,
+          "escalate": 75,
+          "noResponse": 30
+        }
+      ]
+    },
     "manuallyDispatchedAlerts": {
       "id": "manually-dispatched-alerts-trend",
       "title": "Manually Dispatched Alerts Daily Trend",
@@ -472,7 +575,7 @@
       "title": "Alarm Label Detail",
       "description": "Detailed statistics for each alarm label including delayed and held for reoccurrence",
       "data": [
-        { 
+        {
           "alarmLabel": "AFIB", 
           "totalAlarms": 425, 
           "totalAlerts": 298,
@@ -575,15 +678,125 @@
     "alertResponseDetail": {
       "id": "alert-response-detail",
       "title": "Alert Response Detail",
-      "description": "Detailed information about alert responses",
+      "description": "Detailed alert response statistics including response types and timing",
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "totalResp1": { "align": "right" },
+        "totalResp2": { "align": "right" },
+        "totalResp3": { "align": "right" },
+        "totalNoResp": { "align": "right" },
+        "totalUndeliverable": { "align": "right" },
+        "avgAcceptTime": { "align": "right" },
+        "avgEscalateTime": { "align": "right" },
+        "avgAcceptToEnd": { "align": "right" }
+      },
       "data": [
-        { "date": "2024-01-01", "alarmLabel": "Asystole", "priority": "High", "responseType": "Manual", "responseTime": "01:15", "responseAction": "Escalated" },
-        { "date": "2024-01-02", "alarmLabel": "Vtach", "priority": "High", "responseType": "Auto", "responseTime": "00:55", "responseAction": "Delayed" },
-        { "date": "2024-01-03", "alarmLabel": "Vfib", "priority": "High", "responseType": "Manual", "responseTime": "01:10", "responseAction": "Escalated" },
-        { "date": "2024-01-04", "alarmLabel": "Brady", "priority": "Medium", "responseType": "Auto", "responseTime": "00:50", "responseAction": "Not Sustained" },
-        { "date": "2024-01-05", "alarmLabel": "Tachy", "priority": "Medium", "responseType": "Manual", "responseTime": "01:12", "responseAction": "Delayed" }
-      ],
-      "updateInterval": "5min"
+        {
+          "alarmLabel": "AFIB",
+          "totalAlerts": 298,
+          "totalResp1": 145,
+          "totalResp2": 85,
+          "totalResp3": 25,
+          "totalNoResp": 35,
+          "totalUndeliverable": 8,
+          "avgAcceptTime": "00:45",
+          "avgEscalateTime": "01:15",
+          "avgAcceptToEnd": "02:30"
+        },
+        { 
+          "alarmLabel": "ASYSTOLE",
+          "totalAlerts": 314,
+          "totalResp1": 168,
+          "totalResp2": 92,
+          "totalResp3": 28,
+          "totalNoResp": 18,
+          "totalUndeliverable": 8,
+          "avgAcceptTime": "00:35",
+          "avgEscalateTime": "01:05",
+          "avgAcceptToEnd": "02:15"
+        },
+        { 
+          "alarmLabel": "HR HIGH",
+          "totalAlerts": 245,
+          "totalResp1": 112,
+          "totalResp2": 78,
+          "totalResp3": 22,
+          "totalNoResp": 25,
+          "totalUndeliverable": 8,
+          "avgAcceptTime": "00:50",
+          "avgEscalateTime": "01:20",
+          "avgAcceptToEnd": "02:45"
+        },
+        { 
+          "alarmLabel": "HR LOW",
+          "totalAlerts": 228,
+          "totalResp1": 98,
+          "totalResp2": 82,
+          "totalResp3": 18,
+          "totalNoResp": 22,
+          "totalUndeliverable": 8,
+          "avgAcceptTime": "00:48",
+          "avgEscalateTime": "01:18",
+          "avgAcceptToEnd": "02:40"
+        },
+        { 
+          "alarmLabel": "PAUSE",
+          "totalAlerts": 187,
+          "totalResp1": 85,
+          "totalResp2": 58,
+          "totalResp3": 15,
+          "totalNoResp": 22,
+          "totalUndeliverable": 7,
+          "avgAcceptTime": "00:42",
+          "avgEscalateTime": "01:12",
+          "avgAcceptToEnd": "02:25"
+        },
+        { 
+          "alarmLabel": "VFIB/VTACH",
+          "totalAlerts": 356,
+          "totalResp1": 185,
+          "totalResp2": 98,
+          "totalResp3": 32,
+          "totalNoResp": 32,
+          "totalUndeliverable": 9,
+          "avgAcceptTime": "00:32",
+          "avgEscalateTime": "01:02",
+          "avgAcceptToEnd": "02:10"
+        },
+        { 
+          "alarmLabel": "SPO2 LOW",
+          "totalAlerts": 267,
+          "totalResp1": 128,
+          "totalResp2": 85,
+          "totalResp3": 22,
+          "totalNoResp": 24,
+          "totalUndeliverable": 8,
+          "avgAcceptTime": "00:45",
+          "avgEscalateTime": "01:15",
+          "avgAcceptToEnd": "02:35"
+        }
+      ]
+    },
+    "alertResponseByLabel": {
+      "id": "alert-response-by-label",
+      "title": "Alert Response by Alarm Label Detail",
+      "description": "Detailed alert response statistics for each alarm label",
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "alertsResponded": { "align": "right" },
+        "avgResponse": { "align": "right" }
+      },
+      "data": [
+        { "alarmLabel": "AFIB", "totalAlerts": 298, "alertsResponded": 245, "avgResponse": "01:35" },
+        { "alarmLabel": "ASYSTOLE", "totalAlerts": 314, "alertsResponded": 286, "avgResponse": "01:15" },
+        { "alarmLabel": "HR HIGH", "totalAlerts": 245, "alertsResponded": 198, "avgResponse": "01:45" },
+        { "alarmLabel": "HR LOW", "totalAlerts": 228, "alertsResponded": 187, "avgResponse": "01:30" },
+        { "alarmLabel": "PAUSE", "totalAlerts": 187, "alertsResponded": 156, "avgResponse": "01:20" },
+        { "alarmLabel": "VFIB/VTACH", "totalAlerts": 356, "alertsResponded": 312, "avgResponse": "01:10" },
+        { "alarmLabel": "SPO2 LOW", "totalAlerts": 267, "alertsResponded": 234, "avgResponse": "01:25" }
+      ]
     },
     "alarmLabelVolumeDetail": {
       "id": "alarm-label-volume-detail",
@@ -597,6 +810,197 @@
         { "alarmLabel": "PAUSE", "manuallyEscalated": 120, "autoEscalated": 98, "selfResolved": 145 },
         { "alarmLabel": "VFIB/VTACH", "manuallyEscalated": 210, "autoEscalated": 198, "selfResolved": 163 },
         { "alarmLabel": "SPO2 LOW", "manuallyEscalated": 168, "autoEscalated": 156, "selfResolved": 144 }
+      ]
+    },
+    "alertResponseByRecipient": {
+      "id": "alert-response-by-recipient",
+      "title": "Alert Response by Recipient Detail",
+      "description": "Recipients Total Responses (Rec) | Average Response Time (Art)",
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "r1": { "align": "right" },
+        "r1Acc": { "align": "right" },
+        "r1Esc": { "align": "right" },
+        "r1Nr": { "align": "right" },
+        "r1Art": { "align": "right" },
+        "r2": { "align": "right" },
+        "r2Acc": { "align": "right" },
+        "r2Esc": { "align": "right" },
+        "r2Nr": { "align": "right" },
+        "r2Art": { "align": "right" },
+        "r3": { "align": "right" },
+        "r3Acc": { "align": "right" },
+        "r3Esc": { "align": "right" },
+        "r3Nr": { "align": "right" },
+        "r3Art": { "align": "right" },
+        "r4": { "align": "right" },
+        "r4Acc": { "align": "right" },
+        "r4Esc": { "align": "right" },
+        "r4Nr": { "align": "right" },
+        "r4Art": { "align": "right" }
+      },
+      "data": [
+        { 
+          "alarmLabel": "AFIB",
+          "r1": 85,
+          "r1Acc": 45,
+          "r1Esc": 25,
+          "r1Nr": 15,
+          "r1Art": "00:45",
+          "r2": 65,
+          "r2Acc": 35,
+          "r2Esc": 20,
+          "r2Nr": 10,
+          "r2Art": "01:15",
+          "r3": 45,
+          "r3Acc": 25,
+          "r3Esc": 15,
+          "r3Nr": 5,
+          "r3Art": "01:45",
+          "r4": 35,
+          "r4Acc": 20,
+          "r4Esc": 10,
+          "r4Nr": 5,
+          "r4Art": "02:15"
+        },
+        { 
+          "alarmLabel": "ASYSTOLE",
+          "r1": 95,
+          "r1Acc": 50,
+          "r1Esc": 30,
+          "r1Nr": 15,
+          "r1Art": "00:35",
+          "r2": 75,
+          "r2Acc": 40,
+          "r2Esc": 25,
+          "r2Nr": 10,
+          "r2Art": "01:05",
+          "r3": 55,
+          "r3Acc": 30,
+          "r3Esc": 20,
+          "r3Nr": 5,
+          "r3Art": "01:35",
+          "r4": 45,
+          "r4Acc": 25,
+          "r4Esc": 15,
+          "r4Nr": 5,
+          "r4Art": "02:05"
+        },
+        { 
+          "alarmLabel": "HR HIGH",
+          "r1": 75,
+          "r1Acc": 40,
+          "r1Esc": 25,
+          "r1Nr": 10,
+          "r1Art": "00:50",
+          "r2": 55,
+          "r2Acc": 30,
+          "r2Esc": 15,
+          "r2Nr": 10,
+          "r2Art": "01:20",
+          "r3": 35,
+          "r3Acc": 20,
+          "r3Esc": 10,
+          "r3Nr": 5,
+          "r3Art": "01:50",
+          "r4": 25,
+          "r4Acc": 15,
+          "r4Esc": 5,
+          "r4Nr": 5,
+          "r4Art": "02:20"
+        },
+        { 
+          "alarmLabel": "HR LOW",
+          "r1": 70,
+          "r1Acc": 35,
+          "r1Esc": 25,
+          "r1Nr": 10,
+          "r1Art": "00:48",
+          "r2": 50,
+          "r2Acc": 25,
+          "r2Esc": 15,
+          "r2Nr": 10,
+          "r2Art": "01:18",
+          "r3": 30,
+          "r3Acc": 15,
+          "r3Esc": 10,
+          "r3Nr": 5,
+          "r3Art": "01:48",
+          "r4": 20,
+          "r4Acc": 10,
+          "r4Esc": 5,
+          "r4Nr": 5,
+          "r4Art": "02:18"
+        },
+        { 
+          "alarmLabel": "PAUSE",
+          "r1": 65,
+          "r1Acc": 35,
+          "r1Esc": 20,
+          "r1Nr": 10,
+          "r1Art": "00:42",
+          "r2": 45,
+          "r2Acc": 25,
+          "r2Esc": 15,
+          "r2Nr": 5,
+          "r2Art": "01:12",
+          "r3": 25,
+          "r3Acc": 15,
+          "r3Esc": 5,
+          "r3Nr": 5,
+          "r3Art": "01:42",
+          "r4": 15,
+          "r4Acc": 8,
+          "r4Esc": 4,
+          "r4Nr": 3,
+          "r4Art": "02:12"
+        },
+        { 
+          "alarmLabel": "VFIB/VTACH",
+          "r1": 105,
+          "r1Acc": 55,
+          "r1Esc": 35,
+          "r1Nr": 15,
+          "r1Art": "00:32",
+          "r2": 85,
+          "r2Acc": 45,
+          "r2Esc": 30,
+          "r2Nr": 10,
+          "r2Art": "01:02",
+          "r3": 65,
+          "r3Acc": 35,
+          "r3Esc": 25,
+          "r3Nr": 5,
+          "r3Art": "01:32",
+          "r4": 55,
+          "r4Acc": 30,
+          "r4Esc": 20,
+          "r4Nr": 5,
+          "r4Art": "02:02"
+        },
+        { 
+          "alarmLabel": "SPO2 LOW",
+          "r1": 80,
+          "r1Acc": 40,
+          "r1Esc": 30,
+          "r1Nr": 10,
+          "r1Art": "00:45",
+          "r2": 60,
+          "r2Acc": 30,
+          "r2Esc": 20,
+          "r2Nr": 10,
+          "r2Art": "01:15",
+          "r3": 40,
+          "r3Acc": 20,
+          "r3Esc": 15,
+          "r3Nr": 5,
+          "r3Art": "01:45",
+          "r4": 30,
+          "r4Acc": 15,
+          "r4Esc": 10,
+          "r4Nr": 5,
+          "r4Art": "02:15"
+        }
       ]
     }
   }

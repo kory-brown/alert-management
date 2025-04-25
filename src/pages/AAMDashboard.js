@@ -411,22 +411,49 @@ function AAMDashboard() {
               </Grid>
             </Grid>
 
-
-
           {/* End-User Response Subsection */}
           <SectionLabel label="Alert Response Metrics" />
 
-          {/* Pie Charts Row */}
-          <Grid container spacing={3}>
+            {/* Total Alerts Bottom */}
+            <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
-              <PieChart
-                title="End User Response"
-                data={[
-                  { name: 'Manually Escalated', value: 40 },
-                  { name: 'Auto Escalated', value: 35 },
-                  { name: 'Not Sustained', value: 25 }
-                ]}
-              />
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.totalAlertsBottom.title}
+                  value={chartData.bigNumbers.totalAlertsBottom.value}
+                  label={chartData.bigNumbers.totalAlertsBottom.label}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.totalAlertsRespondedTo.title}
+                  value={chartData.bigNumbers.totalAlertsRespondedTo.value}
+                  label={chartData.bigNumbers.totalAlertsRespondedTo.label}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.avgResponseTime.title}
+                  value={chartData.bigNumbers.avgResponseTime.value}
+                  label={chartData.bigNumbers.avgResponseTime.label}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Pie Charts Row */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+          <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alertResponseByLabel.title}
+                  data={chartData.tableCharts.alertResponseByLabel.data}
+                />
+              </Box>
             </Grid>
             <Grid item xs={12} md={4}>
               <PieChart
@@ -452,36 +479,98 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-        
-
-          {/* Alert Dispatch Detail Table Chart */}
+          {/* Alert Response Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
-              <Box sx={{ height: 400, mb: 3 }}>
-                <TableChart
-                  title={chartData.tableCharts.alertDispatchDetail.title}
-                  data={chartData.tableCharts.alertDispatchDetail.data}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-
-          {/* Alert Response Detail Table Chart */}
-          <Grid container spacing={3}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <TableChart
                   title={chartData.tableCharts.alertResponseDetail.title}
                   data={chartData.tableCharts.alertResponseDetail.data}
+                  style={chartData.tableCharts.alertResponseDetail.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Alert Response by Recipient Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alertResponseByRecipient.title}
+                  description={chartData.tableCharts.alertResponseByRecipient.description}
+                  data={chartData.tableCharts.alertResponseByRecipient.data}
+                  style={chartData.tableCharts.alertResponseByRecipient.style}
                 />
               </Box>
             </Grid>
           </Grid>
 
 
+
+            {/* Response Types by Alarm Label Chart */}
+            <Grid container spacing={3} sx={{ mt: 3 }}>
+              <Grid item xs={12}>
+                <Box sx={{ height: 400 }}>
+                  <GroupedBarChart 
+                    title={chartData.barCharts.responseTypesByLabel.title}
+                    data={chartData.barCharts.responseTypesByLabel.data}
+                    xAxisKey="alarmLabel"
+                    dataKeys={['accept', 'escalate', 'noResponse']}
+                    labels={['Accept', 'Escalate', 'No Response']}
+                    colors={['#1aafe6', '#faad14', '#ff6b6b']}
+                  />
+                </Box>
+              </Grid>
+            </Grid>
+
+
+            {/* Alerts Responded To Daily Trend */}
+            <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.alertsRespondedTrend.title}
+                  data={chartData.lineCharts.alertsRespondedTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["totalAlerts", "alertsResponded"]}
+                  yAxisLabels={["Total Alerts", "Alerts Responded"]}
+                  colors={{
+                    'totalAlerts': '#1aafe6',
+                    'alertsResponded': '#52c41a'
+                  }}
+                  isTimeFormat={false}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Alert Response Types Daily Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.responseTypesDailyTrend.title}
+                  data={chartData.lineCharts.responseTypesDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["accepts", "escalate", "noResponse"]}
+                  yAxisLabels={["Accept", "Escalate", "No Response"]}
+                  colors={{
+                    'accepts': '#1aafe6',
+                    'escalate': '#faad14',
+                    'noResponse': '#ff6b6b'
+                  }}
+                  isTimeFormat={false}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
         </Box>
       </Box>
-      <Footer leftLabel="AirStrip Alert Management" versionId="Version 1.0" />
+      <Box sx={{ mt: 4 }}>
+        <Footer leftLabel="AirStrip Alert Management" versionId="Version 1.0" />
+      </Box>
     </Box>
   );
 }
