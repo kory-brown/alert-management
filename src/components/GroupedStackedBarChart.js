@@ -19,7 +19,8 @@ const GroupedStackedBarChart = ({
   xAxisKey = 'date',
   colors,
   keys,
-  labels
+  labels,
+  flattenLegend = false
 }) => {
   if (!colors || !colors.low || !colors.medium || !colors.high) {
     throw new Error('GroupedStackedBarChart requires colors prop with low, medium, and high color arrays');
@@ -53,6 +54,22 @@ const GroupedStackedBarChart = ({
           {description}
         </Typography>
       )}
+      {flattenLegend && (
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 2, mb: 1, pr: 4 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <Box sx={{ width: 16, height: 16, backgroundColor: colors.low[0], borderRadius: 0.5, mr: 1 }} />
+            <Typography variant="body2">{labels.low}</Typography>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <Box sx={{ width: 16, height: 16, backgroundColor: colors.medium[0], borderRadius: 0.5, mr: 1 }} />
+            <Typography variant="body2">{labels.medium}</Typography>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <Box sx={{ width: 16, height: 16, backgroundColor: colors.high[0], borderRadius: 0.5, mr: 1 }} />
+            <Typography variant="body2">{labels.high}</Typography>
+          </Box>
+        </Box>
+      )}
       <Box sx={{ width: '100%', height: 'calc(100% - 40px)' }}>
         <ResponsiveContainer>
           <RechartsBarChart
@@ -85,19 +102,21 @@ const GroupedStackedBarChart = ({
                 return [value, `${labels[priority]} ${type}`];
               }}
             />
-            <Legend 
-              align="right"
-              verticalAlign="top"
-              wrapperStyle={{ 
-                paddingTop: '-20px',
-                marginTop: '-10px'
-              }}
-              formatter={(value) => {
-                const priority = value.toLowerCase().replace('alarmsonly', '').replace('alarms', '').replace('alerts', '');
-                const type = value.toLowerCase().includes('alerts') ? 'Alerts' : 'Alarms';
-                return `${labels[priority]} ${type}`;
-              }}
-            />
+            {!flattenLegend && (
+              <Legend 
+                align="right"
+                verticalAlign="top"
+                wrapperStyle={{ 
+                  paddingTop: '-20px',
+                  marginTop: '-10px'
+                }}
+                formatter={(value) => {
+                  const priority = value.toLowerCase().replace('alarmsonly', '').replace('alarms', '').replace('alerts', '');
+                  const type = value.toLowerCase().includes('alerts') ? 'Alerts' : 'Alarms';
+                  return `${labels[priority]} ${type}`;
+                }}
+              />
+            )}
             
             {/* Low Priority */}
             <Bar 

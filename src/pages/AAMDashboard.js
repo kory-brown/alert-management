@@ -254,8 +254,8 @@ function AAMDashboard() {
               <Box sx={{ height: 400 }}>
                 <GroupedStackedBarChart
                   title={chartData.groupedStackedCharts.severityByDay.title}
-                  description={chartData.groupedStackedCharts.severityByDay.description}
                   data={chartData.groupedStackedCharts.severityByDay.data}
+                  flattenLegend={true}
                   xAxisKey="date"
                   colors={{
                     low: ['#52c7f5', '#1aafe6'],      // Lighter blue for alarms, darker blue for alerts
@@ -306,9 +306,9 @@ function AAMDashboard() {
             <Grid item xs={12} md={3}>
               <Box sx={{ height: 200 }}>
                 <BigNumberChart 
-                  title="Total Number of Alerts Dispatched"
-                  value="578"
-                  label="Total Alerts Dispatched"
+                  title={chartData.bigNumbers.totalAlarmsDispatched.title}
+                  value={chartData.bigNumbers.totalAlarmsDispatched.value}
+                  label={chartData.bigNumbers.totalAlarmsDispatched.label}
                 />
               </Box>
             </Grid>
@@ -337,9 +337,9 @@ function AAMDashboard() {
             <Grid item xs={12} md={3}>
               <Box sx={{ height: 200 }}>
                 <BigNumberChart 
-                  title={chartData.bigNumbers.avgAlarmDuration.title}
-                  value={chartData.bigNumbers.avgAlarmDuration.value}
-                  label={chartData.bigNumbers.avgAlarmDuration.label}
+                  title={chartData.bigNumbers.avgDispatchAlarmDuration.title}
+                  value={chartData.bigNumbers.avgDispatchAlarmDuration.value}
+                  label={chartData.bigNumbers.avgDispatchAlarmDuration.label}
                 />
               </Box>
             </Grid>
@@ -359,14 +359,15 @@ function AAMDashboard() {
 
             <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
-              <PieChart
-                title="Alert Dispatch Delays"
-                data={[
-                  { name: 'Manually Escalated', value: 40 },
-                  { name: 'Auto Escalated', value: 35 },
-                  { name: 'Not Sustained', value: 25 }
-                ]}
-              />
+            <PieChart
+                  title={chartData.pieCharts.alertDispatchTypes.title}
+                  data={chartData.pieCharts.alertDispatchTypes.data}
+                  colors={{
+                    'Manually Dispatched': '#1aafe6',
+                    'Auto Dispatched': '#faad14',
+                    'Not Sustained': '#ff6b6b'
+                  }}
+                />
             </Grid>
             <Grid item xs={12} md={8}>
               <Box sx={{ height: 400 }}>
@@ -374,8 +375,8 @@ function AAMDashboard() {
                   title={chartData.barCharts.alarmLabelDispatchTypes.title}
                   data={chartData.barCharts.alarmLabelDispatchTypes.data}
                   xAxisKey="alarmLabel"
-                  dataKeys={['autoEscalated', 'manuallyEscalated', 'selfResolved']}
-                  labels={['Auto Escalated', 'Manually Escalated', 'Self Resolved']}
+                  dataKeys={['manuallyDispatched', 'autoDispatched', 'selfResolved']}
+                  labels={['Manually Dispatched', 'Auto Dispatched', 'Self Resolved']}
                   colors={['#1aafe6', '#667275', '#ff9c6e']}
                 />
               </Box>
@@ -462,7 +463,7 @@ function AAMDashboard() {
                   { name: 'Response 1', value: 30 },
                   { name: 'Response 2', value: 25 },
                   { name: 'Response 3', value: 20 },
-                  { name: 'Auto / None', value: 25 }
+                  { name: 'No Response', value: 25 }
                 ]}
               />
             </Grid>

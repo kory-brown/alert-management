@@ -20,7 +20,7 @@
       "id": "total-alerts-responded-to",
       "title": "Total Number of Alerts Responded To",
       "value": 301,
-      "label": "Total Alerts Responded",
+      "label": "Alerts",
       "description": "Total number of alerts that received a response",
       "updateInterval": "5min"
     },
@@ -28,7 +28,7 @@
       "id": "total-alerts-bottom",
       "title": "Total Number of Alerts",
       "value": 378,
-      "label": "Total Alerts",
+      "label": "Alerts",
       "description": "Total number of alerts",
       "updateInterval": "5min"
     },
@@ -36,7 +36,23 @@
       "id": "avg-alarm-duration",
       "title": "Average Alarm Duration",
       "value": "01:37",
-      "label": "Alarm Interval to Dispatch (MM:SS)",
+      "label": "Alarm Start to Finish (MM:SS)",
+      "description": "Average duration from alarm to dispatch in minutes and seconds",
+      "updateInterval": "5min"
+    },
+    "totalAlarmsDispatched": {
+      "id": "total-alerts-dispatched",
+      "title": "Total Number of Alerts Dispatched",
+      "value": 571,
+      "label": "Alerts",
+      "description": "Total number of alerts that were dispatched",
+      "updateInterval": "5min"
+    },
+    "avgDispatchAlarmDuration": {
+      "id": "avg-alarm-duration",
+      "title": "Average Alarm Interval to Dispatch Duration",
+      "value": "01:02",
+      "label": "(MM:SS)",
       "description": "Average duration from alarm to dispatch in minutes and seconds",
       "updateInterval": "5min"
     },
@@ -44,7 +60,7 @@
       "id": "manually-dispatched-alerts",
       "title": "Total Number of Manually Dispatched Alerts",
       "value": 254,
-      "label": "Total Dispatched Alerts",
+      "label": "Alerts",
       "description": "Total number of alerts that were manually dispatched",
       "updateInterval": "5min"
     },
@@ -68,7 +84,7 @@
       "id": "auto-dispatched-alerts",
       "title": "Total Number of Auto Dispatched Alerts",
       "value": 311,
-      "label": "Total Dispatched Alerts",
+      "label": "Alerts",
       "description": "Total number of alerts that were manually dispatched",
       "updateInterval": "5min"
     },
@@ -164,7 +180,7 @@
       "id": "avg-response-time",
       "title": "Average Response Time",
       "value": "01:32",
-      "label": "Avg Response Time (MM:SS)",
+      "label": "(MM:SS)",
       "description": "Average time taken to respond to alerts",
       "updateInterval": "5min"
     }
@@ -178,6 +194,17 @@
         { "name": "Low", "value": 1987 }, 
         { "name": "Medium", "value": 3245 }, 
         { "name": "High", "value": 2876 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertDispatchTypes": {
+      "id": "alert-dispatch-types",
+      "title": "Alert Dispatch Types",
+      "description": "Distribution of alert dispatch types",
+      "data": [
+        { "name": "Manually Dispatched", "value": 1987 }, 
+        { "name": "Auto Dispatched", "value": 3245 }, 
+        { "name": "Self Resolved", "value": 2876 }
       ],
       "updateInterval": "5min"
     },
@@ -508,48 +535,48 @@
       "updateInterval": "5min"
     },
     "alarmLabelDispatchTypes": {
-      "title": "Alert Dispatch Delays by Alarm Label",
+      "title": "Alert Dispatch Types by Alarm Label",
       "data": [
         {
           "alarmLabel": "AFIB",
-          "autoEscalated": 145,
-          "manuallyEscalated": 180,
+          "autoDispatched": 145,
+          "manuallyDispatched": 180,
           "selfResolved": 165
         },
         {
           "alarmLabel": "ASYSTOLE",
-          "autoEscalated": 186,
-          "manuallyEscalated": 195,
+          "autoDispatched": 186,
+          "manuallyDispatched": 195,
           "selfResolved": 142
         },
         {
           "alarmLabel": "HR HIGH",
-          "autoEscalated": 132,
-          "manuallyEscalated": 155,
+          "autoDispatched": 132,
+          "manuallyDispatched": 155,
           "selfResolved": 148
         },
         {
           "alarmLabel": "HR LOW",
-          "autoEscalated": 118,
-          "manuallyEscalated": 145,
+          "autoDispatched": 118,
+          "manuallyDispatched": 145,
           "selfResolved": 157
         },
         {
           "alarmLabel": "PAUSE",
-          "autoEscalated": 98,
-          "manuallyEscalated": 120,
+          "autoDispatched": 98,
+          "manuallyDispatched": 120,
           "selfResolved": 145
         },
         {
           "alarmLabel": "VFIB/VTACH",
-          "autoEscalated": 198,
-          "manuallyEscalated": 210,
+          "autoDispatched": 198,
+          "manuallyDispatched": 210,
           "selfResolved": 163
         },
         {
           "alarmLabel": "SPO2 LOW",
-          "autoEscalated": 156,
-          "manuallyEscalated": 168,
+          "autoDispatched": 156,
+          "manuallyDispatched": 168,
           "selfResolved": 144
         }
       ]
@@ -558,7 +585,7 @@
   "tableCharts": {
     "alarmLabelStats": {
       "id": "alarm-label-stats",
-      "title": "Alarm Label Stats",
+      "title": "Alarm Label Detail",
       "description": "Summary statistics for each alarm label",
       "data": [
         { "alarmLabel": "AFIB", "totalAlarms": 425, "totalAlerts": 298, "avgDuration": "01:35" },
@@ -579,85 +606,78 @@
           "alarmLabel": "AFIB", 
           "totalAlarms": 425, 
           "totalAlerts": 298,
-          "manuallyEscalated": 180,
-          "autoEscalated": 145,
+          "manuallyDispatched": 180,
+          "autoDispatched": 145,
           "selfResolved": 165,
-          "delayed": 175, 
-          "heldForReoccurrence": 35,
-          "timeToDispatch": "00:45",
-          "avgDurationInQueue": "01:35"
+          "numberOfDelays": 175, 
+          "numberOfReoccurrenceHolds": 35,
+          "avgAlarmIntervalToDispatch": "01:35"
         },
         { 
           "alarmLabel": "ASYSTOLE", 
           "totalAlarms": 461, 
           "totalAlerts": 314,
-          "manuallyEscalated": 195,
-          "autoEscalated": 186,
+          "manuallyDispatched": 195,
+          "autoDispatched": 186,
           "selfResolved": 142,
-          "delayed": 188, 
-          "heldForReoccurrence": 42,
-          "timeToDispatch": "00:35",
-          "avgDurationInQueue": "02:15"
+          "numberOfDelays": 188, 
+          "numberOfReoccurrenceHolds": 42,
+          "avgAlarmIntervalToDispatch": "02:15"
         },
         { 
           "alarmLabel": "HR HIGH", 
           "totalAlarms": 387, 
           "totalAlerts": 245,
-          "manuallyEscalated": 155,
-          "autoEscalated": 132,
+          "manuallyDispatched": 155,
+          "autoDispatched": 132,
           "selfResolved": 148,
-          "delayed": 156, 
-          "heldForReoccurrence": 31,
-          "timeToDispatch": "00:55",
-          "avgDurationInQueue": "01:25"
+          "numberOfDelays": 156, 
+          "numberOfReoccurrenceHolds": 31,
+          "avgAlarmIntervalToDispatch": "01:25"
         },
         { 
           "alarmLabel": "HR LOW", 
           "totalAlarms": 342, 
           "totalAlerts": 228,
-          "manuallyEscalated": 145,
-          "autoEscalated": 118,
+          "manuallyDispatched": 145,
+          "autoDispatched": 118,
           "selfResolved": 157,
-          "delayed": 143, 
-          "heldForReoccurrence": 28,
-          "timeToDispatch": "00:50",
-          "avgDurationInQueue": "01:15"
+          "numberOfDelays": 143, 
+          "numberOfReoccurrenceHolds": 28,
+          "avgAlarmIntervalToDispatch": "01:15"
         },
         { 
           "alarmLabel": "PAUSE", 
           "totalAlarms": 298, 
           "totalAlerts": 187,
-          "manuallyEscalated": 120,
-          "autoEscalated": 98,
+          "manuallyDispatched": 120,
+          "autoDispatched": 98,
           "selfResolved": 145,
-          "delayed": 124, 
-          "heldForReoccurrence": 25,
-          "timeToDispatch": "00:40",
-          "avgDurationInQueue": "01:05"
+          "numberOfDelays": 124, 
+          "numberOfReoccurrenceHolds": 25,
+          "avgAlarmIntervalToDispatch": "01:05"
         },
         { 
           "alarmLabel": "VFIB/VTACH", 
           "totalAlarms": 475, 
           "totalAlerts": 356,
-          "manuallyEscalated": 210,
-          "autoEscalated": 198,
+          "manuallyDispatched": 210,
+          "autoDispatched": 198,
           "selfResolved": 163,
-          "delayed": 198, 
-          "heldForReoccurrence": 45,
-          "timeToDispatch": "00:30",
-          "avgDurationInQueue": "02:25"
+          "numberOfDelays": 198, 
+          "numberOfReoccurrenceHolds": 45,
+          "avgAlarmIntervalToDispatch": "02:25"
         },
         { 
           "alarmLabel": "SPO2 LOW", 
           "totalAlarms": 412, 
           "totalAlerts": 267,
-          "manuallyEscalated": 168,
-          "autoEscalated": 156,
+          "manuallyDispatched": 168,
+          "autoDispatched": 156,
           "selfResolved": 144,
-          "delayed": 167, 
-          "heldForReoccurrence": 33,
-          "timeToDispatch": "00:45",
-          "avgDurationInQueue": "01:45"
+          "numberOfDelays": 167, 
+          "numberOfReoccurrenceHolds": 33,
+          "avgAlarmIntervalToDispatch": "01:45"
         }
       ],
       "updateInterval": "5min"
@@ -688,7 +708,7 @@
         "totalNoResp": { "align": "right" },
         "totalUndeliverable": { "align": "right" },
         "avgAcceptTime": { "align": "right" },
-        "avgEscalateTime": { "align": "right" },
+        "avgManualTime": { "align": "right" },
         "avgAcceptToEnd": { "align": "right" }
       },
       "data": [
@@ -701,7 +721,7 @@
           "totalNoResp": 35,
           "totalUndeliverable": 8,
           "avgAcceptTime": "00:45",
-          "avgEscalateTime": "01:15",
+          "avgManualTime": "01:15",
           "avgAcceptToEnd": "02:30"
         },
         { 
@@ -713,7 +733,7 @@
           "totalNoResp": 18,
           "totalUndeliverable": 8,
           "avgAcceptTime": "00:35",
-          "avgEscalateTime": "01:05",
+          "avgManualTime": "01:05",
           "avgAcceptToEnd": "02:15"
         },
         { 
@@ -725,7 +745,7 @@
           "totalNoResp": 25,
           "totalUndeliverable": 8,
           "avgAcceptTime": "00:50",
-          "avgEscalateTime": "01:20",
+          "avgManualTime": "01:20",
           "avgAcceptToEnd": "02:45"
         },
         { 
@@ -737,7 +757,7 @@
           "totalNoResp": 22,
           "totalUndeliverable": 8,
           "avgAcceptTime": "00:48",
-          "avgEscalateTime": "01:18",
+          "avgManualTime": "01:18",
           "avgAcceptToEnd": "02:40"
         },
         { 
@@ -749,7 +769,7 @@
           "totalNoResp": 22,
           "totalUndeliverable": 7,
           "avgAcceptTime": "00:42",
-          "avgEscalateTime": "01:12",
+          "avgManualTime": "01:12",
           "avgAcceptToEnd": "02:25"
         },
         { 
@@ -761,7 +781,7 @@
           "totalNoResp": 32,
           "totalUndeliverable": 9,
           "avgAcceptTime": "00:32",
-          "avgEscalateTime": "01:02",
+          "avgManualTime": "01:02",
           "avgAcceptToEnd": "02:10"
         },
         { 
@@ -773,7 +793,7 @@
           "totalNoResp": 24,
           "totalUndeliverable": 8,
           "avgAcceptTime": "00:45",
-          "avgEscalateTime": "01:15",
+          "avgManualTime": "01:15",
           "avgAcceptToEnd": "02:35"
         }
       ]
@@ -781,7 +801,7 @@
     "alertResponseByLabel": {
       "id": "alert-response-by-label",
       "title": "Alert Response by Alarm Label Detail",
-      "description": "Detailed alert response statistics for each alarm label",
+      "description": "Acc (Accept) | Nr (No Response) | Esc (Escalate) | Art (Average Response Time)",
       "style": {
         "alarmLabel": { "align": "left" },
         "totalAlerts": { "align": "right" },
@@ -803,19 +823,19 @@
       "title": "Alert Dispatch Types by Alarm Label Detail",
       "description": "Summary of alarm label volumes by dispatch type",
       "data": [
-        { "alarmLabel": "AFIB", "manuallyEscalated": 180, "autoEscalated": 145, "selfResolved": 165 },
-        { "alarmLabel": "ASYSTOLE", "manuallyEscalated": 195, "autoEscalated": 186, "selfResolved": 142 },
-        { "alarmLabel": "HR HIGH", "manuallyEscalated": 155, "autoEscalated": 132, "selfResolved": 148 },
-        { "alarmLabel": "HR LOW", "manuallyEscalated": 145, "autoEscalated": 118, "selfResolved": 157 },
-        { "alarmLabel": "PAUSE", "manuallyEscalated": 120, "autoEscalated": 98, "selfResolved": 145 },
-        { "alarmLabel": "VFIB/VTACH", "manuallyEscalated": 210, "autoEscalated": 198, "selfResolved": 163 },
-        { "alarmLabel": "SPO2 LOW", "manuallyEscalated": 168, "autoEscalated": 156, "selfResolved": 144 }
+        { "alarmLabel": "AFIB", "manuallyDispatched": 180, "autoDispatched": 145, "selfResolved": 165 },
+        { "alarmLabel": "ASYSTOLE", "manuallyDispatched": 195, "autoDispatched": 186, "selfResolved": 142 },
+        { "alarmLabel": "HR HIGH", "manuallyDispatched": 155, "autoDispatched": 132, "selfResolved": 148 },
+        { "alarmLabel": "HR LOW", "manuallyDispatched": 145, "autoDispatched": 118, "selfResolved": 157 },
+        { "alarmLabel": "PAUSE", "manuallyDispatched": 120, "autoDispatched": 98, "selfResolved": 145 },
+        { "alarmLabel": "VFIB/VTACH", "manuallyDispatched": 210, "autoDispatched": 198, "selfResolved": 163 },
+        { "alarmLabel": "SPO2 LOW", "manuallyDispatched": 168, "autoDispatched": 156, "selfResolved": 144 }
       ]
     },
     "alertResponseByRecipient": {
       "id": "alert-response-by-recipient",
       "title": "Alert Response by Recipient Detail",
-      "description": "Recipients Total Responses (Rec) | Average Response Time (Art)",
+      "description": "Acc (Accepted) | Esc (Escalated) | Nr (No Response) | Average Response Time (Art)",
       "style": {
         "alarmLabel": { "align": "left" },
         "r1": { "align": "right" },

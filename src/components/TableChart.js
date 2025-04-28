@@ -40,7 +40,7 @@ const formatColumnHeader = (key) => {
   return words.join(' ');
 };
 
-const TableChart = ({ title, data }) => {
+const TableChart = ({ title, data, description }) => {
   // Generate headers from the first data object
   const generateHeaders = () => {
     if (!data || data.length === 0) return [];
@@ -75,6 +75,16 @@ const TableChart = ({ title, data }) => {
         }}
       >
         {title}
+      </Typography>
+      <Typography
+        variant="body2"
+        sx={{
+          px: 2,
+          pb: 1,
+          color: '#666'
+        }}
+      >
+        {description}
       </Typography>
       <TableContainer 
         component={Paper} 
