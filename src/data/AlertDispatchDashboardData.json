@@ -3,22 +3,72 @@
     "totalAlarms": {
       "title": "Total Alarms",
       "value": "1,234",
-      "label": "Last 7 Days"
+      "label": "Alarms"
     },
     "totalAlerts": {
       "title": "Total Alerts",
       "value": "567",
-      "label": "Last 7 Days"
+      "label": "Alerts"
     },
     "avgAlarmDuration": {
-      "title": "Avg Alarm Duration",
-      "value": "2.5",
-      "label": "Hours"
+      "title": "Avg Total Active Alarm Time in Queue",
+      "value": "03:19",
+      "label": "(MM:SS)"
     },
     "manuallyDispatchedAlerts": {
-      "title": "Manually Dispatched Alerts",
+      "title": "Total Number of Manually Dispatched Alerts",
       "value": "289",
-      "label": "Last 7 Days"
+      "label": "Alerts"
+    },
+    "autoDispatchedAlerts": {
+      "title": "Total Number of Auto Dispatched Alerts",
+      "value": "199",
+      "label": "Alerts"
+    },
+    "selfResolvedAlarms": {
+      "title": "Total Number of Alarms Self Resolved",
+      "value": "158",
+      "label": "Alarms"
+    },
+    "heldForReoccurenceAlarms": {
+      "title": "Total Number of Alarms Held for Reoccurence",
+      "value": "176",
+      "label": "Alarms"
+    },
+    "snippetsCreated": {
+      "title": "Total Number of Snippets Created",
+      "value": "97",
+      "label": "Snippets"
+    }
+  },
+  "pieCharts": {
+    "alertDispatchTypes": {
+      "id": "alert-dispatch-types",
+      "title": "Alert Dispatch Types",
+      "description": "Distribution of alert dispatch types",
+      "data": [
+        { "name": "Manually Dispatched", "value": 1987 }, 
+        { "name": "Auto Dispatched", "value": 3245 }, 
+        { "name": "Self Resolved", "value": 2876 }
+      ],
+      "updateInterval": "5min"
+    }
+  },
+  "lineCharts": {
+    "alarmsAndAlertsDailyTrend": {
+      "id": "alarms-and-alerts-daily-trend",
+      "title": "Total Alarms & Alerts Daily Trend",
+      "description": "Shows the trend of total alarms and alerts over time",
+      "data": [
+        { "date": "2024-01-01", "alarms": 240, "alerts": 190 },
+        { "date": "2024-01-02", "alarms": 192, "alerts": 152 },
+        { "date": "2024-01-03", "alarms": 251, "alerts": 200 },
+        { "date": "2024-01-04", "alarms": 211, "alerts": 169 },
+        { "date": "2024-01-05", "alarms": 246, "alerts": 197 },
+        { "date": "2024-01-06", "alarms": 238, "alerts": 191 },
+        { "date": "2024-01-07", "alarms": 244, "alerts": 195 }
+      ],
+      "updateInterval": "5min"
     }
   },
   "barCharts": {
@@ -32,6 +82,106 @@
         { "date": "2024-01-05", "manuallyDispatched": 256 },
         { "date": "2024-01-06", "manuallyDispatched": 234 },
         { "date": "2024-01-07", "manuallyDispatched": 289 }
+      ]
+    },
+    "snippetsCreated": {
+      "title": "Total Number of Snippets Created",
+      "data": [
+        { "date": "2024-01-01", "snippetsCreated": 18 },
+        { "date": "2024-01-02", "snippetsCreated": 27 },
+        { "date": "2024-01-03", "snippetsCreated": 19 },
+        { "date": "2024-01-04", "snippetsCreated": 23 },
+        { "date": "2024-01-05", "snippetsCreated": 26 },
+        { "date": "2024-01-06", "snippetsCreated": 27 },
+        { "date": "2024-01-07", "snippetsCreated": 39 }
+      ]
+    },
+    "dispatchesByAlarmLabel": {
+      "title": "Total Number of Dispatches by Alarm Label",
+      "data": [
+        {
+          "alarmLabel": "AFIB",
+          "manuallyDispatched": 145,
+          "autoDispatched": 120,
+          "selfResolved": 85,
+          "alarmsHeldForRecurrence": 50
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "manuallyDispatched": 160,
+          "autoDispatched": 130,
+          "selfResolved": 90,
+          "alarmsHeldForRecurrence": 51
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "manuallyDispatched": 120,
+          "autoDispatched": 100,
+          "selfResolved": 92,
+          "alarmsHeldForRecurrence": 50
+        },
+        {
+          "alarmLabel": "HR LOW",
+          "manuallyDispatched": 110,
+          "autoDispatched": 95,
+          "selfResolved": 74,
+          "alarmsHeldForRecurrence": 40
+        },
+        {
+          "alarmLabel": "PAUSE",
+          "manuallyDispatched": 90,
+          "autoDispatched": 75,
+          "selfResolved": 71,
+          "alarmsHeldForRecurrence": 40
+        },
+        {
+          "alarmLabel": "VFIB/VTACH",
+          "manuallyDispatched": 180,
+          "autoDispatched": 150,
+          "selfResolved": 60,
+          "alarmsHeldForRecurrence": 50
+        },
+        {
+          "alarmLabel": "SPO2 LOW",
+          "manuallyDispatched": 130,
+          "autoDispatched": 110,
+          "selfResolved": 95,
+          "alarmsHeldForRecurrence": 50
+        }
+      ]
+    }
+  },
+  "stackedBarCharts": {
+    "byAlarmLabels": {
+      "id": "stacked-alarms-and-alerts-by-labels",
+      "title": "Total Alarms & Alerts by Labels",
+      "description": "Shows total alarms with alerts as a subset by alarm labels",
+      "groupBy": "Label",
+      "data": [
+        { "groupByLabel": "AFIB", "totalLabel": "Alarms", "totalValue": 425, "subsetLabel": "Alerts", "subsetValue": 298 },
+        { "groupByLabel": "ASYSTOLE", "totalLabel": "Alarms", "totalValue": 461, "subsetLabel": "Alerts", "subsetValue": 314 },
+        { "groupByLabel": "HR HIGH", "totalLabel": "Alarms", "totalValue": 387, "subsetLabel": "Alerts", "subsetValue": 245 },
+        { "groupByLabel": "HR LOW", "totalLabel": "Alarms", "totalValue": 342, "subsetLabel": "Alerts", "subsetValue": 228 },
+        { "groupByLabel": "PAUSE", "totalLabel": "Alarms", "totalValue": 298, "subsetLabel": "Alerts", "subsetValue": 187 },
+        { "groupByLabel": "VFIB/VTACH", "totalLabel": "Alarms", "totalValue": 475, "subsetLabel": "Alerts", "subsetValue": 356 },
+        { "groupByLabel": "SPO2 LOW", "totalLabel": "Alarms", "totalValue": 412, "subsetLabel": "Alerts", "subsetValue": 267 }
+      ],
+      "updateInterval": "5min"
+    }
+  },
+  "tableCharts": {
+    "alarmLabelStats": {
+      "id": "alarm-label-stats",
+      "title": "Alarm Label Detail",
+      "description": "Summary statistics for each alarm label",
+      "data": [
+        { "alarmLabel": "AFIB", "totalAlarms": 425, "totalAlerts": 298, "avgDuration": "01:35" },
+        { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "totalAlerts": 314, "avgDuration": "01:45" },
+        { "alarmLabel": "HR HIGH", "totalAlarms": 387, "totalAlerts": 245, "avgDuration": "01:25" },
+        { "alarmLabel": "HR LOW", "totalAlarms": 342, "totalAlerts": 228, "avgDuration": "01:20" },
+        { "alarmLabel": "PAUSE", "totalAlarms": 298, "totalAlerts": 187, "avgDuration": "01:15" },
+        { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "totalAlerts": 356, "avgDuration": "01:55" },
+        { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "totalAlerts": 267, "avgDuration": "01:30" }
       ]
     }
   }

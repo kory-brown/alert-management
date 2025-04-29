@@ -13,6 +13,8 @@ import BigNumberChart from '../components/BigNumberChart';
 import BarChart from '../components/BarChart';
 import PieChart from '../components/PieChart';
 import TableChart from '../components/TableChart';
+import LineChart from '../components/LineChart';
+import StackedBarChart from '../components/StackedBarChart';
 import FiltersPanel from '../components/FiltersPanel';
 import chartData from '../data/AlertDispatchDashboardData.json';
 import { drawerWidth } from '../components/FiltersPanel';
@@ -142,7 +144,7 @@ function AlertDispatchDashboard() {
           {/* PAGE CHART COMPONENTS */}
 
           {/* Big Number Charts */}
-          <Grid container spacing={3}>
+          <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
               <BigNumberChart {...chartData.bigNumbers.totalAlarms} />
             </Grid>
@@ -154,21 +156,93 @@ function AlertDispatchDashboard() {
             </Grid>
           </Grid>
 
-          {/* Alert Dispatch Workflows Section */}
-          <Typography 
-            variant="h5" 
-            sx={{ 
-              mt: 2.5, 
-              mb: 2, 
-              fontWeight: 600,
-              color: '#2F2F2F'
-            }}
-          >
-            Alert Dispatch Workflows
-          </Typography>
+          {/* Alarms and Alerts Daily TrendRow */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.alarmsAndAlertsDailyTrend.title}
+                  data={chartData.lineCharts.alarmsAndAlertsDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["alarms", "alerts"]}
+                  yAxisLabels={["Alarms", "Alerts"]}
+                  colors={{
+                    'alarms': '#1aafe6',
+                    'alerts': '#808080'
+                  }}
+                  isTimeFormat={false}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Alarm and Alerts by LabelsBar Chart */}
+            <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alarmLabelStats.title}
+                  data={chartData.tableCharts.alarmLabelStats.data}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 400 }}>
+                <StackedBarChart 
+                  title={chartData.stackedBarCharts.byAlarmLabels.title}
+                  data={chartData.stackedBarCharts.byAlarmLabels.data}
+                  groupBy={chartData.stackedBarCharts.byAlarmLabels.groupBy}
+                  colors={['#1aafe6', '#667275']}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+
+          {/* Big Number Alarms & Alerts */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={3}>
+              <BigNumberChart {...chartData.bigNumbers.manuallyDispatchedAlerts} />
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <BigNumberChart {...chartData.bigNumbers.autoDispatchedAlerts} />
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <BigNumberChart {...chartData.bigNumbers.selfResolvedAlarms} />
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <BigNumberChart {...chartData.bigNumbers.heldForReoccurenceAlarms} />
+            </Grid>
+          </Grid>
+         
+          {/* Snippets Created Row */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={3}>
+              <Box sx={{ height: 300 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.snippetsCreated.title}
+                  value={chartData.bigNumbers.snippetsCreated.value}
+                  label={chartData.bigNumbers.snippetsCreated.label}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={9}>
+              <Box sx={{ height: 300 }}>
+                <BarChart
+                  title={chartData.barCharts.snippetsCreated.title}
+                  data={chartData.barCharts.snippetsCreated.data}
+                  xAxisKey="date"
+                  yAxisKeys={["snippetsCreated"]}
+                  yAxisLabels={["Snippets Created"]}
+                  colors={["#667275"]}
+                  showValueLabels={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
 
           {/* Manually Dispatched Alerts Row */}
-          <Grid container spacing={3}>
+          <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={3}>
               <Box sx={{ height: 300 }}>
                 <BigNumberChart
@@ -193,6 +267,49 @@ function AlertDispatchDashboard() {
             </Grid>
           </Grid>
 
+          {/* Total Number of Dispatches by Alarm Label */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <BarChart
+                  title={chartData.barCharts.dispatchesByAlarmLabel.title}
+                  data={chartData.barCharts.dispatchesByAlarmLabel.data}
+                  xAxisKey="alarmLabel"
+                  yAxisKeys={[
+                    "manuallyDispatched",
+                    "autoDispatched",
+                    "selfResolved"
+                  ]}
+                  yAxisLabels={[
+                    "Manually Dispatched",
+                    "Auto Dispatched",
+                    "Self Resolved"
+                  ]}
+                  colors={[
+                    "#1aafe6",
+                    "#667275",
+                    "#4caf50",
+                    "#9c27b0"
+                  ]}
+                  showValueLabels={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+            <PieChart
+                  title={chartData.pieCharts.alertDispatchTypes.title}
+                  data={chartData.pieCharts.alertDispatchTypes.data}
+                  colors={{
+                    'Manually Dispatched': '#1aafe6',
+                    'Auto Dispatched': '#faad14',
+                    'Not Sustained': '#ff6b6b'
+                  }}
+                />
+            </Grid>
+               </Grid>   
           {/* Add more sections specific to Alert Dispatch Dashboard here */}
         </Box>
       </Box>
