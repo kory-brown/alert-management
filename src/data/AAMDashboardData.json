@@ -64,52 +64,12 @@
       "description": "Total number of alerts that were manually dispatched",
       "updateInterval": "5min"
     },
-    "avgTimeManuallyDispatchedAlerts": {
-      "id": "avg-time-manually-dispatched-alerts",
-      "title": "Avg Duration of Manually Dispatched Alerts",
-      "value": "01:32",
-      "label": "Queue to Dispatch (MM:SS)",
-      "description": "Average time for manually dispatched alerts.",
-      "updateInterval": "5min"
-    },
-    "percentManuallyDispatchedAlerts": {
-      "id": "percent-manually-dispatched-alerts",
-      "title": "Percentage of Alerts Manually Dispatched",
-      "value": 25,
-      "label": "Percent Manually Dispatched (%)",
-      "description": "Percentage of alerts that were manually dispatched.",
-      "updateInterval": "5min"
-    },
     "autoDispatchedAlerts": {
       "id": "auto-dispatched-alerts",
       "title": "Total Number of Auto Dispatched Alerts",
       "value": 311,
       "label": "Alerts",
       "description": "Total number of alerts that were manually dispatched",
-      "updateInterval": "5min"
-    },
-    "avgTimeAutoDispatchedAlerts": {
-      "id": "avg-time-auto-dispatched-alerts",
-      "title": "Avg Duration of Auto Dispatched Alerts",
-      "value": "00:56",
-      "label": "Queue to Dispatch (MM:SS)",
-      "description": "Average time for auto dispatched alerts.",
-      "updateInterval": "5min"
-    },
-    "percentAutoDispatchedAlerts": {
-      "id": "percent-auto-dispatched-alerts",
-      "title": "Percentage of Alerts Auto Dispatched",
-      "value": 36,
-      "label": "Percent Auto Dispatched (%)",
-      "description": "Percentage of alerts that were auto dispatched.",
-      "updateInterval": "5min"
-    },
-    "selfResolvedAlarms": {
-      "id": "self-resolved-alarms",
-      "title": "Total Number of Alarms Self Resolved/Not Sustained",
-      "value": 977,
-      "label": "Total Self Resolved/Not Sustained Alarms",
-      "description": "Total number of alarms that were self resolved or not sustained",
       "updateInterval": "5min"
     },
     "avgTimeSelfResolvedAlarms": {
@@ -127,55 +87,7 @@
       "label": "Percentage Resolved/Not Sustained Alarms (%)",
       "description": "Percentage of alarms that were self resolved or not sustained",
       "updateInterval": "5min"
-    },
-    "delayedAlarms": {
-      "id": "delayed-alarms",
-      "title": "Total Number of Alarms Delayed",
-      "value": 1011,
-      "label": "Total Delayed Alarms",
-      "description": "Total number of alarms that were delayed",
-      "updateInterval": "5min"
-    },
-    "avgTimeDelayedAlarms": {
-      "id": "avg-time-delayed-alarms",
-      "title": "Avg Duration of Delayed Alarms",
-      "value": "00:19",
-      "label": "Average Duration (MM:SS)",
-      "description": "Average duration of alarms that were delayed.",
-      "updateInterval": "5min"
-    },
-    "percentageDelayedAlarms": {
-      "id": "percentage-delayed-alarms",
-      "title": "Percentage of Alarms Delayed",
-      "value": 52,
-      "label": "Percentage Delayed Alarms (%)",
-      "description": "Percentage of alarms that were delayed.",
-      "updateInterval": "5min"
-    },
-    "holdReoccurenceAlarms": {
-      "id": "hold-reoccurence-alarms",
-      "title": "Total Number of Hold Reoccurence Alarms",
-      "value": 208,
-      "label": "Total Hold Reoccurence Alarms",
-      "description": "Total number of alarms with hold reoccurence",
-      "updateInterval": "5min"
-    },  
-    "avgTimeHoldReoccurenceAlarms": {
-      "id": "avg-time-hold-reoccurence-alarms",
-      "title": "Avg Duration of Hold Reoccurence Alarms",
-      "value": "00:36",
-      "label": "Average Duration (MM:SS)",
-      "description": "Average duration of hold reoccurrence alarms.",
-      "updateInterval": "5min"
-    },
-    "percentageHoldReoccurenceAlarms": {
-      "id": "percentage-hold-reoccurence-alarms",
-      "title": "Percentage of Hold Reoccurence Alarms",
-      "value": 21,
-      "label": "Percentage Hold Reoccurence Alarms (%)",
-      "description": "Percentage of alarms that were held reoccurence.",
-      "updateInterval": "5min"
-    },
+    }, 
     "avgResponseTime": {
       "id": "avg-response-time",
       "title": "Average Response Time",
@@ -216,6 +128,30 @@
         { "name": "Low", "value": 1543 }, 
         { "name": "Medium", "value": 2456 }, 
         { "name": "High", "value": 2145 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertsResponse": {
+      "id": "alerts-by-response",
+      "title": "Percentage of Alert Response",
+      "description": "Distribution of alerts by response",
+      "data": [
+        { "name": "Response 1", "value": 30 },
+        { "name": "Response 2", "value": 25 },
+        { "name": "Response 3", "value": 20 },
+        { "name": "No Response", "value": 25 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertsResponsebyDestination": {
+      "id": "alerts-response-by-destination",
+      "title": "Percentage of Alert Response by Destination",
+      "description": "Distribution of alerts by response by destination",
+      "data": [
+        { "name": "D1", "value": 30 },
+        { "name": "D2", "value": 25 },
+        { "name": "D3", "value": 20 },
+        { "name": "D4", "value": 25 }
       ],
       "updateInterval": "5min"
     }
@@ -713,8 +649,7 @@
       },
       "data": [
         {
-          "alarmLabel": "AFIB",
-          "totalAlerts": 298,
+          "alarmLabel": "AFIB", "totalAlerts": 298,
           "totalResp1": 145,
           "totalResp2": 85,
           "totalResp3": 25,

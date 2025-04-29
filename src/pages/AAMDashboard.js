@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
-/*import { Link } from 'react-router-dom';*/
-import {
-  Typography,
-  Grid,
-  Paper,
-  Box,
-  IconButton,
-  Toolbar
-} from '@mui/material';
+import {Grid,Paper,Box,IconButton,Toolbar} from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import BigNumberChart from '../components/BigNumberChart';
-import BarChart from '../components/BarChart';
 import GroupedBarChart from '../components/GroupedBarChart';
 import PieChart from '../components/PieChart';
 import TableChart from '../components/TableChart';
 import LineChart from '../components/LineChart';
 import FiltersPanel from '../components/FiltersPanel';
-import SubsectionLabel from '../components/SubsectionLabel';
 import SectionLabel from '../components/SectionLabel';
 import chartData from '../data/AAMDashboardData.json';
 import AppHeader from '../components/AppHeader';
@@ -54,11 +44,13 @@ function AAMDashboard() {
 
   {/* PAGE TEMPLATE COMPONENTS */}
   return (
+
     /* NAVIGATION HEADER BAR */
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', minWidth: '1024px' }}>
       <AppHeader title={pageTitle} />
       <Toolbar />
       <Box sx={{ display: 'flex', flex: 1, position: 'relative' }}>
+      
       {/* FILTERS PANEL */}
         <Box sx={{ 
           display: 'flex',
@@ -106,6 +98,7 @@ function AAMDashboard() {
           </Paper>
         </Box>
 
+      {/* MAIN CONTENT PANEL */}
         <Box
           component="main"
           sx={{
@@ -148,12 +141,10 @@ function AAMDashboard() {
             </IconButton>
           )}
 
-
           {/* PAGE CHART COMPONENTS */}
-
           <SectionLabel label="Alarm and Alert Volume Summary" />
 
-          {/* Big Number Charts */}
+          {/* ROW 1: Big Number Charts */}
           <Grid container spacing={3}>
             <Grid item xs={12} md={4}>
               <BigNumberChart {...chartData.bigNumbers.totalAlarms} />
@@ -166,7 +157,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Alarms and Alerts Daily TrendRow */}
+          {/* ROW 2: Alarms and Alerts Daily TrendRow */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -186,7 +177,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Alarm and Alerts by LabelsBar Chart */}
+          {/* ROW 3: Alarm and Alerts by LabelsBar Chart */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
               <Box sx={{ height: 400 }}>
@@ -208,7 +199,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Priority Charts */}
+          {/* ROW 4: Alarm Label Detail */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
               <Box sx={{ height: 400 }}>
@@ -248,7 +239,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Severity Trends by Day */}
+          {/* ROW 5: Total Alarms & Alerts by Priority by Day */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -277,7 +268,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Alarm Duration by Priority Daily Trend */}
+          {/* ROW 6: Alarm Duration by Priority Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -301,7 +292,7 @@ function AAMDashboard() {
           {/* Alert Dispatch Workflows Section */}
           <SectionLabel label="Alert Dispatch Metrics" />
 
-          {/* Alert Responses Row */}
+          {/* ROW 7: Big Numbers - Alert Responses Row */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={3}>
               <Box sx={{ height: 200 }}>
@@ -312,7 +303,6 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-
             <Grid item xs={12} md={3}>
               <Box sx={{ height: 200 }}>
                 <BigNumberChart
@@ -322,7 +312,6 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-
             <Grid item xs={12} md={3}>
               <Box sx={{ height: 200 }}>
                 <BigNumberChart 
@@ -346,6 +335,7 @@ function AAMDashboard() {
             
           </Grid>
 
+          {/* ROW 8: Alarm Label Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
           <Grid item xs={12} md={12}>
               <Box sx={{ height: 400 }}>
@@ -357,7 +347,8 @@ function AAMDashboard() {
             </Grid>
             </Grid>
 
-            <Grid container spacing={3} sx={{ mt: 3 }}>
+          {/* ROW 9: Alert Dispatch Types Pie Chart */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
             <PieChart
                   title={chartData.pieCharts.alertDispatchTypes.title}
@@ -383,7 +374,7 @@ function AAMDashboard() {
             </Grid>
             </Grid>
 
-            {/* Dispatch Types Daily Trend */}
+          {/* ROW 10: Dispatch Types Daily Trend */}
             <Grid container spacing={3} sx={{ mt: 2.5 }}>
               <Grid item xs={12} md={4}>
                 <Box sx={{ height: 400 }}>
@@ -415,7 +406,7 @@ function AAMDashboard() {
           {/* End-User Response Subsection */}
           <SectionLabel label="Alert Response Metrics" />
 
-            {/* Total Alerts Bottom */}
+            {/* ROW 11: Big Numbers - Total Alerts Bottom */}
             <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
               <Box sx={{ height: 200 }}>
@@ -446,7 +437,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Pie Charts Row */}
+          {/* ROW 12: Alert Response Detail and Pie Charts Row */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
           <Grid item xs={12} md={4}>
               <Box sx={{ height: 400 }}>
@@ -458,29 +449,19 @@ function AAMDashboard() {
             </Grid>
             <Grid item xs={12} md={4}>
               <PieChart
-                title="Percentage of Alert Response"
-                data={[
-                  { name: 'Response 1', value: 30 },
-                  { name: 'Response 2', value: 25 },
-                  { name: 'Response 3', value: 20 },
-                  { name: 'No Response', value: 25 }
-                ]}
+                title={chartData.pieCharts.alertsResponse.title}
+                data={chartData.pieCharts.alertsResponse.data}
               />
             </Grid>
             <Grid item xs={12} md={4}>
-              <PieChart
-                title="Alert Responses by Destination"
-                data={[
-                  { name: 'D1', value: 30 },
-                  { name: 'D2', value: 25 },
-                  { name: 'D3', value: 25 },
-                  { name: 'D4', value: 20 }
-                ]}
+            <PieChart
+                title={chartData.pieCharts.alertsResponsebyDestination.title}
+                data={chartData.pieCharts.alertsResponsebyDestination.data}
               />
             </Grid>
           </Grid>
 
-          {/* Alert Response Detail Table */}
+          {/* ROW 13:Alert Response Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -493,7 +474,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Alert Response by Recipient Table */}
+          {/* ROW 14: Alert Response by Recipient Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -507,9 +488,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-
-
-            {/* Response Types by Alarm Label Chart */}
+          {/* ROW 15: Response Types by Alarm Label Chart */}
             <Grid container spacing={3} sx={{ mt: 3 }}>
               <Grid item xs={12}>
                 <Box sx={{ height: 400 }}>
@@ -525,8 +504,7 @@ function AAMDashboard() {
               </Grid>
             </Grid>
 
-
-            {/* Alerts Responded To Daily Trend */}
+          {/* ROW 16: Alerts Responded To Daily Trend */}
             <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -546,7 +524,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* Alert Response Types Daily Trend */}
+          {/* ROW 17: Response Types Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
