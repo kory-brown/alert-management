@@ -69,6 +69,51 @@
         { "date": "2024-01-07", "alarms": 244, "alerts": 195 }
       ],
       "updateInterval": "5min"
+    },
+    "alertDispatchActionsDailyTrend": {
+      "id": "alert-dispatch-actions-daily-trend",
+      "title": "Alert Dispatch Actions Daily Trend",
+      "description": "Shows the trend of alert dispatch actions over time",
+      "data": [
+        { "date": "2025-01-01", "manuallyDispatched": 85, "autoDispatched": 95, "selfResolved": 45 },
+        { "date": "2025-01-02", "manuallyDispatched": 92, "autoDispatched": 88, "selfResolved": 42 },
+        { "date": "2025-01-03", "manuallyDispatched": 78, "autoDispatched": 102, "selfResolved": 51 },
+        { "date": "2025-01-04", "manuallyDispatched": 95, "autoDispatched": 85, "selfResolved": 38 },
+        { "date": "2025-01-05", "manuallyDispatched": 88, "autoDispatched": 93, "selfResolved": 47 },
+        { "date": "2025-01-06", "manuallyDispatched": 82, "autoDispatched": 98, "selfResolved": 44 },
+        { "date": "2025-01-07", "manuallyDispatched": 90, "autoDispatched": 91, "selfResolved": 49 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertDispatchAvgDurationDailyTrend": {
+      "id": "alert-dispatch-avg-duration-daily-trend",
+      "title": "Alert Dispatch Avg Duration Daily Trend",
+      "description": "Shows the average duration trend of alert dispatch types over time",
+      "data": [
+        { "date": "2025-01-01", "manuallyDispatched": "02:45", "autoDispatched": "01:30", "selfResolved": "03:15" },
+        { "date": "2025-01-02", "manuallyDispatched": "02:55", "autoDispatched": "01:25", "selfResolved": "03:10" },
+        { "date": "2025-01-03", "manuallyDispatched": "02:35", "autoDispatched": "01:40", "selfResolved": "03:25" },
+        { "date": "2025-01-04", "manuallyDispatched": "02:50", "autoDispatched": "01:35", "selfResolved": "03:05" },
+        { "date": "2025-01-05", "manuallyDispatched": "02:40", "autoDispatched": "01:45", "selfResolved": "03:20" },
+        { "date": "2025-01-06", "manuallyDispatched": "02:30", "autoDispatched": "01:35", "selfResolved": "03:15" },
+        { "date": "2025-01-07", "manuallyDispatched": "02:45", "autoDispatched": "01:30", "selfResolved": "03:10" }
+      ],
+      "updateInterval": "5min"
+    },
+    "totalSnippetsCreatedDailyTrend": {
+      "id": "total-snippets-created-daily-trend",
+      "title": "Total Snippets Created Daily Trend",
+      "description": "Shows the trend of total snippets created over time",
+      "data": [
+        { "date": "2025-01-01", "snippetsCreated": 42 },
+        { "date": "2025-01-02", "snippetsCreated": 38 },
+        { "date": "2025-01-03", "snippetsCreated": 45 },
+        { "date": "2025-01-04", "snippetsCreated": 35 },
+        { "date": "2025-01-05", "snippetsCreated": 41 },
+        { "date": "2025-01-06", "snippetsCreated": 39 },
+        { "date": "2025-01-07", "snippetsCreated": 44 }
+      ],
+      "updateInterval": "5min"
     }
   },
   "barCharts": {
@@ -149,6 +194,46 @@
           "alarmsHeldForRecurrence": 50
         }
       ]
+    },
+    "recurrenceAndDelaysByAlarmLabel": {
+      "title": "Total Recurrence Holds and Delays by Alarm Label",
+      "data": [
+        {
+          "alarmLabel": "AFIB",
+          "numberOfDelays": 28,
+          "heldForRecurrence": 42
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "numberOfDelays": 35,
+          "heldForRecurrence": 48
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "delaynumberOfDelaysed": 25,
+          "heldForRecurrence": 38
+        },
+        {
+          "alarmLabel": "HR LOW",
+          "numberOfDelays": 22,
+          "heldForRecurrence": 35
+        },
+        {
+          "alarmLabel": "PAUSE",
+          "numberOfDelays": 18,
+          "heldForRecurrence": 32
+        },
+        {
+          "alarmLabel": "VFIB/VTACH",
+          "numberOfDelays": 38,
+          "heldForRecurrence": 45
+        },
+        {
+          "alarmLabel": "SPO2 LOW",
+          "numberOfDelays": 24,
+          "heldForRecurrence": 40
+        }
+      ]
     }
   },
   "stackedBarCharts": {
@@ -182,6 +267,111 @@
         { "alarmLabel": "PAUSE", "totalAlarms": 298, "totalAlerts": 187, "avgDuration": "01:15" },
         { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "totalAlerts": 356, "avgDuration": "01:55" },
         { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "totalAlerts": 267, "avgDuration": "01:30" }
+      ]
+    },
+    "snippetCreatedDetail": {
+      "id": "snippet-created-detail",
+      "title": "Snippet Created Detail",
+      "description": "Details of snippets created by alarm label",
+      "data": [
+        { "alarmLabel": "AFIB", "totalSnippetsCreated": 45, "accepted": 32, "rejected": 8, "pending": 5 },
+        { "alarmLabel": "ASYSTOLE", "totalSnippetsCreated": 52, "accepted": 38, "rejected": 10, "pending": 4 },
+        { "alarmLabel": "HR HIGH", "totalSnippetsCreated": 38, "accepted": 25, "rejected": 7, "pending": 6 },
+        { "alarmLabel": "HR LOW", "totalSnippetsCreated": 35, "accepted": 24, "rejected": 6, "pending": 5 },
+        { "alarmLabel": "PAUSE", "totalSnippetsCreated": 28, "accepted": 20, "rejected": 5, "pending": 3 },
+        { "alarmLabel": "VFIB/VTACH", "totalSnippetsCreated": 56, "accepted": 42, "rejected": 9, "pending": 5 },
+        { "alarmLabel": "SPO2 LOW", "totalSnippetsCreated": 42, "accepted": 30, "rejected": 7, "pending": 5 }
+      ]
+    },
+    "alertDispatchDetail": {
+      "id": "alert-dispatch-detail",
+      "title": "Alert Dispatch Detail",
+      "description": "Comprehensive dispatch details by alarm label",
+      "data": [
+        {
+          "alarmLabel": "AFIB",
+          "totalAlarms": 425,
+          "totalAlerts": 298,
+          "avgAlarmDuration": "01:35",
+          "manuallyDispatched": 145,
+          "autoDispatched": 120,
+          "selfResolved": 85,
+          "numberOfDelays": 28,
+          "numberOfRecurrenceHolds": 42,
+          "avgAlarmIntervalToDispatch": "00:45"
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "totalAlarms": 461,
+          "totalAlerts": 314,
+          "avgAlarmDuration": "01:45",
+          "manuallyDispatched": 160,
+          "autoDispatched": 130,
+          "selfResolved": 90,
+          "numberOfDelays": 35,
+          "numberOfRecurrenceHolds": 48,
+          "avgAlarmIntervalToDispatch": "00:35"
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "totalAlarms": 387,
+          "totalAlerts": 245,
+          "avgAlarmDuration": "01:25",
+          "manuallyDispatched": 120,
+          "autoDispatched": 100,
+          "selfResolved": 92,
+          "numberOfDelays": 25,
+          "numberOfRecurrenceHolds": 38,
+          "avgAlarmIntervalToDispatch": "00:55"
+        },
+        {
+          "alarmLabel": "HR LOW",
+          "totalAlarms": 342,
+          "totalAlerts": 228,
+          "avgAlarmDuration": "01:20",
+          "manuallyDispatched": 110,
+          "autoDispatched": 95,
+          "selfResolved": 74,
+          "numberOfDelays": 22,
+          "numberOfRecurrenceHolds": 35,
+          "avgAlarmIntervalToDispatch": "00:50"
+        },
+        {
+          "alarmLabel": "PAUSE",
+          "totalAlarms": 298,
+          "totalAlerts": 187,
+          "avgAlarmDuration": "01:15",
+          "manuallyDispatched": 90,
+          "autoDispatched": 75,
+          "selfResolved": 71,
+          "numberOfDelays": 18,
+          "numberOfRecurrenceHolds": 32,
+          "avgAlarmIntervalToDispatch": "00:40"
+        },
+        {
+          "alarmLabel": "VFIB/VTACH",
+          "totalAlarms": 475,
+          "totalAlerts": 356,
+          "avgAlarmDuration": "01:55",
+          "manuallyDispatched": 180,
+          "autoDispatched": 150,
+          "selfResolved": 60,
+          "numberOfDelays": 38,
+          "numberOfRecurrenceHolds": 45,
+          "avgAlarmIntervalToDispatch": "00:30"
+        },
+        {
+          "alarmLabel": "SPO2 LOW",
+          "totalAlarms": 412,
+          "totalAlerts": 267,
+          "avgAlarmDuration": "01:30",
+          "manuallyDispatched": 130,
+          "autoDispatched": 110,
+          "selfResolved": 95,
+          "numberOfDelays": 24,
+          "numberOfRecurrenceHolds": 40,
+          "avgAlarmIntervalToDispatch": "00:45"
+        }
       ]
     }
   }

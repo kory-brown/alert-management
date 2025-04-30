@@ -17,6 +17,7 @@ import LineChart from '../components/LineChart';
 import StackedBarChart from '../components/StackedBarChart';
 import FiltersPanel from '../components/FiltersPanel';
 import chartData from '../data/AlertDispatchDashboardData.json';
+import Footer from '../components/Footer';
 import { drawerWidth } from '../components/FiltersPanel';
 
 function AlertDispatchDashboard() {
@@ -215,57 +216,8 @@ function AlertDispatchDashboard() {
             </Grid>
           </Grid>
          
-          {/* Snippets Created Row */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12} md={3}>
-              <Box sx={{ height: 300 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.snippetsCreated.title}
-                  value={chartData.bigNumbers.snippetsCreated.value}
-                  label={chartData.bigNumbers.snippetsCreated.label}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={9}>
-              <Box sx={{ height: 300 }}>
-                <BarChart
-                  title={chartData.barCharts.snippetsCreated.title}
-                  data={chartData.barCharts.snippetsCreated.data}
-                  xAxisKey="date"
-                  yAxisKeys={["snippetsCreated"]}
-                  yAxisLabels={["Snippets Created"]}
-                  colors={["#667275"]}
-                  showValueLabels={true}
-                />
-              </Box>
-            </Grid>
-          </Grid>
 
-          {/* Manually Dispatched Alerts Row */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12} md={3}>
-              <Box sx={{ height: 300 }}>
-                <BigNumberChart
-                  title={chartData.bigNumbers.manuallyDispatchedAlerts.title}
-                  value={chartData.bigNumbers.manuallyDispatchedAlerts.value}
-                  label={chartData.bigNumbers.manuallyDispatchedAlerts.label}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={9}>
-              <Box sx={{ height: 300 }}>
-                <BarChart
-                  title={chartData.barCharts.manuallyDispatchedAlerts.title}
-                  data={chartData.barCharts.manuallyDispatchedAlerts.data}
-                  xAxisKey="date"
-                  yAxisKeys={["manuallyDispatched"]}
-                  yAxisLabels={["Manually Dispatched Alerts"]}
-                  colors={["#667275"]}
-                  showValueLabels={true}
-                />
-              </Box>
-            </Grid>
-          </Grid>
+          
 
           {/* Total Number of Dispatches by Alarm Label */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
@@ -297,21 +249,119 @@ function AlertDispatchDashboard() {
             </Grid>
           </Grid>
 
+          {/* Alert Dispatch Types Pie Chart */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
-            <PieChart
-                  title={chartData.pieCharts.alertDispatchTypes.title}
-                  data={chartData.pieCharts.alertDispatchTypes.data}
-                  colors={{
-                    'Manually Dispatched': '#1aafe6',
-                    'Auto Dispatched': '#faad14',
-                    'Not Sustained': '#ff6b6b'
-                  }}
-                />
+              <PieChart
+                title={chartData.pieCharts.alertDispatchTypes.title}
+                data={chartData.pieCharts.alertDispatchTypes.data}
+                colors={{
+                  'Manually Dispatched': '#1aafe6',
+                  'Auto Dispatched': '#667275',
+                  'Self Resolved': '#4caf50'
+                }}
+              />
             </Grid>
-               </Grid>   
-          {/* Add more sections specific to Alert Dispatch Dashboard here */}
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 400 }}>
+                <BarChart
+                  title={chartData.barCharts.recurrenceAndDelaysByAlarmLabel.title}
+                  data={chartData.barCharts.recurrenceAndDelaysByAlarmLabel.data}
+                  xAxisKey="alarmLabel"
+                  yAxisKeys={["numberOfDelays", "heldForRecurrence"]}
+                  yAxisLabels={["Number of Delays", "Held for Recurrence"]}
+                  colors={["#1aafe6", "#faad14"]}
+                  showValueLabels={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+           {/* Alert Dispatch Actions Daily Trend */}
+           <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.alertDispatchActionsDailyTrend.title}
+                  data={chartData.lineCharts.alertDispatchActionsDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["manuallyDispatched", "autoDispatched", "selfResolved"]}
+                  yAxisLabels={["Manually Dispatched", "Auto Dispatched", "Self Resolved"]}
+                  colors={{
+                    'manuallyDispatched': '#1aafe6',
+                    'autoDispatched': '#667275',
+                    'selfResolved': '#4caf50'
+                  }}
+                  isTimeFormat={false}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Alert Dispatch Average Duration Daily Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.alertDispatchAvgDurationDailyTrend.title}
+                  data={chartData.lineCharts.alertDispatchAvgDurationDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["manuallyDispatched", "autoDispatched", "selfResolved"]}
+                  yAxisLabels={["Manually Dispatched", "Auto Dispatched", "Self Resolved"]}
+                  colors={{
+                    'manuallyDispatched': '#1aafe6',
+                    'autoDispatched': '#667275',
+                    'selfResolved': '#4caf50'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Snippet Created Detail Table and Chart */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.snippetCreatedDetail.title}
+                  data={chartData.tableCharts.snippetCreatedDetail.data}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.totalSnippetsCreatedDailyTrend.title}
+                  data={chartData.lineCharts.totalSnippetsCreatedDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["snippetsCreated"]}
+                  yAxisLabels={["Snippets Created"]}
+                  colors={{
+                    'snippetsCreated': '#1aafe6'
+                  }}
+                  isTimeFormat={false}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Alert Dispatch Detail Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={12}>
+            <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alertDispatchDetail.title}
+                  data={chartData.tableCharts.alertDispatchDetail.data}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
         </Box>
+      </Box>
+      <Box sx={{ mt: 4 }}>
+        <Footer leftLabel="AirStrip Alert Management" versionId="Version 1.0" />
       </Box>
     </Box>
   );

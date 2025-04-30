@@ -9,21 +9,24 @@ import {
   Tooltip
 } from 'recharts';
 
-const COLORS = [
-  '#1aafe6',  // Bright Blue
-  '#e5801c',  // Orange
-  '#65bce8',  // Light Blue
-  '#f3ad75',  // Light Orange
-  '#8fc9eb',  // Softer Blue
-  '#ed964c',  // Soft Orange
-  '#b2d6ed',  // Very Light Blue
-  '#f6c39d',  // Very Light Orange
-  '#d2e3ef',  // Palest Blue
-  '#f5dac7',  // Palest Orange
-  '#f1f1f1'   // Gray
+const DEFAULT_COLORS = [
+  '#1aafe6',  // Primary Blue
+  '#faad14',  // Orange
+  '#4caf50',  // Green
+  '#ff6b6b',  // Red
+  '#667275'   // Gray
 ];
 
-function PieChart({ title, data }) {
+function PieChart({ title, data, colors = {} }) {
+  const getColor = (entry, index) => {
+    // If a color is specified for this entry's name, use it
+    if (colors[entry.name]) {
+      return colors[entry.name];
+    }
+    // Otherwise fall back to the default color palette
+    return DEFAULT_COLORS[index % DEFAULT_COLORS.length];
+  };
+
   return (
     <Box
       sx={{
@@ -58,7 +61,7 @@ function PieChart({ title, data }) {
             label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
           >
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              <Cell key={`cell-${index}`} fill={getColor(entry, index)} />
             ))}
           </Pie>
           <Tooltip formatter={(value) => `${value}%`} />
