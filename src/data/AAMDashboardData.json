@@ -18,7 +18,7 @@
     },
     "totalAlertsRespondedTo": {
       "id": "total-alerts-responded-to",
-      "title": "Total Number of Alerts Responded To",
+      "title": "Total Alerts Responded To",
       "value": 301,
       "label": "Alerts",
       "description": "Total number of alerts that received a response",
@@ -26,7 +26,7 @@
     },
     "totalAlertsBottom": {
       "id": "total-alerts-bottom",
-      "title": "Total Number of Alerts",
+      "title": "Total Alerts",
       "value": 378,
       "label": "Alerts",
       "description": "Total number of alerts",
@@ -42,7 +42,7 @@
     },
     "totalAlarmsDispatched": {
       "id": "total-alerts-dispatched",
-      "title": "Total Number of Alerts Dispatched",
+      "title": "Total Alerts Dispatched",
       "value": 571,
       "label": "Alerts",
       "description": "Total number of alerts that were dispatched",
@@ -58,7 +58,7 @@
     },
     "manuallyDispatchedAlerts": {
       "id": "manually-dispatched-alerts",
-      "title": "Total Number of Manually Dispatched Alerts",
+      "title": "Total Manually Dispatched Alerts",
       "value": 254,
       "label": "Alerts",
       "description": "Total number of alerts that were manually dispatched",
@@ -66,7 +66,7 @@
     },
     "autoDispatchedAlerts": {
       "id": "auto-dispatched-alerts",
-      "title": "Total Number of Auto Dispatched Alerts",
+      "title": "Total Auto Dispatched Alerts",
       "value": 311,
       "label": "Alerts",
       "description": "Total number of alerts that were manually dispatched",
@@ -133,25 +133,24 @@
     },
     "alertsResponse": {
       "id": "alerts-by-response",
-      "title": "Percentage of Alert Response",
-      "description": "Distribution of alerts by response",
+      "title": "Alert Response Distribution",
+      "description": "Distribution of alerts by response type",
       "data": [
-        { "name": "Response 1", "value": 30 },
-        { "name": "Response 2", "value": 25 },
-        { "name": "Response 3", "value": 20 },
-        { "name": "No Response", "value": 25 }
+        { "name": "Accept", "value": 164 },
+        { "name": "Escalate", "value": 98 },
+        { "name": "No Response", "value": 40 }
       ],
       "updateInterval": "5min"
     },
-    "alertsResponsebyDestination": {
-      "id": "alerts-response-by-destination",
-      "title": "Percentage of Alert Response by Destination",
-      "description": "Distribution of alerts by response by destination",
+    "alertsResponseByRecipient": {
+      "id": "alerts-response-by-recipient",
+      "title": "Percentage of Alert Response by Recipient",
+      "description": "Distribution of alerts by response by recipient",
       "data": [
-        { "name": "D1", "value": 30 },
-        { "name": "D2", "value": 25 },
-        { "name": "D3", "value": 20 },
-        { "name": "D4", "value": 25 }
+        { "name": "R1", "value": 119 },
+        { "name": "R2", "value": 111 },
+        { "name": "R3", "value": 82 },
+        { "name": "R4", "value": 29 }
       ],
       "updateInterval": "5min"
     }
@@ -546,7 +545,7 @@
           "autoDispatched": 145,
           "selfResolved": 165,
           "numberOfDelays": 175, 
-          "numberOfReoccurrenceHolds": 35,
+          "numberOfReccurrenceHolds": 35,
           "avgAlarmIntervalToDispatch": "01:35"
         },
         { 
@@ -557,7 +556,7 @@
           "autoDispatched": 186,
           "selfResolved": 142,
           "numberOfDelays": 188, 
-          "numberOfReoccurrenceHolds": 42,
+          "numberOfReccurrenceHolds": 42,
           "avgAlarmIntervalToDispatch": "02:15"
         },
         { 
@@ -568,7 +567,7 @@
           "autoDispatched": 132,
           "selfResolved": 148,
           "numberOfDelays": 156, 
-          "numberOfReoccurrenceHolds": 31,
+          "numberOfReccurrenceHolds": 31,
           "avgAlarmIntervalToDispatch": "01:25"
         },
         { 
@@ -579,7 +578,7 @@
           "autoDispatched": 118,
           "selfResolved": 157,
           "numberOfDelays": 143, 
-          "numberOfReoccurrenceHolds": 28,
+          "numberOfReccurrenceHolds": 28,
           "avgAlarmIntervalToDispatch": "01:15"
         },
         { 
@@ -590,7 +589,7 @@
           "autoDispatched": 98,
           "selfResolved": 145,
           "numberOfDelays": 124, 
-          "numberOfReoccurrenceHolds": 25,
+          "numberOfReccurrenceHolds": 25,
           "avgAlarmIntervalToDispatch": "01:05"
         },
         { 
@@ -601,7 +600,7 @@
           "autoDispatched": 198,
           "selfResolved": 163,
           "numberOfDelays": 198, 
-          "numberOfReoccurrenceHolds": 45,
+          "numberOfReccurrenceHolds": 45,
           "avgAlarmIntervalToDispatch": "02:25"
         },
         { 
@@ -612,7 +611,7 @@
           "autoDispatched": 156,
           "selfResolved": 144,
           "numberOfDelays": 167, 
-          "numberOfReoccurrenceHolds": 33,
+          "numberOfReccurrenceHolds": 33,
           "avgAlarmIntervalToDispatch": "01:45"
         }
       ],
@@ -638,10 +637,9 @@
       "style": {
         "alarmLabel": { "align": "left" },
         "totalAlerts": { "align": "right" },
-        "totalResp1": { "align": "right" },
-        "totalResp2": { "align": "right" },
-        "totalResp3": { "align": "right" },
-        "totalNoResp": { "align": "right" },
+        "accept": { "align": "right" },
+        "escalate": { "align": "right" },
+        "noResponse": { "align": "right" },
         "totalUndeliverable": { "align": "right" },
         "avgAcceptTime": { "align": "right" },
         "avgManualTime": { "align": "right" },
@@ -650,10 +648,9 @@
       "data": [
         {
           "alarmLabel": "AFIB", "totalAlerts": 298,
-          "totalResp1": 145,
-          "totalResp2": 85,
-          "totalResp3": 25,
-          "totalNoResp": 35,
+          "accept": 145,
+          "escalate": 85,
+          "noResponse": 35,
           "totalUndeliverable": 8,
           "avgAcceptTime": "00:45",
           "avgManualTime": "01:15",
@@ -662,10 +659,9 @@
         { 
           "alarmLabel": "ASYSTOLE",
           "totalAlerts": 314,
-          "totalResp1": 168,
-          "totalResp2": 92,
-          "totalResp3": 28,
-          "totalNoResp": 18,
+          "accept": 168,
+          "escalate": 92,
+          "noResponse": 18,
           "totalUndeliverable": 8,
           "avgAcceptTime": "00:35",
           "avgManualTime": "01:05",
@@ -674,10 +670,9 @@
         { 
           "alarmLabel": "HR HIGH",
           "totalAlerts": 245,
-          "totalResp1": 112,
-          "totalResp2": 78,
-          "totalResp3": 22,
-          "totalNoResp": 25,
+          "accept": 112,
+          "escalate": 78,
+          "noResponse": 25,
           "totalUndeliverable": 8,
           "avgAcceptTime": "00:50",
           "avgManualTime": "01:20",
@@ -686,10 +681,9 @@
         { 
           "alarmLabel": "HR LOW",
           "totalAlerts": 228,
-          "totalResp1": 98,
-          "totalResp2": 82,
-          "totalResp3": 18,
-          "totalNoResp": 22,
+          "accept": 98,
+          "escalate": 82,
+          "noResponse": 22,
           "totalUndeliverable": 8,
           "avgAcceptTime": "00:48",
           "avgManualTime": "01:18",
@@ -698,10 +692,9 @@
         { 
           "alarmLabel": "PAUSE",
           "totalAlerts": 187,
-          "totalResp1": 85,
-          "totalResp2": 58,
-          "totalResp3": 15,
-          "totalNoResp": 22,
+          "accept": 85,
+          "escalate": 58,
+          "noResponse": 22,
           "totalUndeliverable": 7,
           "avgAcceptTime": "00:42",
           "avgManualTime": "01:12",
@@ -710,10 +703,9 @@
         { 
           "alarmLabel": "VFIB/VTACH",
           "totalAlerts": 356,
-          "totalResp1": 185,
-          "totalResp2": 98,
-          "totalResp3": 32,
-          "totalNoResp": 32,
+          "accept": 185,
+          "escalate": 98,
+          "noResponse": 32,
           "totalUndeliverable": 9,
           "avgAcceptTime": "00:32",
           "avgManualTime": "01:02",
@@ -722,10 +714,9 @@
         { 
           "alarmLabel": "SPO2 LOW",
           "totalAlerts": 267,
-          "totalResp1": 128,
-          "totalResp2": 85,
-          "totalResp3": 22,
-          "totalNoResp": 24,
+          "accept": 128,
+          "escalate": 85,
+          "noResponse": 24,
           "totalUndeliverable": 8,
           "avgAcceptTime": "00:45",
           "avgManualTime": "01:15",

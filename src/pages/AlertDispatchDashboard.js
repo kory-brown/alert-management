@@ -17,6 +17,7 @@ import LineChart from '../components/LineChart';
 import StackedBarChart from '../components/StackedBarChart';
 import FiltersPanel from '../components/FiltersPanel';
 import chartData from '../data/AlertDispatchDashboardData.json';
+import SectionLabel from '../components/SectionLabel';
 import Footer from '../components/Footer';
 import { drawerWidth } from '../components/FiltersPanel';
 
@@ -53,6 +54,7 @@ function AlertDispatchDashboard() {
       <AppHeader title={pageTitle} />
       <Toolbar />
       <Box sx={{ display: 'flex', flex: 1, position: 'relative' }}>
+        
         {/* FILTERS PANEL */}
         <Box sx={{ 
           display: 'flex',
@@ -199,7 +201,6 @@ function AlertDispatchDashboard() {
             </Grid>
           </Grid>
 
-
           {/* Big Number Alarms & Alerts */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={3}>
@@ -215,9 +216,6 @@ function AlertDispatchDashboard() {
               <BigNumberChart {...chartData.bigNumbers.heldForReoccurenceAlarms} />
             </Grid>
           </Grid>
-         
-
-          
 
           {/* Total Number of Dispatches by Alarm Label */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
@@ -319,8 +317,20 @@ function AlertDispatchDashboard() {
             </Grid>
           </Grid>
 
-          {/* Snippet Created Detail Table and Chart */}
+          {/* Alert Dispatch Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={12}>
+            <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alertDispatchDetail.title}
+                  data={chartData.tableCharts.alertDispatchDetail.data}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+           {/* Snippet Created Detail Table and Chart */}
+           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
               <Box sx={{ height: 400 }}>
                 <TableChart
@@ -345,19 +355,7 @@ function AlertDispatchDashboard() {
               </Box>
             </Grid>
           </Grid>
-
-          {/* Alert Dispatch Detail Table */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12} md={12}>
-            <Box sx={{ height: 400 }}>
-                <TableChart
-                  title={chartData.tableCharts.alertDispatchDetail.title}
-                  data={chartData.tableCharts.alertDispatchDetail.data}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-
+          
         </Box>
       </Box>
       <Box sx={{ mt: 4 }}>

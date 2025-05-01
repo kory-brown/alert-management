@@ -455,8 +455,8 @@ function AAMDashboard() {
             </Grid>
             <Grid item xs={12} md={4}>
             <PieChart
-                title={chartData.pieCharts.alertsResponsebyDestination.title}
-                data={chartData.pieCharts.alertsResponsebyDestination.data}
+                title={chartData.pieCharts.alertsResponseByRecipient.title}
+                data={chartData.pieCharts.alertsResponseByRecipient.data}
               />
             </Grid>
           </Grid>

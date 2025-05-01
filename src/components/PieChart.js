@@ -64,7 +64,7 @@ function PieChart({ title, data, colors = {} }) {
               <Cell key={`cell-${index}`} fill={getColor(entry, index)} />
             ))}
           </Pie>
-          <Tooltip formatter={(value) => `${value}%`} />
+          <Tooltip formatter={(value) => value} />
           <Legend
             verticalAlign="top"
             align="center"

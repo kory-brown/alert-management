@@ -16,27 +16,27 @@
       "label": "(MM:SS)"
     },
     "manuallyDispatchedAlerts": {
-      "title": "Total Number of Manually Dispatched Alerts",
+      "title": "Total Manually Dispatched Alerts",
       "value": "289",
       "label": "Alerts"
     },
     "autoDispatchedAlerts": {
-      "title": "Total Number of Auto Dispatched Alerts",
+      "title": "Total Auto Dispatched Alerts",
       "value": "199",
       "label": "Alerts"
     },
     "selfResolvedAlarms": {
-      "title": "Total Number of Alarms Self Resolved",
+      "title": "Total Self Resolved Alarms",
       "value": "158",
       "label": "Alarms"
     },
     "heldForReoccurenceAlarms": {
-      "title": "Total Number of Alarms Held for Reoccurence",
+      "title": "Total Alarms Held for Reoccurence",
       "value": "176",
       "label": "Alarms"
     },
     "snippetsCreated": {
-      "title": "Total Number of Snippets Created",
+      "title": "Total Snippets Created",
       "value": "97",
       "label": "Snippets"
     }
@@ -72,7 +72,7 @@
     },
     "alertDispatchActionsDailyTrend": {
       "id": "alert-dispatch-actions-daily-trend",
-      "title": "Alert Dispatch Actions Daily Trend",
+      "title": "Alert Dispatch Types Daily Trend",
       "description": "Shows the trend of alert dispatch actions over time",
       "data": [
         { "date": "2025-01-01", "manuallyDispatched": 85, "autoDispatched": 95, "selfResolved": 45 },
@@ -142,7 +142,7 @@
       ]
     },
     "dispatchesByAlarmLabel": {
-      "title": "Total Number of Dispatches by Alarm Label",
+      "title": "Total Dispatches by Alarm Label",
       "data": [
         {
           "alarmLabel": "AFIB",
@@ -271,7 +271,7 @@
     },
     "snippetCreatedDetail": {
       "id": "snippet-created-detail",
-      "title": "Snippet Created Detail",
+      "title": "Snippets Created Detail",
       "description": "Details of snippets created by alarm label",
       "data": [
         { "alarmLabel": "AFIB", "totalSnippetsCreated": 45, "accepted": 32, "rejected": 8, "pending": 5 },

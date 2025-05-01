@@ -40,7 +40,7 @@ const formatColumnHeader = (key) => {
   return words.join(' ');
 };
 
-const TableChart = ({ title, data, description }) => {
+const TableChart = ({ title, data, description, style }) => {
   // Generate headers from the first data object
   const generateHeaders = () => {
     if (!data || data.length === 0) return [];
@@ -48,8 +48,10 @@ const TableChart = ({ title, data, description }) => {
     return Object.keys(data[0]).map(key => ({
       id: key,
       label: formatColumnHeader(key),
-      // Align numbers to the right, text to the left
-      align: typeof data[0][key] === 'number' ? 'right' : 'left'
+      // Use style prop if provided, otherwise default to type-based alignment
+      align: style && style[key]?.align 
+        ? style[key].align 
+        : (typeof data[0][key] === 'number' ? 'right' : 'left')
     }));
   };
 
