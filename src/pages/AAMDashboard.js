@@ -20,10 +20,9 @@ function AAMDashboard() {
   const [shift, setShift] = useState('');
   const [facility, setFacility] = useState('');
   const [utility, setUtility] = useState('');
+  const [bed, setBed] = useState('');
   const [severity, setSeverity] = useState('');
-  const [category, setCategory] = useState('');
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
-
 
   const handleApplyFilters = () => {
     console.log('Applying filters:', {
@@ -31,8 +30,8 @@ function AAMDashboard() {
       shift,
       facility,
       utility,
-      severity,
-      category
+      bed,
+      severity
     });
   };
 
@@ -83,14 +82,14 @@ function AAMDashboard() {
               shift={shift}
               facility={facility}
               utility={utility}
+              bed={bed}
               severity={severity}
-              category={category}
               onStartDateChange={setStartDate}
               onShiftChange={setShift}
               onFacilityChange={setFacility}
               onUtilityChange={setUtility}
+              onBedChange={setBed}
               onSeverityChange={setSeverity}
-              onCategoryChange={setCategory}
               onApplyFilters={handleApplyFilters}
               isOpen={isFilterPanelOpen}
               onToggle={toggleFilterPanel}
@@ -184,6 +183,7 @@ function AAMDashboard() {
                 <TableChart
                   title={chartData.tableCharts.alarmLabelStats.title}
                   data={chartData.tableCharts.alarmLabelStats.data}
+                  style={chartData.tableCharts.alarmLabelStats.style}
                 />
               </Box>
             </Grid>
@@ -342,6 +342,7 @@ function AAMDashboard() {
                 <TableChart
                   title={chartData.tableCharts.alarmLabelDetail.title}
                   data={chartData.tableCharts.alarmLabelDetail.data}
+                  style={chartData.tableCharts.alarmLabelDetail.style}
                 />
               </Box>
             </Grid>
@@ -444,6 +445,7 @@ function AAMDashboard() {
                 <TableChart
                   title={chartData.tableCharts.alertResponseByLabel.title}
                   data={chartData.tableCharts.alertResponseByLabel.data}
+                  style={chartData.tableCharts.alertResponseByLabel.style}
                 />
               </Box>
             </Grid>

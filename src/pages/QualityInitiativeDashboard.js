@@ -15,6 +15,7 @@ function QualityInitiativeDashboard() {
   const [shift, setShift] = useState('');
   const [facility, setFacility] = useState('');
   const [utility, setUtility] = useState('');
+  const [bed, setBed] = useState('');
   const [severity, setSeverity] = useState('');
   const [category, setCategory] = useState('');
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
@@ -31,8 +32,8 @@ function QualityInitiativeDashboard() {
       shift,
       facility,
       utility,
-      severity,
-      category
+      bed,
+      severity
     });
   };
 
@@ -72,12 +73,14 @@ function QualityInitiativeDashboard() {
               shift={shift}
               facility={facility}
               utility={utility}
+              bed={bed}
               severity={severity}
               category={category}
               onStartDateChange={setStartDate}
               onShiftChange={setShift}
               onFacilityChange={setFacility}
               onUtilityChange={setUtility}
+              onBedChange={setBed}
               onSeverityChange={setSeverity}
               onCategoryChange={setCategory}
               onApplyFilters={handleApplyFilters}

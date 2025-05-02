@@ -522,6 +522,12 @@
       "id": "alarm-label-stats",
       "title": "Alarm Label Detail",
       "description": "Summary statistics for each alarm label",
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "totalAlarms": { "align": "right" },
+        "totalAlerts": { "align": "right" },
+        "avgDuration": { "align": "right" }
+      },
       "data": [
         { "alarmLabel": "AFIB", "totalAlarms": 425, "totalAlerts": 298, "avgDuration": "01:35" },
         { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "totalAlerts": 314, "avgDuration": "01:45" },
@@ -536,6 +542,17 @@
       "id": "alarm-label-detail",
       "title": "Alarm Label Detail",
       "description": "Detailed statistics for each alarm label including delayed and held for reoccurrence",
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "totalAlarms": { "align": "right" },
+        "totalAlerts": { "align": "right" },
+        "manuallyDispatched": { "align": "right" },
+        "autoDispatched": { "align": "right" },
+        "selfResolved": { "align": "right" },
+        "numberOfDelays": { "align": "right" },
+        "numberOfReccurrenceHolds": { "align": "right" },
+        "avgAlarmIntervalToDispatch": { "align": "right" }
+      },
       "data": [
         {
           "alarmLabel": "AFIB", 

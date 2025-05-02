@@ -15,6 +15,7 @@ function PathwaysDashboard() {
   const [shift, setShift] = useState('');
   const [facility, setFacility] = useState('');
   const [utility, setUtility] = useState('');
+  const [bed, setBed] = useState('');
   const [severity, setSeverity] = useState('');
   const [category, setCategory] = useState('');
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
@@ -31,9 +32,13 @@ function PathwaysDashboard() {
       shift,
       facility,
       utility,
-      severity,
-      category
+      bed,
+      severity
     });
+  };
+
+  const handleBedChange = (value) => {
+    setBed(value);
   };
 
   return (
@@ -72,12 +77,14 @@ function PathwaysDashboard() {
               shift={shift}
               facility={facility}
               utility={utility}
+              bed={bed}
               severity={severity}
               category={category}
               onStartDateChange={setStartDate}
               onShiftChange={setShift}
               onFacilityChange={setFacility}
               onUtilityChange={setUtility}
+              onBedChange={handleBedChange}
               onSeverityChange={setSeverity}
               onCategoryChange={setCategory}
               onApplyFilters={handleApplyFilters}

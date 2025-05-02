@@ -22,16 +22,16 @@ const FiltersPanel = ({
   facility,
   utility,
   severity,
-  category,
   onStartDateChange,
   onShiftChange,
   onFacilityChange,
   onUtilityChange,
   onSeverityChange,
-  onCategoryChange,
   onApplyFilters,
   isOpen,
-  onToggle
+  onToggle,
+  bed,
+  onBedChange
 }) => {
   return (
     <Box sx={{ 
@@ -110,15 +110,43 @@ const FiltersPanel = ({
           </FormControl>
 
           <FormControl fullWidth sx={{ mb: 2 }}>
-            <InputLabel>Utility</InputLabel>
+            <InputLabel>Unit</InputLabel>
             <Select
               value={utility}
-              label="Utility"
+              label="Unit"
               onChange={(e) => onUtilityChange(e.target.value)}
             >
-              <MenuItem value="utility1">Utility 1</MenuItem>
-              <MenuItem value="utility2">Utility 2</MenuItem>
-              <MenuItem value="utility3">Utility 3</MenuItem>
+              <MenuItem value="unit1">Critical Care</MenuItem>
+              <MenuItem value="unit2">ICU</MenuItem>
+              <MenuItem value="unit3">NICU</MenuItem>
+            </Select>
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 2 }}>
+            <InputLabel>Bed</InputLabel>
+            <Select
+              value={bed}
+              label="Bed"
+              onChange={(e) => onBedChange(e.target.value)}
+            >
+              <MenuItem value="cc101">CC-101</MenuItem>
+              <MenuItem value="cc102">CC-102</MenuItem>
+              <MenuItem value="cc103">CC-103</MenuItem>
+              <MenuItem value="cc104">CC-104</MenuItem>
+              <MenuItem value="cc105">CC-105</MenuItem>
+              <MenuItem value="cc106">CC-106</MenuItem>
+              <MenuItem value="icu111">ICU-111</MenuItem>
+              <MenuItem value="icu112">ICU-112</MenuItem>
+              <MenuItem value="icu113">ICU-113</MenuItem>
+              <MenuItem value="icu114">ICU-114</MenuItem>
+              <MenuItem value="icu115">ICU-115</MenuItem>
+              <MenuItem value="icu116">ICU-116</MenuItem>
+              <MenuItem value="nicu241">NICU-241</MenuItem>
+              <MenuItem value="nicu242">NICU-242</MenuItem>
+              <MenuItem value="nicu243">NICU-243</MenuItem>
+              <MenuItem value="nicu244">NICU-244</MenuItem>
+              <MenuItem value="nicu245">NICU-245</MenuItem>
+              <MenuItem value="nicu246">NICU-246</MenuItem>
             </Select>
           </FormControl>
         </Box>
@@ -127,28 +155,15 @@ const FiltersPanel = ({
         <Box>
           <Typography variant="subtitle2" sx={{ mb: 1 }}>Options</Typography>
           <FormControl fullWidth sx={{ mb: 2 }}>
-            <InputLabel>Severity</InputLabel>
+            <InputLabel>Priority</InputLabel>
             <Select
               value={severity}
-              label="Severity"
+              label="Priority"
               onChange={(e) => onSeverityChange(e.target.value)}
             >
               <MenuItem value="high">High</MenuItem>
               <MenuItem value="medium">Medium</MenuItem>
               <MenuItem value="low">Low</MenuItem>
-            </Select>
-          </FormControl>
-
-          <FormControl fullWidth sx={{ mb: 2 }}>
-            <InputLabel>Category</InputLabel>
-            <Select
-              value={category}
-              label="Category"
-              onChange={(e) => onCategoryChange(e.target.value)}
-            >
-              <MenuItem value="category1">Category 1</MenuItem>
-              <MenuItem value="category2">Category 2</MenuItem>
-              <MenuItem value="category3">Category 3</MenuItem>
             </Select>
           </FormControl>
         </Box>

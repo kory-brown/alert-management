@@ -25,6 +25,7 @@ const AuditTrailDashboard = () => {
   const [shift, setShift] = useState('');
   const [facility, setFacility] = useState('');
   const [utility, setUtility] = useState('');
+  const [bed, setBed] = useState('');
 
   const toggleFilterPanel = () => {
     setIsFilterPanelOpen(!isFilterPanelOpen);
@@ -36,8 +37,8 @@ const AuditTrailDashboard = () => {
       shift,
       facility,
       utility,
-      severity,
-      category
+      bed,
+      severity
     });
   };
 
@@ -113,12 +114,14 @@ const AuditTrailDashboard = () => {
               shift={shift}
               facility={facility}
               utility={utility}
+              bed={bed}
               severity={severity}
               category={category}
               onStartDateChange={setStartDate}
               onShiftChange={setShift}
               onFacilityChange={setFacility}
               onUtilityChange={setUtility}
+              onBedChange={setBed}
               onSeverityChange={setSeverity}
               onCategoryChange={setCategory}
               onApplyFilters={handleApplyFilters}

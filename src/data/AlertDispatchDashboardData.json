@@ -37,7 +37,7 @@
     },
     "snippetsCreated": {
       "title": "Total Snippets Created",
-      "value": "97",
+      "value": "284",
       "label": "Snippets"
     }
   },
@@ -259,14 +259,20 @@
       "id": "alarm-label-stats",
       "title": "Alarm Label Detail",
       "description": "Summary statistics for each alarm label",
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "totalAlarms": { "align": "right" },
+        "totalAlerts": { "align": "right" },
+        "avgAlarmQueueDuration": { "align": "right" }
+      },
       "data": [
-        { "alarmLabel": "AFIB", "totalAlarms": 425, "totalAlerts": 298, "avgDuration": "01:35" },
-        { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "totalAlerts": 314, "avgDuration": "01:45" },
-        { "alarmLabel": "HR HIGH", "totalAlarms": 387, "totalAlerts": 245, "avgDuration": "01:25" },
-        { "alarmLabel": "HR LOW", "totalAlarms": 342, "totalAlerts": 228, "avgDuration": "01:20" },
-        { "alarmLabel": "PAUSE", "totalAlarms": 298, "totalAlerts": 187, "avgDuration": "01:15" },
-        { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "totalAlerts": 356, "avgDuration": "01:55" },
-        { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "totalAlerts": 267, "avgDuration": "01:30" }
+        { "alarmLabel": "AFIB", "totalAlarms": 425, "totalAlerts": 298, "avgAlarmQueueDuration": "01:35" },
+        { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "totalAlerts": 314, "avgAlarmQueueDuration": "01:45" },
+        { "alarmLabel": "HR HIGH", "totalAlarms": 387, "totalAlerts": 245, "avgAlarmQueueDuration": "01:25" },
+        { "alarmLabel": "HR LOW", "totalAlarms": 342, "totalAlerts": 228, "avgAlarmQueueDuration": "01:20" },
+        { "alarmLabel": "PAUSE", "totalAlarms": 298, "totalAlerts": 187, "avgAlarmQueueDuration": "01:15" },
+        { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "totalAlerts": 356, "avgAlarmQueueDuration": "01:55" },
+        { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "totalAlerts": 267, "avgAlarmQueueDuration": "01:30" }
       ]
     },
     "snippetCreatedDetail": {
@@ -287,6 +293,18 @@
       "id": "alert-dispatch-detail",
       "title": "Alert Dispatch Detail",
       "description": "Comprehensive dispatch details by alarm label",
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "totalAlarms": { "align": "right" },
+        "totalAlerts": { "align": "right" },
+        "avgAlarmDuration": { "align": "right" },
+        "manuallyDispatched": { "align": "right" },
+        "autoDispatched": { "align": "right" },
+        "selfResolved": { "align": "right" },
+        "numberOfDelays": { "align": "right" },
+        "numberOfRecurrenceHolds": { "align": "right" },
+        "avgAlarmIntervalToDispatch": { "align": "right" }
+      },
       "data": [
         {
           "alarmLabel": "AFIB",

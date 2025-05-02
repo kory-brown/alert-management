@@ -26,6 +26,7 @@ function AlertDispatchDashboard() {
   const [shift, setShift] = useState('');
   const [facility, setFacility] = useState('');
   const [utility, setUtility] = useState('');
+  const [bed, setBed] = useState('');
   const [severity, setSeverity] = useState('');
   const [category, setCategory] = useState('');
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
@@ -36,8 +37,8 @@ function AlertDispatchDashboard() {
       shift,
       facility,
       utility,
-      severity,
-      category
+      bed,
+      severity
     });
   };
 
@@ -87,12 +88,14 @@ function AlertDispatchDashboard() {
               shift={shift}
               facility={facility}
               utility={utility}
+              bed={bed}
               severity={severity}
               category={category}
               onStartDateChange={setStartDate}
               onShiftChange={setShift}
               onFacilityChange={setFacility}
               onUtilityChange={setUtility}
+              onBedChange={setBed}
               onSeverityChange={setSeverity}
               onCategoryChange={setCategory}
               onApplyFilters={handleApplyFilters}
@@ -186,6 +189,7 @@ function AlertDispatchDashboard() {
                 <TableChart
                   title={chartData.tableCharts.alarmLabelStats.title}
                   data={chartData.tableCharts.alarmLabelStats.data}
+                  style={chartData.tableCharts.alarmLabelStats.style}
                 />
               </Box>
             </Grid>
@@ -275,6 +279,19 @@ function AlertDispatchDashboard() {
             </Grid>
           </Grid>
 
+          {/* Alert Dispatch Detail Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={12}>
+            <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alertDispatchDetail.title}
+                  data={chartData.tableCharts.alertDispatchDetail.data}
+                  style={chartData.tableCharts.alertDispatchDetail.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
            {/* Alert Dispatch Actions Daily Trend */}
            <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
@@ -317,29 +334,31 @@ function AlertDispatchDashboard() {
             </Grid>
           </Grid>
 
-          {/* Alert Dispatch Detail Table */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12} md={12}>
-            <Box sx={{ height: 400 }}>
-                <TableChart
-                  title={chartData.tableCharts.alertDispatchDetail.title}
-                  data={chartData.tableCharts.alertDispatchDetail.data}
+           {/* Snippet Created Detail Table and Chart */}
+           <Grid container spacing={3} sx={{ mt: 3 }}>
+
+           <Grid item xs={12} md={4}>
+              <Box sx={{ height: 300 }}>
+                <BigNumberChart
+                  title="Total Snippets Created"
+                  value="284"
+                  label="Snippets"
                 />
               </Box>
             </Grid>
-          </Grid>
-
-           {/* Snippet Created Detail Table and Chart */}
-           <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 400 }}>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
                 <TableChart
                   title={chartData.tableCharts.snippetCreatedDetail.title}
                   data={chartData.tableCharts.snippetCreatedDetail.data}
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={8}>
+            </Grid>
+
+            <Grid container spacing={3} sx={{ mt: 3 }}>
+            {/* Snippet Created Daily TrendChart */}
+            <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <LineChart 
                   title={chartData.lineCharts.totalSnippetsCreatedDailyTrend.title}

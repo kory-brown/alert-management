@@ -9,6 +9,8 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import AppHeader from '../components/AppHeader';
 import FiltersPanel from '../components/FiltersPanel';
 import { drawerWidth } from '../components/FiltersPanel';
+import chartData from '../data/AlertResponseDashboardData.json';
+import Footer from '../components/Footer';
 
 function AlertResponseDashboard() {
   const [startDate, setStartDate] = useState('');
@@ -130,6 +132,7 @@ function AlertResponseDashboard() {
           )}
         </Box>
       </Box>
+      <Footer />
     </Box>
   );
 }
