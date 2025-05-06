@@ -16,6 +16,14 @@
       "description": "Total number of alerts that received a response",
       "updateInterval": "5min"
     },
+    "totalAlertsRespondedTo": {
+      "id": "total-alerts-responded-to",
+      "title": "Total Alerts Responded To",
+      "value": 752,
+      "label": "Alerts",
+      "description": "Total number of alerts that received a response",
+      "updateInterval": "5min"
+    },
     "avgResponseTime": {
       "id": "avg-response-time",
       "title": "Average Response Time",
@@ -55,17 +63,68 @@
       "label": "Undeliverable",
       "description": "Number of alerts that could not be delivered",
       "updateInterval": "5min"
+    },
+    "totalAlarms": {
+      "id": "total-alarms",
+      "title": "Total Alarms",
+      "value": 1345,
+      "label": "Alarms",
+      "description": "Total number of alarms across all facilities",
+      "updateInterval": "5min"
+    },
+    "totalDispatchedAlerts": {
+      "id": "total-dispatched-alerts",
+      "title": "Total Dispatched Alerts",
+      "value": 831,
+      "label": "Alerts",
+      "description": "Total number of dispatched alerts",
+      "updateInterval": "5min"
+    },
+    "averageAlarmDuration": {
+      "id": "average-alarm-duration",
+      "title": "Average Alarm Duration",
+      "value": "01:37",
+      "label": "Alarm Start to Finish (MM:SS)",
+      "description": "Average time from alarm start to finish",
+      "updateInterval": "5min"
+    },
+    "averageAlertTimeUntilAccepted": {
+      "id": "average-alert-time-until-accepted",
+      "title": "Average Alert Time Until Accepted",
+      "value": "00:35",
+      "label": "(MM:SS)",
+      "description": "Average time from alert creation until acceptance",
+      "updateInterval": "5min"
+    },
+    "averageAlertTimeToResolve": {
+      "id": "average-alert-time-to-resolve",
+      "title": "Average Alert Time from Accept to Resolve",
+      "value": "01:02",
+      "label": "(MM:SS)",
+      "description": "Average time from alert acceptance to resolution",
+      "updateInterval": "5min"
     }
   },
   "pieCharts": {
-    "alertsByResponse": {
-      "id": "alerts-by-response",
-      "title": "Alerts by Response Type",
+    "alertsByResponseOptions": {
+      "id": "alerts-by-response-options",
+      "title": "Percentage of Alerts by Response Options",
       "description": "Distribution of alerts by response type",
       "data": [
-        { "name": "Accepted", "value": 921 },
-        { "name": "Escalated", "value": 516 },
-        { "name": "No Response", "value": 181 }
+        { "name": "Accepted", "value": 750 },
+        { "name": "Escalated", "value": 309 },
+        { "name": "No Response", "value": 211 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertsByResponse": {
+      "id": "alert-response",
+      "title": "Percentange of Alerts By Response",
+      "description": "Distribution of alert escalations by type",
+      "data": [
+        { "name": "Manually Escalated", "value": 245 },
+        { "name": "Auto-Escalated", "value": 379 },
+        { "name": "Auto from Delay", "value": 211 }
       ],
       "updateInterval": "5min"
     },
@@ -89,6 +148,18 @@
         { "name": "R2", "value": 475 },
         { "name": "R3", "value": 435 },
         { "name": "R4", "value": 400 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertResponseByRecipient": {
+      "id": "alert-response-by-recipient",
+      "title": "Percentage of Alert Response by Recipient",
+      "description": "Distribution of alert responses across recipients",
+      "data": [
+        { "name": "R1", "value": 480 },
+        { "name": "R2", "value": 389 },
+        { "name": "R3", "value": 192 },
+        { "name": "R4", "value": 93 }
       ],
       "updateInterval": "5min"
     }
@@ -312,6 +383,75 @@
           "avgResponseTime": "01:30"
         }
       ]
+    }
+  },
+  "stackedBarCharts": {
+    "byAlarmLabels": {
+      "id": "by-alarm-labels",
+      "title": "Total Alarms and Alerts by Alarm Label",
+      "description": "Distribution of alarms and alerts across different alarm labels",
+      "data": [
+        { "groupByLabel": "AFIB", "totalLabel": "Alarms", "totalValue": 425, "subsetLabel": "Alerts", "subsetValue": 298 },
+        { "groupByLabel": "ASYSTOLE", "totalLabel": "Alarms", "totalValue": 461, "subsetLabel": "Alerts", "subsetValue": 314 },
+        { "groupByLabel": "HR HIGH", "totalLabel": "Alarms", "totalValue": 387, "subsetLabel": "Alerts", "subsetValue": 245 },
+        { "groupByLabel": "HR LOW", "totalLabel": "Alarms", "totalValue": 342, "subsetLabel": "Alerts", "subsetValue": 228 },
+        { "groupByLabel": "PAUSE", "totalLabel": "Alarms", "totalValue": 298, "subsetLabel": "Alerts", "subsetValue": 187 },
+        { "groupByLabel": "VFIB/VTACH", "totalLabel": "Alarms", "totalValue": 475, "subsetLabel": "Alerts", "subsetValue": 356 },
+        { "groupByLabel": "SPO2 LOW", "totalLabel": "Alarms", "totalValue": 412, "subsetLabel": "Alerts", "subsetValue": 267 }
+      ],
+      "updateInterval": "5min"
+    }
+  },
+  "groupedBarCharts": {
+    "responsesByAlarmLabel": {
+      "id": "responses-by-alarm-label",
+      "title": "Alert Responses by Alarm Label",
+      "description": "Distribution of response types across alarm labels",
+      "data": [
+        { 
+          "alarmLabel": "AFIB",
+          "manuallyEscalated": 45,
+          "autoEscalated": 67,
+          "autoFromDelay": 38
+        },
+        { 
+          "alarmLabel": "ASYSTOLE",
+          "manuallyEscalated": 52,
+          "autoEscalated": 78,
+          "autoFromDelay": 42
+        },
+        { 
+          "alarmLabel": "HR HIGH",
+          "manuallyEscalated": 38,
+          "autoEscalated": 56,
+          "autoFromDelay": 32
+        },
+        { 
+          "alarmLabel": "HR LOW",
+          "manuallyEscalated": 35,
+          "autoEscalated": 52,
+          "autoFromDelay": 29
+        },
+        { 
+          "alarmLabel": "PAUSE",
+          "manuallyEscalated": 28,
+          "autoEscalated": 42,
+          "autoFromDelay": 24
+        },
+        { 
+          "alarmLabel": "VFIB/VTACH",
+          "manuallyEscalated": 56,
+          "autoEscalated": 84,
+          "autoFromDelay": 48
+        },
+        { 
+          "alarmLabel": "SPO2 LOW",
+          "manuallyEscalated": 42,
+          "autoEscalated": 63,
+          "autoFromDelay": 36
+        }
+      ],
+      "updateInterval": "5min"
     }
   }
 } 

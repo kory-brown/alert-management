@@ -4,13 +4,20 @@ import {
   Toolbar,
   Paper,
   IconButton,
+  Grid,
 } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import AppHeader from '../components/AppHeader';
 import FiltersPanel from '../components/FiltersPanel';
 import { drawerWidth } from '../components/FiltersPanel';
+import SectionLabel from '../components/SectionLabel';
 import chartData from '../data/AlertResponseDashboardData.json';
 import Footer from '../components/Footer';
+import BigNumberChart from '../components/BigNumberChart';
+import PieChart from '../components/PieChart';
+import StackedBarChart from '../components/StackedBarChart';
+import GroupedBarChart from '../components/GroupedBarChart';
+import BarChart from '../components/BarChart';
 
 function AlertResponseDashboard() {
   const [startDate, setStartDate] = useState('');
@@ -130,6 +137,91 @@ function AlertResponseDashboard() {
               <ChevronRightIcon />
             </IconButton>
           )}
+
+          {/* PAGE CHART COMPONENTS */}
+          <SectionLabel label="Alarm and Alert Volume Summary" />
+
+          {/* ROW 1 - Big Number Charts */}   
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart {...chartData.bigNumbers.totalAlarms} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart {...chartData.bigNumbers.totalDispatchedAlerts} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart {...chartData.bigNumbers.totalAlertsRespondedTo} />
+            </Grid>
+          </Grid>
+
+          {/* ROW 2 - Big Number Charts */}
+          <Grid container spacing={3} sx={{ mt: 2 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart {...chartData.bigNumbers.averageAlarmDuration} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart {...chartData.bigNumbers.averageAlertTimeUntilAccepted} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart {...chartData.bigNumbers.averageAlertTimeToResolve} />
+            </Grid>
+          </Grid>
+
+          {/* ROW 3 - Charts */}
+          <Grid container spacing={3} sx={{ mt: 2 }}>
+            <Grid item xs={12} md={4}>
+              <PieChart {...chartData.pieCharts.alertsByResponse} showRawValues={true} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <PieChart {...chartData.pieCharts.alertsByResponseOptions} showRawValues={true} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <PieChart {...chartData.pieCharts.alertResponseByRecipient} showRawValues={true} />
+            </Grid>
+          </Grid>
+
+          {/* ROW 4 - Stacked Bar Chart */}
+          <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <StackedBarChart 
+                  title={chartData.stackedBarCharts.byAlarmLabels.title}
+                  data={chartData.stackedBarCharts.byAlarmLabels.data}
+                  groupBy={chartData.stackedBarCharts.byAlarmLabels.groupBy}
+                  colors={['#1aafe6', '#667275']}
+                />
+              </Box>
+            </Grid>
+
+          {/* ROW 5 - Grouped Bar Chart */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <BarChart
+                  title={chartData.groupedBarCharts.responsesByAlarmLabel.title}
+                  data={chartData.groupedBarCharts.responsesByAlarmLabel.data}
+                  xAxisKey="alarmLabel"
+                  yAxisKeys={[
+                    "manuallyEscalated",
+                    "autoEscalated",
+                    "autoFromDelay"
+                  ]}
+                  yAxisLabels={[
+                    "Manually Escalated",
+                    "Auto Escalated",
+                    "Auto from Delay"
+                  ]}
+                  colors={[
+                    "#1aafe6",
+                    "#667275",
+                    "#4caf50",
+                    "#9c27b0"
+                  ]}
+                  showValueLabels={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
         </Box>
       </Box>
       <Footer />
