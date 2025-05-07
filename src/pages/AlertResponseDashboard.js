@@ -18,6 +18,8 @@ import PieChart from '../components/PieChart';
 import StackedBarChart from '../components/StackedBarChart';
 import GroupedBarChart from '../components/GroupedBarChart';
 import BarChart from '../components/BarChart';
+import TableChart from '../components/TableChart';
+import LineChart from '../components/LineChart';
 
 function AlertResponseDashboard() {
   const [startDate, setStartDate] = useState('');
@@ -154,7 +156,27 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 2 - Big Number Charts */}
+          {/* ROW 2: Alarms and Alerts Daily TrendRow */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.alarmsAndAlertsDailyTrend.title}
+                  data={chartData.lineCharts.alarmsAndAlertsDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["alarms", "alerts"]}
+                  yAxisLabels={["Alarms", "Alerts"]}
+                  colors={{
+                    'alarms': '#1aafe6',
+                    'alerts': '#808080'
+                  }}
+                  isTimeFormat={false}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 3 - Big Number Charts */}
           <Grid container spacing={3} sx={{ mt: 2 }}>
             <Grid item xs={12} md={4}>
               <BigNumberChart {...chartData.bigNumbers.averageAlarmDuration} />
@@ -167,7 +189,8 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 3 - Charts */}
+
+          {/* ROW 5 - Charts */}
           <Grid container spacing={3} sx={{ mt: 2 }}>
             <Grid item xs={12} md={4}>
               <PieChart {...chartData.pieCharts.alertsByResponse} showRawValues={true} />
@@ -192,9 +215,59 @@ function AlertResponseDashboard() {
               </Box>
             </Grid>
 
-          {/* ROW 5 - Grouped Bar Chart */}
+            {/* ROW 4 - Alerts by Alarm Label Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.alertsByAlarmLabelDailyTrend.title}
+                  data={chartData.lineCharts.alertsByAlarmLabelDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={[
+                    "AFIB",
+                    "ASYSTOLE",
+                    "HR HIGH",
+                    "HR LOW",
+                    "PAUSE",
+                    "VFIB/VTACH",
+                    "SPO2 LOW"
+                  ]}
+                  yAxisLabels={[
+                    "AFIB",
+                    "ASYSTOLE",
+                    "HR HIGH",
+                    "HR LOW",
+                    "PAUSE",
+                    "VFIB/VTACH",
+                    "SPO2 LOW"
+                  ]}
+                  colors={{
+                    'AFIB': '#1aafe6',
+                    'ASYSTOLE': '#667275',
+                    'HR HIGH': '#4caf50',
+                    'HR LOW': '#ff9800',
+                    'PAUSE': '#9c27b0',
+                    'VFIB/VTACH': '#f44336',
+                    'SPO2 LOW': '#795548'
+                  }}
+                  isTimeFormat={false}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 5 - Grouped Bar Chart and Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alarmLabelAvgDuration.title}
+                  data={chartData.tableCharts.alarmLabelAvgDuration.data}
+                  style={chartData.tableCharts.alarmLabelAvgDuration.style}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={8}>
               <Box sx={{ height: 400 }}>
                 <BarChart
                   title={chartData.groupedBarCharts.responsesByAlarmLabel.title}
@@ -213,10 +286,38 @@ function AlertResponseDashboard() {
                   colors={[
                     "#1aafe6",
                     "#667275",
-                    "#4caf50",
-                    "#9c27b0"
+                    "#4caf50"
                   ]}
                   showValueLabels={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+
+          {/* ROW 6 - Alarm Label Response Detail Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alarmLabelResponseDetail.title}
+                  data={chartData.tableCharts.alarmLabelResponseDetail.data}
+                  description={chartData.tableCharts.alarmLabelResponseDetail.description}
+                  style={chartData.tableCharts.alarmLabelResponseDetail.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 7 - Alarm Label Recipient Detail Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alarmLabelRecipientDetail.title}
+                  data={chartData.tableCharts.alarmLabelRecipientDetail.data}
+                  description={chartData.tableCharts.alarmLabelRecipientDetail.description}
+                  style={chartData.tableCharts.alarmLabelRecipientDetail.style}
                 />
               </Box>
             </Grid>
