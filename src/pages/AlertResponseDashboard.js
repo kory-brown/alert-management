@@ -154,7 +154,7 @@ function AlertResponseDashboard() {
             <Grid item xs={12} md={4}>
               <BigNumberChart {...chartData.bigNumbers.totalAlertsRespondedTo} />
             </Grid>
-          </Grid>
+            </Grid>
 
           {/* ROW 2: Alarms and Alerts Daily TrendRow */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
@@ -256,7 +256,23 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 5 - Grouped Bar Chart and Table */}
+          {/* ROW 5 - Big Number Charts */}
+          <Grid container spacing={3} sx={{ mt: 2 }}>
+            <Grid item xs={12} md={3}>
+              <BigNumberChart {...chartData.bigNumbers.totalAcceptedAlerts} />
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <BigNumberChart {...chartData.bigNumbers.totalManuallyEscalatedAlerts} />
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <BigNumberChart {...chartData.bigNumbers.totalAutoEscalatedAlerts} />
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <BigNumberChart {...chartData.bigNumbers.totalSelfResolvedAlerts} />
+            </Grid>
+          </Grid>
+
+          {/* ROW 6 - Grouped Bar Chart and Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
               <Box sx={{ height: 400 }}>
@@ -276,17 +292,20 @@ function AlertResponseDashboard() {
                   yAxisKeys={[
                     "manuallyEscalated",
                     "autoEscalated",
-                    "autoFromDelay"
+                    "accepted",
+                    "selfResolved"
                   ]}
                   yAxisLabels={[
                     "Manually Escalated",
                     "Auto Escalated",
-                    "Auto from Delay"
+                    "Accepted",
+                    "Self Resolved"
                   ]}
                   colors={[
                     "#1aafe6",
                     "#667275",
-                    "#4caf50"
+                    "#4caf50",
+                    "#ff9800"
                   ]}
                   showValueLabels={true}
                 />
@@ -302,28 +321,26 @@ function AlertResponseDashboard() {
                 <TableChart
                   title={chartData.tableCharts.alarmLabelResponseDetail.title}
                   data={chartData.tableCharts.alarmLabelResponseDetail.data}
-                  description={chartData.tableCharts.alarmLabelResponseDetail.description}
                   style={chartData.tableCharts.alarmLabelResponseDetail.style}
                 />
               </Box>
             </Grid>
           </Grid>
 
-          {/* ROW 7 - Alarm Label Recipient Detail Table */}
+          {/* ROW 7 - Alarm Label Recipient Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <TableChart
-                  title={chartData.tableCharts.alarmLabelRecipientDetail.title}
-                  data={chartData.tableCharts.alarmLabelRecipientDetail.data}
-                  description={chartData.tableCharts.alarmLabelRecipientDetail.description}
-                  style={chartData.tableCharts.alarmLabelRecipientDetail.style}
+                  title={chartData.tableCharts.alarmLabelRecipientTable.title}
+                  data={chartData.tableCharts.alarmLabelRecipientTable.data}
+                  style={chartData.tableCharts.alarmLabelRecipientTable.style}
                 />
               </Box>
             </Grid>
           </Grid>
-
-        </Box>
+                                                      
+        </Box>                           
       </Box>
       <Footer />
     </Box>
