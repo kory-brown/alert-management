@@ -687,7 +687,7 @@
     },
     "undeliverableAlertsTable": {
       "id": "undeliverable-alerts-detail-table",
-      "title": "Undeliverable Alerts Detail Table",
+      "title": "Undeliverable Alerts Detail",
       "description": "Details of alerts that could not be delivered to recipients",
       "data": [
         {
