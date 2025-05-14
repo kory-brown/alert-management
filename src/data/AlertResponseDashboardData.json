@@ -1,13 +1,5 @@
 {
   "bigNumbers": {
-    "totalAlerts": {
-      "id": "total-alerts",
-      "title": "Total Alerts",
-      "value": 1895,
-      "label": "Total Alerts",
-      "description": "Total number of alerts across all facilities",
-      "updateInterval": "5min"
-    },
     "totalAlertsRespondedTo": {
       "id": "total-alerts-responded-to",
       "title": "Alerts Responded To",
@@ -22,46 +14,6 @@
       "value": 611,
       "label": "Alerts",
       "description": "Total number of alerts that self resolved",
-      "updateInterval": "5min"
-    },
-    "avgResponseTime": {
-      "id": "avg-response-time",
-      "title": "Average Response Time",
-      "value": "01:25",
-      "label": "Response Time (MM:SS)",
-      "description": "Average time from alert to first response",
-      "updateInterval": "5min"
-    },
-    "acceptedAlerts": {
-      "id": "accepted-alerts",
-      "title": "Accepted Alerts",
-      "value": 921,
-      "label": "Accepted",
-      "description": "Number of alerts that were accepted",
-      "updateInterval": "5min"
-    },
-    "escalatedAlerts": {
-      "id": "escalated-alerts",
-      "title": "Escalated Alerts",
-      "value": 516,
-      "label": "Escalated",
-      "description": "Number of alerts that were escalated",
-      "updateInterval": "5min"
-    },
-    "noResponseAlerts": {
-      "id": "no-response-alerts",
-      "title": "No Response Alerts",
-      "value": 181,
-      "label": "No Response",
-      "description": "Number of alerts that received no response",
-      "updateInterval": "5min"
-    },
-    "undeliverableAlerts": {
-      "id": "undeliverable-alerts",
-      "title": "Undeliverable Alerts",
-      "value": 56,
-      "label": "Undeliverable",
-      "description": "Number of alerts that could not be delivered",
       "updateInterval": "5min"
     },
     "totalAlarms": {
@@ -150,29 +102,6 @@
       ],
       "updateInterval": "5min"
     },
-    "alertsByPriority": {
-      "id": "alerts-by-priority",
-      "title": "Alerts by Priority",
-      "description": "Distribution of alerts by priority level",
-      "data": [
-        { "name": "Low", "value": 425 },
-        { "name": "Medium", "value": 785 },
-        { "name": "High", "value": 685 }
-      ],
-      "updateInterval": "5min"
-    },
-    "alertsByRecipient": {
-      "id": "alerts-by-recipient",
-      "title": "Alerts by Primary Recipient",
-      "description": "Distribution of alerts by primary recipient",
-      "data": [
-        { "name": "R1", "value": 585 },
-        { "name": "R2", "value": 475 },
-        { "name": "R3", "value": 435 },
-        { "name": "R4", "value": 400 }
-      ],
-      "updateInterval": "5min"
-    },
     "alertResponseByRecipient": {
       "id": "alert-response-by-recipient",
       "title": "Alert Response by Recipient",
@@ -187,51 +116,6 @@
     }
   },
   "lineCharts": {
-    "responseTimesTrend": {
-      "id": "response-times-trend",
-      "title": "Response Times Daily Trend",
-      "description": "Average response times by priority level over time",
-      "data": [
-        { "date": "2024-01-01", "low": "01:45", "medium": "01:15", "high": "00:45" },
-        { "date": "2024-01-02", "low": "01:42", "medium": "01:12", "high": "00:42" },
-        { "date": "2024-01-03", "low": "01:48", "medium": "01:18", "high": "00:48" },
-        { "date": "2024-01-04", "low": "01:39", "medium": "01:09", "high": "00:39" },
-        { "date": "2024-01-05", "low": "01:44", "medium": "01:14", "high": "00:44" },
-        { "date": "2024-01-06", "low": "01:46", "medium": "01:16", "high": "00:46" },
-        { "date": "2024-01-07", "low": "01:43", "medium": "01:13", "high": "00:43" }
-      ],
-      "updateInterval": "5min"
-    },
-    "responseTypesTrend": {
-      "id": "response-types-trend",
-      "title": "Response Types Daily Trend",
-      "description": "Distribution of response types over time",
-      "data": [
-        { "date": "2024-01-01", "accepted": 135, "escalated": 75, "noResponse": 25 },
-        { "date": "2024-01-02", "accepted": 128, "escalated": 72, "noResponse": 28 },
-        { "date": "2024-01-03", "accepted": 142, "escalated": 78, "noResponse": 24 },
-        { "date": "2024-01-04", "accepted": 132, "escalated": 74, "noResponse": 26 },
-        { "date": "2024-01-05", "accepted": 138, "escalated": 76, "noResponse": 22 },
-        { "date": "2024-01-06", "accepted": 125, "escalated": 70, "noResponse": 29 },
-        { "date": "2024-01-07", "accepted": 140, "escalated": 77, "noResponse": 23 }
-      ],
-      "updateInterval": "5min"
-    },
-    "alertsRespondedTrend": {
-      "id": "alerts-responded-trend",
-      "title": "Alerts Responded To Daily Trend",
-      "description": "Shows the trend of total alerts and alerts responded to over time",
-      "data": [
-        { "date": "2024-01-01", "totalAlerts": 275, "alertsResponded": 235 },
-        { "date": "2024-01-02", "totalAlerts": 268, "alertsResponded": 228 },
-        { "date": "2024-01-03", "totalAlerts": 284, "alertsResponded": 244 },
-        { "date": "2024-01-04", "totalAlerts": 272, "alertsResponded": 232 },
-        { "date": "2024-01-05", "totalAlerts": 276, "alertsResponded": 236 },
-        { "date": "2024-01-06", "totalAlerts": 264, "alertsResponded": 224 },
-        { "date": "2024-01-07", "totalAlerts": 280, "alertsResponded": 240 }
-      ],
-      "updateInterval": "5min"
-    },
     "alarmsAndAlertsDailyTrend": {
       "id": "alarms-and-alerts-daily-trend",
       "title": "Alarms and Alerts Daily Trend",
@@ -324,181 +208,41 @@
         }
       ],
       "updateInterval": "5min"
+    },
+    "avgAlertResponseTimeByPriorityDailyTrend": {
+      "id": "average-alert-response-time-by-priority-daily-trend",
+      "title": "Avg Alert Response Times by Priority Daily Trend",
+      "description": "Shows the daily trend of average alert response times by priority level.",
+      "data": [
+        { "date": "2025-01-01", "Low": "01:58", "Medium": "01:27", "High": "00:52" },
+        { "date": "2025-01-02", "Low": "01:37", "Medium": "01:03", "High": "00:38" },
+        { "date": "2025-01-03", "Low": "02:04", "Medium": "01:35", "High": "00:47" },
+        { "date": "2025-01-04", "Low": "01:48", "Medium": "01:12", "High": "00:31" },
+        { "date": "2025-01-05", "Low": "01:25", "Medium": "01:18", "High": "00:55" },
+        { "date": "2025-01-06", "Low": "01:52", "Medium": "01:09", "High": "00:43" },
+        { "date": "2025-01-07", "Low": "01:39", "Medium": "01:22", "High": "00:49" }
+      ],
+      "updateInterval": "5min"
+    },
+    "averageAcceptToEndByRecipientDailyTrend": {
+      "id": "average-accept-to-end-by-recipient-daily-trend",
+      "title": "Average Accept to End by Recipient Daily Trend",
+      "description": "Shows the daily trend of average accept to end time by recipient.",
+      "data": [
+        { "date": "2025-01-01", "R1": "01:08", "R2": "01:42", "R3": "01:17", "R4": "01:55" },
+        { "date": "2025-01-02", "R1": "01:22", "R2": "01:15", "R3": "01:45", "R4": "01:33" },
+        { "date": "2025-01-03", "R1": "00:57", "R2": "01:38", "R3": "01:26", "R4": "02:03" },
+        { "date": "2025-01-04", "R1": "01:17", "R2": "01:25", "R3": "00:58", "R4": "01:49" },
+        { "date": "2025-01-05", "R1": "01:34", "R2": "01:05", "R3": "01:53", "R4": "01:28" },
+        { "date": "2025-01-06", "R1": "01:04", "R2": "01:51", "R3": "01:12", "R4": "01:37" },
+        { "date": "2025-01-07", "R1": "01:28", "R2": "01:19", "R3": "01:39", "R4": "01:11" }
+      ],
+      "updateInterval": "5min"
     }
   },
   "barCharts": {
-    "responseTimesByPriority": {
-      "id": "response-times-by-priority",
-      "title": "Average Response Times by Priority",
-      "description": "Average response times for different priority levels",
-      "data": [
-        { "priority": "Low", "avgResponseTime": "01:45" },
-        { "priority": "Medium", "avgResponseTime": "01:15" },
-        { "priority": "High", "avgResponseTime": "00:45" }
-      ],
-      "updateInterval": "5min"
-    },
-    "responseTimesByRecipient": {
-      "id": "response-times-by-recipient",
-      "title": "Average Response Times by Recipient",
-      "description": "Average response times for different recipients",
-      "data": [
-        { "recipient": "R1", "avgResponseTime": "01:15" },
-        { "recipient": "R2", "avgResponseTime": "01:25" },
-        { "recipient": "R3", "avgResponseTime": "01:35" },
-        { "recipient": "R4", "avgResponseTime": "01:45" }
-      ],
-      "updateInterval": "5min"
-    }
   },
   "tableCharts": {
-    "alertResponseByPriority": {
-      "id": "alert-response-by-priority",
-      "title": "Alert Response by Priority",
-      "description": "Detailed response statistics by priority level",
-      "style": {
-        "priority": { "align": "left" },
-        "totalAlerts": { "align": "right" },
-        "accepted": { "align": "right" },
-        "escalated": { "align": "right" },
-        "noResponse": { "align": "right" },
-        "avgResponseTime": { "align": "right" }
-      },
-      "data": [
-        {
-          "priority": "High",
-          "totalAlerts": 685,
-          "accepted": 412,
-          "escalated": 205,
-          "noResponse": 68,
-          "avgResponseTime": "00:45"
-        },
-        {
-          "priority": "Medium",
-          "totalAlerts": 785,
-          "accepted": 345,
-          "escalated": 215,
-          "noResponse": 75,
-          "avgResponseTime": "01:15"
-        },
-        {
-          "priority": "Low",
-          "totalAlerts": 425,
-          "accepted": 164,
-          "escalated": 96,
-          "noResponse": 38,
-          "avgResponseTime": "01:45"
-        }
-      ]
-    },
-    "alertResponseByRecipient": {
-      "id": "alert-response-by-recipient",
-      "title": "Alert Response by Recipient",
-      "description": "Detailed response statistics by recipient",
-      "style": {
-        "recipient": { "align": "left" },
-        "totalAlerts": { "align": "right" },
-        "accepted": { "align": "right" },
-        "escalated": { "align": "right" },
-        "noResponse": { "align": "right" },
-        "avgResponseTime": { "align": "right" }
-      },
-      "data": [
-        {
-          "recipient": "R1",
-          "totalAlerts": 585,
-          "accepted": 315,
-          "escalated": 155,
-          "noResponse": 45,
-          "avgResponseTime": "01:15"
-        },
-        {
-          "recipient": "R2",
-          "totalAlerts": 475,
-          "accepted": 245,
-          "escalated": 135,
-          "noResponse": 45,
-          "avgResponseTime": "01:25"
-        },
-        {
-          "recipient": "R3",
-          "totalAlerts": 435,
-          "accepted": 205,
-          "escalated": 125,
-          "noResponse": 45,
-          "avgResponseTime": "01:35"
-        },
-        {
-          "recipient": "R4",
-          "totalAlerts": 400,
-          "accepted": 156,
-          "escalated": 101,
-          "noResponse": 46,
-          "avgResponseTime": "01:45"
-        }
-      ]
-    },
-    "alertResponseDetail": {
-      "id": "alert-response-detail",
-      "title": "Alert Response Detail by Facility",
-      "description": "Detailed response statistics by facility",
-      "style": {
-        "facility": { "align": "left" },
-        "totalAlerts": { "align": "right" },
-        "accepted": { "align": "right" },
-        "escalated": { "align": "right" },
-        "noResponse": { "align": "right" },
-        "undeliverable": { "align": "right" },
-        "avgResponseTime": { "align": "right" }
-      },
-      "data": [
-        {
-          "facility": "Facility A",
-          "totalAlerts": 425,
-          "accepted": 225,
-          "escalated": 125,
-          "noResponse": 45,
-          "undeliverable": 12,
-          "avgResponseTime": "01:15"
-        },
-        {
-          "facility": "Facility B",
-          "totalAlerts": 385,
-          "accepted": 195,
-          "escalated": 115,
-          "noResponse": 35,
-          "undeliverable": 10,
-          "avgResponseTime": "01:25"
-        },
-        {
-          "facility": "Facility C",
-          "totalAlerts": 345,
-          "accepted": 175,
-          "escalated": 95,
-          "noResponse": 35,
-          "undeliverable": 8,
-          "avgResponseTime": "01:35"
-        },
-        {
-          "facility": "Facility D",
-          "totalAlerts": 365,
-          "accepted": 185,
-          "escalated": 105,
-          "noResponse": 35,
-          "undeliverable": 12,
-          "avgResponseTime": "01:20"
-        },
-        {
-          "facility": "Facility E",
-          "totalAlerts": 375,
-          "accepted": 141,
-          "escalated": 76,
-          "noResponse": 31,
-          "undeliverable": 14,
-          "avgResponseTime": "01:30"
-        }
-      ]
-    },
     "alarmLabelAvgDuration": {
       "id": "alarm-label-avg-duration",
       "title": "Avg Duration by Alarm Label Detail",
@@ -520,7 +264,7 @@
     },
     "alarmLabelResponseDetail": {
       "id": "alarm-label-response-detail",
-      "title": "Alarm Label Response Detail",
+      "title": "Alert Response Detail",
       "description": "Detailed response statistics by alarm label",
       "data": [
         {
@@ -616,7 +360,7 @@
     },
     "alarmLabelRecipientTable": {
       "id": "alarm-label-recipient-table",
-      "title": "Alarm Label Recipient Table",
+      "title": "Alert Response by Recipient Detail",
       "description": "Detailed response statistics by alarm label and recipient",
       "data": [
         {
@@ -940,6 +684,177 @@
         "avgTimeAcceptToEnd": { "align": "right" }
       },
       "updateInterval": "5min"
+    },
+    "undeliverableAlertsTable": {
+      "id": "undeliverable-alerts-detail-table",
+      "title": "Undeliverable Alerts Detail Table",
+      "description": "Details of alerts that could not be delivered to recipients",
+      "data": [
+        {
+          "alarmLabel": "ASYSTOLE",
+          "date": "2024-01-01",
+          "time": "08:15",
+          "unit": "ICU",
+          "room": "RM 101"
+        },
+        {
+          "alarmLabel": "VFIB/VTACH",
+          "date": "2024-01-01",
+          "time": "09:30",
+          "unit": "Emergency",
+          "room": "RM 203"
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "date": "2024-01-02",
+          "time": "10:45",
+          "unit": "CCU",
+          "room": "RM 305"
+        },
+        {
+          "alarmLabel": "SPO2 LOW",
+          "date": "2024-01-02",
+          "time": "14:20",
+          "unit": "ICU",
+          "room": "RM 118"
+        },
+        {
+          "alarmLabel": "HR LOW",
+          "date": "2024-01-03",
+          "time": "07:55",
+          "unit": "Emergency",
+          "room": "RM 211"
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "date": "2024-01-03",
+          "time": "13:40",
+          "unit": "CCU",
+          "room": "RM 315"
+        },
+        {
+          "alarmLabel": "PAUSE",
+          "date": "2024-01-04",
+          "time": "11:25",
+          "unit": "ICU",
+          "room": "RM 124"
+        },
+        {
+          "alarmLabel": "AFIB",
+          "date": "2024-01-04",
+          "time": "16:50",
+          "unit": "Emergency",
+          "room": "RM 225"
+        },
+        {
+          "alarmLabel": "VFIB/VTACH",
+          "date": "2024-01-05",
+          "time": "09:15",
+          "unit": "CCU",
+          "room": "RM 327"
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "date": "2024-01-05",
+          "time": "15:30",
+          "unit": "ICU",
+          "room": "RM 133"
+        },
+        {
+          "alarmLabel": "SPO2 LOW",
+          "date": "2024-01-06",
+          "time": "08:45",
+          "unit": "Emergency",
+          "room": "RM 247"
+        },
+        {
+          "alarmLabel": "HR LOW",
+          "date": "2024-01-06",
+          "time": "12:10",
+          "unit": "CCU",
+          "room": "RM 339"
+        }
+      ],
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "date": { "align": "left" },
+        "time": { "align": "left" },
+        "unit": { "align": "left" },
+        "room": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "autoEscalatedAlertsTable": {
+      "id": "auto-escalated-alerts-table",
+      "title": "Auto Escalated Alerts by Volume",
+      "description": "Details of auto escalated alerts sorted by volume",
+      "data": [
+        {
+          "alarmLabel": "VFIB/VTACH",
+          "alarms": 475,
+          "alerts": 356,
+          "totalAlarmTime": "19:45:30",
+          "avgResponseTime": "00:38",
+          "totalAcceptances": 186
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "alarms": 461,
+          "alerts": 314,
+          "totalAlarmTime": "17:22:45",
+          "avgResponseTime": "00:42",
+          "totalAcceptances": 168
+        },
+        {
+          "alarmLabel": "AFIB",
+          "alarms": 425,
+          "alerts": 298,
+          "totalAlarmTime": "12:23:15",
+          "avgResponseTime": "00:45",
+          "totalAcceptances": 156
+        },
+        {
+          "alarmLabel": "SPO2 LOW",
+          "alarms": 412,
+          "alerts": 267,
+          "totalAlarmTime": "11:28:40",
+          "avgResponseTime": "01:30",
+          "totalAcceptances": 142
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "alarms": 387,
+          "alerts": 245,
+          "totalAlarmTime": "09:41:30",
+          "avgResponseTime": "01:15",
+          "totalAcceptances": 132
+        },
+        {
+          "alarmLabel": "HR LOW",
+          "alarms": 342,
+          "alerts": 228,
+          "totalAlarmTime": "09:07:10",
+          "avgResponseTime": "01:20",
+          "totalAcceptances": 124
+        },
+        {
+          "alarmLabel": "PAUSE",
+          "alarms": 298,
+          "alerts": 187,
+          "totalAlarmTime": "06:14:35",
+          "avgResponseTime": "01:25",
+          "totalAcceptances": 98
+        }
+      ],
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "alarms": { "align": "right" },
+        "alerts": { "align": "right" },
+        "totalAlarmTime": { "align": "right" },
+        "avgResponseTime": { "align": "right" },
+        "totalAcceptances": { "align": "right" }
+      },
+      "updateInterval": "5min"
     }
   },
   "stackedBarCharts": {
@@ -955,6 +870,42 @@
         { "groupByLabel": "PAUSE", "totalLabel": "Alarms", "totalValue": 298, "subsetLabel": "Alerts", "subsetValue": 187 },
         { "groupByLabel": "VFIB/VTACH", "totalLabel": "Alarms", "totalValue": 475, "subsetLabel": "Alerts", "subsetValue": 356 },
         { "groupByLabel": "SPO2 LOW", "totalLabel": "Alarms", "totalValue": 412, "subsetLabel": "Alerts", "subsetValue": 267 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertsByRecipient": {
+      "id": "alerts-by-recipient",
+      "title": "Alerts by Recipient",
+      "description": "Distribution of alerts by recipient and response type",
+      "data": [
+        {
+          "groupByLabel": "R1",
+          "Accepted": 315,
+          "Manually Escalated": 155,
+          "No Response": 45,
+          "Accepted & Auto Escalated": 165
+        },
+        {
+          "groupByLabel": "R2",
+          "Accepted": 245,
+          "Manually Escalated": 135,
+          "No Response": 45,
+          "Accepted & Auto Escalated": 145
+        },
+        {
+          "groupByLabel": "R3",
+          "Accepted": 205,
+          "Manually Escalated": 125,
+          "No Response": 45,
+          "Accepted & Auto Escalated": 125
+        },
+        {
+          "groupByLabel": "R4",
+          "Accepted": 156,
+          "Manually Escalated": 101,
+          "No Response": 46,
+          "Accepted & Auto Escalated": 105
+        }
       ],
       "updateInterval": "5min"
     }
