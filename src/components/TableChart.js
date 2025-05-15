@@ -13,6 +13,11 @@ import {
 
 // Utility function to format column headers
 const formatColumnHeader = (key) => {
+  // Special case for acceptedAndAutoEscalated column
+  if (key === 'acceptedAndAutoEscalated') {
+    return 'Accepted & Auto Escalated';
+  }
+  
   // Special cases for abbreviations that should remain uppercase
   const upperCaseTerms = ['CCU', 'ICU', 'ED', 'SK', 'RT'];
   

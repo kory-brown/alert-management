@@ -122,12 +122,12 @@ const LineChart = ({
             />
             <YAxis
               tick={{ fontSize: 12, fill: '#2F2F2F' }}
-              domain={[0, (dataMax) => dataMax * 1.2]}
+              domain={isTimeFormat ? [0, 'dataMax'] : [0, (dataMax) => dataMax * 1.2]}
               tickFormatter={(value) => {
                 if (!isTimeFormat) return value.toLocaleString();
                 const minutes = Math.floor(value / 60);
-                const seconds = value % 60;
-                return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                const seconds = Math.floor(value % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
               }}
             />
             <Tooltip content={<CustomTooltip isTimeFormat={isTimeFormat} />} />
