@@ -137,20 +137,20 @@
       "updateInterval": "5min"
     },
     "autoEscalatedAlertsByLabel": {
-  "id": "auto-escalated-alerts-by-label",
-  "title": "Auto Escalated Alerts by Alarm Label",
-  "description": "Distribution of auto escalated alerts by alarm label",
-  "data": [
-    { "name": "AFIB", "value": 67 },
-    { "name": "ASYSTOLE", "value": 78 },
-    { "name": "HR HIGH", "value": 56 },
-    { "name": "HR LOW", "value": 52 },
-    { "name": "PAUSE", "value": 42 },
-    { "name": "VFIB/VTACH", "value": 84 },
-    { "name": "SPO2 LOW", "value": 63 }
-  ],
-  "updateInterval": "5min"
-}
+      "id": "auto-escalated-alerts-by-label",
+      "title": "Auto Escalated Alerts by Alarm Label",
+      "description": "Distribution of auto escalated alerts by alarm label",
+      "data": [
+        { "name": "AFIB", "value": 67 },
+        { "name": "ASYSTOLE", "value": 78 },
+        { "name": "HR HIGH", "value": 56 },
+        { "name": "HR LOW", "value": 52 },
+        { "name": "PAUSE", "value": 42 },
+        { "name": "VFIB/VTACH", "value": 84 },
+        { "name": "SPO2 LOW", "value": 63 }
+      ],
+      "updateInterval": "5min"
+    }
   },
   "lineCharts": {
     "alarmsAndAlertsDailyTrend": {
@@ -876,60 +876,52 @@
       "data": [
         {
           "alarmLabel": "VFIB/VTACH",
+          "totalAlerts": 356,
           "totalAutoEscalationCount": 84,
-          "averageAlarmTime": "02:30",
-          "avgResponseTime": "00:38",
-          "totalAcceptances": 186
+          "averageAlarmTime": "02:30"
         },
         {
           "alarmLabel": "ASYSTOLE",
+          "totalAlerts": 314,
           "totalAutoEscalationCount": 78,
-          "averageAlarmTime": "02:15",
-          "avgResponseTime": "00:42",
-          "totalAcceptances": 168
+          "averageAlarmTime": "02:15"
         },
         {
           "alarmLabel": "AFIB",
+          "totalAlerts": 298,
           "totalAutoEscalationCount": 67,
-          "averageAlarmTime": "01:45",
-          "avgResponseTime": "00:45",
-          "totalAcceptances": 156
+          "averageAlarmTime": "01:45"
         },
         {
           "alarmLabel": "SPO2 LOW",
+          "totalAlerts": 267,
           "totalAutoEscalationCount": 63,
-          "averageAlarmTime": "01:40",
-          "avgResponseTime": "01:30",
-          "totalAcceptances": 142
+          "averageAlarmTime": "01:40"
         },
         {
           "alarmLabel": "HR HIGH",
+          "totalAlerts": 245,
           "totalAutoEscalationCount": 56,
-          "averageAlarmTime": "01:30",
-          "avgResponseTime": "01:15",
-          "totalAcceptances": 132
+          "averageAlarmTime": "01:30"
         },
         {
           "alarmLabel": "HR LOW",
+          "totalAlerts": 228,
           "totalAutoEscalationCount": 52,
-          "averageAlarmTime": "01:35",
-          "avgResponseTime": "01:20",
-          "totalAcceptances": 124
+          "averageAlarmTime": "01:35"
         },
         {
           "alarmLabel": "PAUSE",
+          "totalAlerts": 187,
           "totalAutoEscalationCount": 42,
-          "averageAlarmTime": "01:25",
-          "avgResponseTime": "01:25",
-          "totalAcceptances": 98
+          "averageAlarmTime": "01:25"
         }
       ],
       "style": {
         "alarmLabel": { "align": "left" },
+        "totalAlerts": { "align": "right" },
         "totalAutoEscalationCount": { "align": "right" },
-        "averageAlarmTime": { "align": "right" },
-        "avgResponseTime": { "align": "right" },
-        "totalAcceptances": { "align": "right" }
+        "averageAlarmTime": { "align": "right" }
       },
       "updateInterval": "5min"
     }
