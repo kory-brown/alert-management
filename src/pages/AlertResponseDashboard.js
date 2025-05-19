@@ -175,33 +175,7 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 3 - Big Number Charts */}
-          <Grid container spacing={3} sx={{ mt: 2 }}>
-            <Grid item xs={12} md={4}>
-              <BigNumberChart {...chartData.bigNumbers.averageAlarmDuration} />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <BigNumberChart {...chartData.bigNumbers.averageAlertTimeUntilAccepted} />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <BigNumberChart {...chartData.bigNumbers.averageAlertTimeToResolve} />
-            </Grid>
-          </Grid>
-
-          {/* ROW 4 - Charts */}
-          <Grid container spacing={3} sx={{ mt: 2 }}>
-            <Grid item xs={12} md={4}>
-              <PieChart {...chartData.pieCharts.alertsByResponse} showRawValues={true} />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <PieChart {...chartData.pieCharts.alertsByResponseOptions} showRawValues={true} />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <PieChart {...chartData.pieCharts.alertResponseByRecipient} showRawValues={true} />
-            </Grid>
-          </Grid>
-
-          {/* ROW 5 - Stacked Bar Chart */}
+          {/* ROW 3 - Stacked Bar Chart */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -215,8 +189,8 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-            {/* ROW 6 - Alerts by Alarm Label Daily Trend */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
+          {/* ROW 4 - Alerts by Alarm Label Daily Trend */}
+            <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <LineChart 
@@ -256,7 +230,7 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 7 - Big Number Charts */}
+          {/* ROW 5 - Big Number Charts */}
           <Grid container spacing={3} sx={{ mt: 2 }}>
             <Grid item xs={12} md={3}>
               <BigNumberChart {...chartData.bigNumbers.totalAcceptedAlerts} />
@@ -272,20 +246,7 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 8 - Alarm Label Average Durat Table */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
-              <Box sx={{ height: 400 }}>
-                <TableChart
-                  title={chartData.tableCharts.alarmLabelAvgDuration.title}
-                  data={chartData.tableCharts.alarmLabelAvgDuration.data}
-                  style={chartData.tableCharts.alarmLabelAvgDuration.style}
-                />
-              </Box>
-            </Grid>
-          </Grid> 
-
-          {/* ROW 9 - Responses by Alarm Label Grouped Bar Chart */}
+          {/* ROW 6 - Alert Response by Alarm Label Grouped Bar Chart */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -316,10 +277,15 @@ function AlertResponseDashboard() {
               </Box>
             </Grid>
           </Grid>
-          
-          {/* ROW 10- Alarm Label Response Detail Table */}
+
+          {/* ROW 7- Alert by Response Pie Chart & Alert Response Detail Table  */}
+
           <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
+          <Grid item xs={12} md={4}>
+              <PieChart {...chartData.pieCharts.alertsByResponse} showRawValues={true} />
+            </Grid>
+
+            <Grid item xs={12} md={8}>
               <Box sx={{ height: 400 }}>
                 <TableChart
                   title={chartData.tableCharts.alertResponseDetail.title}
@@ -328,16 +294,74 @@ function AlertResponseDashboard() {
                 />
               </Box>
             </Grid>
+          </Grid>          
+
+          {/* ROW 8 - Big Number Charts */}
+          <Grid container spacing={3} sx={{ mt: 2 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart {...chartData.bigNumbers.averageAlarmDuration} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart {...chartData.bigNumbers.averageAlertTimeUntilAccepted} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart {...chartData.bigNumbers.averageAlertTimeToResolve} />
+            </Grid>
           </Grid>
 
-          {/* ROW 11 - Alarm Label Recipient Table */}
+          {/* ROW 9 - Alerts by Response Options Pie Chart & Alert Response Times Detail Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <PieChart {...chartData.pieCharts.alertsByResponseOptions} showRawValues={true} />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alarmLabelAvgDuration.title}
+                  data={chartData.tableCharts.alarmLabelAvgDuration.data}
+                  style={chartData.tableCharts.alarmLabelAvgDuration.style}
+                />
+              </Box>
+            </Grid>
+          </Grid> 
+
+          {/* ROW 10 - Avg Alert Response Times by Priority Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
-                <TableChart
-                  title={chartData.tableCharts.alarmLabelRecipientTable.title}
-                  data={chartData.tableCharts.alarmLabelRecipientTable.data}
-                  style={chartData.tableCharts.alarmLabelRecipientTable.style}
+                <LineChart
+                  title={chartData.lineCharts.avgAlertResponseTimeByPriorityDailyTrend.title}
+                  data={chartData.lineCharts.avgAlertResponseTimeByPriorityDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["Low", "Medium", "High"]}
+                  yAxisLabels={["Low", "Medium", "High"]}
+                  colors={{
+                    'Low': '#4caf50',
+                    'Medium': '#ff9800',
+                    'High': '#f44336'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>         
+
+          {/* ROW 11 - Average Accept to End by Priority Daily Trend*/}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart
+                  title={chartData.lineCharts.averageAcceptToEndByPriorityDailyTrend.title}
+                  data={chartData.lineCharts.averageAcceptToEndByPriorityDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["Low", "Medium", "High"]}
+                  yAxisLabels={["Low", "Medium", "High"]}
+                  colors={{
+                    'Low': '#4caf50',
+                    'Medium': '#ff9800',
+                    'High': '#f44336'
+                  }}
+                  isTimeFormat={true}
                 />
               </Box>
             </Grid>
@@ -375,7 +399,23 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 13 - Avg Alert Response Times by Recipient Daily Trend */}
+          {/* ROW 13 - Alert Response by Recipient Pie Chart & Alert Response by Recipient Detail Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+          <Grid item xs={12} md={4}>
+              <PieChart {...chartData.pieCharts.alertResponseByRecipient} showRawValues={true} />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alertResponseByRecipientTable.title}
+                  data={chartData.tableCharts.alertResponseByRecipientTable.data}
+                  style={chartData.tableCharts.alertResponseByRecipientTable.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 14 - Avg Alert Response Times by Recipient Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -390,27 +430,6 @@ function AlertResponseDashboard() {
                     'R2': '#667275',
                     'R3': '#4caf50',
                     'R4': '#ff9800'
-                  }}
-                  isTimeFormat={true}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-
-          {/* ROW 14 - Avg Alert Response Times by Priority Daily Trend */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
-              <Box sx={{ height: 400 }}>
-                <LineChart
-                  title={chartData.lineCharts.avgAlertResponseTimeByPriorityDailyTrend.title}
-                  data={chartData.lineCharts.avgAlertResponseTimeByPriorityDailyTrend.data}
-                  xAxisKey="date"
-                  yAxisKeys={["Low", "Medium", "High"]}
-                  yAxisLabels={["Low", "Medium", "High"]}
-                  colors={{
-                    'Low': '#4caf50',
-                    'Medium': '#ff9800',
-                    'High': '#f44336'
                   }}
                   isTimeFormat={true}
                 />
@@ -440,22 +459,22 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 16 - Average Accept to End by Priority Daily */}
+          {/* ROW 16 - Auto Escalated Alerts by Volume */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12}>
+          <Grid item xs={12} md={4}>
               <Box sx={{ height: 400 }}>
-                <LineChart
-                  title={chartData.lineCharts.averageAcceptToEndByPriorityDailyTrend.title}
-                  data={chartData.lineCharts.averageAcceptToEndByPriorityDailyTrend.data}
-                  xAxisKey="date"
-                  yAxisKeys={["Low", "Medium", "High"]}
-                  yAxisLabels={["Low", "Medium", "High"]}
-                  colors={{
-                    'Low': '#4caf50',
-                    'Medium': '#ff9800',
-                    'High': '#f44336'
-                  }}
-                  isTimeFormat={true}
+                <PieChart 
+                  {...chartData.pieCharts.autoEscalatedAlertsByLabel} 
+                  showRawValues={true} 
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.autoEscalatedAlertsTable.title}
+                  data={chartData.tableCharts.autoEscalatedAlertsTable.data}
+                  style={chartData.tableCharts.autoEscalatedAlertsTable.style}
                 />
               </Box>
             </Grid>
@@ -505,27 +524,6 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 1 - Auto Escalated Alerts by Volume */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
-          <Grid item xs={12} md={4}>
-              <Box sx={{ height: 400 }}>
-                <PieChart 
-                  {...chartData.pieCharts.autoEscalatedAlertsByLabel} 
-                  showRawValues={true} 
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={8}>
-              <Box sx={{ height: 400 }}>
-                <TableChart
-                  title={chartData.tableCharts.autoEscalatedAlertsTable.title}
-                  data={chartData.tableCharts.autoEscalatedAlertsTable.data}
-                  style={chartData.tableCharts.autoEscalatedAlertsTable.style}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-          
         </Box>                           
       </Box>
       <Footer />

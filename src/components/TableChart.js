@@ -13,6 +13,11 @@ import {
 
 // Utility function to format column headers
 const formatColumnHeader = (key) => {
+  // Special case for percentResponded column
+  if (key === 'percentResponded') {
+    return '% Responded';
+  }
+  
   // Special case for acceptedAndAutoEscalated column
   if (key === 'acceptedAndAutoEscalated') {
     return 'Accepted & Auto Escalated';
