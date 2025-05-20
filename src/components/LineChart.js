@@ -72,6 +72,7 @@ const CustomTooltip = ({ active, payload, label, isTimeFormat }) => {
 
 const LineChart = ({ 
   title, 
+  description,
   data, 
   xAxisKey = 'date', 
   yAxisKeys = [], 
@@ -103,6 +104,11 @@ const LineChart = ({
       <Typography variant="h6" gutterBottom sx={{ color: '#2F2F2F', fontWeight: 500 }}>
         {title}
       </Typography>
+      {description && (
+        <Typography variant="body2" gutterBottom sx={{ color: '#666666' }}>
+          {description}
+        </Typography>
+      )}
       <Box sx={{ width: '100%', height: 'calc(100% - 40px)' }}>
         <ResponsiveContainer width="100%" height="100%">
           <RechartsLineChart

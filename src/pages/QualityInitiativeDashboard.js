@@ -4,11 +4,14 @@ import {
   Toolbar,
   Paper,
   IconButton,
+  Grid,
 } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import AppHeader from '../components/AppHeader';
 import FiltersPanel from '../components/FiltersPanel';
 import { drawerWidth } from '../components/FiltersPanel';
+import BigNumberTrendChart from '../components/BigNumberTrendChart';
+import chartData from '../data/QualityInitiativeDashboardData.json';
 
 function QualityInitiativeDashboard() {
   const [startDate, setStartDate] = useState('');
@@ -42,7 +45,7 @@ function QualityInitiativeDashboard() {
       <AppHeader title={pageTitle} />
       <Toolbar />
       <Box sx={{ display: 'flex', flex: 1, position: 'relative' }}>
-        <Box sx={{ 
+        <Box sx={{
           display: 'flex',
           transition: 'width 0.3s ease',
           width: isFilterPanelOpen ? { md: drawerWidth } : '0px',
@@ -131,6 +134,22 @@ function QualityInitiativeDashboard() {
               <ChevronRightIcon />
             </IconButton>
           )}
+
+          {/* ROW 1 - Big Number Trend Charts */}
+          <Grid container spacing={3} sx={{ mt: 1 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={215}
+                trendLabel={'+7.0% WoW'}
+                trendColor={'#5B7FFF'}
+                trendData={[10, 12, 8, 15, 14, 18, 20, 22, 19, 25, 28, 30, 32, 35, 40, 38, 42, 45, 48, 50]}
+                title={'Quality Initiatives'}
+              />
+            </Grid>
+            {/* Add more BigNumberTrendChart or BigNumberChart components here as needed */}
+          </Grid>
+
+          {/* Future rows for charts/tables go here, following the AAM Dashboard pattern */}
         </Box>
       </Box>
     </Box>
