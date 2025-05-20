@@ -309,28 +309,42 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 9 - Alerts by Response Options Pie Chart & Alert Response Times Detail Table */}
+          {/* ROW 9 - Alerts by Response Options Pie Chart & Average Alert Response Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
               <PieChart {...chartData.pieCharts.alertsByResponseOptions} showRawValues={true} />
             </Grid>
             <Grid item xs={12} md={8}>
               <Box sx={{ height: 400 }}>
-                <TableChart
-                  title={chartData.tableCharts.alarmLabelAvgDuration.title}
-                  data={chartData.tableCharts.alarmLabelAvgDuration.data}
-                  style={chartData.tableCharts.alarmLabelAvgDuration.style}
+              <TableChart
+                  title={chartData.tableCharts.averageAlertResponseAcceptedEscalated.title}
+                  data={chartData.tableCharts.averageAlertResponseAcceptedEscalated.data}
+                  style={chartData.tableCharts.averageAlertResponseAcceptedEscalated.style}
                 />
               </Box>
             </Grid>
           </Grid> 
 
-          {/* ROW 10 - Avg Alert Response Times by Priority Daily Trend */}
+          {/* ROW 10 - Alert Response Times Detail Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+              <TableChart
+                  title={chartData.tableCharts.alarmLabelAvgDuration.title}
+                  data={chartData.tableCharts.alarmLabelAvgDuration.data}
+                  style={chartData.tableCharts.alarmLabelAvgDuration.style}
+                />
+                </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 11 - Avg Alert Response Times by Priority Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <LineChart
                   title={chartData.lineCharts.avgAlertResponseTimeByPriorityDailyTrend.title}
+                  description={chartData.lineCharts.avgAlertResponseTimeByPriorityDailyTrend.description}
                   data={chartData.lineCharts.avgAlertResponseTimeByPriorityDailyTrend.data}
                   xAxisKey="date"
                   yAxisKeys={["Low", "Medium", "High"]}
@@ -346,12 +360,13 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>         
 
-          {/* ROW 11 - Average Accept to End by Priority Daily Trend*/}
+          {/* ROW 12 - Average Accept to End by Priority Daily Trend*/}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <LineChart
                   title={chartData.lineCharts.averageAcceptToEndByPriorityDailyTrend.title}
+                  description={chartData.lineCharts.averageAcceptToEndByPriorityDailyTrend.description}
                   data={chartData.lineCharts.averageAcceptToEndByPriorityDailyTrend.data}
                   xAxisKey="date"
                   yAxisKeys={["Low", "Medium", "High"]}
@@ -367,7 +382,7 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 12 - Alerts by Recipient MultiStackedBarChart */}
+          {/* ROW 13 - Alerts by Recipient MultiStackedBarChart */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -399,7 +414,7 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 13 - Alert Response by Recipient Pie Chart & Alert Response by Recipient Detail Table */}
+          {/* ROW 14 - Alert Response by Recipient Pie Chart & Alert Response by Recipient Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
           <Grid item xs={12} md={4}>
               <PieChart {...chartData.pieCharts.alertResponseByRecipient} showRawValues={true} />
@@ -415,12 +430,13 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 14 - Avg Alert Response Times by Recipient Daily Trend */}
+          {/* ROW 15 - Avg Alert Response Times by Recipient Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <LineChart
                   title={chartData.lineCharts.avgAlertResponseTimeByRecipientDailyTrend.title}
+                  description={chartData.lineCharts.avgAlertResponseTimeByRecipientDailyTrend.description}
                   data={chartData.lineCharts.avgAlertResponseTimeByRecipientDailyTrend.data}
                   xAxisKey="date"
                   yAxisKeys={["R1", "R2", "R3", "R4"]}
@@ -437,12 +453,13 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 15 - Average Accept to End by Recipient Daily  */}
+          {/* ROW 16 - Average Accept to End by Recipient Daily  */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <LineChart
                   title={chartData.lineCharts.averageAcceptToEndByRecipientDailyTrend.title}
+                  description={chartData.lineCharts.averageAcceptToEndByRecipientDailyTrend.description}
                   data={chartData.lineCharts.averageAcceptToEndByRecipientDailyTrend.data}
                   xAxisKey="date"
                   yAxisKeys={["R1", "R2", "R3", "R4"]}
@@ -459,7 +476,7 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 16 - Auto Escalated Alerts by Volume */}
+          {/* ROW 17 - Auto Escalated Alerts by Volume */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
           <Grid item xs={12} md={4}>
               <Box sx={{ height: 400 }}>
@@ -480,7 +497,7 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 17 - Total Undelivered Alerts and Line Chart */}
+          {/* ROW 18 - Total Undelivered Alerts and Line Chart */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
               <BigNumberChart {...chartData.bigNumbers.totalUndeliverableAlerts}
@@ -503,7 +520,7 @@ function AlertResponseDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 18 - Undeliverable Alerts Detail Table */}
+          {/* ROW 19 - Undeliverable Alerts Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
           <Grid item xs={12} md={4}>
               <Box sx={{ height: 400 }}>
