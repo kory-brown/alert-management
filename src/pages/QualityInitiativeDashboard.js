@@ -139,14 +139,37 @@ function QualityInitiativeDashboard() {
           <Grid container spacing={3} sx={{ mt: 1 }}>
             <Grid item xs={12} md={4}>
               <BigNumberTrendChart
-                value={215}
-                trendLabel={'+7.0% WoW'}
-                trendColor={'#5B7FFF'}
-                trendData={[10, 12, 8, 15, 14, 18, 20, 22, 19, 25, 28, 30, 32, 35, 40, 38, 42, 45, 48, 50]}
-                title={'Quality Initiatives'}
+                value={chartData.bigNumberTrends.totalAlarms.value}
+                label={chartData.bigNumberTrends.totalAlarms.label}
+                trendLabel={chartData.bigNumberTrends.totalAlarms.trendLabel}
+                trendData={chartData.bigNumberTrends.totalAlarms.trendData}
+                title={chartData.bigNumberTrends.totalAlarms.title}
+                height={300}
+                trendColor={'#1aafe6'}
               />
             </Grid>
-            {/* Add more BigNumberTrendChart or BigNumberChart components here as needed */}
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalAlerts.value}
+                label={chartData.bigNumberTrends.totalAlerts.label}
+                trendLabel={chartData.bigNumberTrends.totalAlerts.trendLabel}
+                trendData={chartData.bigNumberTrends.totalAlerts.trendData}
+                title={chartData.bigNumberTrends.totalAlerts.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.avgAlarmTime.value}
+                label={chartData.bigNumberTrends.avgAlarmTime.label}
+                trendLabel={chartData.bigNumberTrends.avgAlarmTime.trendLabel}
+                trendData={chartData.bigNumberTrends.avgAlarmTime.trendData}
+                title={chartData.bigNumberTrends.avgAlarmTime.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
           </Grid>
 
           {/* Future rows for charts/tables go here, following the AAM Dashboard pattern */}

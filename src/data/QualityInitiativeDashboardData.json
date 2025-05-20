@@ -1,156 +1,49 @@
 {
   "bigNumbers": {
-    "totalQualityInitiatives": {
-      "id": "total-quality-initiatives",
-      "title": "Total Quality Initiatives",
-      "value": 0,
-      "label": "Initiatives",
-      "description": "Total number of quality initiatives",
+   
+  },
+  "bigNumberTrends": {
+    "totalAlarms": {
+      "id": "total-alarms-trend",
+      "title": "Total Number of Alarms",
+      "value": 1000,
+      "label": "Alarms",
+      "trendLabel": "Daily Alarm Trend +10% ▲",
+      "trendData": [800, 1200, 950, 700, 1300, 900, 1500, 1000],
       "updateInterval": "5min"
     },
-    "activeQualityInitiatives": {
-      "id": "active-quality-initiatives",
-      "title": "Active Quality Initiatives",
-      "value": 0,
-      "label": "Initiatives",
-      "description": "Number of currently active quality initiatives",
+    "totalAlerts": {
+      "id": "total-alerts-trend",
+      "title": "Total Number of Alerts",
+      "value": 800,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend -3% ▼",
+      "trendData": [900, 850, 870, 820, 800, 780, 760, 800],
       "updateInterval": "5min"
     },
-    "completedQualityInitiatives": {
-      "id": "completed-quality-initiatives",
-      "title": "Completed Quality Initiatives",
-      "value": 0,
-      "label": "Initiatives",
-      "description": "Number of completed quality initiatives",
-      "updateInterval": "5min"
-    },
-    "averageCompletionTime": {
-      "id": "average-completion-time",
-      "title": "Average Completion Time",
-      "value": "00:00",
-      "label": "Days",
-      "description": "Average time to complete a quality initiative",
+    "avgAlarmTime": {
+      "id": "avg-alarm-time-trend",
+      "title": "Avg Alarm Time (start to finish)",
+      "value": "03:52",
+      "label": "(MM:SS)",
+      "trendLabel": "Avg Alarm Time Trend +4% ▲",
+      "trendData": [220, 230, 225, 235, 230, 240, 238, 232],
       "updateInterval": "5min"
     }
   },
   "pieCharts": {
-    "initiativesByStatus": {
-      "id": "initiatives-by-status",
-      "title": "Initiatives by Status",
-      "description": "Distribution of initiatives by status",
-      "data": [],
-      "updateInterval": "5min"
-    },
-    "initiativesByCategory": {
-      "id": "initiatives-by-category",
-      "title": "Initiatives by Category",
-      "description": "Distribution of initiatives by category",
-      "data": [],
-      "updateInterval": "5min"
-    },
-    "initiativesByPriority": {
-      "id": "initiatives-by-priority",
-      "title": "Initiatives by Priority",
-      "description": "Distribution of initiatives by priority level",
-      "data": [],
-      "updateInterval": "5min"
-    }
+   
   },
   "lineCharts": {
-    "initiativesOverTime": {
-      "id": "initiatives-over-time",
-      "title": "Initiatives Over Time",
-      "description": "Shows the trend of initiatives over time",
-      "data": [],
-      "updateInterval": "5min"
-    },
-    "completionRateTrend": {
-      "id": "completion-rate-trend",
-      "title": "Completion Rate Trend",
-      "description": "Shows the trend of initiative completion rates over time",
-      "data": [],
-      "updateInterval": "5min"
-    }
+   
   },
   "barCharts": {
-    "initiativesByDepartment": {
-      "id": "initiatives-by-department",
-      "title": "Initiatives by Department",
-      "description": "Number of initiatives by department",
-      "data": [],
-      "updateInterval": "5min"
-    },
-    "initiativesByFacility": {
-      "id": "initiatives-by-facility",
-      "title": "Initiatives by Facility",
-      "description": "Number of initiatives by facility",
-      "data": [],
-      "updateInterval": "5min"
-    }
+   
   },
   "tableCharts": {
-    "initiativeDetails": {
-      "id": "initiative-details",
-      "title": "Initiative Details",
-      "description": "Detailed information about each initiative",
-      "data": [],
-      "style": {
-        "initiativeName": { "align": "left" },
-        "category": { "align": "left" },
-        "status": { "align": "left" },
-        "priority": { "align": "left" },
-        "startDate": { "align": "left" },
-        "targetDate": { "align": "left" },
-        "completionDate": { "align": "left" },
-        "owner": { "align": "left" }
-      },
-      "updateInterval": "5min"
-    },
-    "initiativeMetrics": {
-      "id": "initiative-metrics",
-      "title": "Initiative Metrics",
-      "description": "Key metrics for each initiative",
-      "data": [],
-      "style": {
-        "initiativeName": { "align": "left" },
-        "completionPercentage": { "align": "right" },
-        "daysRemaining": { "align": "right" },
-        "riskLevel": { "align": "left" },
-        "impactScore": { "align": "right" }
-      },
-      "updateInterval": "5min"
-    }
-  },
-  "stackedBarCharts": {
-    "initiativesByStatusAndCategory": {
-      "id": "initiatives-by-status-and-category",
-      "title": "Initiatives by Status and Category",
-      "description": "Distribution of initiatives by status and category",
-      "data": [],
-      "updateInterval": "5min"
-    },
-    "initiativesByPriorityAndDepartment": {
-      "id": "initiatives-by-priority-and-department",
-      "title": "Initiatives by Priority and Department",
-      "description": "Distribution of initiatives by priority and department",
-      "data": [],
-      "updateInterval": "5min"
-    }
+   
   },
   "groupedBarCharts": {
-    "initiativeProgressByDepartment": {
-      "id": "initiative-progress-by-department",
-      "title": "Initiative Progress by Department",
-      "description": "Progress of initiatives by department",
-      "data": [],
-      "updateInterval": "5min"
-    },
-    "initiativeCompletionByCategory": {
-      "id": "initiative-completion-by-category",
-      "title": "Initiative Completion by Category",
-      "description": "Completion rates of initiatives by category",
-      "data": [],
-      "updateInterval": "5min"
-    }
+  
   }
 } 
