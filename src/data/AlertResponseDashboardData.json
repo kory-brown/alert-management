@@ -122,19 +122,19 @@
       "updateInterval": "5min"
     },
     "autoEscalatedAlertsByLabel": {
-      "id": "auto-escalated-alerts-by-label",
-      "title": "Auto Escalated Alerts by Alarm Label",
-      "description": "Distribution of auto escalated alerts by alarm label",
-      "data": [
-        { "name": "AFIB", "value": 67 },
-        { "name": "ASYSTOLE", "value": 78 },
-        { "name": "HR HIGH", "value": 56 },
-        { "name": "HR LOW", "value": 52 },
-        { "name": "PAUSE", "value": 42 },
-        { "name": "VFIB/VTACH", "value": 84 },
-        { "name": "SPO2 LOW", "value": 63 }
-      ],
-      "updateInterval": "5min"
+  "id": "auto-escalated-alerts-by-label",
+  "title": "Auto Escalated Alerts by Alarm Label",
+  "description": "Distribution of auto escalated alerts by alarm label",
+  "data": [
+    { "name": "AFIB", "value": 67 },
+    { "name": "ASYSTOLE", "value": 78 },
+    { "name": "HR HIGH", "value": 56 },
+    { "name": "HR LOW", "value": 52 },
+    { "name": "PAUSE", "value": 42 },
+    { "name": "VFIB/VTACH", "value": 84 },
+    { "name": "SPO2 LOW", "value": 63 }
+  ],
+  "updateInterval": "5min"
     },
     "undeliverableAlertsByLabel": {
       "id": "undeliverable-alerts-by-label",
@@ -150,7 +150,7 @@
         { "name": "SPO2 LOW", "value": 25 }
       ],
       "updateInterval": "5min"
-    }
+}
   },
   "lineCharts": {
     "alarmsAndAlertsDailyTrend": {

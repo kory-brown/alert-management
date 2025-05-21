@@ -32,16 +32,156 @@
     }
   },
   "pieCharts": {
-   
+    "alarmPriorityDistribution": {
+      "id": "alarm-priority-distribution",
+      "title": "Alarm Priority Distribution",
+      "description": "Distribution of alarms by priority level",
+      "data": [
+        { "name": "Low", "value": 450 },
+        { "name": "Medium", "value": 300 },
+        { "name": "High", "value": 250 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertPriorityDistribution": {
+      "id": "alert-priority-distribution",
+      "title": "Alert Priority Distribution",
+      "description": "Distribution of alerts by priority level",
+      "data": [
+        { "name": "Low", "value": 380 },
+        { "name": "Medium", "value": 250 },
+        { "name": "High", "value": 170 }
+      ],
+      "updateInterval": "5min"
+    }
   },
   "lineCharts": {
-   
+    "alarmsAndAlertsDailyTrend": {
+      "id": "alarms-and-alerts-daily-trend",
+      "title": "Total Alarms & Alerts Daily Trend",
+      "description": "Shows the trend of total alarms and alerts over time",
+      "data": [
+        { "date": "2024-01-01", "alarms": 240, "alerts": 190 },
+        { "date": "2024-01-02", "alarms": 192, "alerts": 152 },
+        { "date": "2024-01-03", "alarms": 251, "alerts": 200 },
+        { "date": "2024-01-04", "alarms": 211, "alerts": 169 },
+        { "date": "2024-01-05", "alarms": 246, "alerts": 197 },
+        { "date": "2024-01-06", "alarms": 238, "alerts": 191 },
+        { "date": "2024-01-07", "alarms": 244, "alerts": 195 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alarmPriorityDailyTrend": {
+      "id": "alarm-priority-daily-trend",
+      "title": "Alarm Priority Daily Trend",
+      "description": "Shows the daily trend of alarm priorities over time",
+      "data": [
+        { "date": "2025-01-01", "low": 165, "medium": 195, "high": 270 },
+        { "date": "2025-01-02", "low": 150, "medium": 225, "high": 255 },
+        { "date": "2025-01-03", "low": 175, "medium": 210, "high": 285 },
+        { "date": "2025-01-04", "low": 160, "medium": 200, "high": 260 },
+        { "date": "2025-01-05", "low": 170, "medium": 220, "high": 275 },
+        { "date": "2025-01-06", "low": 155, "medium": 205, "high": 265 },
+        { "date": "2025-01-07", "low": 165, "medium": 215, "high": 280 }
+      ],
+      "updateInterval": "5min"
+    },
+    "alertPriorityDailyTrend": {
+      "id": "alert-priority-daily-trend",
+      "title": "Alert Priority Daily Trend",
+      "description": "Shows the daily trend of alert priorities over time",
+      "data": [
+        { "date": "2025-01-01", "low": 135, "medium": 165, "high": 210 },
+        { "date": "2025-01-02", "low": 120, "medium": 150, "high": 195 },
+        { "date": "2025-01-03", "low": 145, "medium": 175, "high": 225 },
+        { "date": "2025-01-04", "low": 130, "medium": 160, "high": 200 },
+        { "date": "2025-01-05", "low": 140, "medium": 170, "high": 215 },
+        { "date": "2025-01-06", "low": 125, "medium": 155, "high": 205 },
+        { "date": "2025-01-07", "low": 135, "medium": 165, "high": 220 }
+      ],
+      "updateInterval": "5min"
+    }
   },
   "barCharts": {
    
   },
   "tableCharts": {
-   
+    "alarmPriorityDetail": {
+      "id": "alarm-priority-detail",
+      "title": "Alarm Priority Detail",
+      "description": "Detailed metrics by alarm priority level",
+      "data": [
+        {
+          "priority": "Low",
+          "totalAlarms": 450,
+          "trendAlarms": "+12%",
+          "totalAlerts": 380,
+          "trendAlerts": "+7%",
+          "avgAlarmTime": "02:45",
+          "trendAvgAlarmTime": "+2%",
+          "avgAlarmQueueTime": "01:15",
+          "trendAvgAlarmQueueTime": "-1%",
+          "avgResponseTime": "00:45",
+          "trendAvgResponseTime": "+3%",
+          "avgAcceptToEndTime": "01:30",
+          "trendAvgAcceptToEndTime": "0%",
+          "alertResponseTime": "00:30",
+          "trendAlertResponseTime": "-2%"
+        },
+        {
+          "priority": "Medium",
+          "totalAlarms": 300,
+          "trendAlarms": "-5%",
+          "totalAlerts": 250,
+          "trendAlerts": "-2%",
+          "avgAlarmTime": "03:15",
+          "trendAvgAlarmTime": "-3%",
+          "avgAlarmQueueTime": "01:30",
+          "trendAvgAlarmQueueTime": "+1%",
+          "avgResponseTime": "01:00",
+          "trendAvgResponseTime": "-2%",
+          "avgAcceptToEndTime": "01:45",
+          "trendAvgAcceptToEndTime": "+4%",
+          "alertResponseTime": "00:45",
+          "trendAlertResponseTime": "+1%"
+        },
+        {
+          "priority": "High",
+          "totalAlarms": 250,
+          "trendAlarms": "+8%",
+          "totalAlerts": 170,
+          "trendAlerts": "+3%",
+          "avgAlarmTime": "04:30",
+          "trendAvgAlarmTime": "+5%",
+          "avgAlarmQueueTime": "01:45",
+          "trendAvgAlarmQueueTime": "-2%",
+          "avgResponseTime": "01:15",
+          "trendAvgResponseTime": "+2%",
+          "avgAcceptToEndTime": "02:00",
+          "trendAvgAcceptToEndTime": "-1%",
+          "alertResponseTime": "01:00",
+          "trendAlertResponseTime": "0%"
+        }
+      ],
+      "style": {
+        "priority": { "align": "left" },
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "avgAlarmTime": { "align": "right" },
+        "trendAvgAlarmTime": { "align": "left" },
+        "avgAlarmQueueTime": { "align": "right" },
+        "trendAvgAlarmQueueTime": { "align": "left" },
+        "avgResponseTime": { "align": "right" },
+        "trendAvgResponseTime": { "align": "left" },
+        "avgAcceptToEndTime": { "align": "right" },
+        "trendAvgAcceptToEndTime": { "align": "left" },
+        "alertResponseTime": { "align": "right" },
+        "trendAlertResponseTime": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    }
   },
   "groupedBarCharts": {
   

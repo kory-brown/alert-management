@@ -13,6 +13,11 @@ import {
 
 // Utility function to format column headers
 const formatColumnHeader = (key) => {
+  // Special case for trend columns
+  if (key.startsWith('trend')) {
+    return '▲▼';
+  }
+  
   // Special case for percentResponded column
   if (key === 'percentResponded') {
     return '% Responded';

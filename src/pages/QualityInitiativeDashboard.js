@@ -11,6 +11,9 @@ import AppHeader from '../components/AppHeader';
 import FiltersPanel from '../components/FiltersPanel';
 import { drawerWidth } from '../components/FiltersPanel';
 import BigNumberTrendChart from '../components/BigNumberTrendChart';
+import LineChart from '../components/LineChart';
+import PieChart from '../components/PieChart';
+import TableChart from '../components/TableChart';
 import chartData from '../data/QualityInitiativeDashboardData.json';
 
 function QualityInitiativeDashboard() {
@@ -172,7 +175,97 @@ function QualityInitiativeDashboard() {
             </Grid>
           </Grid>
 
-          {/* Future rows for charts/tables go here, following the AAM Dashboard pattern */}
+          {/* Row 2 - Charts */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.alarmsAndAlertsDailyTrend.title}
+                  data={chartData.lineCharts.alarmsAndAlertsDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["alarms", "alerts"]}
+                  yAxisLabels={["Alarms", "Alerts"]}
+                  colors={{
+                    'alarms': '#1aafe6',
+                    'alerts': '#808080'
+                  }}
+                  isTimeFormat={false}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Row 3 - Alarm Priority Charts */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <PieChart
+                  title={chartData.pieCharts.alarmPriorityDistribution.title}
+                  data={chartData.pieCharts.alarmPriorityDistribution.data}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.alarmPriorityDailyTrend.title}
+                  data={chartData.lineCharts.alarmPriorityDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["low", "medium", "high"]}
+                  yAxisLabels={["Low", "Medium", "High"]}
+                  colors={{
+                    'low': '#1aafe6',
+                    'medium': '#FFC107',
+                    'high': '#F44336'
+                  }}
+                  isTimeFormat={false}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Row 4 - Alert Priority Charts */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <PieChart
+                  title={chartData.pieCharts.alertPriorityDistribution.title}
+                  data={chartData.pieCharts.alertPriorityDistribution.data}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 400 }}>
+                <LineChart 
+                  title={chartData.lineCharts.alertPriorityDailyTrend.title}
+                  data={chartData.lineCharts.alertPriorityDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["low", "medium", "high"]}
+                  yAxisLabels={["Low", "Medium", "High"]}
+                  colors={{
+                    'low': '#1aafe6',
+                    'medium': '#FFC107',
+                    'high': '#F44336'
+                  }}
+                  isTimeFormat={false}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Row 5 - Alarm Priority Detail Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alarmPriorityDetail.title}
+                  data={chartData.tableCharts.alarmPriorityDetail.data}
+                  style={chartData.tableCharts.alarmPriorityDetail.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
         </Box>
       </Box>
     </Box>
