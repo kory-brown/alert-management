@@ -29,6 +29,69 @@
       "trendLabel": "Avg Alarm Time Trend +4% ▲",
       "trendData": [220, 230, 225, 235, 230, 240, 238, 232],
       "updateInterval": "5min"
+    },
+    "totalAfibAlerts": {
+      "id": "total-afib-alerts-trend",
+      "title": "Total A-Fib Alerts",
+      "value": 122,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend -7% ▼",
+      "trendData": [22, 20, 18, 17, 16, 15, 14],
+      "updateInterval": "5min"
+    },
+    "totalAsystoleAlerts": {
+      "id": "total-asystole-alerts-trend",
+      "title": "Total Asystole Alerts",
+      "value": 85,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend -5% ▼",
+      "trendData": [15, 14, 13, 12, 11, 10, 10],
+      "updateInterval": "5min"
+    },
+    "totalHrHighAlerts": {
+      "id": "total-hr-high-alerts-trend",
+      "title": "Total HR High Alerts",
+      "value": 156,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend -3% ▼",
+      "trendData": [28, 26, 25, 24, 23, 22, 22],
+      "updateInterval": "5min"
+    },
+    "totalHrLowAlerts": {
+      "id": "total-hr-low-alerts-trend",
+      "title": "Total HR Low Alerts",
+      "value": 110,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend +4% ▲",
+      "trendData": [15, 16, 17, 18, 19, 21, 22],
+      "updateInterval": "5min"
+    },
+    "totalPauseAlerts": {
+      "id": "total-pause-alerts-trend",
+      "title": "Total Pause Alerts",
+      "value": 97,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend +1% ▲",
+      "trendData": [13, 15, 14, 17, 16, 18, 15],
+      "updateInterval": "5min"
+    },
+    "totalVfibVtachAlerts": {
+      "id": "total-vfib-vtach-alerts-trend",
+      "title": "Total VFIB/VTACH Alerts",
+      "value": 61,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend +2% ▲",
+      "trendData": [8, 9, 10, 9, 11, 12, 10],
+      "updateInterval": "5min"
+    },
+    "totalSpo2LowAlerts": {
+      "id": "total-spo2-low-alerts-trend",
+      "title": "Total SPO2 Low Alerts",
+      "value": 134,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend -2% ▼",
+      "trendData": [22, 21, 20, 19, 18, 18, 16],
+      "updateInterval": "5min"
     }
   },
   "pieCharts": {
@@ -98,6 +161,111 @@
         { "date": "2025-01-05", "low": 140, "medium": 170, "high": 215 },
         { "date": "2025-01-06", "low": 125, "medium": 155, "high": 205 },
         { "date": "2025-01-07", "low": 135, "medium": 165, "high": 220 }
+      ],
+      "updateInterval": "5min"
+    },
+    "afibTimeDailyTrend": {
+      "id": "afib-time-daily-trend",
+      "title": "A-Fib Time Daily Trend",
+      "description": "Shows the daily trend of A-Fib related time metrics",
+      "data": [
+        { "date": "2024-01-01", "avgAlarmTime": "03:45", "avgAlarmQueueTime": "01:30", "avgAlertResponseTime": "00:45" },
+        { "date": "2024-01-02", "avgAlarmTime": "03:30", "avgAlarmQueueTime": "01:25", "avgAlertResponseTime": "00:42" },
+        { "date": "2024-01-03", "avgAlarmTime": "03:55", "avgAlarmQueueTime": "01:35", "avgAlertResponseTime": "00:48" },
+        { "date": "2024-01-04", "avgAlarmTime": "03:40", "avgAlarmQueueTime": "01:28", "avgAlertResponseTime": "00:44" },
+        { "date": "2024-01-05", "avgAlarmTime": "03:50", "avgAlarmQueueTime": "01:32", "avgAlertResponseTime": "00:46" },
+        { "date": "2024-01-06", "avgAlarmTime": "03:35", "avgAlarmQueueTime": "01:27", "avgAlertResponseTime": "00:43" },
+        { "date": "2024-01-07", "avgAlarmTime": "03:45", "avgAlarmQueueTime": "01:30", "avgAlertResponseTime": "00:45" }
+      ],
+      "updateInterval": "5min"
+    },
+    "asystoleTimeDailyTrend": {
+      "id": "asystole-time-daily-trend",
+      "title": "Asystole Time Daily Trend",
+      "description": "Shows the daily trend of Asystole related time metrics",
+      "data": [
+        { "date": "2024-01-01", "avgAlarmTime": "04:12", "avgAlarmQueueTime": "01:41", "avgAlertResponseTime": "00:53" },
+        { "date": "2024-01-02", "avgAlarmTime": "04:05", "avgAlarmQueueTime": "01:38", "avgAlertResponseTime": "00:56" },
+        { "date": "2024-01-03", "avgAlarmTime": "04:18", "avgAlarmQueueTime": "01:44", "avgAlertResponseTime": "00:51" },
+        { "date": "2024-01-04", "avgAlarmTime": "04:09", "avgAlarmQueueTime": "01:47", "avgAlertResponseTime": "00:55" },
+        { "date": "2024-01-05", "avgAlarmTime": "04:22", "avgAlarmQueueTime": "01:42", "avgAlertResponseTime": "00:54" },
+        { "date": "2024-01-06", "avgAlarmTime": "04:15", "avgAlarmQueueTime": "01:45", "avgAlertResponseTime": "00:57" },
+        { "date": "2024-01-07", "avgAlarmTime": "04:11", "avgAlarmQueueTime": "01:40", "avgAlertResponseTime": "00:52" }
+      ],
+      "updateInterval": "5min"
+    },
+    "hrHighTimeDailyTrend": {
+      "id": "hr-high-time-daily-trend",
+      "title": "HR High Time Daily Trend",
+      "description": "Shows the daily trend of HR High related time metrics",
+      "data": [
+        { "date": "2024-01-01", "avgAlarmTime": "03:28", "avgAlarmQueueTime": "01:23", "avgAlertResponseTime": "00:41" },
+        { "date": "2024-01-02", "avgAlarmTime": "03:37", "avgAlarmQueueTime": "01:19", "avgAlertResponseTime": "00:39" },
+        { "date": "2024-01-03", "avgAlarmTime": "03:31", "avgAlarmQueueTime": "01:25", "avgAlertResponseTime": "00:44" },
+        { "date": "2024-01-04", "avgAlarmTime": "03:34", "avgAlarmQueueTime": "01:22", "avgAlertResponseTime": "00:40" },
+        { "date": "2024-01-05", "avgAlarmTime": "03:29", "avgAlarmQueueTime": "01:27", "avgAlertResponseTime": "00:43" },
+        { "date": "2024-01-06", "avgAlarmTime": "03:36", "avgAlarmQueueTime": "01:21", "avgAlertResponseTime": "00:42" },
+        { "date": "2024-01-07", "avgAlarmTime": "03:33", "avgAlarmQueueTime": "01:24", "avgAlertResponseTime": "00:40" }
+      ],
+      "updateInterval": "5min"
+    },
+    "hrLowTimeDailyTrend": {
+      "id": "hr-low-time-daily-trend",
+      "title": "HR Low Time Daily Trend",
+      "description": "Shows the daily trend of HR Low related time metrics",
+      "data": [
+        { "date": "2024-01-01", "avgAlarmTime": "03:55", "avgAlarmQueueTime": "01:32", "avgAlertResponseTime": "00:48" },
+        { "date": "2024-01-02", "avgAlarmTime": "03:50", "avgAlarmQueueTime": "01:30", "avgAlertResponseTime": "00:47" },
+        { "date": "2024-01-03", "avgAlarmTime": "04:00", "avgAlarmQueueTime": "01:35", "avgAlertResponseTime": "00:49" },
+        { "date": "2024-01-04", "avgAlarmTime": "03:58", "avgAlarmQueueTime": "01:33", "avgAlertResponseTime": "00:48" },
+        { "date": "2024-01-05", "avgAlarmTime": "03:57", "avgAlarmQueueTime": "01:32", "avgAlertResponseTime": "00:47" },
+        { "date": "2024-01-06", "avgAlarmTime": "03:59", "avgAlarmQueueTime": "01:34", "avgAlertResponseTime": "00:49" },
+        { "date": "2024-01-07", "avgAlarmTime": "03:55", "avgAlarmQueueTime": "01:32", "avgAlertResponseTime": "00:48" }
+      ],
+      "updateInterval": "5min"
+    },
+    "pauseTimeDailyTrend": {
+      "id": "pause-time-daily-trend",
+      "title": "Pause Time Daily Trend",
+      "description": "Shows the daily trend of Pause related time metrics",
+      "data": [
+        { "date": "2024-01-01", "avgAlarmTime": "04:05", "avgAlarmQueueTime": "01:40", "avgAlertResponseTime": "00:52" },
+        { "date": "2024-01-02", "avgAlarmTime": "03:55", "avgAlarmQueueTime": "01:35", "avgAlertResponseTime": "00:50" },
+        { "date": "2024-01-03", "avgAlarmTime": "04:10", "avgAlarmQueueTime": "01:45", "avgAlertResponseTime": "00:54" },
+        { "date": "2024-01-04", "avgAlarmTime": "03:58", "avgAlarmQueueTime": "01:38", "avgAlertResponseTime": "00:51" },
+        { "date": "2024-01-05", "avgAlarmTime": "04:12", "avgAlarmQueueTime": "01:42", "avgAlertResponseTime": "00:55" },
+        { "date": "2024-01-06", "avgAlarmTime": "03:59", "avgAlarmQueueTime": "01:36", "avgAlertResponseTime": "00:50" },
+        { "date": "2024-01-07", "avgAlarmTime": "04:07", "avgAlarmQueueTime": "01:41", "avgAlertResponseTime": "00:53" }
+      ],
+      "updateInterval": "5min"
+    },
+    "vfibVtachTimeDailyTrend": {
+      "id": "vfib-vtach-time-daily-trend",
+      "title": "VFIB/VTACH Time Daily Trend",
+      "description": "Shows the daily trend of VFIB/VTACH related time metrics",
+      "data": [
+        { "date": "2024-01-01", "avgAlarmTime": "04:25", "avgAlarmQueueTime": "01:55", "avgAlertResponseTime": "01:05" },
+        { "date": "2024-01-02", "avgAlarmTime": "04:10", "avgAlarmQueueTime": "01:50", "avgAlertResponseTime": "01:02" },
+        { "date": "2024-01-03", "avgAlarmTime": "04:30", "avgAlarmQueueTime": "01:58", "avgAlertResponseTime": "01:08" },
+        { "date": "2024-01-04", "avgAlarmTime": "04:18", "avgAlarmQueueTime": "01:53", "avgAlertResponseTime": "01:04" },
+        { "date": "2024-01-05", "avgAlarmTime": "04:28", "avgAlarmQueueTime": "01:56", "avgAlertResponseTime": "01:07" },
+        { "date": "2024-01-06", "avgAlarmTime": "04:12", "avgAlarmQueueTime": "01:51", "avgAlertResponseTime": "01:03" },
+        { "date": "2024-01-07", "avgAlarmTime": "04:25", "avgAlarmQueueTime": "01:55", "avgAlertResponseTime": "01:05" }
+      ],
+      "updateInterval": "5min"
+    },
+    "spo2LowTimeDailyTrend": {
+      "id": "spo2-low-time-daily-trend",
+      "title": "SPO2 Low Time Daily Trend",
+      "description": "Shows the daily trend of SPO2 Low related time metrics",
+      "data": [
+        { "date": "2024-01-01", "avgAlarmTime": "03:44", "avgAlarmQueueTime": "01:31", "avgAlertResponseTime": "00:46" },
+        { "date": "2024-01-02", "avgAlarmTime": "03:29", "avgAlarmQueueTime": "01:27", "avgAlertResponseTime": "00:42" },
+        { "date": "2024-01-03", "avgAlarmTime": "03:58", "avgAlarmQueueTime": "01:33", "avgAlertResponseTime": "00:47" },
+        { "date": "2024-01-04", "avgAlarmTime": "03:35", "avgAlarmQueueTime": "01:29", "avgAlertResponseTime": "00:45" },
+        { "date": "2024-01-05", "avgAlarmTime": "03:51", "avgAlarmQueueTime": "01:26", "avgAlertResponseTime": "00:44" },
+        { "date": "2024-01-06", "avgAlarmTime": "03:39", "avgAlarmQueueTime": "01:34", "avgAlertResponseTime": "00:48" },
+        { "date": "2024-01-07", "avgAlarmTime": "03:47", "avgAlarmQueueTime": "01:28", "avgAlertResponseTime": "00:43" }
       ],
       "updateInterval": "5min"
     }
@@ -179,6 +347,286 @@
         "trendAvgAcceptToEndTime": { "align": "left" },
         "alertResponseTime": { "align": "right" },
         "trendAlertResponseTime": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "afibDetails": {
+      "id": "afib-details",
+      "title": "A-Fib Details",
+      "description": "Detailed metrics for A-Fib alerts and alarms",
+      "data": [
+        {
+          "totalAlarms": 122,
+          "trendAlarms": "-7%",
+          "totalAlerts": 98,
+          "trendAlerts": "-5%",
+          "respondedAlerts": 85,
+          "trendRespondedAlerts": "-3%",
+          "avgAlarmTime": "03:45",
+          "trendAvgAlarmTime": "+2%",
+          "avgAlarmQueueTime": "01:30",
+          "trendAvgAlarmQueueTime": "-1%",
+          "avgResponseTime": "00:45",
+          "trendAvgResponseTime": "+1%",
+          "avgAcceptToEndTime": "01:30",
+          "trendAvgAcceptToEndTime": "0%"
+        }
+      ],
+      "style": {
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "respondedAlerts": { "align": "right" },
+        "trendRespondedAlerts": { "align": "left" },
+        "avgAlarmTime": { "align": "right" },
+        "trendAvgAlarmTime": { "align": "left" },
+        "avgAlarmQueueTime": { "align": "right" },
+        "trendAvgAlarmQueueTime": { "align": "left" },
+        "avgResponseTime": { "align": "right" },
+        "trendAvgResponseTime": { "align": "left" },
+        "avgAcceptToEndTime": { "align": "right" },
+        "trendAvgAcceptToEndTime": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "asystoleDetails": {
+      "id": "asystole-details",
+      "title": "Asystole Details",
+      "description": "Detailed metrics for Asystole alerts and alarms",
+      "data": [
+        {
+          "totalAlarms": 85,
+          "trendAlarms": "-5%",
+          "totalAlerts": 72,
+          "trendAlerts": "-4%",
+          "respondedAlerts": 65,
+          "trendRespondedAlerts": "-2%",
+          "avgAlarmTime": "04:15",
+          "trendAvgAlarmTime": "+3%",
+          "avgAlarmQueueTime": "01:45",
+          "trendAvgAlarmQueueTime": "-2%",
+          "avgResponseTime": "00:55",
+          "trendAvgResponseTime": "+2%",
+          "avgAcceptToEndTime": "01:45",
+          "trendAvgAcceptToEndTime": "+1%"
+        }
+      ],
+      "style": {
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "respondedAlerts": { "align": "right" },
+        "trendRespondedAlerts": { "align": "left" },
+        "avgAlarmTime": { "align": "right" },
+        "trendAvgAlarmTime": { "align": "left" },
+        "avgAlarmQueueTime": { "align": "right" },
+        "trendAvgAlarmQueueTime": { "align": "left" },
+        "avgResponseTime": { "align": "right" },
+        "trendAvgResponseTime": { "align": "left" },
+        "avgAcceptToEndTime": { "align": "right" },
+        "trendAvgAcceptToEndTime": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "hrHighDetails": {
+      "id": "hr-high-details",
+      "title": "HR High Details",
+      "description": "Detailed metrics for HR High alerts and alarms",
+      "data": [
+        {
+          "totalAlarms": 156,
+          "trendAlarms": "-3%",
+          "totalAlerts": 132,
+          "trendAlerts": "-2%",
+          "respondedAlerts": 120,
+          "trendRespondedAlerts": "-1%",
+          "avgAlarmTime": "03:30",
+          "trendAvgAlarmTime": "+1%",
+          "avgAlarmQueueTime": "01:20",
+          "trendAvgAlarmQueueTime": "-1%",
+          "avgResponseTime": "00:40",
+          "trendAvgResponseTime": "0%",
+          "avgAcceptToEndTime": "01:10",
+          "trendAvgAcceptToEndTime": "+1%"
+        }
+      ],
+      "style": {
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "respondedAlerts": { "align": "right" },
+        "trendRespondedAlerts": { "align": "left" },
+        "avgAlarmTime": { "align": "right" },
+        "trendAvgAlarmTime": { "align": "left" },
+        "avgAlarmQueueTime": { "align": "right" },
+        "trendAvgAlarmQueueTime": { "align": "left" },
+        "avgResponseTime": { "align": "right" },
+        "trendAvgResponseTime": { "align": "left" },
+        "avgAcceptToEndTime": { "align": "right" },
+        "trendAvgAcceptToEndTime": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "hrLowDetails": {
+      "id": "hr-low-details",
+      "title": "HR Low Details",
+      "description": "Detailed metrics for HR Low alerts and alarms",
+      "data": [
+        {
+          "totalAlarms": 110,
+          "trendAlarms": "+4%",
+          "totalAlerts": 95,
+          "trendAlerts": "+3%",
+          "respondedAlerts": 88,
+          "trendRespondedAlerts": "+2%",
+          "avgAlarmTime": "03:55",
+          "trendAvgAlarmTime": "+1%",
+          "avgAlarmQueueTime": "01:32",
+          "trendAvgAlarmQueueTime": "0%",
+          "avgResponseTime": "00:48",
+          "trendAvgResponseTime": "+1%",
+          "avgAcceptToEndTime": "01:25",
+          "trendAvgAcceptToEndTime": "+1%"
+        }
+      ],
+      "style": {
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "respondedAlerts": { "align": "right" },
+        "trendRespondedAlerts": { "align": "left" },
+        "avgAlarmTime": { "align": "right" },
+        "trendAvgAlarmTime": { "align": "left" },
+        "avgAlarmQueueTime": { "align": "right" },
+        "trendAvgAlarmQueueTime": { "align": "left" },
+        "avgResponseTime": { "align": "right" },
+        "trendAvgResponseTime": { "align": "left" },
+        "avgAcceptToEndTime": { "align": "right" },
+        "trendAvgAcceptToEndTime": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "pauseDetails": {
+      "id": "pause-details",
+      "title": "Pause Details",
+      "description": "Detailed metrics for Pause alerts and alarms",
+      "data": [
+        {
+          "totalAlarms": 97,
+          "trendAlarms": "+1%",
+          "totalAlerts": 82,
+          "trendAlerts": "-2%",
+          "respondedAlerts": 75,
+          "trendRespondedAlerts": "+3%",
+          "avgAlarmTime": "04:05",
+          "trendAvgAlarmTime": "-1%",
+          "avgAlarmQueueTime": "01:40",
+          "trendAvgAlarmQueueTime": "+2%",
+          "avgResponseTime": "00:52",
+          "trendAvgResponseTime": "0%",
+          "avgAcceptToEndTime": "01:35",
+          "trendAvgAcceptToEndTime": "-1%"
+        }
+      ],
+      "style": {
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "respondedAlerts": { "align": "right" },
+        "trendRespondedAlerts": { "align": "left" },
+        "avgAlarmTime": { "align": "right" },
+        "trendAvgAlarmTime": { "align": "left" },
+        "avgAlarmQueueTime": { "align": "right" },
+        "trendAvgAlarmQueueTime": { "align": "left" },
+        "avgResponseTime": { "align": "right" },
+        "trendAvgResponseTime": { "align": "left" },
+        "avgAcceptToEndTime": { "align": "right" },
+        "trendAvgAcceptToEndTime": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "vfibVtachDetails": {
+      "id": "vfib-vtach-details",
+      "title": "VFIB/VTACH Details",
+      "description": "Detailed metrics for VFIB/VTACH alerts and alarms",
+      "data": [
+        {
+          "totalAlarms": 61,
+          "trendAlarms": "+2%",
+          "totalAlerts": 54,
+          "trendAlerts": "+1%",
+          "respondedAlerts": 50,
+          "trendRespondedAlerts": "+2%",
+          "avgAlarmTime": "04:25",
+          "trendAvgAlarmTime": "0%",
+          "avgAlarmQueueTime": "01:55",
+          "trendAvgAlarmQueueTime": "+1%",
+          "avgResponseTime": "01:05",
+          "trendAvgResponseTime": "-1%",
+          "avgAcceptToEndTime": "01:50",
+          "trendAvgAcceptToEndTime": "0%"
+        }
+      ],
+      "style": {
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "respondedAlerts": { "align": "right" },
+        "trendRespondedAlerts": { "align": "left" },
+        "avgAlarmTime": { "align": "right" },
+        "trendAvgAlarmTime": { "align": "left" },
+        "avgAlarmQueueTime": { "align": "right" },
+        "trendAvgAlarmQueueTime": { "align": "left" },
+        "avgResponseTime": { "align": "right" },
+        "trendAvgResponseTime": { "align": "left" },
+        "avgAcceptToEndTime": { "align": "right" },
+        "trendAvgAcceptToEndTime": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "spo2LowDetails": {
+      "id": "spo2-low-details",
+      "title": "SPO2 Low Details",
+      "description": "Detailed metrics for SPO2 Low alerts and alarms",
+      "data": [
+        {
+          "totalAlarms": 134,
+          "trendAlarms": "-2%",
+          "totalAlerts": 120,
+          "trendAlerts": "-3%",
+          "respondedAlerts": 110,
+          "trendRespondedAlerts": "-1%",
+          "avgAlarmTime": "03:40",
+          "trendAvgAlarmTime": "0%",
+          "avgAlarmQueueTime": "01:28",
+          "trendAvgAlarmQueueTime": "-1%",
+          "avgResponseTime": "00:44",
+          "trendAvgResponseTime": "0%",
+          "avgAcceptToEndTime": "01:20",
+          "trendAvgAcceptToEndTime": "-1%"
+        }
+      ],
+      "style": {
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "respondedAlerts": { "align": "right" },
+        "trendRespondedAlerts": { "align": "left" },
+        "avgAlarmTime": { "align": "right" },
+        "trendAvgAlarmTime": { "align": "left" },
+        "avgAlarmQueueTime": { "align": "right" },
+        "trendAvgAlarmQueueTime": { "align": "left" },
+        "avgResponseTime": { "align": "right" },
+        "trendAvgResponseTime": { "align": "left" },
+        "avgAcceptToEndTime": { "align": "right" },
+        "trendAvgAcceptToEndTime": { "align": "left" }
       },
       "updateInterval": "5min"
     }
