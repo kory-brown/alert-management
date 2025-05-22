@@ -266,6 +266,321 @@ function QualityInitiativeDashboard() {
             </Grid>
           </Grid>
 
+          {/* ROW 6 - Total A-Fib Alerts Big Number Trend Chart and Time Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalAfibAlerts.value}
+                label={chartData.bigNumberTrends.totalAfibAlerts.label}
+                trendLabel={chartData.bigNumberTrends.totalAfibAlerts.trendLabel}
+                trendData={chartData.bigNumberTrends.totalAfibAlerts.trendData}
+                title={chartData.bigNumberTrends.totalAfibAlerts.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
+                <LineChart 
+                  title={chartData.lineCharts.afibTimeDailyTrend.title}
+                  data={chartData.lineCharts.afibTimeDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["avgAlarmTime", "avgAlarmQueueTime", "avgAlertResponseTime"]}
+                  yAxisLabels={["Avg Alarm Time", "Avg Alarm Queue Time", "Avg Alert Response Time"]}
+                  colors={{
+                    'avgAlarmTime': '#1aafe6',
+                    'avgAlarmQueueTime': '#4CAF50',
+                    'avgAlertResponseTime': '#9C27B0'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 7 - A-Fib Details Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 150 }}>
+                <TableChart
+                  title={chartData.tableCharts.afibDetails.title}
+                  data={chartData.tableCharts.afibDetails.data}
+                  style={chartData.tableCharts.afibDetails.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 8 - Total Asystole Alerts Big Number Trend Chart and Time Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalAsystoleAlerts.value}
+                label={chartData.bigNumberTrends.totalAsystoleAlerts.label}
+                trendLabel={chartData.bigNumberTrends.totalAsystoleAlerts.trendLabel}
+                trendData={chartData.bigNumberTrends.totalAsystoleAlerts.trendData}
+                title={chartData.bigNumberTrends.totalAsystoleAlerts.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
+                <LineChart 
+                  title={chartData.lineCharts.asystoleTimeDailyTrend.title}
+                  data={chartData.lineCharts.asystoleTimeDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["avgAlarmTime", "avgAlarmQueueTime", "avgAlertResponseTime"]}
+                  yAxisLabels={["Avg Alarm Time", "Avg Alarm Queue Time", "Avg Alert Response Time"]}
+                  colors={{
+                    'avgAlarmTime': '#1aafe6',
+                    'avgAlarmQueueTime': '#4CAF50',
+                    'avgAlertResponseTime': '#9C27B0'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 9 - Asystole Details Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 150 }}>
+                <TableChart
+                  title={chartData.tableCharts.asystoleDetails.title}
+                  data={chartData.tableCharts.asystoleDetails.data}
+                  style={chartData.tableCharts.asystoleDetails.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 10 - Total HR High Alerts Big Number Trend Chart and Time Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalHrHighAlerts.value}
+                label={chartData.bigNumberTrends.totalHrHighAlerts.label}
+                trendLabel={chartData.bigNumberTrends.totalHrHighAlerts.trendLabel}
+                trendData={chartData.bigNumberTrends.totalHrHighAlerts.trendData}
+                title={chartData.bigNumberTrends.totalHrHighAlerts.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
+                <LineChart 
+                  title={chartData.lineCharts.hrHighTimeDailyTrend.title}
+                  data={chartData.lineCharts.hrHighTimeDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["avgAlarmTime", "avgAlarmQueueTime", "avgAlertResponseTime"]}
+                  yAxisLabels={["Avg Alarm Time", "Avg Alarm Queue Time", "Avg Alert Response Time"]}
+                  colors={{
+                    'avgAlarmTime': '#1aafe6',
+                    'avgAlarmQueueTime': '#4CAF50',
+                    'avgAlertResponseTime': '#9C27B0'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 11 - HR High Details Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 150 }}>
+                <TableChart
+                  title={chartData.tableCharts.hrHighDetails.title}
+                  data={chartData.tableCharts.hrHighDetails.data}
+                  style={chartData.tableCharts.hrHighDetails.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 12 - Total HR Low Alerts Big Number Trend Chart and Time Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalHrLowAlerts.value}
+                label={chartData.bigNumberTrends.totalHrLowAlerts.label}
+                trendLabel={chartData.bigNumberTrends.totalHrLowAlerts.trendLabel}
+                trendData={chartData.bigNumberTrends.totalHrLowAlerts.trendData}
+                title={chartData.bigNumberTrends.totalHrLowAlerts.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
+                <LineChart 
+                  title={chartData.lineCharts.hrLowTimeDailyTrend.title}
+                  data={chartData.lineCharts.hrLowTimeDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["avgAlarmTime", "avgAlarmQueueTime", "avgAlertResponseTime"]}
+                  yAxisLabels={["Avg Alarm Time", "Avg Alarm Queue Time", "Avg Alert Response Time"]}
+                  colors={{
+                    'avgAlarmTime': '#1aafe6',
+                    'avgAlarmQueueTime': '#4CAF50',
+                    'avgAlertResponseTime': '#9C27B0'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 13 - HR Low Details Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 150 }}>
+                <TableChart
+                  title={chartData.tableCharts.hrLowDetails.title}
+                  data={chartData.tableCharts.hrLowDetails.data}
+                  style={chartData.tableCharts.hrLowDetails.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 16 - Total Pause Alerts Big Number Trend Chart and Time Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalPauseAlerts.value}
+                label={chartData.bigNumberTrends.totalPauseAlerts.label}
+                trendLabel={chartData.bigNumberTrends.totalPauseAlerts.trendLabel}
+                trendData={chartData.bigNumberTrends.totalPauseAlerts.trendData}
+                title={chartData.bigNumberTrends.totalPauseAlerts.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
+                <LineChart 
+                  title={chartData.lineCharts.pauseTimeDailyTrend.title}
+                  data={chartData.lineCharts.pauseTimeDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["avgAlarmTime", "avgAlarmQueueTime", "avgAlertResponseTime"]}
+                  yAxisLabels={["Avg Alarm Time", "Avg Alarm Queue Time", "Avg Alert Response Time"]}
+                  colors={{
+                    'avgAlarmTime': '#1aafe6',
+                    'avgAlarmQueueTime': '#4CAF50',
+                    'avgAlertResponseTime': '#9C27B0'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 17 - Pause Details Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 150 }}>
+                <TableChart
+                  title={chartData.tableCharts.pauseDetails.title}
+                  data={chartData.tableCharts.pauseDetails.data}
+                  style={chartData.tableCharts.pauseDetails.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 18 - Total VFIB/VTACH Alerts Big Number Trend Chart and Time Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalVfibVtachAlerts.value}
+                label={chartData.bigNumberTrends.totalVfibVtachAlerts.label}
+                trendLabel={chartData.bigNumberTrends.totalVfibVtachAlerts.trendLabel}
+                trendData={chartData.bigNumberTrends.totalVfibVtachAlerts.trendData}
+                title={chartData.bigNumberTrends.totalVfibVtachAlerts.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
+                <LineChart 
+                  title={chartData.lineCharts.vfibVtachTimeDailyTrend.title}
+                  data={chartData.lineCharts.vfibVtachTimeDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["avgAlarmTime", "avgAlarmQueueTime", "avgAlertResponseTime"]}
+                  yAxisLabels={["Avg Alarm Time", "Avg Alarm Queue Time", "Avg Alert Response Time"]}
+                  colors={{
+                    'avgAlarmTime': '#1aafe6',
+                    'avgAlarmQueueTime': '#4CAF50',
+                    'avgAlertResponseTime': '#9C27B0'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 19 - VFIB/VTACH Details Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 150 }}>
+                <TableChart
+                  title={chartData.tableCharts.vfibVtachDetails.title}
+                  data={chartData.tableCharts.vfibVtachDetails.data}
+                  style={chartData.tableCharts.vfibVtachDetails.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 20 - Total SPO2 Low Alerts Big Number Trend Chart and Time Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalSpo2LowAlerts.value}
+                label={chartData.bigNumberTrends.totalSpo2LowAlerts.label}
+                trendLabel={chartData.bigNumberTrends.totalSpo2LowAlerts.trendLabel}
+                trendData={chartData.bigNumberTrends.totalSpo2LowAlerts.trendData}
+                title={chartData.bigNumberTrends.totalSpo2LowAlerts.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
+                <LineChart 
+                  title={chartData.lineCharts.spo2LowTimeDailyTrend.title}
+                  data={chartData.lineCharts.spo2LowTimeDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["avgAlarmTime", "avgAlarmQueueTime", "avgAlertResponseTime"]}
+                  yAxisLabels={["Avg Alarm Time", "Avg Alarm Queue Time", "Avg Alert Response Time"]}
+                  colors={{
+                    'avgAlarmTime': '#1aafe6',
+                    'avgAlarmQueueTime': '#4CAF50',
+                    'avgAlertResponseTime': '#9C27B0'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 21 - SPO2 Low Details Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 150 }}>
+                <TableChart
+                  title={chartData.tableCharts.spo2LowDetails.title}
+                  data={chartData.tableCharts.spo2LowDetails.data}
+                  style={chartData.tableCharts.spo2LowDetails.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
         </Box>
       </Box>
     </Box>
