@@ -92,6 +92,33 @@
       "trendLabel": "Daily Alert Trend -2% ▼",
       "trendData": [22, 21, 20, 19, 18, 18, 16],
       "updateInterval": "5min"
+    },
+    "totalDispatchedAlerts": {
+      "id": "total-dispatched-alerts-trend",
+      "title": "Total Dispatched Alerts",
+      "value": 800,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend 0% ▬",
+      "trendData": [115, 115, 115, 115, 115, 115, 110],
+      "updateInterval": "5min"
+    },
+    "totalAlertsRespondedTo": {
+      "id": "total-alerts-responded-to-trend",
+      "title": "Total Alerts Responded To",
+      "value": 720,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend +1% ▲",
+      "trendData": [100, 102, 105, 104, 106, 101, 102],
+      "updateInterval": "5min"
+    },
+    "totalAlertsRespondedToByRecipient": {
+      "id": "total-alerts-responded-to-by-recipient-trend",
+      "title": "Total Alerts Responded to by Recipient",
+      "value": 680,
+      "label": "Alerts",
+      "trendLabel": "Daily Alert Trend +3% ▲",
+      "trendData": [90, 92, 95, 97, 100, 104, 102],
+      "updateInterval": "5min"
     }
   },
   "pieCharts": {
@@ -267,6 +294,51 @@
         { "date": "2024-01-06", "avgAlarmTime": "03:39", "avgAlarmQueueTime": "01:34", "avgAlertResponseTime": "00:48" },
         { "date": "2024-01-07", "avgAlarmTime": "03:47", "avgAlarmQueueTime": "01:28", "avgAlertResponseTime": "00:43" }
       ],
+      "updateInterval": "5min"
+    },
+    "alertDispatchTypesDailyTrend": {
+      "id": "alert-dispatch-types-daily-trend",
+      "title": "Alert Dispatch Types Daily Trend",
+      "data": [
+        { "date": "2025-01-01", "manuallyDispatched": 80, "autoDispatched": 70, "selfResolved": 35 },
+        { "date": "2025-01-02", "manuallyDispatched": 82, "autoDispatched": 68, "selfResolved": 36 },
+        { "date": "2025-01-03", "manuallyDispatched": 78, "autoDispatched": 72, "selfResolved": 34 },
+        { "date": "2025-01-04", "manuallyDispatched": 81, "autoDispatched": 69, "selfResolved": 33 },
+        { "date": "2025-01-05", "manuallyDispatched": 79, "autoDispatched": 71, "selfResolved": 37 },
+        { "date": "2025-01-06", "manuallyDispatched": 80, "autoDispatched": 70, "selfResolved": 35 },
+        { "date": "2025-01-07", "manuallyDispatched": 80, "autoDispatched": 70, "selfResolved": 35 }
+      ],
+      "legend": ["Manually Dispatched", "Auto Dispatched", "Self Resolved"],
+      "updateInterval": "5min"
+    },
+    "alertResponseTypesDailyTrend": {
+      "id": "alert-response-types-daily-trend",
+      "title": "Alert Response Types Daily Trend",
+      "data": [
+        { "date": "2025-01-01", "manuallyEscalated": 40, "autoEscalated": 30, "accepted": 20, "selfResolved": 10 },
+        { "date": "2025-01-02", "manuallyEscalated": 42, "autoEscalated": 28, "accepted": 22, "selfResolved": 12 },
+        { "date": "2025-01-03", "manuallyEscalated": 39, "autoEscalated": 32, "accepted": 21, "selfResolved": 11 },
+        { "date": "2025-01-04", "manuallyEscalated": 41, "autoEscalated": 29, "accepted": 23, "selfResolved": 13 },
+        { "date": "2025-01-05", "manuallyEscalated": 40, "autoEscalated": 31, "accepted": 20, "selfResolved": 12 },
+        { "date": "2025-01-06", "manuallyEscalated": 43, "autoEscalated": 30, "accepted": 22, "selfResolved": 11 },
+        { "date": "2025-01-07", "manuallyEscalated": 40, "autoEscalated": 30, "accepted": 21, "selfResolved": 10 }
+      ],
+      "legend": ["Manually Escalated", "Auto Escalated", "Accepted", "Self Resolved"],
+      "updateInterval": "5min"
+    },
+    "alertResponseByRecipientTrend": {
+      "id": "alert-response-by-recipient-trend",
+      "title": "Alert Response by Recipient",
+      "data": [
+        { "date": "2025-01-01", "R1": 25, "R2": 20, "R3": 15, "R4": 10 },
+        { "date": "2025-01-02", "R1": 27, "R2": 21, "R3": 16, "R4": 12 },
+        { "date": "2025-01-03", "R1": 26, "R2": 22, "R3": 17, "R4": 11 },
+        { "date": "2025-01-04", "R1": 28, "R2": 23, "R3": 15, "R4": 13 },
+        { "date": "2025-01-05", "R1": 29, "R2": 24, "R3": 18, "R4": 12 },
+        { "date": "2025-01-06", "R1": 30, "R2": 25, "R3": 16, "R4": 14 },
+        { "date": "2025-01-07", "R1": 28, "R2": 23, "R3": 17, "R4": 13 }
+      ],
+      "legend": ["R1", "R2", "R3", "R4"],
       "updateInterval": "5min"
     }
   },
@@ -627,6 +699,113 @@
         "trendAvgResponseTime": { "align": "left" },
         "avgAcceptToEndTime": { "align": "right" },
         "trendAvgAcceptToEndTime": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "alertDispatchDetail": {
+      "id": "alert-dispatch-detail",
+      "title": "Alert Dispatch Detail",
+      "data": [
+        { "alarmLabel": "AFIB", "totalAlarms": 425, "trendAlarms": "+2%", "totalAlerts": 298, "trendAlerts": "-1%", "avgAlarmDuration": "01:35", "trendAvgAlarmDuration": "0%", "manuallyDispatched": 145, "trendManuallyDispatched": "+1%", "autoDispatched": 120, "trendAutoDispatched": "0%", "selfResolved": 85, "trendSelfResolved": "-2%", "numberOfDelays": 28, "trendNumberOfDelays": "+1%", "numberOfRecurrenceHolds": 42, "trendNumberOfRecurrenceHolds": "0%", "avgAlarmIntervalToDispatch": "00:45", "trendAvgAlarmIntervalToDispatch": "0%" },
+        { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "trendAlarms": "+1%", "totalAlerts": 314, "trendAlerts": "+2%", "avgAlarmDuration": "01:45", "trendAvgAlarmDuration": "-1%", "manuallyDispatched": 160, "trendManuallyDispatched": "0%", "autoDispatched": 130, "trendAutoDispatched": "+1%", "selfResolved": 90, "trendSelfResolved": "-1%", "numberOfDelays": 35, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 48, "trendNumberOfRecurrenceHolds": "+2%", "avgAlarmIntervalToDispatch": "00:35", "trendAvgAlarmIntervalToDispatch": "-1%" },
+        { "alarmLabel": "HR HIGH", "totalAlarms": 387, "trendAlarms": "-2%", "totalAlerts": 245, "trendAlerts": "0%", "avgAlarmDuration": "01:25", "trendAvgAlarmDuration": "+1%", "manuallyDispatched": 120, "trendManuallyDispatched": "-1%", "autoDispatched": 100, "trendAutoDispatched": "0%", "selfResolved": 92, "trendSelfResolved": "+1%", "numberOfDelays": 25, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 38, "trendNumberOfRecurrenceHolds": "-1%", "avgAlarmIntervalToDispatch": "00:55", "trendAvgAlarmIntervalToDispatch": "+1%" },
+        { "alarmLabel": "HR LOW", "totalAlarms": 342, "trendAlarms": "0%", "totalAlerts": 228, "trendAlerts": "-2%", "avgAlarmDuration": "01:20", "trendAvgAlarmDuration": "0%", "manuallyDispatched": 110, "trendManuallyDispatched": "+2%", "autoDispatched": 95, "trendAutoDispatched": "-1%", "selfResolved": 74, "trendSelfResolved": "0%", "numberOfDelays": 22, "trendNumberOfDelays": "+1%", "numberOfRecurrenceHolds": 35, "trendNumberOfRecurrenceHolds": "0%", "avgAlarmIntervalToDispatch": "00:50", "trendAvgAlarmIntervalToDispatch": "-1%" },
+        { "alarmLabel": "PAUSE", "totalAlarms": 298, "trendAlarms": "+1%", "totalAlerts": 187, "trendAlerts": "0%", "avgAlarmDuration": "01:15", "trendAvgAlarmDuration": "-1%", "manuallyDispatched": 90, "trendManuallyDispatched": "0%", "autoDispatched": 75, "trendAutoDispatched": "+1%", "selfResolved": 71, "trendSelfResolved": "-2%", "numberOfDelays": 18, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 32, "trendNumberOfRecurrenceHolds": "+1%", "avgAlarmIntervalToDispatch": "00:40", "trendAvgAlarmIntervalToDispatch": "0%" },
+        { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "trendAlarms": "-1%", "totalAlerts": 356, "trendAlerts": "+1%", "avgAlarmDuration": "01:55", "trendAvgAlarmDuration": "0%", "manuallyDispatched": 180, "trendManuallyDispatched": "+1%", "autoDispatched": 150, "trendAutoDispatched": "0%", "selfResolved": 60, "trendSelfResolved": "-1%", "numberOfDelays": 38, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 45, "trendNumberOfRecurrenceHolds": "+2%", "avgAlarmIntervalToDispatch": "00:30", "trendAvgAlarmIntervalToDispatch": "-1%" },
+        { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "trendAlarms": "+2%", "totalAlerts": 267, "trendAlerts": "0%", "avgAlarmDuration": "01:30", "trendAvgAlarmDuration": "-1%", "manuallyDispatched": 130, "trendManuallyDispatched": "0%", "autoDispatched": 110, "trendAutoDispatched": "+1%", "selfResolved": 95, "trendSelfResolved": "-2%", "numberOfDelays": 24, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 40, "trendNumberOfRecurrenceHolds": "+1%", "avgAlarmIntervalToDispatch": "00:45", "trendAvgAlarmIntervalToDispatch": "0%" }
+      ],
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "avgAlarmDuration": { "align": "right" },
+        "trendAvgAlarmDuration": { "align": "left" },
+        "manuallyDispatched": { "align": "right" },
+        "trendManuallyDispatched": { "align": "left" },
+        "autoDispatched": { "align": "right" },
+        "trendAutoDispatched": { "align": "left" },
+        "selfResolved": { "align": "right" },
+        "trendSelfResolved": { "align": "left" },
+        "numberOfDelays": { "align": "right" },
+        "trendNumberOfDelays": { "align": "left" },
+        "numberOfRecurrenceHolds": { "align": "right" },
+        "trendNumberOfRecurrenceHolds": { "align": "left" },
+        "avgAlarmIntervalToDispatch": { "align": "right" },
+        "trendAvgAlarmIntervalToDispatch": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "alertResponseDetail": {
+      "id": "alert-response-detail",
+      "title": "Alert Response Detail",
+      "data": [
+        { "alarmLabel": "AFIB", "totalAlarms": 425, "trendAlarms": "+2%", "totalAlerts": 298, "trendAlerts": "-1%", "avgAlarmDuration": "01:35", "trendAvgAlarmDuration": "0%", "manuallyEscalated": 70, "trendManuallyEscalated": "+1%", "autoEscalated": 60, "trendAutoEscalated": "0%", "accepted": 40, "trendAccepted": "+2%", "selfResolved": 30, "trendSelfResolved": "-2%", "numberOfDelays": 18, "trendNumberOfDelays": "+1%", "numberOfRecurrenceHolds": 22, "trendNumberOfRecurrenceHolds": "0%", "avgAlarmIntervalToDispatch": "00:45", "trendAvgAlarmIntervalToDispatch": "0%" },
+        { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "trendAlarms": "+1%", "totalAlerts": 314, "trendAlerts": "+2%", "avgAlarmDuration": "01:45", "trendAvgAlarmDuration": "-1%", "manuallyEscalated": 80, "trendManuallyEscalated": "0%", "autoEscalated": 70, "trendAutoEscalated": "+1%", "accepted": 50, "trendAccepted": "+1%", "selfResolved": 40, "trendSelfResolved": "-1%", "numberOfDelays": 20, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 28, "trendNumberOfRecurrenceHolds": "+2%", "avgAlarmIntervalToDispatch": "00:35", "trendAvgAlarmIntervalToDispatch": "-1%" },
+        { "alarmLabel": "HR HIGH", "totalAlarms": 387, "trendAlarms": "-2%", "totalAlerts": 245, "trendAlerts": "0%", "avgAlarmDuration": "01:25", "trendAvgAlarmDuration": "+1%", "manuallyEscalated": 60, "trendManuallyEscalated": "-1%", "autoEscalated": 55, "trendAutoEscalated": "0%", "accepted": 35, "trendAccepted": "0%", "selfResolved": 25, "trendSelfResolved": "+1%", "numberOfDelays": 15, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 18, "trendNumberOfRecurrenceHolds": "-1%", "avgAlarmIntervalToDispatch": "00:55", "trendAvgAlarmIntervalToDispatch": "+1%" },
+        { "alarmLabel": "HR LOW", "totalAlarms": 342, "trendAlarms": "0%", "totalAlerts": 228, "trendAlerts": "-2%", "avgAlarmDuration": "01:20", "trendAvgAlarmDuration": "0%", "manuallyEscalated": 55, "trendManuallyEscalated": "+2%", "autoEscalated": 50, "trendAutoEscalated": "-1%", "accepted": 30, "trendAccepted": "-1%", "selfResolved": 20, "trendSelfResolved": "0%", "numberOfDelays": 12, "trendNumberOfDelays": "+1%", "numberOfRecurrenceHolds": 15, "trendNumberOfRecurrenceHolds": "0%", "avgAlarmIntervalToDispatch": "00:50", "trendAvgAlarmIntervalToDispatch": "-1%" },
+        { "alarmLabel": "PAUSE", "totalAlarms": 298, "trendAlarms": "+1%", "totalAlerts": 187, "trendAlerts": "0%", "avgAlarmDuration": "01:15", "trendAvgAlarmDuration": "-1%", "manuallyEscalated": 45, "trendManuallyEscalated": "0%", "autoEscalated": 40, "trendAutoEscalated": "+1%", "accepted": 25, "trendAccepted": "0%", "selfResolved": 15, "trendSelfResolved": "-2%", "numberOfDelays": 10, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 12, "trendNumberOfRecurrenceHolds": "+1%", "avgAlarmIntervalToDispatch": "00:40", "trendAvgAlarmIntervalToDispatch": "0%" },
+        { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "trendAlarms": "-1%", "totalAlerts": 356, "trendAlerts": "+1%", "avgAlarmDuration": "01:55", "trendAvgAlarmDuration": "0%", "manuallyEscalated": 90, "trendManuallyEscalated": "+1%", "autoEscalated": 80, "trendAutoEscalated": "0%", "accepted": 60, "trendAccepted": "+2%", "selfResolved": 30, "trendSelfResolved": "-1%", "numberOfDelays": 22, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 25, "trendNumberOfRecurrenceHolds": "+2%", "avgAlarmIntervalToDispatch": "00:30", "trendAvgAlarmIntervalToDispatch": "-1%" },
+        { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "trendAlarms": "+2%", "totalAlerts": 267, "trendAlerts": "0%", "avgAlarmDuration": "01:30", "trendAvgAlarmDuration": "-1%", "manuallyEscalated": 65, "trendManuallyEscalated": "0%", "autoEscalated": 60, "trendAutoEscalated": "+1%", "accepted": 40, "trendAccepted": "0%", "selfResolved": 20, "trendSelfResolved": "-2%", "numberOfDelays": 14, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 18, "trendNumberOfRecurrenceHolds": "+1%", "avgAlarmIntervalToDispatch": "00:45", "trendAvgAlarmIntervalToDispatch": "0%" }
+      ],
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "avgAlarmDuration": { "align": "right" },
+        "trendAvgAlarmDuration": { "align": "left" },
+        "manuallyEscalated": { "align": "right" },
+        "trendManuallyEscalated": { "align": "left" },
+        "autoEscalated": { "align": "right" },
+        "trendAutoEscalated": { "align": "left" },
+        "accepted": { "align": "right" },
+        "trendAccepted": { "align": "left" },
+        "selfResolved": { "align": "right" },
+        "trendSelfResolved": { "align": "left" },
+        "numberOfDelays": { "align": "right" },
+        "trendNumberOfDelays": { "align": "left" },
+        "numberOfRecurrenceHolds": { "align": "right" },
+        "trendNumberOfRecurrenceHolds": { "align": "left" },
+        "avgAlarmIntervalToDispatch": { "align": "right" },
+        "trendAvgAlarmIntervalToDispatch": { "align": "left" }
+      },
+      "updateInterval": "5min"
+    },
+    "alertResponseByRecipientDetail": {  
+      "id": "alert-response-by-recipient-detail",
+      "title": "Alert Response by Recipient Detail",
+      "data": [
+        { "alarmLabel": "AFIB", "totalAlarms": 425, "trendAlarms": "+2%", "totalAlerts": 298, "trendAlerts": "-1%", "avgAlarmDuration": "01:35", "trendAvgAlarmDuration": "0%", "R1": 60, "trendR1": "+2%", "R2": 50, "trendR2": "+1%", "R3": 40, "trendR3": "0%", "R4": 30, "trendR4": "-1%", "numberOfDelays": 18, "trendNumberOfDelays": "+1%", "numberOfRecurrenceHolds": 22, "trendNumberOfRecurrenceHolds": "0%", "avgAlarmIntervalToDispatch": "00:45", "trendAvgAlarmIntervalToDispatch": "0%" },
+        { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "trendAlarms": "+1%", "totalAlerts": 314, "trendAlerts": "+2%", "avgAlarmDuration": "01:45", "trendAvgAlarmDuration": "-1%", "R1": 70, "trendR1": "+1%", "R2": 60, "trendR2": "0%", "R3": 50, "trendR3": "+2%", "R4": 40, "trendR4": "-1%", "numberOfDelays": 20, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 28, "trendNumberOfRecurrenceHolds": "+2%", "avgAlarmIntervalToDispatch": "00:35", "trendAvgAlarmIntervalToDispatch": "-1%" },
+        { "alarmLabel": "HR HIGH", "totalAlarms": 387, "trendAlarms": "-2%", "totalAlerts": 245, "trendAlerts": "0%", "avgAlarmDuration": "01:25", "trendAvgAlarmDuration": "+1%", "R1": 50, "trendR1": "0%", "R2": 40, "trendR2": "-1%", "R3": 30, "trendR3": "+1%", "R4": 20, "trendR4": "0%", "numberOfDelays": 15, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 18, "trendNumberOfRecurrenceHolds": "-1%", "avgAlarmIntervalToDispatch": "00:55", "trendAvgAlarmIntervalToDispatch": "+1%" },
+        { "alarmLabel": "HR LOW", "totalAlarms": 342, "trendAlarms": "0%", "totalAlerts": 228, "trendAlerts": "-2%", "avgAlarmDuration": "01:20", "trendAvgAlarmDuration": "0%", "R1": 40, "trendR1": "-1%", "R2": 30, "trendR2": "0%", "R3": 20, "trendR3": "+1%", "R4": 10, "trendR4": "0%", "numberOfDelays": 12, "trendNumberOfDelays": "+1%", "numberOfRecurrenceHolds": 15, "trendNumberOfRecurrenceHolds": "0%", "avgAlarmIntervalToDispatch": "00:50", "trendAvgAlarmIntervalToDispatch": "-1%" },
+        { "alarmLabel": "PAUSE", "totalAlarms": 298, "trendAlarms": "+1%", "totalAlerts": 187, "trendAlerts": "0%", "avgAlarmDuration": "01:15", "trendAvgAlarmDuration": "-1%", "R1": 30, "trendR1": "0%", "R2": 20, "trendR2": "+1%", "R3": 10, "trendR3": "0%", "R4": 5, "trendR4": "-1%", "numberOfDelays": 10, "trendNumberOfDelays": "0%", "numberOfRecurrenceHolds": 12, "trendNumberOfRecurrenceHolds": "+1%", "avgAlarmIntervalToDispatch": "00:40", "trendAvgAlarmIntervalToDispatch": "0%" }
+      ],
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "totalAlarms": { "align": "right" },
+        "trendAlarms": { "align": "left" },
+        "totalAlerts": { "align": "right" },
+        "trendAlerts": { "align": "left" },
+        "avgAlarmDuration": { "align": "right" },
+        "trendAvgAlarmDuration": { "align": "left" },
+        "manuallyEscalated": { "align": "right" },
+        "trendManuallyEscalated": { "align": "left" },
+        "autoEscalated": { "align": "right" },
+        "trendAutoEscalated": { "align": "left" },
+        "accepted": { "align": "right" },
+        "trendAccepted": { "align": "left" },
+        "selfResolved": { "align": "right" },
+        "trendSelfResolved": { "align": "left" },
+        "numberOfDelays": { "align": "right" },
+        "trendNumberOfDelays": { "align": "left" },
+        "numberOfRecurrenceHolds": { "align": "right" },
+        "trendNumberOfRecurrenceHolds": { "align": "left" },
+        "avgAlarmIntervalToDispatch": { "align": "right" },
+        "trendAvgAlarmIntervalToDispatch": { "align": "left" }
       },
       "updateInterval": "5min"
     }
