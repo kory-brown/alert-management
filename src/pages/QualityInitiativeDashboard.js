@@ -14,6 +14,7 @@ import BigNumberTrendChart from '../components/BigNumberTrendChart';
 import LineChart from '../components/LineChart';
 import PieChart from '../components/PieChart';
 import TableChart from '../components/TableChart';
+import SectionLabel from '../components/SectionLabel';
 import chartData from '../data/QualityInitiativeDashboardData.json';
 
 function QualityInitiativeDashboard() {
@@ -265,6 +266,9 @@ function QualityInitiativeDashboard() {
               </Box>
             </Grid>
           </Grid>
+
+          {/* PAGE CHART COMPONENTS */}
+          <SectionLabel label="Alarm Labels" />
 
           {/* ROW 6 - Total A-Fib Alerts Big Number Trend Chart and Time Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
@@ -576,6 +580,137 @@ function QualityInitiativeDashboard() {
                   title={chartData.tableCharts.spo2LowDetails.title}
                   data={chartData.tableCharts.spo2LowDetails.data}
                   style={chartData.tableCharts.spo2LowDetails.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* PAGE CHART COMPONENTS */}
+          <SectionLabel label="Workflows" />
+
+          {/* ROW 22 - Alert Dispatch Big Number, Line Chart, and Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalDispatchedAlerts.value}
+                label={chartData.bigNumberTrends.totalDispatchedAlerts.label}
+                trendLabel={chartData.bigNumberTrends.totalDispatchedAlerts.trendLabel}
+                trendData={chartData.bigNumberTrends.totalDispatchedAlerts.trendData}
+                title={chartData.bigNumberTrends.totalDispatchedAlerts.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
+                <LineChart
+                  title={chartData.lineCharts.alertDispatchTypesDailyTrend.title}
+                  data={chartData.lineCharts.alertDispatchTypesDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["manuallyDispatched", "autoDispatched", "selfResolved"]}
+                  yAxisLabels={["Manually Dispatched", "Auto Dispatched", "Self Resolved"]}
+                  colors={{
+                    'manuallyDispatched': '#1aafe6',
+                    'autoDispatched': '#4CAF50',
+                    'selfResolved': '#9C27B0'
+                  }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 300 }}>
+                <TableChart
+                  title={chartData.tableCharts.alertDispatchDetail.title}
+                  data={chartData.tableCharts.alertDispatchDetail.data}
+                  style={chartData.tableCharts.alertDispatchDetail.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 23 - Alert Response Big Number, Line Chart, and Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalAlertsRespondedTo.value}
+                label={chartData.bigNumberTrends.totalAlertsRespondedTo.label}
+                trendLabel={chartData.bigNumberTrends.totalAlertsRespondedTo.trendLabel}
+                trendData={chartData.bigNumberTrends.totalAlertsRespondedTo.trendData}
+                title={chartData.bigNumberTrends.totalAlertsRespondedTo.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
+                <LineChart
+                  title={chartData.lineCharts.alertResponseTypesDailyTrend.title}
+                  data={chartData.lineCharts.alertResponseTypesDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["manuallyEscalated", "autoEscalated", "accepted", "selfResolved"]}
+                  yAxisLabels={["Manually Escalated", "Auto Escalated", "Accepted", "Self Resolved"]}
+                  colors={{
+                    'manuallyEscalated': '#1aafe6',
+                    'autoEscalated': '#4CAF50',
+                    'accepted': '#FFC107',
+                    'selfResolved': '#9C27B0'
+                  }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 300 }}>
+                <TableChart
+                  title={chartData.tableCharts.alertResponseDetail.title}
+                  data={chartData.tableCharts.alertResponseDetail.data}
+                  style={chartData.tableCharts.alertResponseDetail.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 24 - Alert Response by Recipient Big Number, Line Chart, and Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberTrendChart
+                value={chartData.bigNumberTrends.totalAlertsRespondedToByRecipient.value}
+                label={chartData.bigNumberTrends.totalAlertsRespondedToByRecipient.label}
+                trendLabel={chartData.bigNumberTrends.totalAlertsRespondedToByRecipient.trendLabel}
+                trendData={chartData.bigNumberTrends.totalAlertsRespondedToByRecipient.trendData}
+                title={chartData.bigNumberTrends.totalAlertsRespondedToByRecipient.title}
+                height={300}
+                trendColor={'#1aafe6'}
+              />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ height: 300 }}>
+                <LineChart
+                  title={chartData.lineCharts.alertResponseByRecipientTrend.title}
+                  data={chartData.lineCharts.alertResponseByRecipientTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["R1", "R2", "R3", "R4"]}
+                  yAxisLabels={["R1", "R2", "R3", "R4"]}
+                  colors={{
+                    'R1': '#1aafe6',
+                    'R2': '#4CAF50',
+                    'R3': '#FFC107',
+                    'R4': '#9C27B0'
+                  }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 300 }}>
+                <TableChart
+                  title={chartData.tableCharts.alertResponseByRecipientDetail.title}
+                  data={chartData.tableCharts.alertResponseByRecipientDetail.data}
+                  style={chartData.tableCharts.alertResponseByRecipientDetail.style}
                 />
               </Box>
             </Grid>

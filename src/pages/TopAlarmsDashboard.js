@@ -4,11 +4,17 @@ import {
   Toolbar,
   Paper,
   IconButton,
+  Grid,
 } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import AppHeader from '../components/AppHeader';
 import FiltersPanel from '../components/FiltersPanel';
 import { drawerWidth } from '../components/FiltersPanel';
+import BigNumberTrendChart from '../components/BigNumberTrendChart';
+import LineChart from '../components/LineChart';
+import PieChart from '../components/PieChart';
+import TableChart from '../components/TableChart';
+import chartData from '../data/TopAlarmsDashboardData.json';
 
 function TopAlarmsDashboard() {
   const [startDate, setStartDate] = useState('');
@@ -42,7 +48,7 @@ function TopAlarmsDashboard() {
       <AppHeader title={pageTitle} />
       <Toolbar />
       <Box sx={{ display: 'flex', flex: 1, position: 'relative' }}>
-        <Box sx={{ 
+        <Box sx={{
           display: 'flex',
           transition: 'width 0.3s ease',
           width: isFilterPanelOpen ? { md: drawerWidth } : '0px',
