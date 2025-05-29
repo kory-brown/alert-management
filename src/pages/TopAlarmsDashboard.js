@@ -14,7 +14,10 @@ import BigNumberTrendChart from '../components/BigNumberTrendChart';
 import LineChart from '../components/LineChart';
 import PieChart from '../components/PieChart';
 import TableChart from '../components/TableChart';
+import SectionLabel from '../components/SectionLabel';
 import chartData from '../data/TopAlarmsDashboardData.json';
+import BigNumberChart from '../components/BigNumberChart';
+import StackedBarChart from '../components/StackedBarChart';
 
 function TopAlarmsDashboard() {
   const [startDate, setStartDate] = useState('');
@@ -137,6 +140,118 @@ function TopAlarmsDashboard() {
               <ChevronRightIcon />
             </IconButton>
           )}
+
+          {/* PAGE CHART COMPONENTS */}
+          <SectionLabel label="Top Alarms Summary" />
+
+          {/* Row 1 - Total Top Alarms, Alerts, and Average Time */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart
+                value={chartData.bigNumbers.totalTopAlarms.value}
+                label={chartData.bigNumbers.totalTopAlarms.label}
+                title={chartData.bigNumbers.totalTopAlarms.title}
+                height={300}
+              />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart
+                value={chartData.bigNumbers.totalTopAlerts.value}
+                label={chartData.bigNumbers.totalTopAlerts.label}
+                title={chartData.bigNumbers.totalTopAlerts.title}
+                height={300}
+              />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart
+                value={chartData.bigNumbers.averageAlarmTime.value}
+                label={chartData.bigNumbers.averageAlarmTime.label}
+                title={chartData.bigNumbers.averageAlarmTime.title}
+                height={300}
+              />
+            </Grid>
+          </Grid>
+
+          {/* Row 2 - Top Alarms & Alerts by Label */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <StackedBarChart 
+                  title={chartData.stackedBarCharts.byAlarmLabels.title}
+                  data={chartData.stackedBarCharts.byAlarmLabels.data}
+                  groupBy={chartData.stackedBarCharts.byAlarmLabels.groupBy}
+                  totalLabel={chartData.stackedBarCharts.byAlarmLabels.data[0].totalLabel}
+                  subsetLabel={chartData.stackedBarCharts.byAlarmLabels.data[0].subsetLabel}
+                  colors={['#1aafe6', '#667275']}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Row 3 - Total Alerts Responded To and Average Response Time */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart
+                value={chartData.bigNumbers.totalAlertsRespondedTo.value}
+                label={chartData.bigNumbers.totalAlertsRespondedTo.label}
+                title={chartData.bigNumbers.totalAlertsRespondedTo.title}
+                height={300}
+              />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart
+                value={chartData.bigNumbers.averageAlarmResponseTime.value}
+                label={chartData.bigNumbers.averageAlarmResponseTime.label}
+                title={chartData.bigNumbers.averageAlarmResponseTime.title}
+                height={300}
+              />
+            </Grid>
+          </Grid>
+
+          {/* Row 4 - Pie Charts */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <PieChart
+                  title={chartData.pieCharts.alertDispatchActions.title}
+                  data={chartData.pieCharts.alertDispatchActions.data}
+                  colors={chartData.pieCharts.alertDispatchActions.colors}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <PieChart
+                  title={chartData.pieCharts.alertResponseByRecipient.title}
+                  data={chartData.pieCharts.alertResponseByRecipient.data}
+                  colors={chartData.pieCharts.alertResponseByRecipient.colors}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <PieChart
+                  title={chartData.pieCharts.alertResponseOptions.title}
+                  data={chartData.pieCharts.alertResponseOptions.data}
+                  colors={chartData.pieCharts.alertResponseOptions.colors}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Row 5 - Alarm Label Detail Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.alarmLabelDetail.title}
+                  data={chartData.tableCharts.alarmLabelDetail.data}
+                  style={chartData.tableCharts.alarmLabelDetail.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+          
         </Box>
       </Box>
     </Box>
