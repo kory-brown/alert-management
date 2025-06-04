@@ -965,6 +965,157 @@
           "r4Art": "02:15"
         }
       ]
+    },
+    "alertResponseByRecipientTable": {
+      "id": "alert-response-by-recipient-table",
+      "title": "Alert Response by Recipient Detail",
+      "description": "Detailed response statistics by alarm label and recipient",
+      "data": [
+        {
+          "alarmLabel": "AFIB",
+          "recipient": "R1",
+          "percentResponded": "92%",
+          "avgResponseTime": "00:45",
+          "accepted": 45,
+          "manuallyEscalated": 32,
+          "noResponse": 8,
+          "acceptedAndAutoEscalated": 67,
+          "avgTimeAcceptToEnd": "01:15"
+        },
+        {
+          "alarmLabel": "AFIB",
+          "recipient": "R2",
+          "percentResponded": "90%",
+          "avgResponseTime": "00:55",
+          "accepted": 38,
+          "manuallyEscalated": 28,
+          "noResponse": 7,
+          "acceptedAndAutoEscalated": 60,
+          "avgTimeAcceptToEnd": "01:25"
+        },
+        {
+          "alarmLabel": "AFIB",
+          "recipient": "R3",
+          "percentResponded": "89%",
+          "avgResponseTime": "01:05",
+          "accepted": 35,
+          "manuallyEscalated": 25,
+          "noResponse": 6,
+          "acceptedAndAutoEscalated": 55,
+          "avgTimeAcceptToEnd": "01:35"
+        },
+        {
+          "alarmLabel": "AFIB",
+          "recipient": "R4",
+          "percentResponded": "85%",
+          "avgResponseTime": "01:15",
+          "accepted": 38,
+          "manuallyEscalated": 27,
+          "noResponse": 5,
+          "acceptedAndAutoEscalated": 52,
+          "avgTimeAcceptToEnd": "01:45"
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "recipient": "R1",
+          "percentResponded": "94%",
+          "avgResponseTime": "00:42",
+          "accepted": 48,
+          "manuallyEscalated": 35,
+          "noResponse": 6,
+          "acceptedAndAutoEscalated": 70,
+          "avgTimeAcceptToEnd": "01:12"
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "recipient": "R2",
+          "percentResponded": "92%",
+          "avgResponseTime": "00:52",
+          "accepted": 42,
+          "manuallyEscalated": 31,
+          "noResponse": 5,
+          "acceptedAndAutoEscalated": 65,
+          "avgTimeAcceptToEnd": "01:22"
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "recipient": "R3",
+          "percentResponded": "90%",
+          "avgResponseTime": "01:02",
+          "accepted": 39,
+          "manuallyEscalated": 28,
+          "noResponse": 4,
+          "acceptedAndAutoEscalated": 62,
+          "avgTimeAcceptToEnd": "01:32"
+        },
+        {
+          "alarmLabel": "ASYSTOLE",
+          "recipient": "R4",
+          "percentResponded": "87%",
+          "avgResponseTime": "01:12",
+          "accepted": 39,
+          "manuallyEscalated": 32,
+          "noResponse": 5,
+          "acceptedAndAutoEscalated": 60,
+          "avgTimeAcceptToEnd": "01:42"
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "recipient": "R1",
+          "percentResponded": "90%",
+          "avgResponseTime": "01:15",
+          "accepted": 38,
+          "manuallyEscalated": 28,
+          "noResponse": 4,
+          "acceptedAndAutoEscalated": 58,
+          "avgTimeAcceptToEnd": "00:45"
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "recipient": "R2",
+          "percentResponded": "88%",
+          "avgResponseTime": "01:25",
+          "accepted": 32,
+          "manuallyEscalated": 24,
+          "noResponse": 3,
+          "acceptedAndAutoEscalated": 52,
+          "avgTimeAcceptToEnd": "00:55"
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "recipient": "R3",
+          "percentResponded": "86%",
+          "avgResponseTime": "01:35",
+          "accepted": 30,
+          "manuallyEscalated": 22,
+          "noResponse": 3,
+          "acceptedAndAutoEscalated": 48,
+          "avgTimeAcceptToEnd": "01:05"
+        },
+        {
+          "alarmLabel": "HR HIGH",
+          "recipient": "R4",
+          "percentResponded": "84%",
+          "avgResponseTime": "01:45",
+          "accepted": 32,
+          "manuallyEscalated": 24,
+          "noResponse": 4,
+          "acceptedAndAutoEscalated": 46,
+          "avgTimeAcceptToEnd": "01:15"
+        }
+      ],
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "recipient": { "align": "left" },
+        "percentResponded": { "align": "right" },
+        "avgResponseTime": { "align": "right" },
+        "accepted": { "align": "right" },
+        "manuallyEscalated": { "align": "right" },
+        "noResponse": { "align": "right" },
+        "acceptedAndAutoEscalated": { "align": "right" },
+        "avgTimeAcceptToEnd": { "align": "right" }
+      },
+      "updateInterval": "5min"
     }
   }
 } 

@@ -481,10 +481,10 @@ function AAMDashboard() {
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
                 <TableChart
-                  title={chartData.tableCharts.alertResponseByRecipient.title}
-                  description={chartData.tableCharts.alertResponseByRecipient.description}
-                  data={chartData.tableCharts.alertResponseByRecipient.data}
-                  style={chartData.tableCharts.alertResponseByRecipient.style}
+                  title={chartData.tableCharts.alertResponseByRecipientTable.title}
+                  description={chartData.tableCharts.alertResponseByRecipientTable.description}
+                  data={chartData.tableCharts.alertResponseByRecipientTable.data}
+                  style={chartData.tableCharts.alertResponseByRecipientTable.style}
                 />
               </Box>
             </Grid>

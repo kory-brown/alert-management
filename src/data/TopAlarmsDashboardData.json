@@ -15,6 +15,11 @@
         "value": "02:59",
         "label": "(MM:SS)"
       },
+      "averageAlertTime": {
+        "title": "Average Alarm Time (Start to Finish)",
+        "value": "02:37",
+        "label": "(MM:SS)"
+      },
       "totalAlertsRespondedTo": {
         "title": "Total Alerts Responded To",
         "value": 688,
@@ -62,7 +67,21 @@
       }
     },
     "lineCharts": {
-     
+      "topAlarmsDailyTrend": {
+        "id": "top-alarms-daily-trend",
+        "title": "Top Alarms Daily Trend",
+        "description": "Shows the daily trend of top alarm types over time",
+        "data": [
+          { "date": "2024-03-01", "A-Fib": 45, "Asystole": 35, "HR High": 30 },
+          { "date": "2024-03-02", "A-Fib": 50, "Asystole": 40, "HR High": 35 },
+          { "date": "2024-03-03", "A-Fib": 40, "Asystole": 30, "HR High": 25 },
+          { "date": "2024-03-04", "A-Fib": 55, "Asystole": 45, "HR High": 40 },
+          { "date": "2024-03-05", "A-Fib": 45, "Asystole": 35, "HR High": 30 },
+          { "date": "2024-03-06", "A-Fib": 40, "Asystole": 30, "HR High": 25 },
+          { "date": "2024-03-07", "A-Fib": 50, "Asystole": 40, "HR High": 35 }
+        ],
+        "updateInterval": "5min"
+      }
     },
     "barCharts": {
      

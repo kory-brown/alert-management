@@ -144,21 +144,13 @@ function TopAlarmsDashboard() {
           {/* PAGE CHART COMPONENTS */}
           <SectionLabel label="Top Alarms Summary" />
 
-          {/* Row 1 - Total Top Alarms, Alerts, and Average Time */}
-          <Grid container spacing={3} sx={{ mt: 3 }}>
+           {/* Row 1 - Total Top Alarms, Alerts, and Average Time */}
+           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={4}>
               <BigNumberChart
                 value={chartData.bigNumbers.totalTopAlarms.value}
                 label={chartData.bigNumbers.totalTopAlarms.label}
                 title={chartData.bigNumbers.totalTopAlarms.title}
-                height={300}
-              />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <BigNumberChart
-                value={chartData.bigNumbers.totalTopAlerts.value}
-                label={chartData.bigNumbers.totalTopAlerts.label}
-                title={chartData.bigNumbers.totalTopAlerts.title}
                 height={300}
               />
             </Grid>
@@ -172,19 +164,47 @@ function TopAlarmsDashboard() {
             </Grid>
           </Grid>
 
-          {/* Row 2 - Top Alarms & Alerts by Label */}
+          {/* Row 2 - Top Alarms Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
-                <StackedBarChart 
-                  title={chartData.stackedBarCharts.byAlarmLabels.title}
-                  data={chartData.stackedBarCharts.byAlarmLabels.data}
-                  groupBy={chartData.stackedBarCharts.byAlarmLabels.groupBy}
-                  totalLabel={chartData.stackedBarCharts.byAlarmLabels.data[0].totalLabel}
-                  subsetLabel={chartData.stackedBarCharts.byAlarmLabels.data[0].subsetLabel}
-                  colors={['#1aafe6', '#667275']}
+                <LineChart 
+                  title={chartData.lineCharts.topAlarmsDailyTrend.title}
+                  data={chartData.lineCharts.topAlarmsDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["A-Fib", "Asystole", "HR High"]}
+                  yAxisLabels={["A-Fib", "Asystole", "HR High"]}
+                  colors={{
+                    'A-Fib': '#1aafe6',
+                    'Asystole': '#4CAF50',
+                    'HR High': '#FFC107'
+                  }}
+                  isTimeFormat={false}
                 />
               </Box>
+            </Grid>
+          </Grid>
+
+          {/* PAGE CHART COMPONENTS */}
+          <SectionLabel label="Top Alerts Summary" />
+
+          {/* Row 3 - Total Top Alerts, and Average Time */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart
+                value={chartData.bigNumbers.totalTopAlerts.value}
+                label={chartData.bigNumbers.totalTopAlerts.label}
+                title={chartData.bigNumbers.totalTopAlerts.title}
+                height={300}
+              />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <BigNumberChart
+                value={chartData.bigNumbers.averageAlertTime.value}
+                label={chartData.bigNumbers.averageAlertTime.label}
+                title={chartData.bigNumbers.averageAlertTime.title}
+                height={300}
+              />
             </Grid>
           </Grid>
 
