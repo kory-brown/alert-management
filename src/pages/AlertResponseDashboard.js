@@ -144,16 +144,19 @@ function AlertResponseDashboard() {
 
           {/* ROW 1 - Big Number Charts */}   
           <Grid container spacing={3}>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={3}>
               <BigNumberChart {...chartData.bigNumbers.totalAlarms} />
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={3}>
               <BigNumberChart {...chartData.bigNumbers.totalDispatchedAlerts} />
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={3}>
               <BigNumberChart {...chartData.bigNumbers.totalAlertsRespondedTo} />
             </Grid>
+            <Grid item xs={12} md={3}>
+              <BigNumberChart {...chartData.bigNumbers.totalNotificationsFromAlerts} />
             </Grid>
+          </Grid>
 
           {/* ROW 2: Alarms and Alerts Daily TrendRow */}
           <Grid container spacing={3} sx={{ mt: 3 }}>

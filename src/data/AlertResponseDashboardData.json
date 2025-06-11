@@ -32,6 +32,14 @@
       "description": "Total number of dispatched alerts",
       "updateInterval": "5min"
     },
+    "totalNotificationsFromAlerts": {
+      "id": "total-notifications-from-alerts",
+      "title": "Total Notifications from Alerts",
+      "value": 2876,
+      "label": "Notifications",
+      "description": "Total number of notifications generated from alerts",
+      "updateInterval": "5min"
+    },
     "averageAlarmDuration": {
       "id": "average-alarm-duration",
       "title": "Average Alarm Duration",
@@ -355,6 +363,7 @@
         {
           "alarmLabel": "AFIB",
           "totalAlerts": 298,
+          "Notifications from Alerts": 650,
           "alertsRespondedTo": 201,
           "accepted": 156,
           "manuallyEscalated": 45,
@@ -366,6 +375,7 @@
         {
           "alarmLabel": "ASYSTOLE",
           "totalAlerts": 314,
+          "Notifications from Alerts": 680,
           "alertsRespondedTo": 220,
           "accepted": 168,
           "manuallyEscalated": 52,
@@ -377,6 +387,7 @@
         {
           "alarmLabel": "HR HIGH",
           "totalAlerts": 245,
+          "Notifications from Alerts": 520,
           "alertsRespondedTo": 170,
           "accepted": 132,
           "manuallyEscalated": 38,
@@ -388,6 +399,7 @@
         {
           "alarmLabel": "HR LOW",
           "totalAlerts": 228,
+          "Notifications from Alerts": 480,
           "alertsRespondedTo": 159,
           "accepted": 124,
           "manuallyEscalated": 35,
@@ -399,6 +411,7 @@
         {
           "alarmLabel": "PAUSE",
           "totalAlerts": 187,
+          "Notifications from Alerts": 400,
           "alertsRespondedTo": 126,
           "accepted": 98,
           "manuallyEscalated": 28,
@@ -410,6 +423,7 @@
         {
           "alarmLabel": "VFIB/VTACH",
           "totalAlerts": 356,
+          "Notifications from Alerts": 700,
           "alertsRespondedTo": 242,
           "accepted": 186,
           "manuallyEscalated": 56,
@@ -421,6 +435,7 @@
         {
           "alarmLabel": "SPO2 LOW",
           "totalAlerts": 267,
+          "Notifications from Alerts": 500,
           "alertsRespondedTo": 184,
           "accepted": 142,
           "manuallyEscalated": 42,
@@ -433,6 +448,7 @@
       "style": {
         "alarmLabel": { "align": "left" },
         "totalAlerts": { "align": "right" },
+        "Notifications from Alerts": { "align": "right" },
         "alertsRespondedTo": { "align": "right" },
         "accepted": { "align": "right" },
         "manuallyEscalated": { "align": "right" },
@@ -871,48 +887,55 @@
     },
     "autoEscalatedAlertsTable": {
       "id": "auto-escalated-alerts-table",
-      "title": "Top Auto Escalated Alerts Detail",
-      "description": "Details of auto escalated alerts sorted by auto-escalation count",
+      "title": "Auto Escalated Alerts by Alarm Label",
+      "description": "Detailed statistics of auto escalated alerts by alarm label",
       "data": [
         {
           "alarmLabel": "VFIB/VTACH",
           "totalAlerts": 356,
+          "Notifications from Alerts": 700,
           "totalAutoEscalationCount": 84,
           "averageAlarmTime": "02:30"
         },
         {
           "alarmLabel": "ASYSTOLE",
           "totalAlerts": 314,
+          "Notifications from Alerts": 680,
           "totalAutoEscalationCount": 78,
           "averageAlarmTime": "02:15"
         },
         {
           "alarmLabel": "AFIB",
           "totalAlerts": 298,
+          "Notifications from Alerts": 650,
           "totalAutoEscalationCount": 67,
           "averageAlarmTime": "01:45"
         },
         {
           "alarmLabel": "SPO2 LOW",
           "totalAlerts": 267,
+          "Notifications from Alerts": 500,
           "totalAutoEscalationCount": 63,
           "averageAlarmTime": "01:40"
         },
         {
           "alarmLabel": "HR HIGH",
           "totalAlerts": 245,
+          "Notifications from Alerts": 520,
           "totalAutoEscalationCount": 56,
           "averageAlarmTime": "01:30"
         },
         {
           "alarmLabel": "HR LOW",
           "totalAlerts": 228,
+          "Notifications from Alerts": 480,
           "totalAutoEscalationCount": 52,
           "averageAlarmTime": "01:35"
         },
         {
           "alarmLabel": "PAUSE",
           "totalAlerts": 187,
+          "Notifications from Alerts": 400,
           "totalAutoEscalationCount": 42,
           "averageAlarmTime": "01:25"
         }
@@ -920,6 +943,7 @@
       "style": {
         "alarmLabel": { "align": "left" },
         "totalAlerts": { "align": "right" },
+        "Notifications from Alerts": { "align": "right" },
         "totalAutoEscalationCount": { "align": "right" },
         "averageAlarmTime": { "align": "right" }
       },

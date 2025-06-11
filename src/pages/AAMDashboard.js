@@ -409,7 +409,7 @@ function AAMDashboard() {
 
             {/* ROW 11: Big Numbers - Total Alerts Bottom */}
             <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={3}>
               <Box sx={{ height: 200 }}>
                 <BigNumberChart
                   title={chartData.bigNumbers.totalAlertsBottom.title}
@@ -418,7 +418,16 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={3}>
+              <Box sx={{ height: 200 }}>
+                <BigNumberChart
+                  title={chartData.bigNumbers.totalNotificationsFromAlerts.title}
+                  value={chartData.bigNumbers.totalNotificationsFromAlerts.value}
+                  label={chartData.bigNumbers.totalNotificationsFromAlerts.label}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={3}>
               <Box sx={{ height: 200 }}>
                 <BigNumberChart
                   title={chartData.bigNumbers.totalAlertsRespondedTo.title}
@@ -427,7 +436,7 @@ function AAMDashboard() {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={3}>
               <Box sx={{ height: 200 }}>
                 <BigNumberChart
                   title={chartData.bigNumbers.avgResponseTime.title}

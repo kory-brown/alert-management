@@ -32,6 +32,14 @@
       "description": "Total number of alerts",
       "updateInterval": "5min"
     },
+    "totalNotificationsFromAlerts": {
+      "id": "total-notifications-from-alerts",
+      "title": "Total Notifications from Alerts",
+      "value": 867,
+      "label": "Notifications",
+      "description": "Total number of notifications sent from alerts",
+      "updateInterval": "5min"
+    },
     "avgAlarmDuration": {
       "id": "avg-alarm-duration",
       "title": "Average Alarm Duration",
@@ -89,11 +97,11 @@
       "updateInterval": "5min"
     }, 
     "avgResponseTime": {
-      "id": "avg-response-time",
+      "id": "average-response-time",
       "title": "Average Response Time",
-      "value": "01:32",
-      "label": "(MM:SS)",
-      "description": "Average time taken to respond to alerts",
+      "value": "00:45",
+      "label": "MM:SS",
+      "description": "Average time to respond to alerts",
       "updateInterval": "5min"
     }
   },
@@ -654,10 +662,11 @@
       "style": {
         "alarmLabel": { "align": "left" },
         "totalAlerts": { "align": "right" },
+        "Notifications from Alerts": { "align": "right" },
         "accept": { "align": "right" },
         "escalate": { "align": "right" },
         "noResponse": { "align": "right" },
-        "totalUndeliverable": { "align": "right" },
+        "Undeliverable": { "align": "right" },
         "avgAcceptTime": { "align": "right" },
         "avgManualTime": { "align": "right" },
         "avgAcceptToEnd": { "align": "right" }
@@ -665,10 +674,11 @@
       "data": [
         {
           "alarmLabel": "AFIB", "totalAlerts": 298,
+          "Notifications from Alerts": 650,
           "accept": 145,
           "escalate": 85,
           "noResponse": 35,
-          "totalUndeliverable": 8,
+          "Undeliverable": 8,
           "avgAcceptTime": "00:45",
           "avgManualTime": "01:15",
           "avgAcceptToEnd": "02:30"
@@ -676,10 +686,11 @@
         { 
           "alarmLabel": "ASYSTOLE",
           "totalAlerts": 314,
+          "Notifications from Alerts": 680,
           "accept": 168,
           "escalate": 92,
           "noResponse": 18,
-          "totalUndeliverable": 8,
+          "Undeliverable": 8,
           "avgAcceptTime": "00:35",
           "avgManualTime": "01:05",
           "avgAcceptToEnd": "02:15"
@@ -687,10 +698,11 @@
         { 
           "alarmLabel": "HR HIGH",
           "totalAlerts": 245,
+          "Notifications from Alerts": 520,
           "accept": 112,
           "escalate": 78,
           "noResponse": 25,
-          "totalUndeliverable": 8,
+          "Undeliverable": 8,
           "avgAcceptTime": "00:50",
           "avgManualTime": "01:20",
           "avgAcceptToEnd": "02:45"
@@ -698,10 +710,11 @@
         { 
           "alarmLabel": "HR LOW",
           "totalAlerts": 228,
+          "Notifications from Alerts": 480,
           "accept": 98,
           "escalate": 82,
           "noResponse": 22,
-          "totalUndeliverable": 8,
+          "Undeliverable": 8,
           "avgAcceptTime": "00:48",
           "avgManualTime": "01:18",
           "avgAcceptToEnd": "02:40"
@@ -709,10 +722,11 @@
         { 
           "alarmLabel": "PAUSE",
           "totalAlerts": 187,
+          "Notifications from Alerts": 400,
           "accept": 85,
           "escalate": 58,
           "noResponse": 22,
-          "totalUndeliverable": 7,
+          "Undeliverable": 7,
           "avgAcceptTime": "00:42",
           "avgManualTime": "01:12",
           "avgAcceptToEnd": "02:25"
@@ -720,10 +734,11 @@
         { 
           "alarmLabel": "VFIB/VTACH",
           "totalAlerts": 356,
+          "Notifications from Alerts": 700,
           "accept": 185,
           "escalate": 98,
           "noResponse": 32,
-          "totalUndeliverable": 9,
+          "Undeliverable": 9,
           "avgAcceptTime": "00:32",
           "avgManualTime": "01:02",
           "avgAcceptToEnd": "02:10"
@@ -731,10 +746,11 @@
         { 
           "alarmLabel": "SPO2 LOW",
           "totalAlerts": 267,
+          "Notifications from Alerts": 500,
           "accept": 128,
           "escalate": 85,
           "noResponse": 24,
-          "totalUndeliverable": 8,
+          "Undeliverable": 8,
           "avgAcceptTime": "00:45",
           "avgManualTime": "01:15",
           "avgAcceptToEnd": "02:35"
