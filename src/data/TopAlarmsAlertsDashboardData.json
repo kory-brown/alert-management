@@ -1,0 +1,245 @@
+{
+    "bigNumbers": {
+      "totalTopAlarms": {
+        "title": "Total Top Alarms",
+        "value": 850,
+        "label": "Top Alarms"
+      },
+      "totalTopAlerts": {
+        "title": "Total Top Alerts",
+        "value": 750,
+        "label": "Top Alerts"
+      },
+      "averageAlarmTime": {
+        "title": "Average Alarm Time (Start to Finish)",
+        "value": "02:59",
+        "label": "(MM:SS)"
+      },
+      "averageAlertTime": {
+        "title": "Average Alarm Time (Start to Finish)",
+        "value": "02:37",
+        "label": "(MM:SS)"
+      },
+      "totalAlertsRespondedTo": {
+        "title": "Total Alerts Responded To",
+        "value": 688,
+        "label": "Alerts"
+      },
+      "averageAlarmResponseTime": {
+        "title": "Average Alarm Response Time for Alerts",
+        "value": "02:45",
+        "label": "(MM:SS)"
+      }
+    },
+    "bigNumberTrends": {
+
+    },
+    "pieCharts": {
+      "alertDispatchActions": {
+        "title": "Alert Dispatch Actions",
+        "data": [
+          { "name": "Manual", "value": 350 },
+          { "name": "Auto", "value": 200 },
+          { "name": "Self Resolved", "value": 150 },
+          { "name": "Delayed", "value": 100 },
+          { "name": "Hold for Recurrence", "value": 50 }
+        ],
+        "colors": ["#1aafe6", "#4CAF50", "#FFC107", "#9C27B0", "#F44336"]
+      },
+      "alertResponseByRecipient": {
+        "title": "Alert Response by Recipient",
+        "data": [
+          { "name": "R1", "value": 250 },
+          { "name": "R2", "value": 200 },
+          { "name": "R3", "value": 150 },
+          { "name": "R4", "value": 100 }
+        ],
+        "colors": ["#1aafe6", "#4CAF50", "#FFC107", "#9C27B0"]
+      },
+      "alertResponseOptions": {
+        "title": "Alert Response Options",
+        "data": [
+          { "name": "Accepted", "value": 500 },
+          { "name": "Escalated", "value": 150 },
+          { "name": "No Response", "value": 100 }
+        ],
+        "colors": ["#1aafe6", "#FFC107", "#F44336"]
+      }
+    },
+    "lineCharts": {
+      "topAlarmsDailyTrend": {
+        "id": "top-alarms-daily-trend",
+        "title": "Top Alarms Daily Trend",
+        "description": "Shows the daily trend of top alarm types over time",
+        "data": [
+          { "date": "2024-03-01", "A-Fib": 45, "HR High": 30, "VFIB/VTACH": 25 },
+          { "date": "2024-03-02", "A-Fib": 50, "HR High": 35, "VFIB/VTACH": 30 },
+          { "date": "2024-03-03", "A-Fib": 40, "HR High": 25, "VFIB/VTACH": 20 },
+          { "date": "2024-03-04", "A-Fib": 55, "HR High": 40, "VFIB/VTACH": 35 },
+          { "date": "2024-03-05", "A-Fib": 45, "HR High": 30, "VFIB/VTACH": 25 },
+          { "date": "2024-03-06", "A-Fib": 40, "HR High": 25, "VFIB/VTACH": 20 },
+          { "date": "2024-03-07", "A-Fib": 50, "HR High": 35, "VFIB/VTACH": 30 }
+        ],
+        "updateInterval": "5min"
+      },
+      "topAlarmsAvgDurationDailyTrend": {
+        "id": "top-alarms-avg-duration-daily-trend",
+        "title": "Top Alarms Average Alarm Duration Daily Trend",
+        "description": "Shows the daily trend of average alarm duration for top alarm types over time",
+        "data": [
+          { "date": "2025-01-01", "A-Fib": "02:45", "HR High": "01:30", "VFIB/VTACH": "03:15" },
+          { "date": "2025-01-02", "A-Fib": "02:55", "HR High": "01:25", "VFIB/VTACH": "03:10" },
+          { "date": "2025-01-03", "A-Fib": "02:35", "HR High": "01:40", "VFIB/VTACH": "03:25" },
+          { "date": "2025-01-04", "A-Fib": "02:50", "HR High": "01:35", "VFIB/VTACH": "03:05" },
+          { "date": "2025-01-05", "A-Fib": "02:40", "HR High": "01:45", "VFIB/VTACH": "03:20" },
+          { "date": "2025-01-06", "A-Fib": "02:30", "HR High": "01:35", "VFIB/VTACH": "03:15" },
+          { "date": "2025-01-07", "A-Fib": "02:45", "HR High": "01:30", "VFIB/VTACH": "03:10" }
+        ],
+        "updateInterval": "5min"
+      },
+      "topAlertsDailyTrend": {
+        "id": "top-alerts-daily-trend",
+        "title": "Top Alerts Daily Trend",
+        "description": "Shows the daily trend of top alert types over time",
+        "data": [
+          { "date": "2024-03-01", "A-Fib": 35, "HR High": 25, "VFIB/VTACH": 20 },
+          { "date": "2024-03-02", "A-Fib": 40, "HR High": 30, "VFIB/VTACH": 25 },
+          { "date": "2024-03-03", "A-Fib": 30, "HR High": 20, "VFIB/VTACH": 15 },
+          { "date": "2024-03-04", "A-Fib": 45, "HR High": 35, "VFIB/VTACH": 30 },
+          { "date": "2024-03-05", "A-Fib": 35, "HR High": 25, "VFIB/VTACH": 20 },
+          { "date": "2024-03-06", "A-Fib": 30, "HR High": 20, "VFIB/VTACH": 15 },
+          { "date": "2024-03-07", "A-Fib": 40, "HR High": 30, "VFIB/VTACH": 25 }
+        ],
+        "updateInterval": "5min"
+      },
+      "topAlertsAvgDurationDailyTrend": {
+        "id": "top-alerts-avg-duration-daily-trend",
+        "title": "Top Alerts Average Duration Daily Trend",
+        "description": "Shows the daily trend of average alert duration for top alert types over time",
+        "data": [
+          { "date": "2024-03-01", "A-Fib": "02:45", "HR High": "01:30", "VFIB/VTACH": "03:15" },
+          { "date": "2024-03-02", "A-Fib": "02:55", "HR High": "01:25", "VFIB/VTACH": "03:10" },
+          { "date": "2024-03-03", "A-Fib": "02:35", "HR High": "01:40", "VFIB/VTACH": "03:25" },
+          { "date": "2024-03-04", "A-Fib": "02:50", "HR High": "01:35", "VFIB/VTACH": "03:05" },
+          { "date": "2024-03-05", "A-Fib": "02:40", "HR High": "01:45", "VFIB/VTACH": "03:20" },
+          { "date": "2024-03-06", "A-Fib": "02:30", "HR High": "01:35", "VFIB/VTACH": "03:15" },
+          { "date": "2024-03-07", "A-Fib": "02:45", "HR High": "01:30", "VFIB/VTACH": "03:10" }
+        ],
+        "updateInterval": "5min"
+      }
+    },
+    "barCharts": {
+      "topAlarmTotals": {
+        "title": "Top Alarm Totals",
+        "data": [
+          { "alarmLabel": "A-Fib", "alarms": 120 },
+          { "alarmLabel": "HR High", "alarms": 85 },
+          { "alarmLabel": "VFIB/VTACH", "alarms": 55 }
+        ],
+        "xAxisKey": "alarmLabel",
+        "yAxisKey": "alarms",
+        "showValues": true,
+        "isStacked": false,
+        "labelAlign": "center"
+      },
+      "topAlertTotals": {
+        "title": "Top Alerts",
+        "data": [
+          { "alarmLabel": "A-Fib", "alerts": 98 },
+          { "alarmLabel": "HR High", "alerts": 75 },
+          { "alarmLabel": "VFIB/VTACH", "alerts": 48 }
+        ],
+        "xAxisKey": "alarmLabel",
+        "yAxisKey": "alerts",
+        "showValues": true,
+        "isStacked": false,
+        "labelAlign": "center"
+      }
+    },
+    "tableCharts": {
+      "alarmLabelDetail": {
+        "title": "Top Alarms Detail",
+        "data": [
+          {
+            "alarmLabel": "A-Fib",
+            "totalAlarms": 120,
+            "totalAlerts": 98,
+            "avgAlarmTime": "02:45"
+          },
+          {
+            "alarmLabel": "HR High",
+            "totalAlarms": 85,
+            "totalAlerts": 75,
+            "avgAlarmTime": "02:15"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "totalAlarms": 55,
+            "totalAlerts": 48,
+            "avgAlarmTime": "01:30"
+          }
+        ],
+        "style": {
+          "alarmLabel": { "align": "left" },
+          "totalAlarms": { "align": "right" },
+          "totalAlerts": { "align": "right" },
+          "avgAlarmTime": { "align": "right" }
+        },
+        "columnLabels": {
+          "avgAlarmTime": "Avg Alarm Time (start to finish)"
+        }
+      },
+      "topAlertsDetail": {
+        "title": "Top Alerts Detail",
+        "data": [
+          {
+            "alarmLabel": "A-Fib",
+            "totalAlarms": 120,
+            "totalAlerts": 98,
+            "avgAlertDuration": "02:45"
+          },
+          {
+            "alarmLabel": "HR High",
+            "totalAlarms": 85,
+            "totalAlerts": 75,
+            "avgAlertDuration": "02:15"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "totalAlarms": 55,
+            "totalAlerts": 48,
+            "avgAlertDuration": "01:30"
+          }
+        ],
+        "style": {
+          "alarmLabel": { "align": "left" },
+          "totalAlarms": { "align": "right" },
+          "totalAlerts": { "align": "right" },
+          "avgAlertDuration": { "align": "right" }
+        },
+        "columnLabels": {
+          "alarmLabel": "Alarm Label",
+          "totalAlarms": "Total Alarms",
+          "totalAlerts": "Total Alerts",
+          "avgAlertDuration": "Ave Alert Duration (Start to Finish)"
+        }
+      }
+    },
+    "groupedBarCharts": {
+    
+    },
+    "stackedBarCharts": {
+      "byAlarmLabels": {
+        "id": "stacked-alarms-by-label",
+        "title": "Top Alarms & Alerts by Label",
+        "description": "Shows total alarms with alerts as a subset",
+        "groupBy": "Alarm Label",
+        "data": [
+          { "groupByLabel": "A-Fib", "totalLabel": "Alarms", "totalValue": 120, "subsetLabel": "Alerts", "subsetValue": 98 },
+          { "groupByLabel": "HR High", "totalLabel": "Alarms", "totalValue": 85, "subsetLabel": "Alerts", "subsetValue": 75 },
+          { "groupByLabel": "VFIB/VTACH", "totalLabel": "Alarms", "totalValue": 55, "subsetLabel": "Alerts", "subsetValue": 48 }
+        ],
+        "updateInterval": "5min"
+      }
+    }
+  } 

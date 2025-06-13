@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import AAMDashboard from './pages/AAMDashboard';
 import AlertDispatchDashboard from './pages/AlertDispatchDashboard';
 import AlertResponseDashboard from './pages/AlertResponseDashboard';
-import TopAlarmsDashboard from './pages/TopAlarmsDashboard';
+import TopAlarmsAlertsDashboard from './pages/TopAlarmsAlertsDashboard';
 import QualityInitiativeDashboard from './pages/QualityInitiativeDashboard';
 import ShiftDashboard from './pages/ShiftDashboard';
 import IndividualBedDashboard from './pages/IndividualBedDashboard';
@@ -69,7 +69,7 @@ function App() {
             } />
             <Route path="/dashboard/top-alarms" element={
               <ProtectedRoute>
-                <TopAlarmsDashboard />
+                <TopAlarmsAlertsDashboard />
               </ProtectedRoute>
             } />
             <Route path="/dashboard/quality" element={
