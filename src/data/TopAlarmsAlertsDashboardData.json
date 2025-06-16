@@ -1,70 +1,12 @@
 {
     "bigNumbers": {
-      "totalTopAlarms": {
-        "title": "Total Top Alarms",
-        "value": 850,
-        "label": "Top Alarms"
-      },
-      "totalTopAlerts": {
-        "title": "Total Top Alerts",
-        "value": 750,
-        "label": "Top Alerts"
-      },
-      "averageAlarmTime": {
-        "title": "Average Alarm Time (Start to Finish)",
-        "value": "02:59",
-        "label": "(MM:SS)"
-      },
-      "averageAlertTime": {
-        "title": "Average Alarm Time (Start to Finish)",
-        "value": "02:37",
-        "label": "(MM:SS)"
-      },
-      "totalAlertsRespondedTo": {
-        "title": "Total Alerts Responded To",
-        "value": 688,
-        "label": "Alerts"
-      },
-      "averageAlarmResponseTime": {
-        "title": "Average Alarm Response Time for Alerts",
-        "value": "02:45",
-        "label": "(MM:SS)"
-      }
+
     },
     "bigNumberTrends": {
 
     },
     "pieCharts": {
-      "alertDispatchActions": {
-        "title": "Alert Dispatch Actions",
-        "data": [
-          { "name": "Manual", "value": 350 },
-          { "name": "Auto", "value": 200 },
-          { "name": "Self Resolved", "value": 150 },
-          { "name": "Delayed", "value": 100 },
-          { "name": "Hold for Recurrence", "value": 50 }
-        ],
-        "colors": ["#1aafe6", "#4CAF50", "#FFC107", "#9C27B0", "#F44336"]
-      },
-      "alertResponseByRecipient": {
-        "title": "Alert Response by Recipient",
-        "data": [
-          { "name": "R1", "value": 250 },
-          { "name": "R2", "value": 200 },
-          { "name": "R3", "value": 150 },
-          { "name": "R4", "value": 100 }
-        ],
-        "colors": ["#1aafe6", "#4CAF50", "#FFC107", "#9C27B0"]
-      },
-      "alertResponseOptions": {
-        "title": "Alert Response Options",
-        "data": [
-          { "name": "Accepted", "value": 500 },
-          { "name": "Escalated", "value": 150 },
-          { "name": "No Response", "value": 100 }
-        ],
-        "colors": ["#1aafe6", "#FFC107", "#F44336"]
-      }
+
     },
     "lineCharts": {
       "topAlarmsDailyTrend": {
@@ -143,7 +85,7 @@
         "labelAlign": "center"
       },
       "topAlertTotals": {
-        "title": "Top Alerts",
+        "title": "Top Alerts Totals",
         "data": [
           { "alarmLabel": "A-Fib", "alerts": 98 },
           { "alarmLabel": "HR High", "alerts": 75 },
@@ -164,18 +106,21 @@
             "alarmLabel": "A-Fib",
             "totalAlarms": 120,
             "totalAlerts": 98,
+            "notificationsFromAlerts": 245,
             "avgAlarmTime": "02:45"
           },
           {
             "alarmLabel": "HR High",
             "totalAlarms": 85,
             "totalAlerts": 75,
+            "notificationsFromAlerts": 188,
             "avgAlarmTime": "02:15"
           },
           {
             "alarmLabel": "VFIB/VTACH",
             "totalAlarms": 55,
             "totalAlerts": 48,
+            "notificationsFromAlerts": 120,
             "avgAlarmTime": "01:30"
           }
         ],
@@ -183,10 +128,12 @@
           "alarmLabel": { "align": "left" },
           "totalAlarms": { "align": "right" },
           "totalAlerts": { "align": "right" },
+          "notificationsFromAlerts": { "align": "right" },
           "avgAlarmTime": { "align": "right" }
         },
         "columnLabels": {
-          "avgAlarmTime": "Avg Alarm Time (start to finish)"
+          "avgAlarmTime": "Avg Alarm Time (start to finish)",
+          "notificationsFromAlerts": "Notifications from Alerts"
         }
       },
       "topAlertsDetail": {
@@ -196,18 +143,21 @@
             "alarmLabel": "A-Fib",
             "totalAlarms": 120,
             "totalAlerts": 98,
+            "notificationsFromAlerts": 245,
             "avgAlertDuration": "02:45"
           },
           {
             "alarmLabel": "HR High",
             "totalAlarms": 85,
             "totalAlerts": 75,
+            "notificationsFromAlerts": 188,
             "avgAlertDuration": "02:15"
           },
           {
             "alarmLabel": "VFIB/VTACH",
             "totalAlarms": 55,
             "totalAlerts": 48,
+            "notificationsFromAlerts": 120,
             "avgAlertDuration": "01:30"
           }
         ],
@@ -215,31 +165,610 @@
           "alarmLabel": { "align": "left" },
           "totalAlarms": { "align": "right" },
           "totalAlerts": { "align": "right" },
+          "notificationsFromAlerts": { "align": "right" },
           "avgAlertDuration": { "align": "right" }
         },
         "columnLabels": {
           "alarmLabel": "Alarm Label",
           "totalAlarms": "Total Alarms",
           "totalAlerts": "Total Alerts",
+          "notificationsFromAlerts": "Notifications from Alerts",
           "avgAlertDuration": "Ave Alert Duration (Start to Finish)"
+        }
+      },
+      "topAlarmDispatchDetail": {
+        "title": "Top Alarm - Alert Dispatch Detail",
+        "data": [
+          {
+            "alarmLabel": "A-Fib",
+            "totalAlarms": 120,
+            "totalAlerts": 98,
+            "manuallyDispatched": 45,
+            "autoDispatched": 35,
+            "selfResolved": 12,
+            "numberOfDelays": 4,
+            "numberOfRecurrenceHolds": 2,
+            "avgAlarmIntervalToDispatch": "01:45"
+          },
+          {
+            "alarmLabel": "HR High",
+            "totalAlarms": 85,
+            "totalAlerts": 75,
+            "manuallyDispatched": 30,
+            "autoDispatched": 35,
+            "selfResolved": 8,
+            "numberOfDelays": 1,
+            "numberOfRecurrenceHolds": 1,
+            "avgAlarmIntervalToDispatch": "01:30"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "totalAlarms": 55,
+            "totalAlerts": 48,
+            "manuallyDispatched": 25,
+            "autoDispatched": 18,
+            "selfResolved": 4,
+            "numberOfDelays": 1,
+            "numberOfRecurrenceHolds": 0,
+            "avgAlarmIntervalToDispatch": "01:15"
+          }
+        ],
+        "style": {
+          "alarmLabel": { "align": "left" },
+          "totalAlarms": { "align": "right" },
+          "totalAlerts": { "align": "right" },
+          "manuallyDispatched": { "align": "right" },
+          "autoDispatched": { "align": "right" },
+          "selfResolved": { "align": "right" },
+          "numberOfDelays": { "align": "right" },
+          "numberOfRecurrenceHolds": { "align": "right" },
+          "avgAlarmIntervalToDispatch": { "align": "right" }
+        },
+        "columnLabels": {
+          "alarmLabel": "Alarm Label",
+          "totalAlarms": "Total Alarms",
+          "totalAlerts": "Total Alerts",
+          "manuallyDispatched": "Manually Dispatched",
+          "autoDispatched": "Auto Dispatched",
+          "selfResolved": "Self Resolved",
+          "numberOfDelays": "Number of Delays",
+          "numberOfRecurrenceHolds": "Number of Recurrence Holds",
+          "avgAlarmIntervalToDispatch": "Avg Alarm Interval to Dispatch (MM:SS)"
+        }
+      },
+      "topAlarmAlertResponseByRecipientDetail": {
+        "title": "Top Alarms - Alert Response by Recipient Detail",
+        "columns": [
+          { "key": "alarmLabel", "label": "Alarm Label" },
+          { "key": "recipient", "label": "Recipient" },
+          { "key": "percentResponded", "label": "% Responded" },
+          { "key": "avgResponseTime", "label": "Avg Response Time" },
+          { "key": "accepted", "label": "Accepted" },
+          { "key": "manuallyEscalated", "label": "Manually Escalated" },
+          { "key": "noResponse", "label": "No Response" },
+          { "key": "acceptedAndAutoEscalated", "label": "Accepted and Auto Escalated" },
+          { "key": "avgTimeAcceptToEnd", "label": "Avg Time (Accept to End)" }
+        ],
+        "style": {
+          "percentResponded": { "align": "right" },
+          "avgResponseTime": { "align": "right" },
+          "accepted": { "align": "right" },
+          "manuallyEscalated": { "align": "right" },
+          "noResponse": { "align": "right" },
+          "acceptedAndAutoEscalated": { "align": "right" },
+          "avgTimeAcceptToEnd": { "align": "right" }
+        },
+        "data": [
+          {
+            "alarmLabel": "A-Fib",
+            "recipient": "R1",
+            "percentResponded": "95%",
+            "avgResponseTime": "02:15",
+            "accepted": 85,
+            "manuallyEscalated": 5,
+            "noResponse": 5,
+            "acceptedAndAutoEscalated": 3,
+            "avgTimeAcceptToEnd": "15:30"
+          },
+          {
+            "alarmLabel": "A-Fib",
+            "recipient": "R2",
+            "percentResponded": "92%",
+            "avgResponseTime": "02:45",
+            "accepted": 75,
+            "manuallyEscalated": 8,
+            "noResponse": 8,
+            "acceptedAndAutoEscalated": 4,
+            "avgTimeAcceptToEnd": "18:15"
+          },
+          {
+            "alarmLabel": "A-Fib",
+            "recipient": "R3",
+            "percentResponded": "88%",
+            "avgResponseTime": "03:30",
+            "accepted": 65,
+            "manuallyEscalated": 12,
+            "noResponse": 12,
+            "acceptedAndAutoEscalated": 6,
+            "avgTimeAcceptToEnd": "20:45"
+          },
+          {
+            "alarmLabel": "A-Fib",
+            "recipient": "R4",
+            "percentResponded": "85%",
+            "avgResponseTime": "04:15",
+            "accepted": 55,
+            "manuallyEscalated": 15,
+            "noResponse": 15,
+            "acceptedAndAutoEscalated": 7,
+            "avgTimeAcceptToEnd": "22:30"
+          },
+          {
+            "alarmLabel": "HR High",
+            "recipient": "R1",
+            "percentResponded": "94%",
+            "avgResponseTime": "02:00",
+            "accepted": 70,
+            "manuallyEscalated": 6,
+            "noResponse": 6,
+            "acceptedAndAutoEscalated": 3,
+            "avgTimeAcceptToEnd": "14:45"
+          },
+          {
+            "alarmLabel": "HR High",
+            "recipient": "R2",
+            "percentResponded": "91%",
+            "avgResponseTime": "02:30",
+            "accepted": 60,
+            "manuallyEscalated": 9,
+            "noResponse": 9,
+            "acceptedAndAutoEscalated": 4,
+            "avgTimeAcceptToEnd": "17:30"
+          },
+          {
+            "alarmLabel": "HR High",
+            "recipient": "R3",
+            "percentResponded": "87%",
+            "avgResponseTime": "03:15",
+            "accepted": 50,
+            "manuallyEscalated": 13,
+            "noResponse": 13,
+            "acceptedAndAutoEscalated": 5,
+            "avgTimeAcceptToEnd": "19:15"
+          },
+          {
+            "alarmLabel": "HR High",
+            "recipient": "R4",
+            "percentResponded": "84%",
+            "avgResponseTime": "04:00",
+            "accepted": 40,
+            "manuallyEscalated": 16,
+            "noResponse": 16,
+            "acceptedAndAutoEscalated": 6,
+            "avgTimeAcceptToEnd": "21:45"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "recipient": "R1",
+            "percentResponded": "96%",
+            "avgResponseTime": "01:45",
+            "accepted": 40,
+            "manuallyEscalated": 4,
+            "noResponse": 4,
+            "acceptedAndAutoEscalated": 2,
+            "avgTimeAcceptToEnd": "12:30"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "recipient": "R2",
+            "percentResponded": "93%",
+            "avgResponseTime": "02:15",
+            "accepted": 35,
+            "manuallyEscalated": 7,
+            "noResponse": 7,
+            "acceptedAndAutoEscalated": 3,
+            "avgTimeAcceptToEnd": "15:45"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "recipient": "R3",
+            "percentResponded": "89%",
+            "avgResponseTime": "03:00",
+            "accepted": 30,
+            "manuallyEscalated": 11,
+            "noResponse": 11,
+            "acceptedAndAutoEscalated": 4,
+            "avgTimeAcceptToEnd": "18:30"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "recipient": "R4",
+            "percentResponded": "86%",
+            "avgResponseTime": "03:45",
+            "accepted": 25,
+            "manuallyEscalated": 14,
+            "noResponse": 14,
+            "acceptedAndAutoEscalated": 5,
+            "avgTimeAcceptToEnd": "20:15"
+          }
+        ]
+      },
+      "topAlarmAlertResponseDetail": {
+        "title": "Top Alarm - Alert Response Detail",
+        "data": [
+          {
+            "alarmLabel": "A-Fib",
+            "totalAlerts": 98,
+            "notificationsFromAlerts": 245,
+            "alertsRespondedTo": 85,
+            "accepted": 65,
+            "manuallyEscalated": 12,
+            "autoEscalated": 5,
+            "selfResolved": 3,
+            "noResponses": 10,
+            "undelivered": 3
+          },
+          {
+            "alarmLabel": "HR High",
+            "totalAlerts": 75,
+            "notificationsFromAlerts": 188,
+            "alertsRespondedTo": 65,
+            "accepted": 50,
+            "manuallyEscalated": 8,
+            "autoEscalated": 4,
+            "selfResolved": 3,
+            "noResponses": 8,
+            "undelivered": 2
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "totalAlerts": 48,
+            "notificationsFromAlerts": 120,
+            "alertsRespondedTo": 42,
+            "accepted": 35,
+            "manuallyEscalated": 5,
+            "autoEscalated": 1,
+            "selfResolved": 1,
+            "noResponses": 5,
+            "undelivered": 1
+          }
+        ],
+        "style": {
+          "alarmLabel": { "align": "left" },
+          "totalAlerts": { "align": "right" },
+          "notificationsFromAlerts": { "align": "right" },
+          "alertsRespondedTo": { "align": "right" },
+          "accepted": { "align": "right" },
+          "manuallyEscalated": { "align": "right" },
+          "autoEscalated": { "align": "right" },
+          "selfResolved": { "align": "right" },
+          "noResponses": { "align": "right" },
+          "undelivered": { "align": "right" }
+        },
+        "columnLabels": {
+          "alarmLabel": "Alarm Label",
+          "totalAlerts": "Total Alerts",
+          "notificationsFromAlerts": "Notifications from Alerts",
+          "alertsRespondedTo": "Alerts Responded To",
+          "accepted": "Accepted",
+          "manuallyEscalated": "Manually Escalated",
+          "autoEscalated": "Auto Escalated",
+          "selfResolved": "Self Resolved",
+          "noResponses": "No Responses",
+          "undelivered": "Undelivered"
+        }
+      },
+      "topAlertsAlertResponseByRecipientDetail": {
+        "title": "Top Alerts - Alert Response by Recipient Detail",
+        "columns": [
+          { "key": "alarmLabel", "label": "Alarm Label" },
+          { "key": "recipient", "label": "Recipient" },
+          { "key": "percentResponded", "label": "% Responded" },
+          { "key": "avgResponseTime", "label": "Avg Response Time" },
+          { "key": "accepted", "label": "Accepted" },
+          { "key": "manuallyEscalated", "label": "Manually Escalated" },
+          { "key": "noResponse", "label": "No Response" },
+          { "key": "acceptedAndAutoEscalated", "label": "Accepted and Auto Escalated" },
+          { "key": "avgTimeAcceptToEnd", "label": "Avg Time (Accept to End)" }
+        ],
+        "style": {
+          "percentResponded": { "align": "right" },
+          "avgResponseTime": { "align": "right" },
+          "accepted": { "align": "right" },
+          "manuallyEscalated": { "align": "right" },
+          "noResponse": { "align": "right" },
+          "acceptedAndAutoEscalated": { "align": "right" },
+          "avgTimeAcceptToEnd": { "align": "right" }
+        },
+        "data": [
+          {
+            "alarmLabel": "A-Fib",
+            "recipient": "R1",
+            "percentResponded": "94%",
+            "avgResponseTime": "02:00",
+            "accepted": 70,
+            "manuallyEscalated": 4,
+            "noResponse": 4,
+            "acceptedAndAutoEscalated": 2,
+            "avgTimeAcceptToEnd": "14:30"
+          },
+          {
+            "alarmLabel": "A-Fib",
+            "recipient": "R2",
+            "percentResponded": "91%",
+            "avgResponseTime": "02:30",
+            "accepted": 60,
+            "manuallyEscalated": 7,
+            "noResponse": 7,
+            "acceptedAndAutoEscalated": 3,
+            "avgTimeAcceptToEnd": "17:15"
+          },
+          {
+            "alarmLabel": "A-Fib",
+            "recipient": "R3",
+            "percentResponded": "87%",
+            "avgResponseTime": "03:15",
+            "accepted": 50,
+            "manuallyEscalated": 11,
+            "noResponse": 11,
+            "acceptedAndAutoEscalated": 4,
+            "avgTimeAcceptToEnd": "19:45"
+          },
+          {
+            "alarmLabel": "A-Fib",
+            "recipient": "R4",
+            "percentResponded": "84%",
+            "avgResponseTime": "04:00",
+            "accepted": 40,
+            "manuallyEscalated": 14,
+            "noResponse": 14,
+            "acceptedAndAutoEscalated": 5,
+            "avgTimeAcceptToEnd": "21:30"
+          },
+          {
+            "alarmLabel": "HR High",
+            "recipient": "R1",
+            "percentResponded": "93%",
+            "avgResponseTime": "01:45",
+            "accepted": 65,
+            "manuallyEscalated": 5,
+            "noResponse": 5,
+            "acceptedAndAutoEscalated": 2,
+            "avgTimeAcceptToEnd": "13:45"
+          },
+          {
+            "alarmLabel": "HR High",
+            "recipient": "R2",
+            "percentResponded": "90%",
+            "avgResponseTime": "02:15",
+            "accepted": 55,
+            "manuallyEscalated": 8,
+            "noResponse": 8,
+            "acceptedAndAutoEscalated": 3,
+            "avgTimeAcceptToEnd": "16:30"
+          },
+          {
+            "alarmLabel": "HR High",
+            "recipient": "R3",
+            "percentResponded": "86%",
+            "avgResponseTime": "03:00",
+            "accepted": 45,
+            "manuallyEscalated": 12,
+            "noResponse": 12,
+            "acceptedAndAutoEscalated": 4,
+            "avgTimeAcceptToEnd": "18:15"
+          },
+          {
+            "alarmLabel": "HR High",
+            "recipient": "R4",
+            "percentResponded": "83%",
+            "avgResponseTime": "03:45",
+            "accepted": 35,
+            "manuallyEscalated": 15,
+            "noResponse": 15,
+            "acceptedAndAutoEscalated": 5,
+            "avgTimeAcceptToEnd": "20:45"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "recipient": "R1",
+            "percentResponded": "95%",
+            "avgResponseTime": "01:30",
+            "accepted": 35,
+            "manuallyEscalated": 3,
+            "noResponse": 3,
+            "acceptedAndAutoEscalated": 1,
+            "avgTimeAcceptToEnd": "11:30"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "recipient": "R2",
+            "percentResponded": "92%",
+            "avgResponseTime": "02:00",
+            "accepted": 30,
+            "manuallyEscalated": 6,
+            "noResponse": 6,
+            "acceptedAndAutoEscalated": 2,
+            "avgTimeAcceptToEnd": "14:45"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "recipient": "R3",
+            "percentResponded": "88%",
+            "avgResponseTime": "02:45",
+            "accepted": 25,
+            "manuallyEscalated": 10,
+            "noResponse": 10,
+            "acceptedAndAutoEscalated": 3,
+            "avgTimeAcceptToEnd": "17:30"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "recipient": "R4",
+            "percentResponded": "85%",
+            "avgResponseTime": "03:30",
+            "accepted": 20,
+            "manuallyEscalated": 13,
+            "noResponse": 13,
+            "acceptedAndAutoEscalated": 4,
+            "avgTimeAcceptToEnd": "19:15"
+          }
+        ]
+      },
+      "topAlertsAlertResponseDetail": {
+        "title": "Top Alerts - Alert Response Detail",
+        "data": [
+          {
+            "alarmLabel": "A-Fib",
+            "totalAlerts": 98,
+            "notificationsFromAlerts": 245,
+            "alertsRespondedTo": 85,
+            "accepted": 65,
+            "manuallyEscalated": 12,
+            "autoEscalated": 5,
+            "selfResolved": 3,
+            "noResponses": 10,
+            "undelivered": 3
+          },
+          {
+            "alarmLabel": "HR High",
+            "totalAlerts": 75,
+            "notificationsFromAlerts": 188,
+            "alertsRespondedTo": 65,
+            "accepted": 50,
+            "manuallyEscalated": 8,
+            "autoEscalated": 4,
+            "selfResolved": 3,
+            "noResponses": 8,
+            "undelivered": 2
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "totalAlerts": 48,
+            "notificationsFromAlerts": 120,
+            "alertsRespondedTo": 42,
+            "accepted": 35,
+            "manuallyEscalated": 5,
+            "autoEscalated": 1,
+            "selfResolved": 1,
+            "noResponses": 5,
+            "undelivered": 1
+          }
+        ],
+        "style": {
+          "alarmLabel": { "align": "left" },
+          "totalAlerts": { "align": "right" },
+          "notificationsFromAlerts": { "align": "right" },
+          "alertsRespondedTo": { "align": "right" },
+          "accepted": { "align": "right" },
+          "manuallyEscalated": { "align": "right" },
+          "autoEscalated": { "align": "right" },
+          "selfResolved": { "align": "right" },
+          "noResponses": { "align": "right" },
+          "undelivered": { "align": "right" }
+        },
+        "columnLabels": {
+          "alarmLabel": "Alarm Label",
+          "totalAlerts": "Total Alerts",
+          "notificationsFromAlerts": "Notifications from Alerts",
+          "alertsRespondedTo": "Alerts Responded To",
+          "accepted": "Accepted",
+          "manuallyEscalated": "Manually Escalated",
+          "autoEscalated": "Auto Escalated",
+          "selfResolved": "Self Resolved",
+          "noResponses": "No Responses",
+          "undelivered": "Undelivered"
+        }
+      },
+      "alertDispatchDetail": {
+        "title": "Top Alert - Alert Dispatch Detail",
+        "data": [
+          {
+            "alarmLabel": "A-Fib",
+            "totalAlarms": 120,
+            "totalAlerts": 98,
+            "manuallyDispatched": 45,
+            "autoDispatched": 35,
+            "selfResolved": 12,
+            "numberOfDelays": 4,
+            "numberOfRecurrenceHolds": 2,
+            "avgAlarmIntervalToDispatch": "01:45"
+          },
+          {
+            "alarmLabel": "HR High",
+            "totalAlarms": 85,
+            "totalAlerts": 75,
+            "manuallyDispatched": 30,
+            "autoDispatched": 35,
+            "selfResolved": 8,
+            "numberOfDelays": 1,
+            "numberOfRecurrenceHolds": 1,
+            "avgAlarmIntervalToDispatch": "01:30"
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "totalAlarms": 55,
+            "totalAlerts": 48,
+            "manuallyDispatched": 25,
+            "autoDispatched": 18,
+            "selfResolved": 4,
+            "numberOfDelays": 1,
+            "numberOfRecurrenceHolds": 0,
+            "avgAlarmIntervalToDispatch": "01:15"
+          }
+        ],
+        "style": {
+          "alarmLabel": { "align": "left" },
+          "totalAlarms": { "align": "right" },
+          "totalAlerts": { "align": "right" },
+          "manuallyDispatched": { "align": "right" },
+          "autoDispatched": { "align": "right" },
+          "selfResolved": { "align": "right" },
+          "numberOfDelays": { "align": "right" },
+          "numberOfRecurrenceHolds": { "align": "right" },
+          "avgAlarmIntervalToDispatch": { "align": "right" }
+        },
+        "columnLabels": {
+          "alarmLabel": "Alarm Label",
+          "totalAlarms": "Total Alarms",
+          "totalAlerts": "Total Alerts",
+          "manuallyDispatched": "Manually Dispatched",
+          "autoDispatched": "Auto Dispatched",
+          "selfResolved": "Self Resolved",
+          "numberOfDelays": "Number of Delays",
+          "numberOfRecurrenceHolds": "Number of Recurrence Holds",
+          "avgAlarmIntervalToDispatch": "Avg Alarm Interval to Dispatch (MM:SS)"
         }
       }
     },
     "groupedBarCharts": {
-    
+
     },
     "stackedBarCharts": {
       "byAlarmLabels": {
-        "id": "stacked-alarms-by-label",
-        "title": "Top Alarms & Alerts by Label",
-        "description": "Shows total alarms with alerts as a subset",
-        "groupBy": "Alarm Label",
+        "title": "Alarms by Label",
         "data": [
-          { "groupByLabel": "A-Fib", "totalLabel": "Alarms", "totalValue": 120, "subsetLabel": "Alerts", "subsetValue": 98 },
-          { "groupByLabel": "HR High", "totalLabel": "Alarms", "totalValue": 85, "subsetLabel": "Alerts", "subsetValue": 75 },
-          { "groupByLabel": "VFIB/VTACH", "totalLabel": "Alarms", "totalValue": 55, "subsetLabel": "Alerts", "subsetValue": 48 }
+          {
+            "alarmLabel": "A-Fib",
+            "alarms": 120,
+            "alerts": 98
+          },
+          {
+            "alarmLabel": "HR High",
+            "alarms": 85,
+            "alerts": 75
+          },
+          {
+            "alarmLabel": "VFIB/VTACH",
+            "alarms": 55,
+            "alerts": 48
+          }
         ],
-        "updateInterval": "5min"
+        "xAxisKey": "alarmLabel",
+        "yAxisKeys": ["alarms", "alerts"],
+        "showValues": true,
+        "isStacked": false,
+        "labelAlign": "center"
       }
     }
   } 
