@@ -26,7 +26,7 @@
       },
       "topAlarmsAvgDurationDailyTrend": {
         "id": "top-alarms-avg-duration-daily-trend",
-        "title": "Top Alarms Average Alarm Duration Daily Trend",
+        "title": "Top Alarms - Average Alarm Duration Daily Trend",
         "description": "Shows the daily trend of average alarm duration for top alarm types over time",
         "data": [
           { "date": "2025-01-01", "A-Fib": "02:45", "HR High": "01:30", "VFIB/VTACH": "03:15" },
@@ -38,6 +38,46 @@
           { "date": "2025-01-07", "A-Fib": "02:45", "HR High": "01:30", "VFIB/VTACH": "03:10" }
         ],
         "updateInterval": "5min"
+      },
+      "topAlarmsAlertResponseDailyTrend": {
+        "title": "Top Alarms - Average Alert Response Daily Trend",
+        "data": [
+          {
+            "date": "2025-01-01",
+            "Manually Escalated": "05:30",
+            "Auto Escalated": "03:45",
+            "Accepted": "02:15",
+            "Self Resolved": "01:30"
+          },
+          {
+            "date": "2025-01-02",
+            "Manually Escalated": "06:15",
+            "Auto Escalated": "04:00",
+            "Accepted": "02:30",
+            "Self Resolved": "01:45"
+          },
+          {
+            "date": "2025-01-03",
+            "Manually Escalated": "05:45",
+            "Auto Escalated": "03:30",
+            "Accepted": "02:00",
+            "Self Resolved": "01:15"
+          },
+          {
+            "date": "2025-01-04",
+            "Manually Escalated": "06:00",
+            "Auto Escalated": "03:45",
+            "Accepted": "02:15",
+            "Self Resolved": "01:30"
+          },
+          {
+            "date": "2025-01-05",
+            "Manually Escalated": "05:15",
+            "Auto Escalated": "03:15",
+            "Accepted": "01:45",
+            "Self Resolved": "01:00"
+          }
+        ]
       },
       "topAlertsDailyTrend": {
         "id": "top-alerts-daily-trend",
@@ -68,11 +108,51 @@
           { "date": "2024-03-07", "A-Fib": "02:45", "HR High": "01:30", "VFIB/VTACH": "03:10" }
         ],
         "updateInterval": "5min"
+      },
+      "topAlertsAlertResponseDailyTrend": {
+        "title": "Top Alerts - Average Alert Response Daily Trend",
+        "data": [
+          {
+            "date": "2025-01-01",
+            "Manually Escalated": "04:30",
+            "Auto Escalated": "02:45",
+            "Accepted": "01:45",
+            "Self Resolved": "01:00"
+          },
+          {
+            "date": "2025-01-02",
+            "Manually Escalated": "05:15",
+            "Auto Escalated": "03:00",
+            "Accepted": "02:00",
+            "Self Resolved": "01:15"
+          },
+          {
+            "date": "2025-01-03",
+            "Manually Escalated": "04:45",
+            "Auto Escalated": "02:30",
+            "Accepted": "01:30",
+            "Self Resolved": "00:45"
+          },
+          {
+            "date": "2025-01-04",
+            "Manually Escalated": "05:00",
+            "Auto Escalated": "02:45",
+            "Accepted": "01:45",
+            "Self Resolved": "01:00"
+          },
+          {
+            "date": "2025-01-05",
+            "Manually Escalated": "04:15",
+            "Auto Escalated": "02:15",
+            "Accepted": "01:15",
+            "Self Resolved": "00:30"
+          }
+        ]
       }
     },
     "barCharts": {
       "topAlarmTotals": {
-        "title": "Top Alarm Totals",
+        "title": "Top Alarms Totals",
         "data": [
           { "alarmLabel": "A-Fib", "alarms": 120 },
           { "alarmLabel": "HR High", "alarms": 85 },
@@ -177,7 +257,7 @@
         }
       },
       "topAlarmDispatchDetail": {
-        "title": "Top Alarm - Alert Dispatch Detail",
+        "title": "Top Alarms - Alert Dispatch Detail",
         "data": [
           {
             "alarmLabel": "A-Fib",
@@ -394,7 +474,7 @@
         ]
       },
       "topAlarmAlertResponseDetail": {
-        "title": "Top Alarm - Alert Response Detail",
+        "title": "Top Alarms - Alert Response Detail",
         "data": [
           {
             "alarmLabel": "A-Fib",
@@ -681,7 +761,7 @@
         }
       },
       "alertDispatchDetail": {
-        "title": "Top Alert - Alert Dispatch Detail",
+        "title": "Top Alerts - Alert Dispatch Detail",
         "data": [
           {
             "alarmLabel": "A-Fib",

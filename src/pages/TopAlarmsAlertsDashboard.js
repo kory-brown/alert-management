@@ -177,7 +177,7 @@ function TopAlarmsAlertsDashboard() {
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
-                <LineChart 
+                <LineChart
                   title={chartData.lineCharts.topAlarmsDailyTrend.title}
                   data={chartData.lineCharts.topAlarmsDailyTrend.data}
                   xAxisKey="date"
@@ -194,11 +194,11 @@ function TopAlarmsAlertsDashboard() {
             </Grid>
           </Grid>
 
-          {/* Row 3 - Top Alarms Daily Trend */}
+          {/* Row 3 - Top Alarms Avg Duration Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
-                <LineChart 
+                <LineChart
                   title={chartData.lineCharts.topAlarmsAvgDurationDailyTrend.title}
                   data={chartData.lineCharts.topAlarmsAvgDurationDailyTrend.data}
                   xAxisKey="date"
@@ -215,7 +215,29 @@ function TopAlarmsAlertsDashboard() {
             </Grid>
           </Grid>
 
-          {/* Row 4 - Top Alarm Dispatch Detail Table */}
+           {/* Row 4 - Top Alarms Alert Response Daily Trend */}
+           <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart
+                  title={chartData.lineCharts.topAlarmsAlertResponseDailyTrend.title}
+                  data={chartData.lineCharts.topAlarmsAlertResponseDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["Manually Escalated", "Auto Escalated", "Accepted", "Self Resolved"]}
+                  yAxisLabels={["Manually Escalated", "Auto Escalated", "Accepted", "Self Resolved"]}
+                  colors={{
+                    'Manually Escalated': '#FF6B6B',
+                    'Auto Escalated': '#4ECDC4',
+                    'Accepted': '#45B7D1',
+                    'Self Resolved': '#96CEB4'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Row 5 - Top Alarm Dispatch Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 300 }}>
@@ -229,7 +251,7 @@ function TopAlarmsAlertsDashboard() {
             </Grid>
           </Grid>
 
-          {/* Row 5 - Top Alarm Alert Response Detail Table */}
+          {/* Row 6 - Top Alarm Alert Response Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 300 }}>
@@ -241,9 +263,9 @@ function TopAlarmsAlertsDashboard() {
                 />
               </Box>
             </Grid>
-          </Grid>
+          </Grid> 
 
-          {/* Row 5.5 - Top Alarm Alert Response by Recipient Detail Table */}
+          {/* Row 7 - Top Alarm Alert Response by Recipient Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 300 }}>
@@ -260,7 +282,7 @@ function TopAlarmsAlertsDashboard() {
           {/* PAGE CHART COMPONENTS */}
           <SectionLabel label="Top Alerts Summary" />
           
-          {/* Row 6 - Top Alerts Detail Table and Bar Chart */}
+          {/* Row 8 - Top Alerts Detail Table and Bar Chart */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12} md={6}>
               <Box sx={{ height: 300 }}>
@@ -286,7 +308,7 @@ function TopAlarmsAlertsDashboard() {
             </Grid>
           </Grid>
 
-          {/* Row 7 - Top Alerts Daily Trend */}
+          {/* Row 9 - Top Alerts Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -307,7 +329,7 @@ function TopAlarmsAlertsDashboard() {
             </Grid>
           </Grid>
 
-          {/* Row 8 - Top Alerts Average Duration Daily Trend */}
+          {/* Row 10 - Top Alerts Average Duration Daily Trend */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -328,7 +350,29 @@ function TopAlarmsAlertsDashboard() {
             </Grid>
           </Grid>
 
-          {/* Row 9 - Alert Dispatch Detail Table */}
+          {/* Row 11 - Top Alerts Alert Response Daily Trend */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <LineChart
+                  title={chartData.lineCharts.topAlertsAlertResponseDailyTrend.title}
+                  data={chartData.lineCharts.topAlertsAlertResponseDailyTrend.data}
+                  xAxisKey="date"
+                  yAxisKeys={["Manually Escalated", "Auto Escalated", "Accepted", "Self Resolved"]}
+                  yAxisLabels={["Manually Escalated", "Auto Escalated", "Accepted", "Self Resolved"]}
+                  colors={{
+                    'Manually Escalated': '#FF6B6B',
+                    'Auto Escalated': '#4ECDC4',
+                    'Accepted': '#45B7D1',
+                    'Self Resolved': '#96CEB4'
+                  }}
+                  isTimeFormat={true}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Row 12 - Alert Dispatch Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 300 }}>
@@ -342,7 +386,7 @@ function TopAlarmsAlertsDashboard() {
             </Grid>
           </Grid>
 
-          {/* Row 10 - Top Alerts Alert Response Detail Table */}
+          {/* Row 13 - Top Alerts Alert Response Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 300 }}>
@@ -356,7 +400,7 @@ function TopAlarmsAlertsDashboard() {
             </Grid>
           </Grid>
 
-          {/* Row 8 - Top Alerts Alert Response by Recipient Detail Table */}
+          {/* Row 14 - Top Alerts Alert Response by Recipient Detail Table */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 300 }}>
@@ -369,6 +413,7 @@ function TopAlarmsAlertsDashboard() {
               </Box>
             </Grid>
           </Grid>
+
         </Box>
       </Box>
       <Box sx={{ mt: 4 }}>
