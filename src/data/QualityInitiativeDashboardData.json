@@ -5,7 +5,7 @@
   "bigNumberTrends": {
     "totalAlarms": {
       "id": "total-alarms-trend",
-      "title": "Total Number of Alarms",
+      "title": "Total Alarms",
       "value": 1000,
       "label": "Alarms",
       "trendLabel": "Daily Alarm Trend +10% ▲",
@@ -14,7 +14,7 @@
     },
     "totalAlerts": {
       "id": "total-alerts-trend",
-      "title": "Total Number of Alerts",
+      "title": "Total Alerts",
       "value": 800,
       "label": "Alerts",
       "trendLabel": "Daily Alert Trend -3% ▼",
