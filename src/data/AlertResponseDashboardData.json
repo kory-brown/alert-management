@@ -338,17 +338,16 @@
       "title": "Alert Response Times Detail",
       "description": "Average response times for each alarm label",
       "data": [
-        { "alarmLabel": "AFIB", "avgDuration": "01:45", "avgAlarmTimeStartToFinish": "01:45", "avgResponseTime": "00:45", "avgTimeAcceptToEnd": "01:15" },
-        { "alarmLabel": "ASYSTOLE", "avgDuration": "02:15", "avgAlarmTimeStartToFinish": "02:15", "avgResponseTime": "00:42", "avgTimeAcceptToEnd": "01:45" },
-        { "alarmLabel": "HR HIGH", "avgDuration": "01:30", "avgAlarmTimeStartToFinish": "01:30", "avgResponseTime": "01:15", "avgTimeAcceptToEnd": "00:45" },
-        { "alarmLabel": "HR LOW", "avgDuration": "01:35", "avgAlarmTimeStartToFinish": "01:35", "avgResponseTime": "01:20", "avgTimeAcceptToEnd": "00:50" },
-        { "alarmLabel": "PAUSE", "avgDuration": "01:25", "avgAlarmTimeStartToFinish": "01:25", "avgResponseTime": "01:25", "avgTimeAcceptToEnd": "00:40" },
-        { "alarmLabel": "VFIB/VTACH", "avgDuration": "02:30", "avgAlarmTimeStartToFinish": "02:30", "avgResponseTime": "00:38", "avgTimeAcceptToEnd": "01:55" },
-        { "alarmLabel": "SPO2 LOW", "avgDuration": "01:40", "avgAlarmTimeStartToFinish": "01:40", "avgResponseTime": "01:30", "avgTimeAcceptToEnd": "00:55" }
+        { "alarmLabel": "AFIB", "avgAlarmTimeStartToFinish": "01:45", "avgResponseTime": "00:45", "avgTimeAcceptToEnd": "01:15" },
+        { "alarmLabel": "ASYSTOLE",  "avgAlarmTimeStartToFinish": "02:15", "avgResponseTime": "00:42", "avgTimeAcceptToEnd": "01:45" },
+        { "alarmLabel": "HR HIGH", "avgAlarmTimeStartToFinish": "01:30", "avgResponseTime": "01:15", "avgTimeAcceptToEnd": "00:45" },
+        { "alarmLabel": "HR LOW", "avgAlarmTimeStartToFinish": "01:35", "avgResponseTime": "01:20", "avgTimeAcceptToEnd": "00:50" },
+        { "alarmLabel": "PAUSE", "avgAlarmTimeStartToFinish": "01:25", "avgResponseTime": "01:25", "avgTimeAcceptToEnd": "00:40" },
+        { "alarmLabel": "VFIB/VTACH", "avgAlarmTimeStartToFinish": "02:30", "avgResponseTime": "00:38", "avgTimeAcceptToEnd": "01:55" },
+        { "alarmLabel": "SPO2 LOW", "avgAlarmTimeStartToFinish": "01:40", "avgResponseTime": "01:30", "avgTimeAcceptToEnd": "00:55" }
       ],
       "style": {
         "alarmLabel": { "align": "left" },
-        "avgDuration": { "align": "right" },
         "avgAlarmTimeStartToFinish": { "align": "right" },
         "avgResponseTime": { "align": "right" },
         "avgTimeAcceptToEnd": { "align": "right" }
