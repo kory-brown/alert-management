@@ -296,11 +296,11 @@
       "style": {
         "alarmLabel": { "align": "left" },
         "totalAlarms": { "align": "right" },
+        "selfResolved": { "align": "right" },
+        "avgAlarmTimeStartToFinish": { "align": "right" },
         "totalAlerts": { "align": "right" },
-        "avgAlarmDuration": { "align": "right" },
         "manuallyDispatched": { "align": "right" },
         "autoDispatched": { "align": "right" },
-        "selfResolved": { "align": "right" },
         "numberOfDelays": { "align": "right" },
         "numberOfRecurrenceHolds": { "align": "right" },
         "avgAlarmIntervalToDispatch": { "align": "right" }
@@ -309,11 +309,11 @@
         {
           "alarmLabel": "AFIB",
           "totalAlarms": 425,
+          "selfResolved": 85,
+          "avgAlarmTimeStartToFinish": "01:35",
           "totalAlerts": 298,
-          "avgAlarmDuration": "01:35",
           "manuallyDispatched": 145,
           "autoDispatched": 120,
-          "selfResolved": 85,
           "numberOfDelays": 28,
           "numberOfRecurrenceHolds": 42,
           "avgAlarmIntervalToDispatch": "00:45"
@@ -321,11 +321,11 @@
         {
           "alarmLabel": "ASYSTOLE",
           "totalAlarms": 461,
+          "selfResolved": 90,
+          "avgAlarmTimeStartToFinish": "01:45",
           "totalAlerts": 314,
-          "avgAlarmDuration": "01:45",
           "manuallyDispatched": 160,
           "autoDispatched": 130,
-          "selfResolved": 90,
           "numberOfDelays": 35,
           "numberOfRecurrenceHolds": 48,
           "avgAlarmIntervalToDispatch": "00:35"
@@ -333,11 +333,11 @@
         {
           "alarmLabel": "HR HIGH",
           "totalAlarms": 387,
+          "selfResolved": 92,
+          "avgAlarmTimeStartToFinish": "01:25",
           "totalAlerts": 245,
-          "avgAlarmDuration": "01:25",
           "manuallyDispatched": 120,
           "autoDispatched": 100,
-          "selfResolved": 92,
           "numberOfDelays": 25,
           "numberOfRecurrenceHolds": 38,
           "avgAlarmIntervalToDispatch": "00:55"
@@ -345,11 +345,11 @@
         {
           "alarmLabel": "HR LOW",
           "totalAlarms": 342,
+          "selfResolved": 74,
+          "avgAlarmTimeStartToFinish": "01:20",
           "totalAlerts": 228,
-          "avgAlarmDuration": "01:20",
           "manuallyDispatched": 110,
           "autoDispatched": 95,
-          "selfResolved": 74,
           "numberOfDelays": 22,
           "numberOfRecurrenceHolds": 35,
           "avgAlarmIntervalToDispatch": "00:50"
@@ -357,11 +357,11 @@
         {
           "alarmLabel": "PAUSE",
           "totalAlarms": 298,
+          "selfResolved": 71,
+          "avgAlarmTimeStartToFinish": "01:15",
           "totalAlerts": 187,
-          "avgAlarmDuration": "01:15",
           "manuallyDispatched": 90,
           "autoDispatched": 75,
-          "selfResolved": 71,
           "numberOfDelays": 18,
           "numberOfRecurrenceHolds": 32,
           "avgAlarmIntervalToDispatch": "00:40"
@@ -369,11 +369,11 @@
         {
           "alarmLabel": "VFIB/VTACH",
           "totalAlarms": 475,
+          "selfResolved": 60,
+          "avgAlarmTimeStartToFinish": "01:55",
           "totalAlerts": 356,
-          "avgAlarmDuration": "01:55",
           "manuallyDispatched": 180,
           "autoDispatched": 150,
-          "selfResolved": 60,
           "numberOfDelays": 38,
           "numberOfRecurrenceHolds": 45,
           "avgAlarmIntervalToDispatch": "00:30"
@@ -381,11 +381,11 @@
         {
           "alarmLabel": "SPO2 LOW",
           "totalAlarms": 412,
+          "selfResolved": 95,
+          "avgAlarmTimeStartToFinish": "01:30",
           "totalAlerts": 267,
-          "avgAlarmDuration": "01:30",
           "manuallyDispatched": 130,
           "autoDispatched": 110,
-          "selfResolved": 95,
           "numberOfDelays": 24,
           "numberOfRecurrenceHolds": 40,
           "avgAlarmIntervalToDispatch": "00:45"

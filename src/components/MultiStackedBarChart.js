@@ -63,7 +63,8 @@ const MultiStackedBarChart = ({
             />
             <YAxis
               tick={{ fill: '#2F2F2F' }}
-              domain={[0, (dataMax) => Math.min(dataMax * 1.2, 600)]}
+              domain={[0, 750]}
+              ticks={[0, 150, 300, 450, 600, 750]}
             />
             <Tooltip
               contentStyle={{

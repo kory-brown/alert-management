@@ -556,6 +556,71 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
+          {/* End-User Response Subsection */}
+          <SectionLabel label="Leads Fail Detail" />
+
+          {/* ROW 18: Leads Fail Pie Charts */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <PieChart
+                  title={chartData.pieCharts.leadsFailAlarms.title}
+                  data={chartData.pieCharts.leadsFailAlarms.data}
+                  colors={{
+                    'Leads Fail': '#1aafe6',
+                    'No Telem': '#faad14',
+                    'LF - No Telem': '#ff6b6b',
+                    'No Telemetry': '#52c41a'
+                  }}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <PieChart
+                  title={chartData.pieCharts.leadsFailAlerts.title}
+                  data={chartData.pieCharts.leadsFailAlerts.data}
+                  colors={{
+                    'Leads Fail': '#1aafe6',
+                    'No Telem': '#faad14',
+                    'LF - No Telem': '#ff6b6b',
+                    'No Telemetry': '#52c41a'
+                  }}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 400 }}>
+                <PieChart
+                  title={chartData.pieCharts.leadsFailSourceAlarms.title}
+                  data={chartData.pieCharts.leadsFailSourceAlarms.data}
+                  colors={{
+                    'Leads Fail': '#1aafe6',
+                    'No Telem': '#faad14',
+                    'LF - No Telem': '#ff6b6b',
+                    'No Telemetry': '#52c41a'
+                  }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* ROW 19: Leads Fail Detail Table */}
+          <Grid container spacing={3} sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <Box sx={{ height: 400 }}>
+                <TableChart
+                  title={chartData.tableCharts.leadsFailDetail.title}
+                  data={chartData.tableCharts.leadsFailDetail.data}
+                  style={chartData.tableCharts.leadsFailDetail.style}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* End-User Response Subsection */}
+
+
         </Box>
       </Box>
       <Box sx={{ mt: 4 }}>

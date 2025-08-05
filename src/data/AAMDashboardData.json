@@ -161,6 +161,42 @@
         { "name": "R4", "value": 29 }
       ],
       "updateInterval": "5min"
+    },
+    "leadsFailAlarms": {
+      "id": "leads-fail-alarms",
+      "title": "Leads Fail - Alarms",
+      "description": "Distribution of Leads Failed alarms by alarm label",
+      "data": [
+        { "name": "Leads Fail", "value": 245 },
+        { "name": "No Telem", "value": 187 },
+        { "name": "LF - No Telem", "value": 156 },
+        { "name": "No Telemetry", "value": 198 }
+      ],
+      "updateInterval": "5min"
+    },
+    "leadsFailAlerts": {
+      "id": "leads-fail-alerts",
+      "title": "Leads Fail - Alerts",
+      "description": "Distribution of Leads Failed alerts by alarm label",
+      "data": [
+        { "name": "Leads Fail", "value": 215 },
+        { "name": "No Telem", "value": 170 },
+        { "name": "LF - No Telem", "value": 105 },
+        { "name": "No Telemetry", "value": 120 }
+      ],
+      "updateInterval": "5min"
+    },
+    "leadsFailSourceAlarms": {
+      "id": "leads-fail-source-alarms",
+      "title": "Leads Fail - Source Alarms",
+      "description": "Distribution of Leads Failed source alarms by alarm label",
+      "data": [
+        { "name": "Leads Fail", "value": 245 },
+        { "name": "No Telem", "value": 187 },
+        { "name": "LF - No Telem", "value": 156 },
+        { "name": "No Telemetry", "value": 198 }
+      ],
+      "updateInterval": "5min"
     }
   },
   "stackedBarCharts": {
@@ -194,17 +230,13 @@
     },
     "byAlarmLabels": {
       "id": "stacked-alarms-and-alerts-by-labels",
-      "title": "Total Alarms & Alerts by Labels",
-      "description": "Shows total alarms with alerts as a subset by alarm labels",
-      "groupBy": "Label",
+      "title": "Total Alarms & Alerts by Unit",
+      "description": "Shows total alarms with alerts as a subset by unit",
+      "groupBy": "Unit",
       "data": [
-        { "groupByLabel": "AFIB", "totalLabel": "Alarms", "totalValue": 425, "subsetLabel": "Alerts", "subsetValue": 298 },
-        { "groupByLabel": "ASYSTOLE", "totalLabel": "Alarms", "totalValue": 461, "subsetLabel": "Alerts", "subsetValue": 314 },
-        { "groupByLabel": "HR HIGH", "totalLabel": "Alarms", "totalValue": 387, "subsetLabel": "Alerts", "subsetValue": 245 },
-        { "groupByLabel": "HR LOW", "totalLabel": "Alarms", "totalValue": 342, "subsetLabel": "Alerts", "subsetValue": 228 },
-        { "groupByLabel": "PAUSE", "totalLabel": "Alarms", "totalValue": 298, "subsetLabel": "Alerts", "subsetValue": 187 },
-        { "groupByLabel": "VFIB/VTACH", "totalLabel": "Alarms", "totalValue": 475, "subsetLabel": "Alerts", "subsetValue": 356 },
-        { "groupByLabel": "SPO2 LOW", "totalLabel": "Alarms", "totalValue": 412, "subsetLabel": "Alerts", "subsetValue": 267 }
+        { "groupByLabel": "Critical Care", "totalLabel": "Alarms", "totalValue": 425, "subsetLabel": "Alerts", "subsetValue": 298 },
+        { "groupByLabel": "ICU", "totalLabel": "Alarms", "totalValue": 461, "subsetLabel": "Alerts", "subsetValue": 314 },
+        { "groupByLabel": "NICU", "totalLabel": "Alarms", "totalValue": 387, "subsetLabel": "Alerts", "subsetValue": 245 }
       ],
       "updateInterval": "5min"
     },
@@ -340,49 +372,25 @@
   "barCharts": {
     "responseTypesByLabel": {
       "id": "response-types-by-label",
-      "title": "Alert Response Types by Alarm Label",
-      "description": "Distribution of response types (Accept, Escalate, No Response) for each alarm label",
+      "title": "Alert Response Types by Unit",
+      "description": "Distribution of response types (Accept, Escalate, No Response) for each unit",
       "data": [
         {
-          "alarmLabel": "AFIB",
+          "alarmLabel": "Critical Care",
           "accept": 125,
           "escalate": 70,
           "noResponse": 35
         },
         {
-          "alarmLabel": "ASYSTOLE",
+          "alarmLabel": "ICU",
           "accept": 145,
           "escalate": 90,
           "noResponse": 35
         },
         {
-          "alarmLabel": "HR HIGH",
+          "alarmLabel": "NICU",
           "accept": 105,
           "escalate": 55,
-          "noResponse": 30
-        },
-        {
-          "alarmLabel": "HR LOW",
-          "accept": 85,
-          "escalate": 55,
-          "noResponse": 30
-        },
-        {
-          "alarmLabel": "PAUSE",
-          "accept": 83,
-          "escalate": 44,
-          "noResponse": 23
-        },
-        {
-          "alarmLabel": "VFIB/VTACH",
-          "accept": 165,
-          "escalate": 110,
-          "noResponse": 35
-        },
-        {
-          "alarmLabel": "SPO2 LOW",
-          "accept": 105,
-          "escalate": 75,
           "noResponse": 30
         }
       ]
@@ -478,49 +486,25 @@
       "updateInterval": "5min"
     },
     "alarmLabelDispatchTypes": {
-      "title": "Alert Dispatch Types by Alarm Label",
+      "title": "Alert Dispatch Types by Unit",
       "data": [
         {
-          "alarmLabel": "AFIB",
-          "autoDispatched": 145,
+          "alarmLabel": "Critical Care",
           "manuallyDispatched": 180,
+          "autoDispatched": 145,
           "selfResolved": 165
         },
         {
-          "alarmLabel": "ASYSTOLE",
-          "autoDispatched": 186,
+          "alarmLabel": "ICU",
           "manuallyDispatched": 195,
+          "autoDispatched": 186,
           "selfResolved": 142
         },
         {
-          "alarmLabel": "HR HIGH",
-          "autoDispatched": 132,
+          "alarmLabel": "NICU",
           "manuallyDispatched": 155,
+          "autoDispatched": 132,
           "selfResolved": 148
-        },
-        {
-          "alarmLabel": "HR LOW",
-          "autoDispatched": 118,
-          "manuallyDispatched": 145,
-          "selfResolved": 157
-        },
-        {
-          "alarmLabel": "PAUSE",
-          "autoDispatched": 98,
-          "manuallyDispatched": 120,
-          "selfResolved": 145
-        },
-        {
-          "alarmLabel": "VFIB/VTACH",
-          "autoDispatched": 198,
-          "manuallyDispatched": 210,
-          "selfResolved": 163
-        },
-        {
-          "alarmLabel": "SPO2 LOW",
-          "autoDispatched": 156,
-          "manuallyDispatched": 168,
-          "selfResolved": 144
         }
       ]
     }
@@ -534,16 +518,16 @@
         "alarmLabel": { "align": "left" },
         "totalAlarms": { "align": "right" },
         "totalAlerts": { "align": "right" },
-        "avgDuration": { "align": "right" }
+        "avgAlarmTimeStartToFinish": { "align": "right" }
       },
       "data": [
-        { "alarmLabel": "AFIB", "totalAlarms": 425, "totalAlerts": 298, "avgDuration": "01:35" },
-        { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "totalAlerts": 314, "avgDuration": "01:45" },
-        { "alarmLabel": "HR HIGH", "totalAlarms": 387, "totalAlerts": 245, "avgDuration": "01:25" },
-        { "alarmLabel": "HR LOW", "totalAlarms": 342, "totalAlerts": 228, "avgDuration": "01:20" },
-        { "alarmLabel": "PAUSE", "totalAlarms": 298, "totalAlerts": 187, "avgDuration": "01:15" },
-        { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "totalAlerts": 356, "avgDuration": "01:55" },
-        { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "totalAlerts": 267, "avgDuration": "01:30" }
+        { "alarmLabel": "AFIB", "totalAlarms": 425, "totalAlerts": 298, "avgAlarmTimeStartToFinish": "01:35" },
+        { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "totalAlerts": 314, "avgAlarmTimeStartToFinish": "01:45" },
+        { "alarmLabel": "HR HIGH", "totalAlarms": 387, "totalAlerts": 245, "avgAlarmTimeStartToFinish": "01:25" },
+        { "alarmLabel": "HR LOW", "totalAlarms": 342, "totalAlerts": 228, "avgAlarmTimeStartToFinish": "01:20" },
+        { "alarmLabel": "PAUSE", "totalAlarms": 298, "totalAlerts": 187, "avgAlarmTimeStartToFinish": "01:15" },
+        { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "totalAlerts": 356, "avgAlarmTimeStartToFinish": "01:55" },
+        { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "totalAlerts": 267, "avgAlarmTimeStartToFinish": "01:30" }
       ]
     },
     "alarmLabelDetail": {
@@ -553,94 +537,93 @@
       "style": {
         "alarmLabel": { "align": "left" },
         "totalAlarms": { "align": "right" },
+        "selfResolved": { "align": "right" },
         "totalAlerts": { "align": "right" },
         "manuallyDispatched": { "align": "right" },
         "autoDispatched": { "align": "right" },
-        "selfResolved": { "align": "right" },
         "numberOfDelays": { "align": "right" },
         "numberOfReccurrenceHolds": { "align": "right" },
         "avgAlarmIntervalToDispatch": { "align": "right" }
       },
       "data": [
         {
-          "alarmLabel": "AFIB", 
-          "totalAlarms": 425, 
+          "alarmLabel": "AFIB",
+          "totalAlarms": 425,
+          "selfResolved": 165,
           "totalAlerts": 298,
           "manuallyDispatched": 180,
           "autoDispatched": 145,
-          "selfResolved": 165,
-          "numberOfDelays": 175, 
+          "numberOfDelays": 175,
           "numberOfReccurrenceHolds": 35,
           "avgAlarmIntervalToDispatch": "01:35"
         },
-        { 
-          "alarmLabel": "ASYSTOLE", 
-          "totalAlarms": 461, 
+        {
+          "alarmLabel": "ASYSTOLE",
+          "totalAlarms": 461,
+          "selfResolved": 142,
           "totalAlerts": 314,
           "manuallyDispatched": 195,
           "autoDispatched": 186,
-          "selfResolved": 142,
-          "numberOfDelays": 188, 
+          "numberOfDelays": 188,
           "numberOfReccurrenceHolds": 42,
           "avgAlarmIntervalToDispatch": "02:15"
         },
-        { 
-          "alarmLabel": "HR HIGH", 
-          "totalAlarms": 387, 
+        {
+          "alarmLabel": "HR HIGH",
+          "totalAlarms": 387,
+          "selfResolved": 148,
           "totalAlerts": 245,
           "manuallyDispatched": 155,
           "autoDispatched": 132,
-          "selfResolved": 148,
-          "numberOfDelays": 156, 
+          "numberOfDelays": 156,
           "numberOfReccurrenceHolds": 31,
           "avgAlarmIntervalToDispatch": "01:25"
         },
-        { 
-          "alarmLabel": "HR LOW", 
-          "totalAlarms": 342, 
+        {
+          "alarmLabel": "HR LOW",
+          "totalAlarms": 342,
+          "selfResolved": 157,
           "totalAlerts": 228,
           "manuallyDispatched": 145,
           "autoDispatched": 118,
-          "selfResolved": 157,
-          "numberOfDelays": 143, 
+          "numberOfDelays": 143,
           "numberOfReccurrenceHolds": 28,
           "avgAlarmIntervalToDispatch": "01:15"
         },
-        { 
-          "alarmLabel": "PAUSE", 
-          "totalAlarms": 298, 
+        {
+          "alarmLabel": "PAUSE",
+          "totalAlarms": 298,
+          "selfResolved": 145,
           "totalAlerts": 187,
           "manuallyDispatched": 120,
           "autoDispatched": 98,
-          "selfResolved": 145,
-          "numberOfDelays": 124, 
+          "numberOfDelays": 124,
           "numberOfReccurrenceHolds": 25,
           "avgAlarmIntervalToDispatch": "01:05"
         },
-        { 
-          "alarmLabel": "VFIB/VTACH", 
-          "totalAlarms": 475, 
+        {
+          "alarmLabel": "VFIB/VTACH",
+          "totalAlarms": 475,
+          "selfResolved": 163,
           "totalAlerts": 356,
           "manuallyDispatched": 210,
           "autoDispatched": 198,
-          "selfResolved": 163,
-          "numberOfDelays": 198, 
+          "numberOfDelays": 198,
           "numberOfReccurrenceHolds": 45,
           "avgAlarmIntervalToDispatch": "02:25"
         },
-        { 
-          "alarmLabel": "SPO2 LOW", 
-          "totalAlarms": 412, 
+        {
+          "alarmLabel": "SPO2 LOW",
+          "totalAlarms": 412,
+          "selfResolved": 144,
           "totalAlerts": 267,
           "manuallyDispatched": 168,
           "autoDispatched": 156,
-          "selfResolved": 144,
-          "numberOfDelays": 167, 
+          "numberOfDelays": 167,
           "numberOfReccurrenceHolds": 33,
           "avgAlarmIntervalToDispatch": "01:45"
         }
-      ],
-      "updateInterval": "5min"
+      ]
     },
     "alertDispatchDetail": {
       "id": "alert-dispatch-detail",
@@ -1131,6 +1114,49 @@
         "acceptedAndAutoEscalated": { "align": "right" },
         "avgTimeAcceptToEnd": { "align": "right" }
       },
+      "updateInterval": "5min"
+    },
+    "leadsFailDetail": {
+      "id": "leads-fail-detail",
+      "title": "Leads Fail Detail",
+      "description": "Detailed statistics for leads fail alarms and alerts",
+      "style": {
+        "alarmLabel": { "align": "left" },
+        "totalAlarms": { "align": "right" },
+        "totalAlerts": { "align": "right" },
+        "avgAlarmDuration": { "align": "right" },
+        "totalActiveAlarmTime": { "align": "right" }
+      },
+      "data": [
+        {
+          "alarmLabel": "Leads Fail",
+          "totalAlarms": 245,
+          "totalAlerts": 215,
+          "avgAlarmDuration": "01:45",
+          "totalActiveAlarmTime": "07:15"
+        },
+        {
+          "alarmLabel": "No Telem",
+          "totalAlarms": 187,
+          "totalAlerts": 170,
+          "avgAlarmDuration": "01:35",
+          "totalActiveAlarmTime": "06:45"
+        },
+        {
+          "alarmLabel": "LF - No Telem",
+          "totalAlarms": 156,
+          "totalAlerts": 105,
+          "avgAlarmDuration": "01:25",
+          "totalActiveAlarmTime": "05:35"
+        },
+        {
+          "alarmLabel": "No Telemetry",
+          "totalAlarms": 198,
+          "totalAlerts": 120,
+          "avgAlarmDuration": "01:55",
+          "totalActiveAlarmTime": "08:25"
+        }
+      ],
       "updateInterval": "5min"
     }
   }
