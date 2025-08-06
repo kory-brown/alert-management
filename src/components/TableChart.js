@@ -55,14 +55,14 @@ const formatColumnHeader = (key) => {
   return words.join(' ');
 };
 
-const TableChart = ({ title, data, description, style }) => {
+const TableChart = ({ title, data, description, style, columnLabels }) => {
   // Generate headers from the first data object
   const generateHeaders = () => {
     if (!data || data.length === 0) return [];
     
     return Object.keys(data[0]).map(key => ({
       id: key,
-      label: formatColumnHeader(key),
+      label: columnLabels && columnLabels[key] ? columnLabels[key] : formatColumnHeader(key),
       // Use style prop if provided, otherwise default to type-based alignment
       align: style && style[key]?.align 
         ? style[key].align 

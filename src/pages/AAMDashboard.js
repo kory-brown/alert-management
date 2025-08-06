@@ -146,10 +146,10 @@ function AAMDashboard() {
           {/* ROW 1: Big Number Charts */}
           <Grid container spacing={3}>
             <Grid item xs={12} md={4}>
-              <BigNumberChart {...chartData.bigNumbers.totalAlarms} />
+              <BigNumberChart {...chartData.bigNumbers.AAMAlarms} />
             </Grid>
             <Grid item xs={12} md={4}>
-              <BigNumberChart {...chartData.bigNumbers.totalAlerts} />
+              <BigNumberChart {...chartData.bigNumbers.dispatchedAlerts} />
             </Grid>
             <Grid item xs={12} md={4}>
               <BigNumberChart {...chartData.bigNumbers.avgAlarmDuration} />
@@ -184,6 +184,7 @@ function AAMDashboard() {
                   title={chartData.tableCharts.alarmLabelStats.title}
                   data={chartData.tableCharts.alarmLabelStats.data}
                   style={chartData.tableCharts.alarmLabelStats.style}
+                  columnLabels={chartData.tableCharts.alarmLabelStats.columnLabels}
                 />
               </Box>
             </Grid>
@@ -239,7 +240,7 @@ function AAMDashboard() {
             </Grid>
           </Grid>
 
-          {/* ROW 5: Total Alarms & Alerts by Priority by Day */}
+          {/* ROW 5: AAM Alarms & Alerts by Priority by Day */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
             <Grid item xs={12}>
               <Box sx={{ height: 400 }}>
@@ -343,6 +344,7 @@ function AAMDashboard() {
                   title={chartData.tableCharts.alarmLabelDetail.title}
                   data={chartData.tableCharts.alarmLabelDetail.data}
                   style={chartData.tableCharts.alarmLabelDetail.style}
+                  columnLabels={chartData.tableCharts.alarmLabelDetail.columnLabels}
                 />
               </Box>
             </Grid>
@@ -379,9 +381,10 @@ function AAMDashboard() {
             <Grid container spacing={3} sx={{ mt: 2.5 }}>
               <Grid item xs={12} md={4}>
                 <Box sx={{ height: 400 }}>
-                  <TableChart
-                    title={chartData.tableCharts.alarmLabelVolumeDetail.title}
-                    data={chartData.tableCharts.alarmLabelVolumeDetail.data}
+                                  <TableChart
+                  title={chartData.tableCharts.alarmLabelVolumeDetail.title}
+                  data={chartData.tableCharts.alarmLabelVolumeDetail.data}
+                  columnLabels={chartData.tableCharts.alarmLabelVolumeDetail.columnLabels}
                   />
                 </Box>
               </Grid>
@@ -455,6 +458,7 @@ function AAMDashboard() {
                   title={chartData.tableCharts.alertResponseByLabel.title}
                   data={chartData.tableCharts.alertResponseByLabel.data}
                   style={chartData.tableCharts.alertResponseByLabel.style}
+                  columnLabels={chartData.tableCharts.alertResponseByLabel.columnLabels}
                 />
               </Box>
             </Grid>
@@ -480,6 +484,7 @@ function AAMDashboard() {
                   title={chartData.tableCharts.alertResponseDetail.title}
                   data={chartData.tableCharts.alertResponseDetail.data}
                   style={chartData.tableCharts.alertResponseDetail.style}
+                  columnLabels={chartData.tableCharts.alertResponseDetail.columnLabels}
                 />
               </Box>
             </Grid>
@@ -494,6 +499,7 @@ function AAMDashboard() {
                   description={chartData.tableCharts.alertResponseByRecipientTable.description}
                   data={chartData.tableCharts.alertResponseByRecipientTable.data}
                   style={chartData.tableCharts.alertResponseByRecipientTable.style}
+                  columnLabels={chartData.tableCharts.alertResponseByRecipientTable.columnLabels}
                 />
               </Box>
             </Grid>
@@ -523,10 +529,10 @@ function AAMDashboard() {
                   title={chartData.lineCharts.alertsRespondedTrend.title}
                   data={chartData.lineCharts.alertsRespondedTrend.data}
                   xAxisKey="date"
-                  yAxisKeys={["totalAlerts", "alertsResponded"]}
-                  yAxisLabels={["Total Alerts", "Alerts Responded"]}
+                  yAxisKeys={["dispatchedAlerts", "alertsResponded"]}
+                  yAxisLabels={["Dispatched Alerts", "Alerts Responded"]}
                   colors={{
-                    'totalAlerts': '#1aafe6',
+                    'dispatchedAlerts': '#1aafe6',
                     'alertsResponded': '#52c41a'
                   }}
                   isTimeFormat={false}
@@ -557,39 +563,28 @@ function AAMDashboard() {
           </Grid>
 
           {/* End-User Response Subsection */}
-          <SectionLabel label="Leads Fail Detail" />
+          <SectionLabel label="Leads Fail Metrics" />
 
           {/* ROW 18: Leads Fail Pie Charts */}
           <Grid container spacing={3} sx={{ mt: 3 }}>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6}>
               <Box sx={{ height: 400 }}>
                 <PieChart
                   title={chartData.pieCharts.leadsFailAlarms.title}
                   data={chartData.pieCharts.leadsFailAlarms.data}
                   colors={{
-                    'Leads Fail': '#1aafe6',
-                    'No Telem': '#faad14',
-                    'LF - No Telem': '#ff6b6b',
-                    'No Telemetry': '#52c41a'
+                    'HR Low': '#1aafe6',
+                    'Leads Fail': '#faad14',
+                    'HR High': '#ff6b6b',
+                    'VTach': '#52c41a',
+                    'Pause': '#722ed1',
+                    'Asystole': '#eb2f96',
+                    'Vfib-Vtach': '#13c2c2'
                   }}
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ height: 400 }}>
-                <PieChart
-                  title={chartData.pieCharts.leadsFailAlerts.title}
-                  data={chartData.pieCharts.leadsFailAlerts.data}
-                  colors={{
-                    'Leads Fail': '#1aafe6',
-                    'No Telem': '#faad14',
-                    'LF - No Telem': '#ff6b6b',
-                    'No Telemetry': '#52c41a'
-                  }}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6}>
               <Box sx={{ height: 400 }}>
                 <PieChart
                   title={chartData.pieCharts.leadsFailSourceAlarms.title}
@@ -613,6 +608,7 @@ function AAMDashboard() {
                   title={chartData.tableCharts.leadsFailDetail.title}
                   data={chartData.tableCharts.leadsFailDetail.data}
                   style={chartData.tableCharts.leadsFailDetail.style}
+                  columnLabels={chartData.tableCharts.leadsFailDetail.columnLabels}
                 />
               </Box>
             </Grid>

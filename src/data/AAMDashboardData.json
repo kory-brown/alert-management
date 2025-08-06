@@ -1,24 +1,24 @@
 {
   "bigNumbers": {
-    "totalAlarms": {
-      "id": "total-alarms",
-      "title": "Total Alarms",
+      "AAMAlarms": {
+    "id": "aam-alarms",
+      "title": "AAM Alarms",
       "value": 24575,
       "label": "Total Alarms",
       "description": "Total number of alarms across all facilities",
       "updateInterval": "5min"
     },
-    "totalAlerts": {
-      "id": "total-alerts",
-      "title": "Total Alerts",
+    "dispatchedAlerts": {
+      "id": "dispatched-alerts",
+      "title": "Dispatched Alerts",
       "value": 18722,
       "label": "Total Alerts",
-      "description": "Total number of alerts requiring attention",
+      "description": "Number of alerts requiring attention",
       "updateInterval": "5min"
     },
     "totalAlertsRespondedTo": {
       "id": "total-alerts-responded-to",
-      "title": "Total Alerts Responded To",
+      "title": "Dispatched Alerts Responded To",
       "value": 301,
       "label": "Alerts",
       "description": "Total number of alerts that received a response",
@@ -26,7 +26,7 @@
     },
     "totalAlertsBottom": {
       "id": "total-alerts-bottom",
-      "title": "Total Alerts",
+      "title": "Dispatched Alerts",
       "value": 378,
       "label": "Alerts",
       "description": "Total number of alerts",
@@ -34,7 +34,7 @@
     },
     "totalNotificationsFromAlerts": {
       "id": "total-notifications-from-alerts",
-      "title": "Total Notifications from Alerts",
+      "title": "Notifications from Dispatched Alerts",
       "value": 867,
       "label": "Notifications",
       "description": "Total number of notifications sent from alerts",
@@ -50,7 +50,7 @@
     },
     "totalAlarmsDispatched": {
       "id": "total-alerts-dispatched",
-      "title": "Total Alerts Dispatched",
+      "title": "Alerts Dispatched",
       "value": 571,
       "label": "Alerts",
       "description": "Total number of alerts that were dispatched",
@@ -66,7 +66,7 @@
     },
     "manuallyDispatchedAlerts": {
       "id": "manually-dispatched-alerts",
-      "title": "Total Manually Dispatched Alerts",
+      "title": "Manually Dispatched Alerts",
       "value": 254,
       "label": "Alerts",
       "description": "Total number of alerts that were manually dispatched",
@@ -74,7 +74,7 @@
     },
     "autoDispatchedAlerts": {
       "id": "auto-dispatched-alerts",
-      "title": "Total Auto Dispatched Alerts",
+      "title": "Auto Dispatched Alerts",
       "value": 311,
       "label": "Alerts",
       "description": "Total number of alerts that were manually dispatched",
@@ -108,7 +108,7 @@
   "pieCharts": {
     "alarmsByPriority": {
       "id": "alarms-by-priority",
-      "title": "Alarms by Priority",
+      "title": "AAM Alarms by Priority",
       "description": "Distribution of alarms by priority level",
       "data": [
         { "name": "Low", "value": 1987 }, 
@@ -130,7 +130,7 @@
     },
     "alertsByPriority": {
       "id": "alerts-by-priority",
-      "title": "Alerts by Priority",
+      "title": "Dispatched Alerts by Priority",
       "description": "Distribution of alerts by priority level",
       "data": [
         { "name": "Low", "value": 1543 }, 
@@ -141,7 +141,7 @@
     },
     "alertsResponse": {
       "id": "alerts-by-response",
-      "title": "Alert Response Distribution",
+      "title": "Dispatched Alert Response Distribution",
       "description": "Distribution of alerts by response type",
       "data": [
         { "name": "Accept", "value": 164 },
@@ -152,7 +152,7 @@
     },
     "alertsResponseByRecipient": {
       "id": "alerts-response-by-recipient",
-      "title": "Percentage of Alert Response by Recipient",
+      "title": "Dispatched Alert Response by Recipient",
       "description": "Distribution of alerts by response by recipient",
       "data": [
         { "name": "R1", "value": 119 },
@@ -164,31 +164,22 @@
     },
     "leadsFailAlarms": {
       "id": "leads-fail-alarms",
-      "title": "Leads Fail - Alarms",
+      "title": "Dispatched Alerts by Alarm Label",
       "description": "Distribution of Leads Failed alarms by alarm label",
       "data": [
-        { "name": "Leads Fail", "value": 245 },
-        { "name": "No Telem", "value": 187 },
-        { "name": "LF - No Telem", "value": 156 },
-        { "name": "No Telemetry", "value": 198 }
-      ],
-      "updateInterval": "5min"
-    },
-    "leadsFailAlerts": {
-      "id": "leads-fail-alerts",
-      "title": "Leads Fail - Alerts",
-      "description": "Distribution of Leads Failed alerts by alarm label",
-      "data": [
-        { "name": "Leads Fail", "value": 215 },
-        { "name": "No Telem", "value": 170 },
-        { "name": "LF - No Telem", "value": 105 },
-        { "name": "No Telemetry", "value": 120 }
+        { "name": "HR Low", "value": 245 },
+        { "name": "Leads Fail", "value": 187 },
+        { "name": "HR High", "value": 156 },
+        { "name": "VTach", "value": 198 },
+        { "name": "Pause", "value": 167 },
+        { "name": "Asystole", "value": 178 },
+        { "name": "Vfib-Vtach", "value": 210 }
       ],
       "updateInterval": "5min"
     },
     "leadsFailSourceAlarms": {
       "id": "leads-fail-source-alarms",
-      "title": "Leads Fail - Source Alarms",
+      "title": "Leads Fail - Source Alarm Breakdown",
       "description": "Distribution of Leads Failed source alarms by alarm label",
       "data": [
         { "name": "Leads Fail", "value": 245 },
@@ -202,8 +193,8 @@
   "stackedBarCharts": {
     "alarmsAndAlerts": {
       "id": "stacked-alarms-and-alerts",
-      "title": "Total Alarms and Alerts by Day",
-      "description": "Shows total alarms with alerts as a subset",
+      "title": "AAM Alarms and Dispatched Alerts by Day",
+      "description": "Shows AAM alarms with alerts as a subset",
       "groupBy": "Date",
       "data": [
         { "groupByLabel": "2024-01-01", "totalLabel": "Alarms", "totalValue": 3500, "subsetLabel": "Alerts", "subsetValue": 2675 },
@@ -218,8 +209,8 @@
     },
     "bySeverity": {
       "id": "stacked-alarms-and-alerts-by-severity",
-      "title": "Total Alarms & Alerts by Priority",
-      "description": "Shows total alarms with alerts as a subset by severity level",
+      "title": "AAM Alarms & Dispatched Alerts by Priority",
+      "description": "Shows AAM alarms with alerts as a subset by severity level",
       "groupBy": "Severity",
       "data": [
         { "groupByLabel": "Low", "totalLabel": "Alarms", "totalValue": 219, "subsetLabel": "Alerts", "subsetValue": 185 },
@@ -230,8 +221,8 @@
     },
     "byAlarmLabels": {
       "id": "stacked-alarms-and-alerts-by-labels",
-      "title": "Total Alarms & Alerts by Unit",
-      "description": "Shows total alarms with alerts as a subset by unit",
+      "title": "AAM Alarms & Dispatched Alerts by Unit",
+      "description": "Shows AAM alarms with alerts as a subset by unit",
       "groupBy": "Unit",
       "data": [
         { "groupByLabel": "Critical Care", "totalLabel": "Alarms", "totalValue": 425, "subsetLabel": "Alerts", "subsetValue": 298 },
@@ -242,7 +233,7 @@
     },
     "severityByDay": {
       "id": "stacked-alarms-and-alerts-by-severity-day",
-      "title": "Total Alarms & Alerts by Priority by Day",
+      "title": "AAM Alarms & Dispatched Alerts by Priority by Day",
       "description": "Shows daily totals of alarms with alerts as a subset by priority level",
       "groupBy": "Date",
       "data": [
@@ -279,7 +270,7 @@
   },
   "groupedStackedCharts": {
     "severityByDay": {
-      "title": "Total Alarms & Alerts by Priority by Day",
+      "title": "AAM Alarms & Dispatched Alerts by Priority by Day",
       "description": "Shows daily totals of alarms and alerts broken down by priority level",
       "data": [
         { "date": "2024-01-01", "lowAlarms": 45, "lowAlerts": 35, "mediumAlarms": 75, "mediumAlerts": 60, "highAlarms": 120, "highAlerts": 95 },
@@ -295,7 +286,7 @@
   "lineCharts": {
     "responseTypesDailyTrend": {
       "id": "response-types-daily-trend",
-      "title": "Alert Response Types Daily Trend",
+      "title": "Dispatched Alert Response Types Daily Trend",
       "description": "Shows the daily trend of accepts, escalations, and no responses",
       "data": [
         { "date": "2024-01-01", "accepts": 165, "escalate": 98, "noResponse": 38 },
@@ -310,23 +301,23 @@
     },
     "alertsRespondedTrend": {
       "id": "alerts-responded-trend",
-      "title": "Alerts Responded To Daily Trend",
+      "title": "Dispatched Alerts Responded To Daily Trend",
       "description": "Shows the trend of total alerts and alerts responded to over time",
       "data": [
-        { "date": "2024-01-01", "totalAlerts": 378, "alertsResponded": 301 },
-        { "date": "2024-01-02", "totalAlerts": 352, "alertsResponded": 282 },
-        { "date": "2024-01-03", "totalAlerts": 401, "alertsResponded": 325 },
-        { "date": "2024-01-04", "totalAlerts": 367, "alertsResponded": 298 },
-        { "date": "2024-01-05", "totalAlerts": 389, "alertsResponded": 315 },
-        { "date": "2024-01-06", "totalAlerts": 345, "alertsResponded": 276 },
-        { "date": "2024-01-07", "totalAlerts": 392, "alertsResponded": 318 }
+        { "date": "2024-01-01", "dispatchedAlerts": 378, "alertsResponded": 301 },
+        { "date": "2024-01-02", "dispatchedAlerts": 352, "alertsResponded": 282 },
+        { "date": "2024-01-03", "dispatchedAlerts": 401, "alertsResponded": 325 },
+        { "date": "2024-01-04", "dispatchedAlerts": 367, "alertsResponded": 298 },
+        { "date": "2024-01-05", "dispatchedAlerts": 389, "alertsResponded": 315 },
+        { "date": "2024-01-06", "dispatchedAlerts": 345, "alertsResponded": 276 },
+        { "date": "2024-01-07", "dispatchedAlerts": 392, "alertsResponded": 318 }
       ],
       "updateInterval": "5min"
     },
     "alarmsAndAlertsDailyTrend": {
       "id": "alarms-and-alerts-daily-trend",
-      "title": "Total Alarms & Alerts Daily Trend",
-      "description": "Shows the trend of total alarms and alerts over time",
+      "title": "AAM Alarms & Dispatched Alerts Daily Trend",
+      "description": "Shows the trend of AAM alarms and alerts over time",
       "data": [
         { "date": "2024-01-01", "alarms": 240, "alerts": 190 },
         { "date": "2024-01-02", "alarms": 192, "alerts": 152 },
@@ -340,7 +331,7 @@
     },
     "alarmDurationByPriorityTrend": {
       "id": "alarm-duration-by-priority-trend",
-      "title": "Alarm Duration by Priority Daily Trend",
+      "title": "AAM Alarm Duration by Priority Daily Trend",
       "description": "Average duration of alarms in MM:SS by priority level over time",
       "data": [
         { "date": "2024-01-01", "low": "00:45", "medium": "01:15", "high": "02:00" },
@@ -372,7 +363,7 @@
   "barCharts": {
     "responseTypesByLabel": {
       "id": "response-types-by-label",
-      "title": "Alert Response Types by Unit",
+      "title": "Dispatched Alert Response Types by Unit",
       "description": "Distribution of response types (Accept, Escalate, No Response) for each unit",
       "data": [
         {
@@ -442,7 +433,7 @@
     },
     "delayedAlarms": {
       "id": "delayed-alarms-trend",
-      "title": "Delayed Alarms Daily Trend",
+      "title": "Delayed AAM Alarms Daily Trend",
       "description": "Shows the trend of delayed alarms over time",
       "data": [
         { "date": "2024-01-01", "delayed": 175 },
@@ -457,7 +448,7 @@
     },
     "holdReoccurenceAlarms": {
       "id": "hold-reoccurence-alarms-trend",
-      "title": "Hold Reoccurence Alarms Daily Trend",
+      "title": "Hold Reoccurence AAM Alarms Daily Trend",
       "description": "Shows the trend of hold reoccurence alarms over time",
       "data": [
         { "date": "2024-01-01", "holdReoccurence": 35 },
@@ -512,45 +503,62 @@
   "tableCharts": {
     "alarmLabelStats": {
       "id": "alarm-label-stats",
-      "title": "Alarm Label Detail",
+      "title": "AAM Alarm Label Detail",
       "description": "Summary statistics for each alarm label",
       "style": {
         "alarmLabel": { "align": "left" },
-        "totalAlarms": { "align": "right" },
-        "totalAlerts": { "align": "right" },
+        "AAMAlarms": { "align": "right" },
+        "dispatchedAlerts": { "align": "right" },
         "avgAlarmTimeStartToFinish": { "align": "right" }
       },
+      "columnLabels": {
+        "alarmLabel": "Alarm Label",
+        "AAMAlarms": "AAM Alarms",
+        "dispatchedAlerts": "Dispatched Alerts",
+        "avgAlarmTimeStartToFinish": "Avg Alarm Time (Start to Finish)"
+      },
       "data": [
-        { "alarmLabel": "AFIB", "totalAlarms": 425, "totalAlerts": 298, "avgAlarmTimeStartToFinish": "01:35" },
-        { "alarmLabel": "ASYSTOLE", "totalAlarms": 461, "totalAlerts": 314, "avgAlarmTimeStartToFinish": "01:45" },
-        { "alarmLabel": "HR HIGH", "totalAlarms": 387, "totalAlerts": 245, "avgAlarmTimeStartToFinish": "01:25" },
-        { "alarmLabel": "HR LOW", "totalAlarms": 342, "totalAlerts": 228, "avgAlarmTimeStartToFinish": "01:20" },
-        { "alarmLabel": "PAUSE", "totalAlarms": 298, "totalAlerts": 187, "avgAlarmTimeStartToFinish": "01:15" },
-        { "alarmLabel": "VFIB/VTACH", "totalAlarms": 475, "totalAlerts": 356, "avgAlarmTimeStartToFinish": "01:55" },
-        { "alarmLabel": "SPO2 LOW", "totalAlarms": 412, "totalAlerts": 267, "avgAlarmTimeStartToFinish": "01:30" }
+        { "alarmLabel": "AFIB", "AAMAlarms": 425, "dispatchedAlerts": 298, "avgAlarmTimeStartToFinish": "01:35" },
+        { "alarmLabel": "ASYSTOLE", "AAMAlarms": 461, "dispatchedAlerts": 314, "avgAlarmTimeStartToFinish": "01:45" },
+        { "alarmLabel": "HR HIGH", "AAMAlarms": 387, "dispatchedAlerts": 245, "avgAlarmTimeStartToFinish": "01:25" },
+        { "alarmLabel": "HR LOW", "AAMAlarms": 342, "dispatchedAlerts": 228, "avgAlarmTimeStartToFinish": "01:20" },
+        { "alarmLabel": "PAUSE", "AAMAlarms": 298, "dispatchedAlerts": 187, "avgAlarmTimeStartToFinish": "01:15" },
+        { "alarmLabel": "VFIB/VTACH", "AAMAlarms": 475, "dispatchedAlerts": 356, "avgAlarmTimeStartToFinish": "01:55" },
+        { "alarmLabel": "SPO2 LOW", "AAMAlarms": 412, "dispatchedAlerts": 267, "avgAlarmTimeStartToFinish": "01:30" }
       ]
     },
     "alarmLabelDetail": {
       "id": "alarm-label-detail",
-      "title": "Alarm Label Detail",
+      "title": "AAM Alarm Label Detail",
       "description": "Detailed statistics for each alarm label including delayed and held for reoccurrence",
       "style": {
         "alarmLabel": { "align": "left" },
-        "totalAlarms": { "align": "right" },
+        "AAMAlarms": { "align": "right" },
         "selfResolved": { "align": "right" },
-        "totalAlerts": { "align": "right" },
+        "dispatchedAlerts": { "align": "right" },
         "manuallyDispatched": { "align": "right" },
         "autoDispatched": { "align": "right" },
         "numberOfDelays": { "align": "right" },
         "numberOfReccurrenceHolds": { "align": "right" },
         "avgAlarmIntervalToDispatch": { "align": "right" }
       },
+      "columnLabels": {
+        "alarmLabel": "Alarm Label",
+        "AAMAlarms": "AAM Alarms",
+        "selfResolved": "Self Resolved",
+        "dispatchedAlerts": "Dispatched Alerts",
+        "manuallyDispatched": "Manually Dispatched",
+        "autoDispatched": "Auto Dispatched",
+        "numberOfDelays": "Number of Delays",
+        "numberOfReccurrenceHolds": "Number of Recurrence Holds",
+        "avgAlarmIntervalToDispatch": "Avg Alarm Interval to Dispatch"
+      },
       "data": [
         {
           "alarmLabel": "AFIB",
-          "totalAlarms": 425,
+          "AAMAlarms": 425,
           "selfResolved": 165,
-          "totalAlerts": 298,
+          "dispatchedAlerts": 298,
           "manuallyDispatched": 180,
           "autoDispatched": 145,
           "numberOfDelays": 175,
@@ -559,9 +567,9 @@
         },
         {
           "alarmLabel": "ASYSTOLE",
-          "totalAlarms": 461,
+          "AAMAlarms": 461,
           "selfResolved": 142,
-          "totalAlerts": 314,
+          "dispatchedAlerts": 314,
           "manuallyDispatched": 195,
           "autoDispatched": 186,
           "numberOfDelays": 188,
@@ -570,9 +578,9 @@
         },
         {
           "alarmLabel": "HR HIGH",
-          "totalAlarms": 387,
+          "AAMAlarms": 387,
           "selfResolved": 148,
-          "totalAlerts": 245,
+          "dispatchedAlerts": 245,
           "manuallyDispatched": 155,
           "autoDispatched": 132,
           "numberOfDelays": 156,
@@ -581,9 +589,9 @@
         },
         {
           "alarmLabel": "HR LOW",
-          "totalAlarms": 342,
+          "AAMAlarms": 342,
           "selfResolved": 157,
-          "totalAlerts": 228,
+          "dispatchedAlerts": 228,
           "manuallyDispatched": 145,
           "autoDispatched": 118,
           "numberOfDelays": 143,
@@ -592,9 +600,9 @@
         },
         {
           "alarmLabel": "PAUSE",
-          "totalAlarms": 298,
+          "AAMAlarms": 298,
           "selfResolved": 145,
-          "totalAlerts": 187,
+          "dispatchedAlerts": 187,
           "manuallyDispatched": 120,
           "autoDispatched": 98,
           "numberOfDelays": 124,
@@ -603,9 +611,9 @@
         },
         {
           "alarmLabel": "VFIB/VTACH",
-          "totalAlarms": 475,
+          "AAMAlarms": 475,
           "selfResolved": 163,
-          "totalAlerts": 356,
+          "dispatchedAlerts": 356,
           "manuallyDispatched": 210,
           "autoDispatched": 198,
           "numberOfDelays": 198,
@@ -614,9 +622,9 @@
         },
         {
           "alarmLabel": "SPO2 LOW",
-          "totalAlarms": 412,
+          "AAMAlarms": 412,
           "selfResolved": 144,
-          "totalAlerts": 267,
+          "dispatchedAlerts": 267,
           "manuallyDispatched": 168,
           "autoDispatched": 156,
           "numberOfDelays": 167,
@@ -640,11 +648,11 @@
     },
     "alertResponseDetail": {
       "id": "alert-response-detail",
-      "title": "Alert Response Detail",
+      "title": "Dispatched Alert Response Detail",
       "description": "Detailed alert response statistics including response types and timing",
       "style": {
         "alarmLabel": { "align": "left" },
-        "totalAlerts": { "align": "right" },
+        "dispatchedAlerts": { "align": "right" },
         "Notifications from Alerts": { "align": "right" },
         "accept": { "align": "right" },
         "escalate": { "align": "right" },
@@ -656,7 +664,7 @@
       },
       "data": [
         {
-          "alarmLabel": "AFIB", "totalAlerts": 298,
+          "alarmLabel": "AFIB", "dispatchedAlerts": 298,
           "Notifications from Alerts": 650,
           "accept": 145,
           "escalate": 85,
@@ -668,7 +676,7 @@
         },
         { 
           "alarmLabel": "ASYSTOLE",
-          "totalAlerts": 314,
+          "dispatchedAlerts": 314,
           "Notifications from Alerts": 680,
           "accept": 168,
           "escalate": 92,
@@ -680,7 +688,7 @@
         },
         { 
           "alarmLabel": "HR HIGH",
-          "totalAlerts": 245,
+          "dispatchedAlerts": 245,
           "Notifications from Alerts": 520,
           "accept": 112,
           "escalate": 78,
@@ -692,7 +700,7 @@
         },
         { 
           "alarmLabel": "HR LOW",
-          "totalAlerts": 228,
+          "dispatchedAlerts": 228,
           "Notifications from Alerts": 480,
           "accept": 98,
           "escalate": 82,
@@ -704,7 +712,7 @@
         },
         { 
           "alarmLabel": "PAUSE",
-          "totalAlerts": 187,
+          "dispatchedAlerts": 187,
           "Notifications from Alerts": 400,
           "accept": 85,
           "escalate": 58,
@@ -716,7 +724,7 @@
         },
         { 
           "alarmLabel": "VFIB/VTACH",
-          "totalAlerts": 356,
+          "dispatchedAlerts": 356,
           "Notifications from Alerts": 700,
           "accept": 185,
           "escalate": 98,
@@ -728,7 +736,7 @@
         },
         { 
           "alarmLabel": "SPO2 LOW",
-          "totalAlerts": 267,
+          "dispatchedAlerts": 267,
           "Notifications from Alerts": 500,
           "accept": 128,
           "escalate": 85,
@@ -742,27 +750,27 @@
     },
     "alertResponseByLabel": {
       "id": "alert-response-by-label",
-      "title": "Alert Response by Alarm Label Detail",
+      "title": "Alert Response by AAM Alarm Label Detail",
       "description": "Acc (Accept) | Nr (No Response) | Esc (Escalate) | Art (Average Response Time)",
       "style": {
         "alarmLabel": { "align": "left" },
-        "totalAlerts": { "align": "right" },
+        "dispatchedAlerts": { "align": "right" },
         "alertsResponded": { "align": "right" },
         "avgResponse": { "align": "right" }
       },
       "data": [
-        { "alarmLabel": "AFIB", "totalAlerts": 298, "alertsResponded": 245, "avgResponse": "01:35" },
-        { "alarmLabel": "ASYSTOLE", "totalAlerts": 314, "alertsResponded": 286, "avgResponse": "01:15" },
-        { "alarmLabel": "HR HIGH", "totalAlerts": 245, "alertsResponded": 198, "avgResponse": "01:45" },
-        { "alarmLabel": "HR LOW", "totalAlerts": 228, "alertsResponded": 187, "avgResponse": "01:30" },
-        { "alarmLabel": "PAUSE", "totalAlerts": 187, "alertsResponded": 156, "avgResponse": "01:20" },
-        { "alarmLabel": "VFIB/VTACH", "totalAlerts": 356, "alertsResponded": 312, "avgResponse": "01:10" },
-        { "alarmLabel": "SPO2 LOW", "totalAlerts": 267, "alertsResponded": 234, "avgResponse": "01:25" }
+        { "alarmLabel": "AFIB", "dispatchedAlerts": 298, "alertsResponded": 245, "avgResponse": "01:35" },
+        { "alarmLabel": "ASYSTOLE", "dispatchedAlerts": 314, "alertsResponded": 286, "avgResponse": "01:15" },
+        { "alarmLabel": "HR HIGH", "dispatchedAlerts": 245, "alertsResponded": 198, "avgResponse": "01:45" },
+        { "alarmLabel": "HR LOW", "dispatchedAlerts": 228, "alertsResponded": 187, "avgResponse": "01:30" },
+        { "alarmLabel": "PAUSE", "dispatchedAlerts": 187, "alertsResponded": 156, "avgResponse": "01:20" },
+        { "alarmLabel": "VFIB/VTACH", "dispatchedAlerts": 356, "alertsResponded": 312, "avgResponse": "01:10" },
+        { "alarmLabel": "SPO2 LOW", "dispatchedAlerts": 267, "alertsResponded": 234, "avgResponse": "01:25" }
       ]
     },
     "alarmLabelVolumeDetail": {
       "id": "alarm-label-volume-detail",
-      "title": "Alert Dispatch Types by Alarm Label Detail",
+      "title": "Alert Dispatch Types by AAM Alarm Label Detail",
       "description": "Summary of alarm label volumes by dispatch type",
       "data": [
         { "alarmLabel": "AFIB", "manuallyDispatched": 180, "autoDispatched": 145, "selfResolved": 165 },
@@ -776,7 +784,7 @@
     },
     "alertResponseByRecipient": {
       "id": "alert-response-by-recipient",
-      "title": "Alert Response by Recipient Detail",
+      "title": "Dispatched Alert Response by Recipient Detail",
       "description": "Acc (Accepted) | Esc (Escalated) | Nr (No Response) | Average Response Time (Art)",
       "style": {
         "alarmLabel": { "align": "left" },
@@ -967,7 +975,7 @@
     },
     "alertResponseByRecipientTable": {
       "id": "alert-response-by-recipient-table",
-      "title": "Alert Response by Recipient Detail",
+      "title": "Dispatched Alert Response by Recipient Detail",
       "description": "Detailed response statistics by alarm label and recipient",
       "data": [
         {
@@ -1118,41 +1126,48 @@
     },
     "leadsFailDetail": {
       "id": "leads-fail-detail",
-      "title": "Leads Fail Detail",
+      "title": "Leads Fail - Source Alarm Breakdown Detail",
       "description": "Detailed statistics for leads fail alarms and alerts",
       "style": {
         "alarmLabel": { "align": "left" },
-        "totalAlarms": { "align": "right" },
-        "totalAlerts": { "align": "right" },
+        "AAMAlarms": { "align": "right" },
+        "dispatchedAlerts": { "align": "right" },
         "avgAlarmDuration": { "align": "right" },
         "totalActiveAlarmTime": { "align": "right" }
+      },
+      "columnLabels": {
+        "alarmLabel": "Alarm Label",
+        "AAMAlarms": "AAM Alarms",
+        "dispatchedAlerts": "Dispatched Alerts",
+        "avgAlarmDuration": "Avg Alarm Duration",
+        "totalActiveAlarmTime": "Total Active Alarm Time"
       },
       "data": [
         {
           "alarmLabel": "Leads Fail",
-          "totalAlarms": 245,
-          "totalAlerts": 215,
+          "AAMAlarms": 245,
+          "dispatchedAlerts": 215,
           "avgAlarmDuration": "01:45",
           "totalActiveAlarmTime": "07:15"
         },
         {
           "alarmLabel": "No Telem",
-          "totalAlarms": 187,
-          "totalAlerts": 170,
+          "AAMAlarms": 187,
+          "dispatchedAlerts": 170,
           "avgAlarmDuration": "01:35",
           "totalActiveAlarmTime": "06:45"
         },
         {
           "alarmLabel": "LF - No Telem",
-          "totalAlarms": 156,
-          "totalAlerts": 105,
+          "AAMAlarms": 156,
+          "dispatchedAlerts": 105,
           "avgAlarmDuration": "01:25",
           "totalActiveAlarmTime": "05:35"
         },
         {
           "alarmLabel": "No Telemetry",
-          "totalAlarms": 198,
-          "totalAlerts": 120,
+          "AAMAlarms": 198,
+          "dispatchedAlerts": 120,
           "avgAlarmDuration": "01:55",
           "totalActiveAlarmTime": "08:25"
         }
